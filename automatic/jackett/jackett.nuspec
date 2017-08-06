@@ -4,7 +4,7 @@
   <metadata>
     <id>jackett</id>
     <title>Jackett</title>
-    <version>0.7.1644</version>
+    <version>0.7.1650</version>
     <authors>zone117x, kaso17, chibidev</authors>
     <owners>JourneyOver</owners>
     <summary>Jackett works as a proxy server: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software.</summary>
@@ -15,7 +15,7 @@ Jackett works as a proxy server: it translates queries from apps (Sonarr, Radarr
     <projectUrl>https://github.com/Jackett/Jackett</projectUrl>
     <bugTrackerUrl>https://github.com/Jackett/Jackett/issues</bugTrackerUrl>
     <docsUrl>https://github.com/Jackett/Jackett/wiki</docsUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/jackett.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/jackett.png</iconUrl>
     <tags>torrent-search-engine torrent-management torrent-downloader torznab newznab rss rss-proxy p2p filesharing torrent nntp proxy server sonarr radarr sickrage couchpotato mylar admin</tags>
     <copyright></copyright>
     <licenseUrl>https://github.com/Jackett/Jackett/blob/master/LICENSE</licenseUrl>
