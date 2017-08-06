@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>swift-im</id>
+    <version>3.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/swift-im</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>Swift</title>
+    <authors>Isode Ltd</authors>
+    <projectUrl>https://www.swift.im/swift.html</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/swift-im.png</iconUrl>
+    <copyright>© Isode Ltd. 2015 - 2016</copyright>
+    <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://www.swift.im/swift.html</docsUrl>
+    <tags>swift swift.im XMPP admin</tags>
+    <summary>Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.</summary>
+    <description>
+Swift is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.
+</description>
+    <releaseNotes>
+#### Program
+* [Changelog]('http://swift.im/docs/changelog-3-0.html')
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
