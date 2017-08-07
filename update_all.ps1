@@ -76,7 +76,7 @@ $Options = [ordered]@{
       Port        = $Env:mail_port
       EnableSsl   = $Env:mail_enablessl -eq 'true'
       Attachment  = "$PSScriptRoot\update_info.xml"
-      UserMessage = 'Update status: http://gep13.me/choco-au'
+      UserMessage = ''
       SendAlways  = $false                        #Send notifications every time
     }
   }
