@@ -29,8 +29,8 @@ $Options = [ordered]@{
     'Internal Server Error'
     'An exception occurred during a WebClient request'
   )
-  #RepeatSleep   = 250                                    #How much to sleep between repeats in seconds, by default 0
-  #RepeatCount   = 2                                      #How many times to repeat on errors, by default 1
+  RepeatSleep   = 0                                    #How much to sleep between repeats in seconds, by default 0
+  RepeatCount   = 1                                      #How many times to repeat on errors, by default 1
 
   Report           = @{
     Type   = 'markdown'                                   #Report type: markdown or text
