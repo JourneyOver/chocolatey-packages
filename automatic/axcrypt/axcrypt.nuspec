@@ -17,20 +17,20 @@
     <tags>axcrypt AxCrypt cloud storage crypt password collab admin</tags>
     <summary>AxCrypt is a free and open-source encryption app for Microsoft Windows, developed in Sweden by Svante Seleborg for AxCrypt AB. It can compress, delete, encrypt and edit files.</summary>
     <description>
-    AxCrypt - Personal Privacy and Security with AES-256 File Encryption and Compression for Windows. Double-click to automatically decrypt and open documents.
+AxCrypt - Personal Privacy and Security with AES-256 File Encryption and Compression for Windows. Double-click to automatically decrypt and open documents.
 
-    Features
-    * Seamless integration with Windows Explorer.
-    * Double-click to decrypt, open and re-encrypt.
-    * No configuration required.
-    * Many languages supported.
+Features
+* Seamless integration with Windows Explorer.
+* Double-click to decrypt, open and re-encrypt.
+* No configuration required.
+* Many languages supported.
     </description>
     <releaseNotes>
-    #### Program
-    * [Changelog](https://www.axcrypt.net/documentation/release-notes/)
+#### Program
+* [Changelog](https://www.axcrypt.net/documentation/release-notes/)
 
-    #### Package
-    * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
     </metadata>
     <files>
       <file src="tools\**" target="tools" />
