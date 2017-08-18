@@ -17,10 +17,10 @@ function global:au_GetLatest {
   $regex = 'https://www.axcrypt.net/downloads/'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 2 -expand href
 
-  $versionRegEx = 'Version\s+(\d+)\.(\d+)\.(\d+)'
-  $version = ([regex]::match($download_page.Content, $versionRegEx) -replace ("Version ", ""))
+  $versionRegEx = 'Windows:\s+(\d+)\.(\d+)\.(\d+)'
+  $version = ([regex]::match($download_page.Content, $versionRegEx) -replace ("Windows: ", ""))
 
-  $url32 = $url[0]
+  $url32 = $url[1]
 
   $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest
