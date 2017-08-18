@@ -1,8 +1,8 @@
 ﻿$packageName = 'jackett'
 $installerType = 'exe'
 $silentArgs = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
-$url = 'https://github.com/Jackett/Jackett/releases/download/v0.8.59/Jackett.Installer.Windows.exe'
-$checksum = '1096802c14bdf3ca4ee5c8d98a329cb833254d0338d81f43edac15c98f9f62b1'
+$url = 'https://github.com/Jackett/Jackett/releases/download/v0.8.67/Jackett.Installer.Windows.exe'
+$checksum = '43b10f722ac273f96a12904912c8a0e89b7bd606dd1c46793dbb303becea5a2b'
 $checksumType = 'sha256'
 $validExitCodes = @(0)
 
