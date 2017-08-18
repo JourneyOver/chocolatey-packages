@@ -24,13 +24,13 @@ environment:
     secure: pjjxVtx3PPBrCQGTPgRgG6AZS55C0yq5tfRmUgUU+7yOixqxSvPZRgVYG0zt7nzx #https://ci.appveyor.com/tools/encrypt
 
   # Mail credentials - for error notifications
-  mail_user:
-    secure: qSfqhhJrHzARCadXZGrlhiFI5sIv9e1MIuGk8grcxNs= #https://ci.appveyor.com/tools/encrypt
-  mail_pass:
-    secure: uQPsjF1MmjWD4M3UlrkIdA== #https://ci.appveyor.com/tools/encrypt
-  mail_server: smtp.gmail.com
-  mail_port: 587
-  mail_enablessl: true
+#  mail_user:
+#    secure:  #https://ci.appveyor.com/tools/encrypt
+#  mail_pass:
+#    secure:  #https://ci.appveyor.com/tools/encrypt
+#  mail_server: smtp.gmail.com
+#  mail_port: 587
+#  mail_enablessl: true
 
   # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
   # Optional, leave empty to create anonymous gist
@@ -100,12 +100,12 @@ artifacts:
 - path: Update-History.md
 - path: au_temp.zip
 
-notifications:
-- provider: Email
-  to: $(mail_user)
-  on_build_success: false
-  on_build_failure: true
-  on_build_status_changed: true
+#notifications:
+#- provider: Email
+#  to: $(mail_user)
+#  on_build_success: false
+#  on_build_failure: true
+#  on_build_status_changed: true
 
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))

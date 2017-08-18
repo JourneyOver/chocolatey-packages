@@ -1,6 +1,7 @@
 import-module au
 
 $releases = 'https://www.axcrypt.net/download/'
+$downloadraw_url = 'https://account.axcrypt.net/download/'
 
 function global:au_SearchReplace {
   @{
@@ -14,13 +15,13 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-  $regex = 'https://www.axcrypt.net/downloads/'
-  $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 2 -expand href
+  $regex = 'AxCrypt-(\d+)-Setup.exe'
+  $url = ([regex]::match($download_page.Content, $regex))
 
   $versionRegEx = 'Windows:\s+(\d+)\.(\d+)\.(\d+)'
   $version = ([regex]::match($download_page.Content, $versionRegEx) -replace ("Windows: ", ""))
 
-  $url32 = $url[1]
+  $url32 = $downloadraw_url + $url
 
   $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest
