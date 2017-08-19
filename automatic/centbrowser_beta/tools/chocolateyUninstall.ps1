@@ -15,7 +15,7 @@ $packageArgs = @{
 }
 
 # Kill CB process before uninstall if running
-$killCB = Get-Process chrome -ErrorAction SilentlyContinue
+$killCB = Get-Process | Where-Object {$_.Path -like "$env:LOCALAPPDATA\CentBrowser\Application\chrome.exe"} -ErrorAction SilentlyContinue
 if ($killCB) {
   # try gracefully first
   $killCB.CloseMainWindow()
