@@ -14,6 +14,18 @@ $packageArgs = @{
   File           = $myfile
 }
 
+# Kill CB process before uninstall if running
+$killCB = Get-Process chrome -ErrorAction SilentlyContinue
+if ($killCB) {
+  # try gracefully first
+  $killCB.CloseMainWindow()
+  # kill after ten seconds
+  Start-Sleep 10
+  if (!$killCB.HasExited) {
+    $killCB | Stop-Process -Force
+  }
+}
+
 # Now to Uninstall the Package
 Uninstall-ChocolateyPackage @packageArgs
 # Currently doesn't delete User Data folder
