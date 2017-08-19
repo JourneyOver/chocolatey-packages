@@ -25,7 +25,7 @@ function global:au_GetLatest {
   $url64 = $releases + $url[0] -replace("beta_32", "beta_64") -replace(".exe", "_x64.exe ")
   $build = "-beta"
 
-  $Latest = @{ PackageName = 'centbrowser'; URL32 = $url32; URL64 = $url64; version = ($version + $build) }
+  $Latest = @{ PackageName = 'CentBrowser'; URL32 = $url32; URL64 = $url64; version = ($version + $build) }
   return $Latest
 }
 

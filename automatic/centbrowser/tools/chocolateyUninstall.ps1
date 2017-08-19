@@ -7,7 +7,7 @@ $myfile = $file -replace ( $chromiumArgs )
 
 # All arguments for the Uninstallation of this package
 $packageArgs = @{
-  PackageName    = 'centbrowser'
+  PackageName    = 'CentBrowser'
   FileType       = 'exe'
   SilentArgs     = $silentArgs
   validExitCodes = @(0, 19, 21)

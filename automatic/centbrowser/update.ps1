@@ -24,7 +24,7 @@ function global:au_GetLatest {
   $url32 = $url[0]
   $url64 = $url[2]
 
-  $Latest = @{ URL32 = $url32; URL64 = $url64; version = $version }
+  $Latest = @{ PackageName = 'CentBrowser'; URL32 = $url32; URL64 = $url64; version = $version }
   return $Latest
 }
 
