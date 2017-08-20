@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'CentBrowser'
-$url32 = 'http://static.centbrowser.com/installer_32/centbrowser_2.7.4.52.exe'
-$url64 = 'http://static.centbrowser.com/installer_64/centbrowser_2.7.4.52_x64.exe'
-$checksum32 = '1675f67e2c2219b7a750441538ab7782daf07688fb02dad85500d7a8faa91cbc'
-$checksum64 = 'f8651427d568ca334089cd2a5d046b63228419f018039a1564a5377248548d43'
+$url32 = 'http://static.centbrowser.com/installer_32/centbrowser_2.8.3.58.exe'
+$url64 = 'http://static.centbrowser.com/installer_64/centbrowser_2.8.3.58_x64.exe'
+$checksum32 = 'c30e842d3b64fc9b67e7b44e00eec724d5974dad4003d7007621d5c011bf754e'
+$checksum64 = 'e9b42feb0f4f5ca47b8f8f7135f696dc0380f97718191822d473d41b6d2a56e4'
 
 $packageArgs = @{
   packageName    = $packageName
