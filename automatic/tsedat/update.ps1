@@ -6,8 +6,8 @@ $fakelink = 'http://www2.fs.u-bunkyo.ac.jp/~gilner/_files/TheSage_Setup_0-0-0000
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "([$]url32\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
-      "([$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+      "([$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
+      "([$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
     }
   }
 }
@@ -23,7 +23,7 @@ function global:au_GetLatest {
   $version = $realnum -replace ('-', '.');
   $url32 = $fakelink -replace ("(\d+)\-(\d+)\-(\d+)", "$realnum");
 
-  $Latest = @{version = $version; URL32 = $url32}
+  $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest
 }
 

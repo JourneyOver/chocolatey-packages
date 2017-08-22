@@ -21,7 +21,7 @@ Swift is an elegant, secure, adaptable and intuitive XMPP client, with features 
 </description>
     <releaseNotes>
 #### Program
-* [Changelog]('http://swift.im/docs/changelog-3-0.html')
+* [Changelog](http://swift.im/docs/changelog-3-0.html)
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>

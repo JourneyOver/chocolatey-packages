@@ -15,34 +15,26 @@ $schecksum64 = 'A0ADC29ABA2FF9CFE9A9F0A61ED34E4A73A9E94174EDD32B7F1EB2FD3618BBD2
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  url            = $url32
-  url64Bit       = $url64
   silentArgs     = "/S"
   validExitCodes = @(0)
-  checksum       = $checksum32
-  checksum64     = $checksum64
-  checksumType   = 'sha256'
-  checksumType64 = 'sha256'
-}
-
-$spackageArgs = @{
-  packageName    = $packageName
-  fileType       = 'exe'
-  url            = $surl32
-  url64Bit       = $surl64
-  silentArgs     = "/S"
-  validExitCodes = @(0)
-  checksum       = $schecksum32
-  checksum64     = $schecksum64
   checksumType   = 'sha256'
   checksumType64 = 'sha256'
 }
 
 If ($ServerOS -match "Server") {
-  Install-ChocolateyPackage @spackageArgs
+  $packageArgs['url'] = $surl32
+  $packageArgs['url64Bit'] = $surl64
+  $packageArgs['checksum'] = $schecksum32
+  $packageArgs['checksum64'] = $schecksum64
   write-host Installing Server Version
-}
-Else {
+
   Install-ChocolateyPackage @packageArgs
+} else {
+  $packageArgs['url'] = $url32
+  $packageArgs['url64Bit'] = $url64
+  $packageArgs['checksum'] = $checksum32
+  $packageArgs['checksum64'] = $checksum64
   write-host Installing Workstations Version
+
+  Install-ChocolateyPackage @packageArgs
 }
