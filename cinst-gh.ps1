@@ -8,11 +8,11 @@
     - Pass repository package name as a first argument
     - Pass any cinst option after that (some may not work ofc. such as `version`)
 
-  Example:
-    iwr https://goo.gl/SZ9c3m | iex; cinst-gh furmark --force
+  Example: (replacing {packagename} with actual package name)
+    iwr https://goo.gl/aFBC52 | iex; cinst-gh {packagename} --force
 #>
 function cinst-gh {
-  $Repo = "https://github.com/JourneyOver/chocolatey-packages/tree/master"
+  $Repo = "https://github.com/JourneyOver/chocolatey-packages/tree/master/cinst-gh_packages"
 
   $name = $args[0]
   $download_page = iwr $Repo/$name -UseBasicParsing
