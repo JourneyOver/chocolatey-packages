@@ -1,16 +1,20 @@
-﻿$packageName = 'jackett'
-$packageSearch = "Jackett*"
-$installerType = 'exe'
-$silentArgs = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
-$validExitCodes = @(0)
+﻿$ErrorActionPreference = 'Stop';
 
-Get-ItemProperty -Path @( 'HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
-  'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*',
-  'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*' ) `
-  -ErrorAction:SilentlyContinue `
-  | Where-Object { $_.DisplayName -like $packageSearch } `
-  | ForEach-Object { Uninstall-ChocolateyPackage -PackageName "$packageName" `
-    -FileType "$installerType" `
-    -SilentArgs "$($silentArgs)" `
-    -File "$($_.UninstallString.Replace('"',''))" `
-    -ValidExitCodes $validExitCodes }
+$packageArgs = @{
+  packageName     = 'jackett'
+  fileType        = 'exe'
+  silentArgs      = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
+  $validExitCodes = @(0)
+  File            = "${Env:ProgramFiles(x86)}\Jackett\unins000.exe"
+}
+
+Uninstall-ChocolateyPackage @packageArgs
+
+#remove Jackett folder that gets left behind
+$fexist = Test-Path $env:ProgramData\Jackett
+If ($fexist) {
+  write-host "Removing Radarr Folder that's left behind"
+  Remove-Item $env:ProgramData\Jackett -Recurse -Force
+} else {
+  Write-Host Radarr Folder not found
+}
