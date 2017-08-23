@@ -1,16 +1,20 @@
-﻿$packageName = 'radarr'
-$packageSearch = "Radarr*"
-$installerType = 'exe'
-$silentArgs = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
-$validExitCodes = @(0)
+﻿$ErrorActionPreference = 'Stop';
 
-Get-ItemProperty -Path @( 'HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
-  'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*',
-  'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*' ) `
-  -ErrorAction:SilentlyContinue `
-  | Where-Object { $_.DisplayName -like $packageSearch } `
-  | ForEach-Object { Uninstall-ChocolateyPackage -PackageName "$packageName" `
-    -FileType "$installerType" `
-    -SilentArgs "$($silentArgs)" `
-    -File "$($_.UninstallString.Replace('"',''))" `
-    -ValidExitCodes $validExitCodes }
+$packageArgs = @{
+  packageName    = 'radarr'
+  fileType       = 'exe'
+  silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
+  validExitCodes = @(0)
+  File           = "$env:ProgramData\Radarr\bin\unins000.exe"
+}
+
+Uninstall-ChocolateyPackage @packageArgs
+
+#remove Radarr folder that gets left behind
+$fexist = Test-Path $env:ProgramData\Radarr
+If ($fexist) {
+  Write-Host "Removing Radarr Folder that's left behind"
+  Remove-Item $env:ProgramData\Radarr -Recurse -Force
+} else {
+  Write-Host Radarr Folder not found
+}

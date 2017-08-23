@@ -1,7 +1,7 @@
 *~
 *.bak
 *.cache
-*.nupkg
+automatic/*/*.nupkg
 *.old
 *.orig
 *.swp
@@ -9,10 +9,10 @@
 *.suo
 *.test
 *.work
-*.exe
+automatic/*/*.exe
 *.dll
-*.zip
-*.7z
+automatic/*/*.zip
+automatic/*/*.7z
 *.handover
 *.new
 *.exist

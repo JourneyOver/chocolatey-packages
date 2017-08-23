@@ -1,12 +1,13 @@
 import-module au
 
 $releases = 'http://bsplayer.com/bsplayer-english/download-free.html'
+$download = 'http://download2.bsplayer.com/download/file/mirror1/bsplayer000.setup.exe'
 
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "([$]url32\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
-      "([$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+      "([$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
+      "([$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
     }
   }
 }
@@ -19,8 +20,7 @@ function global:au_GetLatest {
 
   $ndot = $version.replace(".", "")
 
-  $url = "http://download2.bsplayer.com/download/file/mirror1/bsplayer000.setup.exe" -replace ("000", "$ndot")
-  $url32 = $url
+  $url32 = $download -replace ("000", "$ndot")
 
   $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest
