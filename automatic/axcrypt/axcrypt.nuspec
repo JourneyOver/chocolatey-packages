@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>axcrypt</id>
-    <version>2.1.1532</version>
+    <version>2.1.1534</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/axcrypt</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>AxCrypt</title>
     <authors>Svante Seleborg, Zebastian Victorin, Måns Hansson, Linda Olander, Mattias Tall, Alejandro Serratosa, Juliette Dreyer</authors>
     <projectUrl>https://www.axcrypt.net</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/axcrypt.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/cb45c3b13afef4d9f6d7de610a7bf8c30d1c8ff8/icons/axcrypt.png</iconUrl>
     <copyright>Copyright © 2017 AxCrypt AB, All rights reserved.</copyright>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'axcrypt'
-$url = 'https://account.axcrypt.net/download/axcrypt-2-setup.exe'
-$checksum = '6d2ecebb869be36e0bf2b48f63ea6e7c1e8cf27c8e08f9a892dedb69295c74ba'
+$url = 'https://account.axcrypt.net/download/AxCrypt-2-Setup.exe'
+$checksum = 'ff8e1b411cdef0f55ad5a7bfd568891376a58c567024c02201f40b9491279350'
 
 $packageArgs = @{
   packageName    = $packageName
