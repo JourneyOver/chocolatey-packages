@@ -13,8 +13,8 @@ Uninstall-ChocolateyPackage @packageArgs
 #remove Jackett folder that gets left behind
 $fexist = Test-Path $env:ProgramData\Jackett
 If ($fexist) {
-  write-host "Removing Radarr Folder that's left behind"
+  write-host "Removing Jackett Folder that's left behind"
   Remove-Item $env:ProgramData\Jackett -Recurse -Force
 } else {
-  Write-Host Radarr Folder not found
+  Write-Host Jackett Folder not found
 }
