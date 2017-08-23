@@ -1,10 +1,10 @@
-﻿$ErrorActionPreference = 'Stop';
+﻿$ErrorActionPreference = 'Stop'
 
 $packageArgs = @{
   packageName     = 'jackett'
   fileType        = 'exe'
   silentArgs      = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
-  $validExitCodes = @(0)
+  validExitCodes = @(0)
   File            = "${Env:ProgramFiles(x86)}\Jackett\unins000.exe"
 }
 
