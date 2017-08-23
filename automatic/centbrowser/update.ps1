@@ -1,6 +1,7 @@
 import-module au
 
-$releases = 'https://www.centbrowser.com/history.html'
+$releases_32 = 'http://static.centbrowser.com/installer_32/'
+$releases_64 = 'http://static.centbrowser.com/installer_64/'
 
 function global:au_SearchReplace {
   @{
@@ -14,15 +15,22 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $download_page_32 = Invoke-WebRequest -Uri $releases_32 -UseBasicParsing
+  $download_page_64 = Invoke-WebRequest -Uri $releases_64 -UseBasicParsing
 
   $regex = '.exe$'
-  $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 3 -expand href
+  $url_32 = $download_page_32.links | Where-Object href -match $regex | Select-Object -Last 2 -expand href
+  $url_64 = $download_page_64.links | Where-Object href -match $regex | Select-Object -Last 2 -expand href
 
-  $version = $url[0] -split 'centbrowser_|.exe' | Select-Object -Last 1 -Skip 1
+  $version = $url_32[0] -split 'centbrowser_|.exe' | Select-Object -Last 1 -Skip 1
+  $version64 = $url_64[0] -split 'centbrowser_|_x64.exe' | Select-Object -Last 1 -Skip 1
 
-  $url32 = $url[0]
-  $url64 = $url[2]
+  if ($version -ne $version64) {
+    throw "32-bit and 64-bit version do not match. Please investigate."
+  }
+
+  $url32 = $releases_32 + $url_32[0]
+  $url64 = $releases_64 + $url_64[0]
 
   $Latest = @{ PackageName = 'CentBrowser'; URL32 = $url32; URL64 = $url64; version = $version }
   return $Latest
