@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>any2ico.portable</id>
+    <version>2.2.3.0</version>
+    <owners>JourneyOver</owners>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/any2ico</packageSourceUrl>
+    <title>Quick Any2Ico (portable)</title>
+    <authors>Carifred</authors>
+    <projectUrl>http://www.carifred.com/quick_any2ico/#index</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/any2ico.png</iconUrl>
+    <copyright>Copyright Carifred © 2010 - 2017, all rights reserved.</copyright>
+    <licenseUrl>http://www.carifred.com/License.php</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>http://www.carifred.com/quick_any2ico/#selecting_source</docsUrl>
+    <tags>Quick Any2Ico extract icons portable</tags>
+    <summary>Quick Any2Ico is a free portable application that creates high quality icon files from any file, folder or resource.</summary>
+    <description>
+Quick Any2Ico is a free portable application that creates high quality icon files from any file, folder or resource.
+
+It can also add or remove image formats from icon files, save the extracted icons in the PNG format and much more
+    </description>
+    <releaseNotes>
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
