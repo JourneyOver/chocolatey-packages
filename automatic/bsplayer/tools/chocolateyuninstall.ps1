@@ -1,7 +1,9 @@
 $ErrorActionPreference = 'Stop'
 
+$packageName = 'bsplayer'
+
 $packageArgs = @{
-  packageName    = 'bsplayer'
+  packageName    = $packageName
   fileType       = 'exe'
   silentArgs     = "/S"
   validExitCodes = @(0)

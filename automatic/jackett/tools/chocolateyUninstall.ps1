@@ -1,7 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+$packageName = 'jackett'
+
 $packageArgs = @{
-  packageName     = 'jackett'
+  packageName    = $packageName
   fileType        = 'exe'
   silentArgs      = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   validExitCodes = @(0)

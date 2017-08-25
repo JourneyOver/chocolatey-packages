@@ -5,9 +5,10 @@ $chromiumArgs = @{$true = "--uninstall --system-level"; $false = "--uninstall"}[
 $silentArgs = @{$true = '--uninstall --system-level --force-uninstall'; $false = '--uninstall --force-uninstall'}[ $Arg_chk ]
 $myfile = $file -replace ( $chromiumArgs )
 
-# All arguments for the Uninstallation of this package
+$packageName = 'CentBrowser'
+
 $packageArgs = @{
-  PackageName    = 'CentBrowser'
+  packageName    = $packageName
   FileType       = 'exe'
   SilentArgs     = $silentArgs
   validExitCodes = @(0, 19, 21)
@@ -26,6 +27,5 @@ if ($killCB) {
   }
 }
 
-# Now to Uninstall the Package
 Uninstall-ChocolateyPackage @packageArgs
 # Currently doesn't delete User Data folder

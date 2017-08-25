@@ -1,14 +1,12 @@
 # Roadmap
 
+## Automatic Packages
+
 `~` origin
 
 `~` taiga
 
-`done` process lasso
-
 `~` kcp black
-
-`~` simple static IP
 
 `~` uplay
 
@@ -16,15 +14,9 @@
 
 `~` gog galaxy
 
-`~` always up
-
 `~` cleanmem
 
 `~` gameplay time tracker
-
-`~` macro recorder jitbit
-
-`~` firehawk
 
 `~` adobe air
 
@@ -37,3 +29,17 @@
 `~` steam
 
 `~` infinity
+
+## Cinst-gh packages
+
+`~` cleanmem
+
+`~` firehawk
+
+## Manual Packages
+
+# Done
+
+`+` Process Lasso
+
+`+` simple static IP

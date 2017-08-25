@@ -1,7 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+$packageName = 'tsedat'
+
 $packageArgs = @{
-  packageName    = 'tsedat'
+  packageName    = $packageName
   fileType       = 'exe'
   silentArgs     = "/S"
   validExitCodes = @(0, 3010, 1605, 1614, 1641)

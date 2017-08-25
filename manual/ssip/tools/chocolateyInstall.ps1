@@ -1,15 +1,15 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'bsplayer'
-$url = 'http://download2.bsplayer.com/download/file/mirror1/bsplayer271.setup.exe'
-$checksum = 'C1CB5C485D7F7F20B48AF3F930575FF69234A9AEA09F2C4F47277B3566229F35'
+$packageName = 'ssip'
+$url = 'http://www.pcwintech.com/files/setups/Simple_Static_IP_v1.3.0_Setup.exe'
+$checksum = '00bbe92bb807c6821ae78831dad1fdf8a6e2af0d547f2d01452e6971638fb211'
 $toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
   url            = $url
-  silentArgs     = "/S"
+  silentArgs     = ''
   validExitCodes = @(0)
   checksum       = $checksum
   checksumType   = 'sha256'
