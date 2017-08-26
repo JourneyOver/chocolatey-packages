@@ -21,7 +21,9 @@ Quick Any2Ico is a free portable application that creates high quality icon file
 
 It can also add or remove image formats from icon files, save the extracted icons in the PNG format and much more
     </description>
-    <releaseNotes>none</releaseNotes>
+    <releaseNotes>
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

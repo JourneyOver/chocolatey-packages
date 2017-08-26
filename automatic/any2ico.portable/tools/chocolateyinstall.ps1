@@ -1,4 +1,5 @@
 ﻿$ErrorActionPreference = 'Stop'
+
 $packageName = 'any2ico.portable'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $scriptDir = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
