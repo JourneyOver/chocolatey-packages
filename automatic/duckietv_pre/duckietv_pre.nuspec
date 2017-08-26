@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>duckietv</id>
-    <version>2017.0825.0130-nightly</version>
+    <version>2017.0826.0130-nightly</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/duckietv</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>DuckieTV</title>
@@ -12,7 +12,7 @@
     <projectSourceUrl>https://github.com/SchizoDuckie/DuckieTV</projectSourceUrl>
     <bugTrackerUrl>https://github.com/SchizoDuckie/DuckieTV/issues</bugTrackerUrl>
     <docsUrl>https://github.com/SchizoDuckie/DuckieTV/wiki</docsUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/duckietv.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/575bc31abcf0249da6533821231a854255a2cc4e/icons/duckietv.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/SchizoDuckie/DuckieTV/blob/angular/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
