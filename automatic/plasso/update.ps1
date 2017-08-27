@@ -4,6 +4,8 @@ $releases = 'https://bitsum.com/changes/processlasso/'
 $vrelease = 'https://bitsum.com/userservices/versioninfo.php?ProductName=ProcessLasso'
 
 function global:au_BeforeUpdate {
+  $Latest.Checksum32 = Get-RemoteChecksum $Latest.URL32
+  $Latest.Checksum64 = Get-RemoteChecksum $Latest.URL64
   $Latest.SChecksum32 = Get-RemoteChecksum $Latest.SURL32
   $Latest.SChecksum64 = Get-RemoteChecksum $Latest.SURL64
 }
@@ -11,12 +13,12 @@ function global:au_BeforeUpdate {
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "([$]url32\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
-      "([$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
+      "([$]url32\s*=\s*)('.*')"       = "`$1'$($Latest.URL32)'"
+      "([$]url64\s*=\s*)('.*')"       = "`$1'$($Latest.URL64)'"
+      "([$]checksum32\s*=\s*)('.*')"  = "`$1'$($Latest.Checksum32)'"
+      "([$]checksum64\s*=\s*)('.*')"  = "`$1'$($Latest.Checksum64)'"
       "([$]surl32\s*=\s*)('.*')"      = "`$1'$($Latest.SURL32)'"
       "([$]surl64\s*=\s*)('.*')"      = "`$1'$($Latest.SURL64)'"
-      "([$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
-      "([$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
       "([$]schecksum32\s*=\s*)('.*')" = "`$1'$($Latest.SChecksum32)'"
       "([$]schecksum64\s*=\s*)('.*')" = "`$1'$($Latest.SChecksum64)'"
     }
