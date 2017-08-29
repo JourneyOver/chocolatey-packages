@@ -11,7 +11,7 @@ $packageArgs = @{
   fileType       = 'exe'
   silentArgs     = "/S"
   validExitCodes = @(0)
-  file = $file
+  file           = $file
 }
 
 Uninstall-ChocolateyPackage @packageArgs
