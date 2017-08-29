@@ -4,7 +4,7 @@
   <metadata>
     <id>radarr</id>
     <title>Radarr</title>
-    <version>0.2.0.778</version>
+    <version>0.2.0.846</version>
     <authors>galli-leo</authors>
     <owners>JourneyOver</owners>
     <summary>Movie PVR for Usenet and BitTorrent</summary>
@@ -24,7 +24,7 @@ The project was inspired by other Usenet/BitTorrent movie downloaders such as Co
     <projectSourceUrl>https://github.com/radarr/radarr</projectSourceUrl>
     <bugTrackerUrl>https://github.com/radarr/radarr/issues</bugTrackerUrl>
     <docsUrl>https://github.com/Radarr/Radarr/wiki</docsUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/radarr.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/radarr.png</iconUrl>
     <tags>pvr p2p filesharing torrent nntp admin</tags>
     <copyright>© 2017 Radarr. All rights reserved.</copyright>
     <licenseUrl>http://www.gnu.org/licenses/gpl-3.0.html</licenseUrl>
