@@ -20,7 +20,7 @@ ForEach ($path in $PATHS) {
     Select-Object -Property DisplayName, DisplayVersion, UninstallString, QuietUninstallString
 
   ForEach ($app in $installed) {
-    $packageArgs['file'] = "$($app.QuietUninstallString)"
+    $packageArgs['file'] = "$($app.UninstallString)"
     Uninstall-ChocolateyPackage @packageArgs
   }
 }
