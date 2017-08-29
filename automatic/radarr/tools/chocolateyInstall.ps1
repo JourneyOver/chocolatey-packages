@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'radarr'
-$url = 'https://github.com/Radarr/Radarr/releases/download/v0.2.0.778/Radarr.develop.0.2.0.778.installer.exe'
-$checksum = '890448a07df2125de0681cb7b6f60979200d149405023bbb1fa6bfde4e90e9a9'
+$url = 'https://github.com/Radarr/Radarr/releases/download/v0.2.0.846/Radarr.develop.0.2.0.846.installer.exe'
+$checksum = 'f0d5bb7278dd2270a1fefab5f3c075ae409558fa0467eeb98157f3b070cfeb70'
 
 $packageArgs = @{
   packageName    = $packageName

@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'jackett'
-$url = 'https://github.com/Jackett/Jackett/releases/download/v0.8.105/Jackett.Installer.Windows.exe'
-$checksum = '7801bf7b31521a1f5556b30279d08d6b28f34de13a62b30f2c2022c15586b90a'
+$url = 'https://github.com/Jackett/Jackett/releases/download/v0.8.124/Jackett.Installer.Windows.exe'
+$checksum = '76dbdd299e67fbc0cff033805ef009d7fa536d4c62e077be6b4c940b3bcd4797'
 
 $packageArgs = @{
   packageName    = $packageName
