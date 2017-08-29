@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>plasso</id>
+    <version>9.0.0.394</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>Process Lasso</title>
+    <authors>Jeremy Collake</authors>
+    <projectUrl>https://bitsum.com/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/plasso.png</iconUrl>
+    <copyright>Bitsum LLC © 2002-2017 - All Rights Reserved Worldwide</copyright>
+    <licenseUrl>https://bitsum.com/our-copyright-notice/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://bitsum.com/processlasso-docs/</docsUrl>
+    <tags>Prioritize Process Process Manager Execute Process Process Priority Optimizer Manager admin</tags>
+    <summary>Process Lasso is a process priority optimizer for Windows developed by Jeremy Collake of Bitsum LLC. It features a graphical user interface that allows for automating various process related tasks.More at Wikipedia
+</summary>
+    <description>
+Process Lasso is a tool designed to manage and edit how your processes and services run.
+
+It offers a robust list of capabilities including default process priorities and affinities, termination of disallowed processes, instance count limits, a system responsiveness graph, logging of processes, keep select processes running (auto-restart), and much more.
+
+Process Lasso Features:
+
+ProBalance dynamic priority optimization
+Persistent (sticky) priorities and CPU affinities
+Instance count limits
+Disallowed processes
+Keep processes running (auto-restart)
+Unique system responsiveness graph
+Prevent PC sleep for designated processes
+Differentiate between svchost.exe instances
+Extremely low resource use
+Stand-alone process management engine (uses as little as 1MB of RAM)
+Event logging
+</description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://bitsum.com/changes/processlasso/#latest)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
