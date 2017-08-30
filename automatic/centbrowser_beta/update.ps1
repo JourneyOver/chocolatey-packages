@@ -10,6 +10,7 @@ function global:au_SearchReplace {
       "([$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
       "([$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
       "([$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+      "([$]version\s*=\s*)('.*')" = "`$1'$($Latest.Version)'"
     }
   }
 }
@@ -33,7 +34,7 @@ function global:au_GetLatest {
   $url32 = $releases_32 + $url_32[0]
   $url64 = $releases_64 + $url_64[0]
 
-  $Latest = @{ PackageName = 'CentBrowser'; URL32 = $url32; URL64 = $url64; version = ($version + $build)  }
+  $Latest = @{ PackageName = 'CentBrowser'; URL32 = $url32; URL64 = $url64; Version = ($version + $build)  }
   return $Latest
 }
 

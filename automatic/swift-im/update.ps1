@@ -12,7 +12,7 @@ function global:au_SearchReplace {
     }
 
     ".\swift-im.nuspec"             = @{
-      "(\*\s+\[(\w+)\])(.*)" = "`$1($($Latest.changelog))"
+      "(\*\s+\[(\w+)\])(.*)" = "`$1($($Latest.Changelog))"
     }
   }
 }
@@ -30,7 +30,7 @@ function global:au_GetLatest {
   $url32 = $fjoin + $url
   $changelog = $clog + $changelogx
 
-  $Latest = @{URL32 = $url32; version = $version; changelog = $changelog }
+  $Latest = @{URL32 = $url32; Version = $version; Changelog = $changelog }
   return $Latest
 }
 

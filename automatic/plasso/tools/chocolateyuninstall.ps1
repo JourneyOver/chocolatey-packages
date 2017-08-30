@@ -9,7 +9,7 @@ $PATHS = @("HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstal
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  silentArgs     = "/S"
+  silentArgs     = '/S'
   validExitCodes = @(0, 3010, 1605, 1614, 1641)
 }
 

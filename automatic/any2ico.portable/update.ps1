@@ -22,7 +22,7 @@ function global:au_GetLatest {
 
   $url32 = $releases + $url
 
-  $Latest = @{ URL32 = $url32; version = $version }
+  $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest
 }
 

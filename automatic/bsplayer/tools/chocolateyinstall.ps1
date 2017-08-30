@@ -11,7 +11,7 @@ $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
   url            = $url
-  silentArgs     = "/S"
+  silentArgs     = '/S'
   validExitCodes = @(0)
   checksum       = $checksum
   checksumType   = 'sha256'
@@ -23,7 +23,7 @@ if (Test-Path $registryPath) {
   ).DisplayVersion
 }
 
-if ($installedVersion -match $version) {
+if ($installedVersion -eq $version) {
   Write-Output $(
     "bsplayer $installedVersion is already installed. " +
     "Skipping download and installation."

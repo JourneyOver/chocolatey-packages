@@ -40,7 +40,7 @@ function global:au_GetLatest {
   $surl32 = $url[5]
   $surl64 = $url[4]
 
-  $Latest = @{ URL32 = $url32; URL64 = $url64; SURL32 = $surl32; SURL64 = $surl64; version = $version }
+  $Latest = @{ URL32 = $url32; URL64 = $url64; SURL32 = $surl32; SURL64 = $surl64; Version = $version }
   return $Latest
 }
 

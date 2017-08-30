@@ -9,7 +9,7 @@ $file = $registry.UninstallString
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  silentArgs     = "/S"
+  silentArgs     = '/S'
   validExitCodes = @(0)
   file           = $file
 }
