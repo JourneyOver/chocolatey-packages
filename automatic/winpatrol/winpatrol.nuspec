@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>winpatrol</id>
+    <version>35.5.2017.8</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/winpatrol</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>WinPatrol</title>
+    <authors>Ruiware</authors>
+    <projectUrl>https://www.winpatrol.com/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/winpatrol.ico</iconUrl>
+    <copyright>Copyright 1997 - 2017 WinPatrol | All Rights Reserved</copyright>
+    <licenseUrl>http://www.winpatrol.com/license.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://www.winpatrol.com/support/features.html</docsUrl>
+    <tags>WinPatrol Remove Spyware Clean adware Startup manager Spyware Adware Cleaner Remover admin</tags>
+    <summary>WinPatrol takes a snapshot of your critical system resources and alerts you to any changes that may have occurred without your knowledge. WinPatrol was the pioneer in using a heuristic behavioral approach to detecting attacks and violations of your computing environment. WinPatrol provides you with an easy tabbed interface which will allow you to explore deep inside your machine without having to be a computer expert.</summary>
+    <description>
+WinPatrol alerts you to hijackings, malware attacks and critical changes made to your computer without your permission. As a multipurpose support utility, WinPatrol replaces multiple system utilities with its enhanced functionality.
+
+WinPatrol was the pioneer in using a heuristic behavioral approach to detecting attacks and violations of your computing environment. Traditional security programs scan your hard drive searching for previously identified threats. WinPatrol takes snapshots of your critical system resources and alerts you to any changes that occur without your knowledge.
+
+You'll be removing dangerous new programs while others prepare to update their definition/signature data files.
+</description>
+    <releaseNotes>
+#### Program
+* [Changelog](http://www.winpatrol.com/download.html)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <dependencies>
+      <dependency id="autohotkey.portable" version="1.1.26.01" />
+      <dependency id="chocolatey" version="0.10.8" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
