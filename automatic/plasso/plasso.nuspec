@@ -42,6 +42,9 @@ Event logging
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <dependencies>
+      <dependency id="chocolatey" version="0.10.8" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
