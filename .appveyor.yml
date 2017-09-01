@@ -60,7 +60,7 @@ install:
       If ($chocov -eq "$newestVersion") {
         write-host Chocolatey is up to date
       } Else {
-        choco upgrade chocolatey
+        choco upgrade chocolatey | Out-Null
       }
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
