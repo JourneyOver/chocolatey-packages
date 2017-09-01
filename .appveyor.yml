@@ -49,11 +49,22 @@ init:
 - git config --global core.safecrlf false
 
 install:
+- ps: |
+    #Chocolatey version check and update if there is one.
+      $chocov = choco --version
+      $versions = Invoke-Webrequest -UseBasicParsing `
+          "https://chocolatey.org/api/v2/package-versions/chocolatey" |
+        Select-Object -Expand Content  | ConvertFrom-Json
+      $newestVersion = $versions[-1]
+
+      If ($chocov -eq "$newestVersion") {
+        write-host Chocolatey is up to date
+      } Else {
+        choco upgrade chocolatey
+      }
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
 - git --version
-- choco upgrade chocolatey
-- choco --version
 - choco install autohotkey.portable
 - refreshenv
 - ps: |
