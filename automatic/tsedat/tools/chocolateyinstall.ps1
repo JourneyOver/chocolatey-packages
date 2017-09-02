@@ -22,7 +22,7 @@ if (Test-Path $registryPath) {
   ).DisplayVersion
 }
 
-if ($installedVersion -match $version) {
+if ($installedVersion -eq $version) {
   Write-Output $(
     "TheSage English Dictionary and Thesaurus $installedVersion is already installed. " +
     "Skipping download and installation."

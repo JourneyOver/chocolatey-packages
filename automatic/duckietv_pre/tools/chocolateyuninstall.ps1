@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'duckietv'
-$programUninstallEntryName = 'DuckieTV'
+$programUninstallEntryName = 'DuckieTV*'
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString

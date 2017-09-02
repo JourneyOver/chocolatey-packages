@@ -1,11 +1,12 @@
-$registry = Get-UninstallRegistryKey -SoftwareName 'Cent Browser'
+$packageName = 'CentBrowser'
+$programUninstallEntryName = 'Cent Browser*'
+
+$registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString
 $Arg_chk = ($file -match "--system-level")
 $chromiumArgs = @{$true = "--uninstall --system-level"; $false = "--uninstall"}[ $Arg_chk ]
 $silentArgs = @{$true = '--uninstall --system-level --cb-silent-uninstall-type=0'; $false = '--uninstall --cb-silent-uninstall-type=0'}[ $Arg_chk ]
 $myfile = $file -replace ( $chromiumArgs )
-
-$packageName = 'CentBrowser'
 
 $packageArgs = @{
   packageName    = $packageName

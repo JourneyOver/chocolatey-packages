@@ -10,7 +10,7 @@ $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
   silentArgs     = '/S'
-  validExitCodes = @(0, 3010, 1605, 1614, 1641)
+  validExitCodes = @(0)
   file           = $file
 }
 
