@@ -2,10 +2,10 @@
 
 $packageName = 'bsplayer'
 $url = 'http://download2.bsplayer.com/download/file/mirror1/bsplayer271.setup.exe'
-$checksum = 'C1CB5C485D7F7F20B48AF3F930575FF69234A9AEA09F2C4F47277B3566229F35'
+$checksum = 'c1cb5c485d7f7f20b48af3f930575ff69234a9aea09f2c4f47277b3566229f35'
 $toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $registryPath = $('HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\BSPlayerf')
-$version = '2.71'
+$version = '2.71.1081'
 
 $packageArgs = @{
   packageName    = $packageName

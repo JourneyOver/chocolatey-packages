@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>bsplayer</id>
-    <version>2.71</version>
+    <version>2.71.1081</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/axcrypt</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>BSPlayer</title>
     <authors>AB Team Ltd.</authors>
     <projectUrl>http://bsplayer.com/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/bsplayer.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/0edd82c680a2ed45d8e7df6ccf75c5224a198d54/icons/bsplayer.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>http://bsplayer.com/bsplayer-english/products/licencing.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
