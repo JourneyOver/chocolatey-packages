@@ -12,7 +12,7 @@
     <projectSourceUrl>https://github.com/SchizoDuckie/DuckieTV</projectSourceUrl>
     <bugTrackerUrl>https://github.com/SchizoDuckie/DuckieTV/issues</bugTrackerUrl>
     <docsUrl>https://github.com/SchizoDuckie/DuckieTV/wiki</docsUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/duckietv.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/575bc31abcf0249da6533821231a854255a2cc4e/icons/duckietv.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/SchizoDuckie/DuckieTV/blob/angular/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

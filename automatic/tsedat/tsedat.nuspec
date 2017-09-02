@@ -9,7 +9,7 @@
     <title>TheSage English Dictionary and Thesaurus</title>
     <authors>Sequence Publishing</authors>
     <projectUrl>http://www.sequencepublishing.com/1/thesage.html</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/tsedat.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/tsedat.png</iconUrl>
     <copyright>Copyright © 2001-2017 by Sequence Publishing. All Rights Reserved.</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>http://www.sequencepublishing.com/1/thesage_documentation.html</docsUrl>

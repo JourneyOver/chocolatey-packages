@@ -9,7 +9,7 @@
     <title>Swift</title>
     <authors>Isode Ltd</authors>
     <projectUrl>https://www.swift.im/swift.html</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/swift-im.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/swift-im.png</iconUrl>
     <copyright>© Isode Ltd. 2015 - 2016</copyright>
     <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
