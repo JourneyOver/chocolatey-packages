@@ -4,13 +4,13 @@ $ServerOS = (Get-WmiObject -class Win32_OperatingSystem).Caption
 $packageName = 'plasso'
 $url32 = 'https://bitsum.com/files/processlassosetup32.exe'
 $url64 = 'https://bitsum.com/files/processlassosetup64.exe'
-$checksum32 = 'B77ABBEB105D615EE949D936BC9C0B9690EE4790F733A39039988FC2AF9525D0'
-$checksum64 = 'FEC50E6346374148796AAEF4CEC4307BCDE8D496E6D502E26049F358C596EB17'
+$checksum32 = 'd219b70ce097bdff9664c4343dcb53dbcecfaba51e75027f95034bf1da0fe7ea'
+$checksum64 = '132a96fa063219ea8512482fe7e9f11015244fc59f8c5565f44eebd0b6ab036d'
 
 $surl32 = 'https://bitsum.com/files/server/processlassosetup32.exe'
 $surl64 = 'https://bitsum.com/files/server/processlassosetup64.exe'
-$schecksum32 = 'FA36E44D5A9F26C7B1328F201391A1175D245DD0C1D12D84635AF080BEF4EE5F'
-$schecksum64 = 'A0ADC29ABA2FF9CFE9A9F0A61ED34E4A73A9E94174EDD32B7F1EB2FD3618BBD2'
+$schecksum32 = '49d49e130203dc531423fb90821d1286b7e2651a586c931b43d47cbca8b1f7d7'
+$schecksum64 = 'ed1d6aa55f55e500af70ae63344421ba08e49520a9cf19587f1151855a4cf8f9'
 
 $packageArgs = @{
   packageName    = $packageName

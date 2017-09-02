@@ -3,13 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>plasso</id>
-    <version>9.0.0.394</version>
+    <version>9.0.0.398</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Process Lasso</title>
     <authors>Jeremy Collake</authors>
     <projectUrl>https://bitsum.com/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/plasso.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/c28e2ded32fc8910b6227c10fdaf5cd0c17091c3/icons/plasso.png</iconUrl>
     <copyright>Bitsum LLC © 2002-2017 - All Rights Reserved Worldwide</copyright>
     <licenseUrl>https://bitsum.com/our-copyright-notice/</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
