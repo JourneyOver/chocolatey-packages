@@ -1,7 +1,7 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
-$packageName = 'tsedat'
-$programUninstallEntryName = 'TheSage*'
+$packageName = 'plasso'
+$programUninstallEntryName = "Process Lasso*"
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString

@@ -1,16 +1,16 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'axcrypt'
-$url = 'https://account.axcrypt.net/download/AxCrypt-2-Setup.exe'
-$checksum = '3008e96379f1bb72beaf1aaae333e0977f3ba3073d08986a8e9b290eb8656b58'
-$registryPath = $('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{9E15EF89-8322-C117-CAF2-E79EFAC71395}')
-$version = '2.1.1536'
+$packageName = 'jackett'
+$url = 'https://github.com/Jackett/Jackett/releases/download/v0.8.145/Jackett.Installer.Windows.exe'
+$checksum = '683b2a902aae1be2503b8af5529beeb091fb1790a57d2f9d40d940ff768e9066'
+$registryPath = $('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C2A9FC00-AA48-4F17-9A72-62FBCEE2785B}_is1')
+$version = '0.8.145'
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
   url            = $url
-  silentArgs     = '/S'
+  silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   validExitCodes = @(0)
   checksum       = $checksum
   checksumType   = 'sha256'
@@ -24,7 +24,7 @@ if (Test-Path $registryPath) {
 
 if ($installedVersion -match $version) {
   Write-Output $(
-    "AxCrypt $installedVersion is already installed. " +
+    "Jackett $installedVersion is already installed. " +
     "Skipping download and installation."
   )
 } else {

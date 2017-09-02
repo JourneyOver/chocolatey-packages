@@ -21,6 +21,7 @@ function global:au_SearchReplace {
       "([$]surl64\s*=\s*)('.*')"      = "`$1'$($Latest.SURL64)'"
       "([$]schecksum32\s*=\s*)('.*')" = "`$1'$($Latest.SChecksum32)'"
       "([$]schecksum64\s*=\s*)('.*')" = "`$1'$($Latest.SChecksum64)'"
+      "([$]version\s*=\s*)('.*')" = "`$1'$($Latest.Version)'"
     }
   }
 }
@@ -40,7 +41,7 @@ function global:au_GetLatest {
   $surl32 = $url[5]
   $surl64 = $url[4]
 
-  $Latest = @{ URL32 = $url32; URL64 = $url64; SURL32 = $surl32; SURL64 = $surl64; version = $version }
+  $Latest = @{ URL32 = $url32; URL64 = $url64; SURL32 = $surl32; SURL64 = $surl64; Version = $version }
   return $Latest
 }
 

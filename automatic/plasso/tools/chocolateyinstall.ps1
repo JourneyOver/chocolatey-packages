@@ -12,12 +12,15 @@ $surl64 = 'https://bitsum.com/files/server/processlassosetup64.exe'
 $schecksum32 = '49d49e130203dc531423fb90821d1286b7e2651a586c931b43d47cbca8b1f7d7'
 $schecksum64 = 'ed1d6aa55f55e500af70ae63344421ba08e49520a9cf19587f1151855a4cf8f9'
 
+$registryPath = $('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso')
+$version = '9.0.0.398'
+
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
   url            = $url32
   url64Bit       = $url64
-  silentArgs     = "/S"
+  silentArgs     = '/S'
   validExitCodes = @(0)
   checksum       = $checksum32
   checksum64     = $checksum64
@@ -35,4 +38,17 @@ If ($ServerOS -match "Server") {
   write-host Installing Workstations Version
 }
 
-Install-ChocolateyPackage @packageArgs
+if (Test-Path $registryPath) {
+  $installedVersion = (
+    Get-ItemProperty -Path $registryPath -Name 'DisplayVersion'
+  ).DisplayVersion
+}
+
+if ($installedVersion -match $version) {
+  Write-Output $(
+    "Process Lasso $installedVersion is already installed. " +
+    "Skipping download and installation."
+  )
+} else {
+  Install-ChocolateyPackage @packageArgs
+}
