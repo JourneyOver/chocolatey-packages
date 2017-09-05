@@ -10,8 +10,6 @@
 
 `~` uplay
 
-`~` winpatrol
-
 `~` gog galaxy
 
 `~` cleanmem
@@ -43,3 +41,5 @@
 `+` Process Lasso
 
 `+` simple static IP
+
+`+` winpatrol
