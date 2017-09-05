@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+  <metadata>
+    <id>-firefox</id>
+    <version></version>
+    <title> for Firefox</title>
+    <authors></authors>
+    <owners>bcurran3</owners>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/</packageSourceUrl>		
+    <licenseUrl></licenseUrl>
+    <projectUrl>https://addons.mozilla.org/en-US/firefox/addon/</projectUrl>
+    <iconUrl></iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary></summary>
+    <description>
+
+Note: This addon will be installed for all profiles. You can not remove the addon through Firefox - only manually by removing the folder from \extensions or by uninstalling the package. You will have to confirm in Firefox if you want to enable the addon (thats a security feature of Firefox). You can Disable it within Firefox. Subsequent updates should be dealt with automatically by Firefox.
+</description>
+    <releaseNotes></releaseNotes>
+    <tags>extension firefox</tags>
+    <dependencies>
+      <dependency id="firefox" version="14.0"/>
+    </dependencies>
+  </metadata>
+</package>
+
+
+

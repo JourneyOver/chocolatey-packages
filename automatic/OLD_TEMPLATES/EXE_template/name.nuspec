@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id></id>
+    <title> (Install)</title>
+    <version></version>
+    <authors></authors>
+    <owners>bcurran3</owners>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/</packageSourceUrl>		
+    <summary></summary>
+    <description>
+![Screenshot of ]()	
+
+**PACKAGING NOTE:** This program is updated semi-frequently. The download link remains the same, but the checksum changes with each new release. If you get an error installing it please try --ignore-checksums and report the update in Disquss or open an issue on GitHub.
+    </description>
+    <projectUrl></projectUrl>
+    <docsUrl></docsUrl>
+    <mailingListUrl></mailingListUrl>
+    <tags> admin</tags>
+    <copyright></copyright>
+    <licenseUrl></licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl></iconUrl>
+    <releaseNotes></releaseNotes>
+      </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
