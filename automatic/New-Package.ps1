@@ -44,28 +44,28 @@ function New-Package {
   switch ($Type) {
     'Installer' {
       Write-Verbose 'Using installer template'
-      mv "$LowerName\tools\chocolateyInstallExe.ps1" "$LowerName\tools\chocolateyInstall.ps1"
+      mv "$LowerName\tools\chocolateyInstallExe.ps1" "$LowerName\tools\chocolateyinstall.ps1"
     }
     'Portable' {
       Write-Verbose 'Using portable template'
-      mv "$LowerName\tools\chocolateyInstallZip.ps1" "$LowerName\tools\chocolateyInstall.ps1"
+      mv "$LowerName\tools\chocolateyInstallZip.ps1" "$LowerName\tools\chocolateyinstall.ps1"
     }
     'EInstaller' {
       Write-Verbose 'Using embedded installer template'
-      mv "$LowerName\tools\chocolateyInstallEmbeddedExe.ps1" "$LowerName\tools\chocolateyInstall.ps1"
+      mv "$LowerName\tools\chocolateyInstallEmbeddedExe.ps1" "$LowerName\tools\chocolateyinstall.ps1"
     }
     'EPortable' {
       Write-Verbose 'Using embedded portable template'
-      mv "$LowerName\tools\chocolateyInstallEmbeddedZip.ps1" "$LowerName\tools\chocolateyInstall.ps1"
+      mv "$LowerName\tools\chocolateyInstallEmbeddedZip.ps1" "$LowerName\tools\chocolateyinstall.ps1"
     }
 
     default { throw 'No template given' }
   }
-  rm "$Name\tools\*.ps1" -Exclude chocolateyInstall.ps1, chocolateyUninstall.ps1
+  rm "$Name\tools\*.ps1" -Exclude chocolateyinstall.ps1, chocolateyuninstall.ps1
 
-  Write-Verbose 'Fixing chocolateyInstall.ps1'
-  $installer = gc "$LowerName\tools\chocolateyInstall.ps1"
-  $installer -replace "([$]packageName\s*=\s*)('.*')", "`$1'$($LowerName)'" | sc "$LowerName\tools\chocolateyInstall.ps1"
+  Write-Verbose 'Fixing chocolateyinstall.ps1'
+  $installer = gc "$LowerName\tools\chocolateyinstall.ps1"
+  $installer -replace "([$]packageName\s*=\s*)('.*')", "`$1'$($LowerName)'" | sc "$LowerName\tools\chocolateyinstall.ps1"
 }
 
 New-Package $Name $Type -GithubRepository JourneyOver/chocolatey-packages -Verbose
