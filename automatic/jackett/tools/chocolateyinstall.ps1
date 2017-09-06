@@ -1,10 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'jackett'
-$url = 'https://github.com/Jackett/Jackett/releases/download/v0.8.147/Jackett.Installer.Windows.exe'
-$checksum = '98b1b941f150f6d6d7efb3427eb2e5a803c8a9219c1327f57dab77bd0c4352c1'
+$url = 'https://github.com/Jackett/Jackett/releases/download/v0.8.151/Jackett.Installer.Windows.exe'
+$checksum = '1f3674e755c5b2d0e6ffd7d2adb53a072b455208f76297410770f6ad205ecabc'
 $registryPath = $('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C2A9FC00-AA48-4F17-9A72-62FBCEE2785B}_is1')
-$version = '0.8.147'
+$version = '0.8.151'
 
 $packageArgs = @{
   packageName    = $packageName
