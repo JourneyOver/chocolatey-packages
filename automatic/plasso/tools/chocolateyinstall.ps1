@@ -4,16 +4,16 @@ $ServerOS = (Get-WmiObject -class Win32_OperatingSystem).Caption
 $packageName = 'plasso'
 $url32 = 'https://bitsum.com/files/processlassosetup32.exe'
 $url64 = 'https://bitsum.com/files/processlassosetup64.exe'
-$checksum32 = 'd219b70ce097bdff9664c4343dcb53dbcecfaba51e75027f95034bf1da0fe7ea'
-$checksum64 = '132a96fa063219ea8512482fe7e9f11015244fc59f8c5565f44eebd0b6ab036d'
+$checksum32 = '98f17ecaa61d08e75fc466e3f3fa43a8ab39744c0c7c8707da86ce1bddf9dffb'
+$checksum64 = '7558e631c38c27d96135df9cfedf6a97a85e85aca169ef045bdba0fa39dd1f85'
 
 $surl32 = 'https://bitsum.com/files/server/processlassosetup32.exe'
 $surl64 = 'https://bitsum.com/files/server/processlassosetup64.exe'
-$schecksum32 = '49d49e130203dc531423fb90821d1286b7e2651a586c931b43d47cbca8b1f7d7'
-$schecksum64 = 'ed1d6aa55f55e500af70ae63344421ba08e49520a9cf19587f1151855a4cf8f9'
+$schecksum32 = '07b11b7c56f494e14076a79b23d18e95acac4a70a31ff99022a1d75e03e8ed50'
+$schecksum64 = '6a0a043e3ee78601c332bae2d17fb5d8e16369ca39bd6cfa5a03ba74100a247a'
 
 $registryPath = $('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso')
-$version = '9.0.0.398'
+$version = '9.0.0.402'
 
 $packageArgs = @{
   packageName    = $packageName
