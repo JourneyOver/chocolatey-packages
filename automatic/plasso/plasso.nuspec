@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>plasso</id>
-    <version>9.0.0.398</version>
+    <version>9.0.0.402</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Process Lasso</title>
