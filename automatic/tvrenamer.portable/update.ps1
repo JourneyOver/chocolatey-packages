@@ -19,7 +19,7 @@ function global:au_GetLatest {
   $regex = '.exe$'
   $url = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 2
 
-  $version = (Split-Path ( Split-Path $url | Select-Object -First 1 ) -Leaf).Substring(1)
+  $version = (Split-Path ( Split-Path $url[0] ) -Leaf).Substring(1)
 
   $url32 = 'https://github.com' + $url[0]
   $url64 = 'https://github.com' + $url[1]

@@ -16,8 +16,7 @@ function New-Package {
     [string] $Name,
 
     #Type of the package
-    [ValidateSet('Installer', 'Portable', 'EInstaller', 'EPortable')]
-    # Future Types -- 'CExtension', 'FExtension', 'PBundle', 'WGadget'
+    [ValidateSet('EInstaller', 'MInstaller', 'EPortable', 'ZPortable', 'CExtension', 'FExtension', 'PBundle')]
     [string] $Type,
 
     #Github repository in the form username/repository
@@ -28,11 +27,11 @@ function New-Package {
   if (Test-Path $Name) { throw "Package with that name already exists" }
   if (!(Test-Path _template)) { throw "Template for the packages not found" }
   $LowerName = $Name.ToLower() -replace ' ', '_'
-  cp _template $LowerName -Recurse
+  Copy-Item _template $LowerName -Recurse
 
   Move-Item "$LowerName/template.nuspec" "$LowerName/$LowerName.nuspec" -Force;
   ../scripts/Update-IconUrl.ps1 -Name "$LowerName" -GithubRepository $GithubRepository;
-  $nuspec = gc -Encoding utf8 "$LowerName/$LowerName.nuspec";
+  $nuspec = Get-Content -Encoding utf8 "$LowerName/$LowerName.nuspec";
 
   Write-Verbose 'Fixing nuspec'
   $nuspec = $nuspec -replace '<id>.+', "<id>$LowerName</id>"
@@ -42,30 +41,49 @@ function New-Package {
   $nuspec | Out-File -Encoding UTF8 "$LowerName\$LowerName.nuspec"
 
   switch ($Type) {
-    'Installer' {
-      Write-Verbose 'Using installer template'
-      mv "$LowerName\tools\chocolateyInstallExe.ps1" "$LowerName\tools\chocolateyinstall.ps1"
-    }
-    'Portable' {
-      Write-Verbose 'Using portable template'
-      mv "$LowerName\tools\chocolateyInstallZip.ps1" "$LowerName\tools\chocolateyinstall.ps1"
-    }
     'EInstaller' {
-      Write-Verbose 'Using embedded installer template'
-      mv "$LowerName\tools\chocolateyInstallEmbeddedExe.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Write-Verbose 'Using exe installer template'
+      Move-Item "$LowerName\tools\chocolateyInstallExe.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Move-Item "$LowerName\tools\chocolateyUninstallExe.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
+    }
+    'MInstaller' {
+      Write-Verbose 'Using msi installer template'
+      Move-Item "$LowerName\tools\chocolateyInstallMsi.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Move-Item "$LowerName\tools\chocolateyUninstallMsi.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
     }
     'EPortable' {
-      Write-Verbose 'Using embedded portable template'
-      mv "$LowerName\tools\chocolateyInstallEmbeddedZip.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Write-Verbose 'Using exe portable template'
+      Move-Item "$LowerName\tools\chocolateyExePortInstall.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Move-Item "$LowerName\tools\chocolateyPortUninstall.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
+    }
+    'ZPortable' {
+      Write-Verbose 'Using zip portable template'
+      Move-Item "$LowerName\tools\chocolateyZipPortInstall.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Move-Item "$LowerName\tools\chocolateyPortUninstall.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
+    }
+    'CExtension' {
+      Write-Verbose 'Using chrome extension template'
+      Move-Item "$LowerName\tools\chocolateyInstallChrome.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Move-Item "$LowerName\tools\chocolateyUninstallChrome.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
+    }
+    'FExtension' {
+      Write-Verbose 'Using firefox extension template'
+      Move-Item "$LowerName\tools\chocolateyInstallFF.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Move-Item "$LowerName\tools\chocolateyUninstallFF.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
+    }
+    'PBundle' {
+      Write-Verbose 'Using firefox extension template'
+      Move-Item "$LowerName\tools\chocolateyInstallPB.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Move-Item "$LowerName\tools\chocolateyUninstallPB.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
     }
 
     default { throw 'No template given' }
   }
-  rm "$Name\tools\*.ps1" -Exclude chocolateyinstall.ps1, chocolateyuninstall.ps1
+  Remove-Item "$Name\tools\*.ps1" -Exclude chocolateyinstall.ps1, chocolateyuninstall.ps1
 
   Write-Verbose 'Fixing chocolateyinstall.ps1'
-  $installer = gc "$LowerName\tools\chocolateyinstall.ps1"
-  $installer -replace "([$]packageName\s*=\s*)('.*')", "`$1'$($LowerName)'" | sc "$LowerName\tools\chocolateyinstall.ps1"
+  $installer = Get-Content "$LowerName\tools\chocolateyinstall.ps1"
+  $installer -replace "([$]packageName\s*=\s*)('.*')", "`$1'$($LowerName)'" | Set-Content "$LowerName\tools\chocolateyinstall.ps1"
 }
 
 New-Package $Name $Type -GithubRepository JourneyOver/chocolatey-packages -Verbose

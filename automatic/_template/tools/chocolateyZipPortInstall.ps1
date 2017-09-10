@@ -1,18 +1,24 @@
 ﻿$ErrorActionPreference = 'Stop'
-$packageName  = '' 
-$toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url          = ''
-$checksum     = ''
+
+$packageName = ''
+$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$url = ''
+$url64 = ''
+$checksum = ''
+$checksum64 = ''
 $shortcutName = '.lnk'
-$exe          = '.exe'
+$exe = '.exe'
 
 $packageArgs = @{
-  packageName   = $packageName
-  unzipLocation = $toolsDir
-  fileType      = 'ZIP' 
-  url           = $url
-  checksum      = $checksum
-  checksumType  = 'sha256'
+  packageName    = $packageName
+  fileType       = 'ZIP'
+  url            = $url
+  url64Bit       = $url64
+  unzipLocation  = $toolsDir
+  checksum       = $checksum
+  checksum64     = $checksum64
+  checksumType   = 'sha256'
+  checksumType64 = 'sha256'
 }
 
 Install-ChocolateyZipPackage @packageArgs

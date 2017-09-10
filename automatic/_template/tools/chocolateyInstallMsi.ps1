@@ -8,11 +8,11 @@ $checksum64 = ''
 
 $packageArgs = @{
   packageName    = $packageName
-  fileType       = 'exe'
+  fileType       = 'msi'
   url            = $url
   url64Bit       = $url64
-  silentArgs     = '/S'
-  validExitCodes = @(0)
+  silentArgs     = '/quiet /qn /norestart'
+  validExitCodes = @(0, 3010, 1641)
   checksum       = $checksum
   checksum64     = $checksum64
   checksumType   = 'sha256'
