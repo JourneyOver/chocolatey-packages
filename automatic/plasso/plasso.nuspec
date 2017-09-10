@@ -4,7 +4,7 @@
   <metadata>
     <id>plasso</id>
     <version>9.0.0.402</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/plasso</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Process Lasso</title>
     <authors>Jeremy Collake</authors>
