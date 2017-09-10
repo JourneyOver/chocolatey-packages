@@ -4,7 +4,7 @@
   <metadata>
     <id>radarr</id>
     <title>Radarr</title>
-    <version>0.2.0.846</version>
+    <version>0.2.0.852</version>
     <authors>galli-leo</authors>
     <owners>JourneyOver</owners>
     <summary>Movie PVR for Usenet and BitTorrent</summary>
