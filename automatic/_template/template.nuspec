@@ -4,25 +4,29 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id></id>
-    <title></title>
     <version>0.0</version>
-    <authors></authors>
+    <packageSourceUrl></packageSourceUrl>
     <owners>JourneyOver</owners>
-    <summary></summary>
-    <description>
-    </description>
+    <title></title>
+    <authors></authors>
     <projectUrl></projectUrl>
-    <tags></tags>
+    <iconUrl></iconUrl>
     <copyright></copyright>
     <licenseUrl></licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl></iconUrl>
-    <releaseNotes></releaseNotes>
+    <projectSourceUrl></projectSourceUrl>
     <docsUrl></docsUrl>
     <mailingListUrl></mailingListUrl>
     <bugTrackerUrl></bugTrackerUrl>
-    <projectSourceUrl></projectSourceUrl>
-    <packageSourceUrl></packageSourceUrl>
+    <tags></tags>
+    <summary></summary>
+    <description></description>
+    <releaseNotes>
+#### Program
+* [Changelog]()
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
     <dependencies>
     </dependencies>
   </metadata>
