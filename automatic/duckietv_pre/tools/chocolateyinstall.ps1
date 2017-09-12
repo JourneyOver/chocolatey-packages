@@ -1,9 +1,9 @@
 ﻿$packageName = 'duckietv'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url32 = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201709100130/DuckieTV-201709100130-windows-x32.zip'
-$url64 = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201709100130/DuckieTV-201709100130-windows-x64.zip'
-$checksum32 = 'E1184240E9B16DC95ECAD2148D8B72DAD186D93032F16591EC4DD4353703235C'
-$checksum64 = 'D4A58C1C6B4DADAE6CECB32C16D5BA99056830D992DCB71EDA33085E5CC85C93'
+$url32 = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201709120130/DuckieTV-201709120130-windows-x32.zip'
+$url64 = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201709120130/DuckieTV-201709120130-windows-x64.zip'
+$checksum32 = '8EE3AF7D52A050A73C83BF7299F41CC3FAA440B4BEA47A475068532098065B26'
+$checksum64 = '7C73D77D11657BB6C50864122F8D1D494D158FFB463DD8C21E71DD615EB2E21D'
 $silentArgs = '/S'
 $validExitCodes = @(0)
 $bits = $ENV:PROCESSOR_ARCHITECTURE -replace ("amd", "") -replace ("x86", "32")
