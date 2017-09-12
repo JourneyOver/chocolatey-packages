@@ -239,7 +239,6 @@ function GetPackagesFromDiff() {
   <#
   Gets the changed packages that have changed since the
   latest common ancestor of the current branch, and the specified $diffAgainst branch.
-
 .PARAMETER diffAgainst
   The branch we should run git diff against.
 #>

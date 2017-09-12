@@ -11,8 +11,7 @@ function Get-RedirectedUrl() {
   if ($resp -and $resp.ResponseUri.OriginalString -ne $url) {
     Write-Host "Found redirected url '$($resp.ResponseUri)"
     $result = $resp.ResponseUri.OriginalString
-  }
-  else {
+  } else {
     Write-Warning "No redirected url was found, returning given url."
     $result = $url
   }

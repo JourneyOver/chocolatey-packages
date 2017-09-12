@@ -1,4 +1,3 @@
-
 function Update-ChangelogVersion([string]$version, [string]$format = '## Version: {VERSION} ({DATE})') {
 
   if (!(Test-Path "Changelog.md")) { return }
