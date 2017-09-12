@@ -2,9 +2,9 @@
 
 $packageName = 'axcrypt'
 $url = 'https://account.axcrypt.net/download/AxCrypt-2-Setup.exe'
-$checksum = '3008e96379f1bb72beaf1aaae333e0977f3ba3073d08986a8e9b290eb8656b58'
+$checksum = 'b20929f8825194e5f9a398ed4be8b3121304ca979f356ce4d4b9bbfcf7d58327'
 $registryPath = $('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{9E15EF89-8322-C117-CAF2-E79EFAC71395}')
-$version = '2.1.1536'
+$version = '2.1.1541'
 
 $packageArgs = @{
   packageName    = $packageName
