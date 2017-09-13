@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'bsplayer'
 $url = 'http://download2.bsplayer.com/download/file/mirror1/bsplayer271.setup.exe'

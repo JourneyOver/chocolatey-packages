@@ -1,26 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
-  <metadata>
-    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
-    <id>bsplayer</id>
-    <version>2.71.1081</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/bsplayer</packageSourceUrl>
-    <owners>JourneyOver</owners>
-    <title>BSPlayer</title>
-    <authors>AB Team Ltd.</authors>
-    <projectUrl>http://bsplayer.com/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/0edd82c680a2ed45d8e7df6ccf75c5224a198d54/icons/bsplayer.png</iconUrl>
-    <copyright>Copyright © #1# AB Team d.o.o.</copyright>
-    <licenseUrl>http://bsplayer.com/bsplayer-english/products/licencing.html</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <!-- <projectSourceUrl></projectSourceUrl> -->
-    <docsUrl>http://wiki.bsplayer.com/?english</docsUrl>
-    <mailingListUrl>http://bsplayer.com/bsplayer-english/contact-us.html</mailingListUrl>
-    <bugTrackerUrl>http://forum.bsplayer.com/bug-reports-codecs/</bugTrackerUrl>
-    <tags>multimedia audio video mp3 dvd avi media player admin</tags>
-    <summary>Play videos, movies, DVDs, music, tv streams, teletext, radio streams, podcasts and much more using this powerful and intuitive media player</summary>
-    <description>
+# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/0edd82c680a2ed45d8e7df6ccf75c5224a198d54/icons/bsplayer.png" width="48" height="48"/> [BS.Player](https://chocolatey.org/packages/bsplayer)
+
+Play videos, movies, DVDs, music, tv streams, teletext, radio streams, podcasts and much more using this powerful and intuitive media player
+
+#
+
 BS.Player is one of the best media player on the market today. Main advantages of the player are high quality playback, support for wide range of media files and it is low in CPU and memory consumption.
 
 BS.Player is used by more than 70 millions of users throughout the world and it has been translated into more than 90 languages. All the downloaded versions of free player surpass the sum of all downloads of competitive video players and payable DVD players. Because it does not use much processing power it is suitable for all those who use slightly less capable computers but still want to have excellent video and audio quality. The multimedia playback has not been – and never will be – disturbed by any annoying technical problem, much too often experienced with software of this kind.
@@ -50,19 +33,3 @@ Use the resolution changing feature and avoid the oversized picture if you wish 
 Though the BS.Player™ proudly bears a modern look that sets new standards in this field, developers have included an easy skin selection option and the option of adding your own custom skins. You may create your own dream look or choose from the many pre-prepared ones found at SKIN section.
 
 ![screenshot](http://4.bp.blogspot.com/-1jw8kpir8CQ/UGoII_Z69lI/AAAAAAAABOU/bFqfo9piZVc/s1600/bs+player.jpg)
-    </description>
-    <releaseNotes>
-#### Program
-* [Changelog](http://forum.bsplayer.com/news-updates/)
-
-#### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
-    <dependencies>
-      <dependency id="chocolatey" version="0.10.8" />
-      <dependency id="autohotkey.portable" version="1.1.26.01" />
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-  </files>
-</package>
