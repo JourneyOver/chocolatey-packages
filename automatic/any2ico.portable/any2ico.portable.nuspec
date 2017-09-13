@@ -16,8 +16,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!--<projectSourceUrl></projectSourceUrl> -->
     <docsUrl>http://www.carifred.com/quick_any2ico/#selecting_source</docsUrl>
-    <!--<mailingListUrl></mailingListUrl>
-    <bugTrackerUrl></bugTrackerUrl> -->
+    <mailingListUrl>http://www.carifred.com/contact/</mailingListUrl>
+    <!--<bugTrackerUrl></bugTrackerUrl> -->
     <tags>Quick Any2Ico extract icons portable</tags>
     <summary>Allow users to easily create or extract icons and save them as PNG or ICO images, in a range of different resolutions, with compression options for PNG files</summary>
     <description>
