@@ -26,7 +26,6 @@ $packageArgs = @{
 if (!(Test-Path $extFolder)) {
   New-Item -Force -ItemType directory -Path $extFolder
   Install-ChocolateyZipPackage @packageArgs
-}
-else {
+} else {
   Write-Host "$packageName already exists"
 }

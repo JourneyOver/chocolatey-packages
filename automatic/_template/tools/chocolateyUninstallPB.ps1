@@ -12,8 +12,7 @@ $strFileName = "$LocalAppDataPath\Plex Media Server\Plug-ins\$BundleName.old"
 If (Test-Path $strFileName) {
   Write-Host "Removing previous .old version." -ForegroundColor green -BackgroundColor blue
   Remove-Item "$UnZipDir\$BundleName.old" -recurse
-}
-Else {
+} Else {
   Write-Host ".old version does not exist." -ForegroundColor green -BackgroundColor blue
 }
 
@@ -21,8 +20,7 @@ $strFileName = "$LocalAppDataPath\Plex Media Server\Plug-ins\$BundleName"
 If (Test-Path $strFileName) {
   Write-Host "Removing $packageName" -ForegroundColor green -BackgroundColor blue
   Remove-Item "$UnZipDir\$BundleName" -recurse
-}
-Else {
+} Else {
   Write-Host "ERROR: No previous version exists." -ForegroundColor green -BackgroundColor blue
 }
 Write-Host "You can ignore Only an exit code of non-zero will fail... messages." -ForegroundColor green -BackgroundColor blue

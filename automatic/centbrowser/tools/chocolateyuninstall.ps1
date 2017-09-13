@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'Stop'
+
 $packageName = 'CentBrowser'
 $programUninstallEntryName = 'Cent Browser*'
 

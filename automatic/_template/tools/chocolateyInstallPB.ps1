@@ -1,6 +1,7 @@
 ﻿$packageName = '-plex'
 $BundleName = '.bundle'
 $url = ''
+$checksum = ''
 $LocalAppDataPath = Get-ItemProperty -path "registry::hkey_current_user\software\Plex, Inc.\Plex Media Server" | select-object -expandproperty LocalAppDataPath
 
 if ($LocalAppDataPath -eq $null) {
@@ -18,7 +19,7 @@ $packageArgs = @{
   unzipLocation = $UnZipDir
   fileType      = 'ZIP'
   url           = $url
-  checksum      = '66487922CC685E99E2C847415EFD350EEB954F438AADA1230E121BA791B9FA2A'
+  checksum      = $checksum
   checksumType  = 'sha256'
 }
 
@@ -28,8 +29,7 @@ $strFileName = "$LocalAppDataPath\Plex Media Server\Plug-ins\$BundleName.old"
 If (Test-Path $strFileName) {
   Write-Host "Removing previous .old version." -ForegroundColor green -BackgroundColor blue
   Remove-Item "$UnZipDir\$BundleName.old" -recurse
-}
-Else {
+} Else {
   Write-Host ".old version does not exist." -ForegroundColor green -BackgroundColor blue
 }
 
@@ -37,8 +37,7 @@ $strFileName = "$LocalAppDataPath\Plex Media Server\Plug-ins\$BundleName"
 If (Test-Path $strFileName) {
   Write-Host "Renaming previous version .old." -ForegroundColor green -BackgroundColor blue
   Rename-Item "$UnZipDir\$BundleName" "$BundleName.old"
-}
-Else {
+} Else {
   Write-Host "No previous version exists." -ForegroundColor green -BackgroundColor blue
 }
 

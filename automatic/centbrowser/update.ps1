@@ -1,4 +1,5 @@
-import-module au
+Import-Module au
+Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 $releases_32 = 'http://static.centbrowser.com/installer_32/'
 $releases_64 = 'http://static.centbrowser.com/installer_64/'
@@ -6,13 +7,17 @@ $releases_64 = 'http://static.centbrowser.com/installer_64/'
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "([$]url32\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
+      "([$]url\s*=\s*)('.*')"        = "`$1'$($Latest.URL32)'"
       "([$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
-      "([$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+      "([$]checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
       "([$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
-      "([$]version\s*=\s*)('.*')" = "`$1'$($Latest.Version)'"
+      "([$]version\s*=\s*)('.*')"    = "`$1'$($Latest.Version)'"
     }
   }
+}
+
+function global:au_AfterUpdate {
+  Set-DescriptionFromReadme -SkipFirst 1
 }
 
 function global:au_GetLatest {
