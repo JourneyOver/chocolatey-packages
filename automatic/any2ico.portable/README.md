@@ -1,26 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
-  <metadata>
-    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
-    <id>any2ico.portable</id>
-    <version>2.2.3.0</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/any2ico.portable</packageSourceUrl>
-    <owners>JourneyOver</owners>
-    <title>Quick Any2Ico (portable)</title>
-    <authors>Carifred</authors>
-    <projectUrl>http://www.carifred.com/quick_any2ico/#index</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/1e63e1f77337f67003290d824b7ddf3d08fb44e9/icons/any2ico.png</iconUrl>
-    <copyright>Copyright Carifred © 2010 - 2017, all rights reserved.</copyright>
-    <licenseUrl>http://www.carifred.com/License.php</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <!--<projectSourceUrl></projectSourceUrl> -->
-    <docsUrl>http://www.carifred.com/quick_any2ico/#selecting_source</docsUrl>
-    <!--<mailingListUrl></mailingListUrl>
-    <bugTrackerUrl></bugTrackerUrl> -->
-    <tags>Quick Any2Ico extract icons portable</tags>
-    <summary>Allow users to easily create or extract icons and save them as PNG or GIF images, in a range of different resolutions, with compression options for PNG files</summary>
-    <description>
+# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/1e63e1f77337f67003290d824b7ddf3d08fb44e9/icons/any2ico.png" width="48" height="48"/> [Quick Any2Ico](https://chocolatey.org/packages/any2ico.portable)
+
 Allow users to easily create or extract icons and save them as PNG or GIF images, in a range of different resolutions, with compression options for PNG files
 
 #
@@ -44,14 +23,3 @@ Additional options like drawing tools, allowing users to be able to customize an
 There are some areas where Quick Any2Ico provides significant detail, such as the resolution options, unfortunately that is about it. That being said, for those looking for a simple icon extractor, Quick Any2Ico is a very useful, easy-to-use program that will suit a users basic needs only.
 
 ![screenshot](http://www.carifred.com/quick_any2ico/Quick_Any2IcoGUI.png)
-    </description>
-    <releaseNotes>
-#### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
-    <!-- <dependencies>
-    </dependencies> -->
-  </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-  </files>
-</package>
