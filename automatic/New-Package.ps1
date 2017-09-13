@@ -72,7 +72,7 @@ function New-Package {
       Move-Item "$LowerName\tools\chocolateyUninstallFF.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
     }
     'PBundle' {
-      Write-Verbose 'Using firefox extension template'
+      Write-Verbose 'Using plex bundle template'
       Move-Item "$LowerName\tools\chocolateyInstallPB.ps1" "$LowerName\tools\chocolateyinstall.ps1"
       Move-Item "$LowerName\tools\chocolateyUninstallPB.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
     }
