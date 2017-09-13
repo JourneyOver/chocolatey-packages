@@ -84,6 +84,10 @@ function New-Package {
   Write-Verbose 'Fixing chocolateyinstall.ps1'
   $installer = Get-Content "$LowerName\tools\chocolateyinstall.ps1"
   $installer -replace "([$]packageName\s*=\s*)('.*')", "`$1'$($LowerName)'" | Set-Content "$LowerName\tools\chocolateyinstall.ps1"
+
+  Write-Verbose 'Fixing chocolateyuninstall.ps1'
+  $installer = Get-Content "$LowerName\tools\chocolateyuninstall.ps1"
+  $installer -replace "([$]packageName\s*=\s*)('.*')", "`$1'$($LowerName)'" | Set-Content "$LowerName\tools\chocolateyuninstall.ps1"
 }
 
 New-Package $Name $Type -GithubRepository JourneyOver/chocolatey-packages -Verbose
