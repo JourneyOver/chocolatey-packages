@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'axcrypt'
 $url = 'https://account.axcrypt.net/download/AxCrypt-2-Setup.exe'
