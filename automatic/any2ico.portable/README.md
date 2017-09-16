@@ -1,9 +1,5 @@
 # <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/1e63e1f77337f67003290d824b7ddf3d08fb44e9/icons/any2ico.png" width="48" height="48"/> [Quick Any2Ico](https://chocolatey.org/packages/any2ico.portable)
 
-Allow users to easily create or extract icons and save them as PNG or ICO images, in a range of different resolutions, with compression options for PNG files
-
-#
-
 There are a number of icons that are included with programs and images, that users might need to work with. Quick Any2Ico is an application that allows users to extract icons from various different file formats, then convert them into either PNG or ICO images in several different resolution options.
 
 ### A single window interface that displays all the programs options and settings within a single window

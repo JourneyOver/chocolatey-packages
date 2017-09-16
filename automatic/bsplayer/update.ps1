@@ -16,7 +16,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_AfterUpdate {
-  Set-DescriptionFromReadme -SkipFirst 5
+  Set-DescriptionFromReadme -SkipFirst 1
 }
 
 function global:au_GetLatest {

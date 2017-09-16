@@ -1,9 +1,5 @@
 # <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/cb45c3b13afef4d9f6d7de610a7bf8c30d1c8ff8/icons/axcrypt.png" width="48" height="48"/> [AxCrypt](https://chocolatey.org/packages/axcrypt)
 
-AxCrypt is a free and open-source encryption app for Microsoft Windows, developed in Sweden by Svante Seleborg for AxCrypt AB. It can compress, delete, encrypt and edit files.
-
-#
-
 AxCrypt is a highly secure data encryption app that provides AES-128/256 file encryption and compression for Windows. It has a simple interface and works with a single double-click to automatically decrypt and open documents. It has seamless integration with Windows Explorer with no configuration required.
 
 AxCrypt is used to share and work with stored documents and e-mail attachments, in a secure manner. If your documents reside on a document sharing service or file server, AxCrypt is well suited and is able to seamlessly integrate, and makes both sharing and storing sensitive data a simple task.

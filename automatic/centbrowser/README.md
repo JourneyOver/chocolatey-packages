@@ -2,10 +2,6 @@
 
 Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.
 
-#
-
-Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.
-
 Cent Browser Features:
 
 * Google Chrome Based
