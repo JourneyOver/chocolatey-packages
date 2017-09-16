@@ -9,7 +9,7 @@ $checksum64 = '6B3289787E24FDAF4519C6C9A810335C058DD592BA25E6F324E3663FFD8037F2'
 $silentArgs = '/S'
 $validExitCodes = @(0)
 $bits = Get-ProcessorBits
-$fileLocation = "$env:ChocolateyInstall\lib\$packageName\tools\DuckieTV-$version-windows-x$bits.exe"
+$fileLocation = "$env:ChocolateyInstall\lib\$packageName\tools\DuckieTV-$env:ChocolateyPackageVersion-windows-x$bits.exe"
 
 $packageArgs = @{
   packageName    = $packageName

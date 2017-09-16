@@ -9,7 +9,7 @@ $checksum64 = '90990B2CCC898C61EB8F3A0D5CAA3495065200E1C8D67384530DC852620BB503'
 $silentArgs = '/S'
 $validExitCodes = @(0)
 $bits = Get-ProcessorBits
-$fversion = $version.replace('.', '').replace('-nightly', '')
+$fversion = $env:ChocolateyPackageVersion.replace('.', '').replace('-nightly', '')
 $fileLocation = "$env:ChocolateyInstall\lib\$packageName\tools\DuckieTV-$fversion-windows-x$bits.exe"
 
 $packageArgs = @{
