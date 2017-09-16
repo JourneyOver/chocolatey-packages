@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>duckietv</id>
     <version>1.1.4</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/duckietv</packageSourceUrl>
@@ -9,28 +10,33 @@
     <title>DuckieTV</title>
     <authors>SchizoDuckie</authors>
     <projectUrl>http://schizoduckie.github.io/DuckieTV/</projectUrl>
-    <projectSourceUrl>https://github.com/SchizoDuckie/DuckieTV</projectSourceUrl>
-    <bugTrackerUrl>https://github.com/SchizoDuckie/DuckieTV/issues</bugTrackerUrl>
-    <docsUrl>https://github.com/SchizoDuckie/DuckieTV/wiki</docsUrl>
     <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/575bc31abcf0249da6533821231a854255a2cc4e/icons/duckietv.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/SchizoDuckie/DuckieTV/blob/angular/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/SchizoDuckie/DuckieTV</projectSourceUrl>
+    <docsUrl>https://github.com/SchizoDuckie/DuckieTV/wiki</docsUrl>
+    <mailingListUrl>https://www.reddit.com/r/duckietv/</mailingListUrl>
+    <bugTrackerUrl>https://github.com/SchizoDuckie/DuckieTV/issues</bugTrackerUrl>
     <tags>tv series-database calendar angularjs javascript episodes search-engine torrent-client remote-control angular nwjs qbittorrent series trakt automation utorrent js admin</tags>
-    <summary>A web application built with AngularJS to track your favorite tv-shows with semi-automagic torrent integration</summary>
+    <summary>DuckieTV is the TV-Show calendar you've been waiting for. A personalized calendar that tracks the shows you like that can search on multiple torrent sites</summary>
     <description>
 DuckieTV is an application that takes care of TV-Show addicts by providing a personalized TV-Show calendar. DuckieTV makes sure the information is always up-to-date and gives you an integrated blocking-resistant torrent search to help you get to the right download as easy as possible.
 
 With the integrated DuckieTorrent client you can connect DuckieTV to your local Torrent client and be updated on the download progress without switching applications. Support is available for clients of BiglyBT, Deluge, Ktorrent, qBittorrent, rTorrent, Tixati, Transmission, µTorrent/BitTorrent and Vuze.
 
 As of v0.60 DuckieTV also is also finally becoming a worthy SickBeard competitor by introducing an automatic downloading of shows that have aired and translations into 15 languages (English, Deutch, Español, Français, Italiano, 日本, 한국어, Nederlands, Norsk bokmål, Português, Русский, Română, Slovenščina, Svenska, 简体中文).
-</description>
+
+![screenshot](http://i.imgur.com/qi6yqA3.png)
+    </description>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/SchizoDuckie/DuckieTV/releases)
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
