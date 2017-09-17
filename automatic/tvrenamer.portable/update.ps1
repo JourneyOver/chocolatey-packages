@@ -1,7 +1,7 @@
 Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$releases = 'https://github.com/tvrenamer/tvrenamer/releases/latest'
+$releases = 'https://github.com/tvrenamer/tvrenamer/releases'
 
 function global:au_SearchReplace {
   @{
