@@ -1,16 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tvrenamer.portable</id>
-    <version>0.7.2</version>
+    <version>0.8</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tvrenamer.portable</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>TVRenamer (portable)</title>
     <authors>daveharris vipuldelwadia</authors>
     <projectUrl>http://www.tvrenamer.org/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/tvrenamer.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/0b9b1e2b8be77cc100c19ad2dff40758670d18f2/icons/tvrenamer.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/tvrenamer/tvrenamer/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -32,7 +32,7 @@ It will take an ugly filename like **Lost.S06E05.DD51.720p.WEB-DL.AVC-FUSiON.mkv
 * Optionally move renamed files, i.e. a NAS or external HDD
 
 ![Screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tvrenamer.png)
-    </description>
+</description>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/tvrenamer/tvrenamer/releases)

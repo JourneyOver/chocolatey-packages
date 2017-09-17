@@ -1,11 +1,11 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'tvrenamer.portable'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://github.com/tvrenamer/tvrenamer/releases/download/0.7.2/TVRenamer-0.7.2-win32.exe'
-$url64 = 'https://github.com/tvrenamer/tvrenamer/releases/download/0.7.2/TVRenamer-0.7.2-win64.exe'
-$checksum = 'D9D0E9DD0D106173000EDF9D3A00B82FFFD005D6D29A44B527E05366A15ECD7B'
-$checksum64 = 'C0AD3E1DD22AF24C588C5432B881A875EBB89189A8EA1ACE16D4CADBCB701DAD'
+$url = 'https://github.com/tvrenamer/tvrenamer/releases/download/v0.8/TVRenamer-0.8-win32.exe'
+$url64 = 'https://github.com/tvrenamer/tvrenamer/releases/download/v0.8/TVRenamer-0.8-win64.exe'
+$checksum = '2d6cc43ef0e694eafb54de47450955e62765dc6620fc55b3fbdcbf891f530fb3'
+$checksum64 = '81f45ae5b676970003b0a102d614fca8f0aee9d0e4d6f4d1e555cca7e6a1e27c'
 $bits = Get-ProcessorBits
 $shortcutName = 'TVRenamer.lnk'
 $exe = "TVRenamer-$env:ChocolateyPackageVersion-win$bits.exe"
