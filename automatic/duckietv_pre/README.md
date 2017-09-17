@@ -6,4 +6,4 @@ With the integrated DuckieTorrent client you can connect DuckieTV to your local 
 
 As of v0.60 DuckieTV also is also finally becoming a worthy SickBeard competitor by introducing an automatic downloading of shows that have aired and translations into 15 languages (English, Deutch, Español, Français, Italiano, 日本, 한국어, Nederlands, Norsk bokmål, Português, Русский, Română, Slovenščina, Svenska, 简体中文).
 
-![screenshot](http://i.imgur.com/qi6yqA3.png)
+![screenshot](http://picresize.com/images/rsz_1qi6yqa3.png)
