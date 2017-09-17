@@ -2,24 +2,37 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tvrenamer.portable</id>
     <version>0.8</version>
-    <owners>JourneyOver</owners>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tvrenamer.portable</packageSourceUrl>
-    <title>tvrenamer (portable)</title>
-    <authors>eprenamer vipuldelwadia daveharris johnv02139</authors>
+    <owners>JourneyOver</owners>
+    <title>TVRenamer (portable)</title>
+    <authors>daveharris vipuldelwadia</authors>
     <projectUrl>http://www.tvrenamer.org/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/tvrenamer.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/0b9b1e2b8be77cc100c19ad2dff40758670d18f2/icons/tvrenamer.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/tvrenamer/tvrenamer/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/tvrenamer/tvrenamer</projectSourceUrl>
     <docsUrl>https://github.com/tvrenamer/tvrenamer/wiki</docsUrl>
+    <!-- <mailingListUrl></mailingListUrl> -->
     <bugTrackerUrl>https://github.com/tvrenamer/tvrenamer/issues</bugTrackerUrl>
     <tags>tvrenamer tv renamer Java GUI portable</tags>
     <summary>A Java GUI utility to rename TV episodes from TV listings</summary>
-    <description>TVRenamer is a Java GUI utility to rename TV episodes from TV listings It will take an ugly filename like Lost.S06E05.DD51.720p.WEB-DL.AVC-FUSiON.mkv and rename it to Lost [6x05] Lighthouse.mkv
-    </description>
+    <description>
+TVRenamer is a Java GUI utility to rename TV episodes from TV listings
+It will take an ugly filename like **Lost.S06E05.DD51.720p.WEB-DL.AVC-FUSiON.mkv** and rename it to **Lost [6x05] Lighthouse.mkv**
+
+## Features
+* Rename many different shows at once from information from [TheTVDB](http://thetvdb.com/)
+* Customise the format and content of the resulting filename
+* Native look and feel for your operating system
+* Drag and Drop or standard 'add file' interface
+* Optionally move renamed files, i.e. a NAS or external HDD
+
+![Screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tvrenamer.png)
+</description>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/tvrenamer/tvrenamer/releases)
