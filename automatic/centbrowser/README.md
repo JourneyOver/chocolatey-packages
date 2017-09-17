@@ -18,4 +18,4 @@ Cent Browser Features:
 * QR Code Generator
 * Privacy Protection
 
-![screenshot](https://img.raymond.cc/blog/wp-content/uploads/2016/11/cent_browser.png)
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/dev/readme_imgs/centbrowser.png)

@@ -18,4 +18,4 @@ Additional options like drawing tools, allowing users to be able to customize an
 
 There are some areas where Quick Any2Ico provides significant detail, such as the resolution options, unfortunately that is about it. That being said, for those looking for a simple icon extractor, Quick Any2Ico is a very useful, easy-to-use program that will suit a users basic needs only.
 
-![screenshot](http://www.carifred.com/quick_any2ico/Quick_Any2IcoGUI.png)
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/dev/readme_imgs/any2ico.png)

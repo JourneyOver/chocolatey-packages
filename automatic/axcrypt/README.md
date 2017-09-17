@@ -21,4 +21,4 @@ Overall, AxCrypt is a straightforward security solution that can be used by anyo
 
 *Some features are only available in AxCrypt Premium.
 
-![screenshot](http://cdn1.techadvisor.co.uk/cmsdata/downloads/34279/img3File_thumb800.png)
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/dev/readme_imgs/axcrypt.png)
