@@ -1,4 +1,5 @@
-import-module au
+Import-Module au
+Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 $releases = 'https://github.com/Jackett/Jackett/releases'
 
@@ -7,9 +8,13 @@ function global:au_SearchReplace {
     ".\tools\chocolateyInstall.ps1" = @{
       "([$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
       "([$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
-      "([$]version\s*=\s*)('.*')" = "`$1'$($Latest.Version)'"
+      "([$]version\s*=\s*)('.*')"  = "`$1'$($Latest.Version)'"
     }
   }
+}
+
+function global:au_AfterUpdate {
+  Set-DescriptionFromReadme -SkipFirst 1
 }
 
 function global:au_GetLatest {

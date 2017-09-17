@@ -1,32 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>jackett</id>
-    <title>Jackett</title>
     <version>0.8.199</version>
-    <authors>zone117x, kaso17, chibidev</authors>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/jackett</packageSourceUrl>
     <owners>JourneyOver</owners>
+    <title>Jackett</title>
+    <authors>zone117x, kaso17, chibidev</authors>
+    <projectUrl>https://github.com/Jackett/Jackett</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/jackett.png</iconUrl>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/Jackett/Jackett/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <projectSourceUrl></projectSourceUrl> -->
+    <docsUrl>https://github.com/Jackett/Jackett/wiki</docsUrl>
+    <mailingListUrl>https://discord.gg/J865QuA</mailingListUrl>
+    <bugTrackerUrl>https://github.com/Jackett/Jackett/issues</bugTrackerUrl>
+    <tags>torrent-search-engine torrent-management torrent-downloader torznab newznab rss rss-proxy p2p filesharing torrent nntp proxy server sonarr radarr sickrage couchpotato mylar admin</tags>
     <summary>Jackett works as a proxy server: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software.</summary>
     <description>
 Jackett works as a proxy server: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping and translation logic - removing the burden from other apps.
     </description>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/jackett</packageSourceUrl>
-    <projectUrl>https://github.com/Jackett/Jackett</projectUrl>
-    <bugTrackerUrl>https://github.com/Jackett/Jackett/issues</bugTrackerUrl>
-    <docsUrl>https://github.com/Jackett/Jackett/wiki</docsUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/jackett.png</iconUrl>
-    <tags>torrent-search-engine torrent-management torrent-downloader torznab newznab rss rss-proxy p2p filesharing torrent nntp proxy server sonarr radarr sickrage couchpotato mylar admin</tags>
-    <copyright></copyright>
-    <licenseUrl>https://github.com/Jackett/Jackett/blob/master/LICENSE</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/Jackett/Jackett/releases/)
 
 #### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
-    </releaseNotes>
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'jackett'
 $url = 'https://github.com/Jackett/Jackett/releases/download/v0.8.199/Jackett.Installer.Windows.exe'
