@@ -1,41 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>radarr</id>
-    <title>Radarr</title>
     <version>0.2.0.852</version>
-    <authors>galli-leo</authors>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/radarr</packageSourceUrl>
     <owners>JourneyOver</owners>
+    <title>Radarr</title>
+    <authors>galli-leo</authors>
+    <projectUrl>https://radarr.video/</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/radarr.png</iconUrl>
+    <copyright>© 2010-2017 Radarr. All rights reserved.</copyright>
+    <licenseUrl>https://github.com/Radarr/Radarr/blob/develop/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/radarr/radarr</projectSourceUrl>
+    <docsUrl>https://github.com/Radarr/Radarr/wiki</docsUrl>
+    <mailingListUrl>https://www.reddit.com/r/radarr/</mailingListUrl>
+    <bugTrackerUrl>https://github.com/radarr/radarr/issues</bugTrackerUrl>
+    <tags>pvr p2p filesharing torrent nntp admin</tags>
     <summary>Movie PVR for Usenet and BitTorrent</summary>
     <description>
-Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.
+Radarr is an __independent__ fork of [Sonarr](https://github.com/Sonarr/Sonarr) reworked for automatically downloading movies via Usenet and BitTorrent.
 
 The project was inspired by other Usenet/BitTorrent movie downloaders such as CouchPotato.
 
-[Features](https://github.com/Radarr/Radarr#features)
+## Features
+* Adding new movies with lots of information, such as trailers, ratings, etc.
+* Support for major platforms: Windows, Linux, macOS, Raspberry Pi, etc.
+* Can watch for better quality of the movies you have and do an automatic upgrade. *eg. from DVD to Blu-Ray*
+* Automatic failed download handling will try another release if one fails
+* Manual search so you can pick any release or to see why a release was not downloaded automatically
+* Full integration with SABnzbd and NZBGet
+* Automatically searching for releases as well as RSS Sync
+* Automatically importing downloaded movies
+* Recognizing Special Editions, Director's Cut, etc.
+* Identifying releases with hardcoded subs
+* All indexers supported by Sonarr also supported
+* New PassThePopcorn Indexer
+* QBittorrent, Deluge, rTorrent, Transmission and uTorrent download client (Other clients are coming)
+* New TorrentPotato Indexer
+* Torznab Indexer now supports Movies (Works well with [Jackett](https://github.com/Jackett/Jackett))
+* Scanning PreDB to know when a new release is available
+* Importing movies from various online sources, such as IMDb Watchlists (A complete list can be found [here](https://github.com/Radarr/Radarr/issues/114))
+* Full integration with Kodi, Plex (notification, library update)
+* And a beautiful UI
 
-#### Community
+## Community
 * [Discord](https://discord.gg/AD3UP37)
 * [Reddit](https://www.reddit.com/r/radarr)
-    </description>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/radarr</packageSourceUrl>
-    <projectUrl>https://radarr.video/</projectUrl>
-    <projectSourceUrl>https://github.com/radarr/radarr</projectSourceUrl>
-    <bugTrackerUrl>https://github.com/radarr/radarr/issues</bugTrackerUrl>
-    <docsUrl>https://github.com/Radarr/Radarr/wiki</docsUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/radarr.png</iconUrl>
-    <tags>pvr p2p filesharing torrent nntp admin</tags>
-    <copyright>© 2017 Radarr. All rights reserved.</copyright>
-    <licenseUrl>http://www.gnu.org/licenses/gpl-3.0.html</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+</description>
     <releaseNotes>
 #### Program
-* [Changelog](https://github.com/Radarr/Radarr/blob/develop/CHANGELOG.md)
+* [Changelog](https://github.com/Radarr/Radarr/releases)
 
 #### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
-    </releaseNotes>
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
