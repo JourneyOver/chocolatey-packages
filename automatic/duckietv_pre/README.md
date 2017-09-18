@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/575bc31abcf0249da6533821231a854255a2cc4e/icons/duckietv.png" width="48" height="48"/> [DuckieTV](https://chocolatey.org/packages/duckietv)
+# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/575bc31abcf0249da6533821231a854255a2cc4e/icons/duckietv.png" width="48" height="48"/> [DuckieTV Nightly](https://chocolatey.org/packages/duckietv)
 
 DuckieTV is an application that takes care of TV-Show addicts by providing a personalized TV-Show calendar. DuckieTV makes sure the information is always up-to-date and gives you an integrated blocking-resistant torrent search to help you get to the right download as easy as possible.
 
