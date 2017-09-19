@@ -20,39 +20,28 @@ if not A_IsAdmin
 }
 
 
-WinWait, Simple Static IP Setup, &Next >
+Winahk = ahk_exe irsetup.exe
 
-WinActivate
-IfWinActive
 ; Welcome Screen
-sleep, 2000 ;(wait 2 seconds)
-MouseMove 343, 362
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
+WinWait, %Winahk%, &Help
+ControlClick, &Next, %Winahk%
+
 ; Installation Folder
-sleep, 2000 ;(wait 2 seconds)
-MouseMove 343, 362
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
+WinWait, %Winahk%, C&hange...
+ControlClick, &Next, %Winahk%
+
 ; Shortcut Folder
-sleep, 2000 ;(wait 2 seconds)
-ControlClick, Button4
-MouseMove 343, 362
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
+WinWait, %Winahk%, Install shortcuts for current user only
+sleep, 1000
+ControlClick, Button4, %Winahk%
+sleep, 1000
+ControlClick, &Next, %Winahk%
+
 ; Ready To Install
-sleep, 2000 ;(wait 2 seconds)
-MouseMove 343, 362
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
+sleep, 4000
+WinWait, %Winahk%, &Cancel
+ControlClick, &Next, %Winahk%
+
 ; Install Successfull
-sleep, 4000 ;(wait 4 seconds)
-MouseMove 343, 362
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
-Return
+WinWait, %Winahk%, &Finish
+ControlClick, &Finish, %Winahk%
