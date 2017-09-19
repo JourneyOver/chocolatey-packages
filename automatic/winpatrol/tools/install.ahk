@@ -23,29 +23,21 @@ if not A_IsAdmin
 Winahk = ahk_exe wpsetup.exe
 
 ; Welcome Screen
-WinWait, %Winahk%
+WinWait, %Winahk%, InstallMate will install
 ControlClick, &Next, %Winahk%
-
-sleep, 2000 ;(wait 2 seconds)
 
 ; Important Information
-WinWait, %Winahk%
+WinWait, %Winahk%, Please read this information carefully before continuing.
 ControlClick, &Next, %Winahk%
-
-sleep, 2000 ;(wait 2 seconds)
 
 ; Registration Info
-WinWait, %Winahk%
+WinWait, %Winahk%, Registration information
 ControlClick, &Next, %Winahk%
 
-sleep, 2000 ;(wait 2 seconds)
-
 ; Installation Options
-WinWait, %Winahk%
+WinWait, %Winahk%, Installation options
 ControlClick, &Install, %Winahk%
 
-sleep, 5000 ;(wait 5 seconds)
-
 ; Install Successfull
-WinWait, %Winahk%
+WinWait, %Winahk%, Installation completed
 ControlClick, &Finish, %Winahk%
