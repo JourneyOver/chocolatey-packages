@@ -11,4 +11,4 @@ WinPatrol was the pioneer in using a heuristic behavioral approach to detecting 
 * Does NOT slow down your computer!
 * Speed up computer Start-up.
 
-![Screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/winpatrol.jpeg)
+![Screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/dev/readme_imgs/winpatrol.jpeg)
