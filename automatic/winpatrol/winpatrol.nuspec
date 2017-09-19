@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>winpatrol</id>
     <version>35.5.2017.8</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/winpatrol</packageSourceUrl>
@@ -13,15 +14,25 @@
     <copyright>Copyright 1997 - 2017 WinPatrol | All Rights Reserved</copyright>
     <licenseUrl>http://www.winpatrol.com/license.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <projectSourceUrl></projectSourceUrl> -->
     <docsUrl>https://www.winpatrol.com/support/features.html</docsUrl>
-    <tags>WinPatrol Remove Spyware Clean adware Startup manager Spyware Adware Cleaner Remover admin</tags>
-    <summary>WinPatrol takes a snapshot of your critical system resources and alerts you to any changes that may have occurred without your knowledge. WinPatrol was the pioneer in using a heuristic behavioral approach to detecting attacks and violations of your computing environment. WinPatrol provides you with an easy tabbed interface which will allow you to explore deep inside your machine without having to be a computer expert.</summary>
+    <mailingListUrl>https://www.winpatrol.com/contact-us/</mailingListUrl>
+    <!-- <bugTrackerUrl></bugTrackerUrl> -->
+    <tags>WinPatrol Remove-Spyware Clean-adware Startup-manager Spyware-Adware-Cleaner Remover</tags>
+    <summary>WinPatrol gathers useful Windows utilities in one free toolkit. Watchdog mascot Scotty monitors and manages Startup Programs, Cookies, Active Tasks, Services, IE Helpers, and more. It also helps you sort legitimate Hidden Files from possible problems, troubleshoots file associations, and more.</summary>
     <description>
 WinPatrol alerts you to hijackings, malware attacks and critical changes made to your computer without your permission. As a multipurpose support utility, WinPatrol replaces multiple system utilities with its enhanced functionality.
 
 WinPatrol was the pioneer in using a heuristic behavioral approach to detecting attacks and violations of your computing environment. Traditional security programs scan your hard drive searching for previously identified threats. WinPatrol takes snapshots of your critical system resources and alerts you to any changes that occur without your knowledge.
 
-You'll be removing dangerous new programs while others prepare to update their definition/signature data files.
+## Features
+* Block installation of add-ons and toolbars.
+* Know and reverse unwanted system changes.
+* Starts protecting immediately upon installation.
+* Does NOT slow down your computer!
+* Speed up computer Start-up.
+
+![Screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/winpatrol.jpeg)
 </description>
     <releaseNotes>
 #### Program
@@ -30,8 +41,8 @@ You'll be removing dangerous new programs while others prepare to update their d
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
     <dependencies>
-      <dependency id="autohotkey.portable" version="1.1.26.01" />
       <dependency id="chocolatey" version="0.10.8" />
+      <dependency id="autohotkey.portable" version="1.1.26.01" />
     </dependencies>
   </metadata>
   <files>

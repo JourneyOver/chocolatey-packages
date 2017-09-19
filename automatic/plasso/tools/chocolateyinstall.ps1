@@ -1,6 +1,5 @@
 $ErrorActionPreference = 'Stop'
 $ServerOS = (Get-WmiObject -class Win32_OperatingSystem).Caption
-$bits = Get-ProcessorBits
 
 $packageName = 'plasso'
 $url = 'https://bitsum.com/files/processlassosetup32.exe'
@@ -13,11 +12,7 @@ $surl64 = 'https://bitsum.com/files/server/processlassosetup64.exe'
 $schecksum = '07b11b7c56f494e14076a79b23d18e95acac4a70a31ff99022a1d75e03e8ed50'
 $schecksum64 = '6a0a043e3ee78601c332bae2d17fb5d8e16369ca39bd6cfa5a03ba74100a247a'
 
-if ($bits -eq 64) {
-  $registryPath = $('HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso')
-} else {
-  $registryPath = $('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso')
-}
+$registrypaths = @('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso', 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso')
 $version = '9.0.0.402'
 
 $packageArgs = @{
@@ -33,10 +28,12 @@ $packageArgs = @{
   checksumType64 = 'sha256'
 }
 
-If (Test-Path $registryPath) {
-  $installedVersion = (
-    Get-ItemProperty -Path $registryPath -Name 'DisplayVersion'
-  ).DisplayVersion
+Foreach ($registry in $registrypaths) {
+  if (Test-Path $registry) {
+    $installedVersion = (
+      Get-ItemProperty -Path $registry -Name 'DisplayVersion'
+    ).DisplayVersion
+  }
 }
 
 If ($installedVersion -eq $version) {
