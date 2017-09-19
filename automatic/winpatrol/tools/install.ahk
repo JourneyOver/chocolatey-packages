@@ -2,6 +2,7 @@
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+SetControlDelay, -1
 
 Loop, %0%  ; For each parameter:
   {
@@ -19,38 +20,24 @@ if not A_IsAdmin
   ExitApp
 }
 
-WinWait, ahk_exe wpsetup.exe, &Next >
+Winahk = ahk_exe wpsetup.exe
 
-WinActivate
-IfWinActive
 ; Welcome Screen
-sleep, 2000 ;(wait 2 seconds)
-MouseMove 354, 364
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
+WinWait, %Winahk%, InstallMate will install
+ControlClick, &Next, %Winahk%
+
 ; Important Information
-sleep, 2000 ;(wait 2 seconds)
-MouseMove 354, 364
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
+WinWait, %Winahk%, Please read this information carefully before continuing.
+ControlClick, &Next, %Winahk%
+
 ; Registration Info
-sleep, 2000 ;(wait 2 seconds)
-MouseMove 354, 364
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
+WinWait, %Winahk%, Registration information
+ControlClick, &Next, %Winahk%
+
 ; Installation Options
-sleep, 2000 ;(wait 2 seconds)
-MouseMove 354, 364
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
+WinWait, %Winahk%, Installation options
+ControlClick, &Install, %Winahk%
+
 ; Install Successfull
-sleep, 9000 ;(wait 9 seconds)
-MouseMove 343, 362
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
-Return
+WinWait, %Winahk%, Installation completed
+ControlClick, &Finish, %Winahk%
