@@ -19,20 +19,12 @@ if not A_IsAdmin
   ExitApp
 }
 
-WinWait, Simple Static IP Uninstaller, &Next >
+Winahk = Simple Static IP Uninstaller
 
-WinActivate
-IfWinActive
 ; Uninstall Simple Static IP
-sleep, 2000 ;(wait 2 seconds)
-MouseMove 343, 362
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
+WinWait, %Winahk%, &Next >
+ControlClick, &Next, %Winahk%
+
 ; uninstallation successfull
-sleep, 4000 ;(wait 4 seconds)
-MouseMove 343, 362
-Click down
-sleep, 50 ;(wait 50 milliseconds)
-click up
-return
+WinWait, %Winahk%, &Finish
+ControlClick, &Finish, %Winahk%
