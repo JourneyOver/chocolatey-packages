@@ -1,11 +1,11 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'duckietv'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.4/DuckieTV-1.1.4-windows-x32.zip'
-$url64 = 'https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.4/DuckieTV-1.1.4-windows-x64.zip'
-$checksum = 'ECAE9E1DAA64673E72BC06B40908DFCD7DD85D1D0C074350A4049D1E0320060B'
-$checksum64 = '6B3289787E24FDAF4519C6C9A810335C058DD592BA25E6F324E3663FFD8037F2'
+$url = 'https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x32.zip'
+$url64 = 'https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x64.zip'
+$checksum = '9d294285da2dfe73473b7682279d566e092b21dce38350cc64151eeab0bef650'
+$checksum64 = '215ec0b23ff40f976ef7a7579654a52eb87b7f181cd7e847376fd5041a210e58'
 $silentArgs = '/S'
 $validExitCodes = @(0)
 $bits = Get-ProcessorBits
