@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tsedat</id>
     <version>7.18.2678</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tsedat</packageSourceUrl>
@@ -11,9 +12,13 @@
     <projectUrl>http://www.sequencepublishing.com/1/thesage.html</projectUrl>
     <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/tsedat.png</iconUrl>
     <copyright>Copyright © 2001-2017 by Sequence Publishing. All Rights Reserved.</copyright>
+    <!-- <licenseUrl></licenseUrl> -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <projectSourceUrl></projectSourceUrl> -->
     <docsUrl>http://www.sequencepublishing.com/1/thesage_documentation.html</docsUrl>
-    <tags>TheSage English Dictionary thesaurus admin</tags>
+    <mailingListUrl>http://www.sequencepublishing.com/1/about.html</mailingListUrl>
+    <!-- <bugTrackerUrl></bugTrackerUrl> -->
+    <tags>TheSage English Dictionary Thesaurus One-click lookup wildcard-search anagram concordancer speech pronunciation word-lists admin</tags>
     <summary>TheSage is a comprehensive English dictionary and thesaurus that provides a number of useful and in some cases unusual search tools.</summary>
     <description>
 TheSage is a comprehensive English dictionary and thesaurus that provides a number of useful and in some cases unusual search tools.
@@ -33,6 +38,8 @@ Pronunciations	~135,000 phonetic transcriptions
 Requests for ports have steadily increased over the years. It is a natural consequence of the fragmentation of the operating system landscape brought about by the so-called mobile revolution. The technical costs involved have become significant.
 
 We will continue providing TheSage for free, as we always have. From version 7 on, we also provide a professional edition for a small fee. We hope that English language lovers and casual users alike will appreciate the value of the project and see fit to support its continuing development on Windows and other platforms.
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/dev/readme_imgs/tsedat.png)
 </description>
     <releaseNotes>
 #### Program
@@ -40,6 +47,8 @@ We will continue providing TheSage for free, as we always have. From version 7 o
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
