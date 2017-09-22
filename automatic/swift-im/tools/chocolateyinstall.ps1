@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'swift-im'
 $url = 'http://swift.im/downloads/releases/swift-3.0/Swift-3.0.msi'
@@ -9,7 +9,7 @@ $packageArgs = @{
   fileType       = 'msi'
   url            = $url
   silentArgs     = '/quiet /qn /norestart'
-  validExitCodes = @(0)
+  validExitCodes = @(0, 3010, 1641)
   checksum       = $checksum
   checksumType   = 'sha256'
 }
