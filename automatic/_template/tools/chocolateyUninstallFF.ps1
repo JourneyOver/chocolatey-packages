@@ -1,5 +1,5 @@
 $packageName = '-firefox'
-$extensionID = ""
+$extensionID = ''
 
 if (test-path 'hklm:\SOFTWARE\Mozilla\Firefox\TaskBarIDs') {
   $installDir = Get-Item -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Mozilla\Firefox\TaskBarIDs | Select-Object -ExpandProperty Property

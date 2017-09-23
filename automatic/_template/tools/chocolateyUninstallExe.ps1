@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = ''
-$programUninstallEntryName = "*"
+$programUninstallEntryName = '*'
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString

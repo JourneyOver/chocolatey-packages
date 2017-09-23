@@ -2,8 +2,7 @@
 
 Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.
 
-Cent Browser Features:
-
+## Features
 * Google Chrome Based
 * Mouse Gesture
 * Scrollable Tab Bar
@@ -18,4 +17,4 @@ Cent Browser Features:
 * QR Code Generator
 * Privacy Protection
 
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/dev/readme_imgs/centbrowser.png)
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/centbrowser.png)

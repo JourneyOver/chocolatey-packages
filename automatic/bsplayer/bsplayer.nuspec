@@ -21,36 +21,38 @@
     <tags>multimedia audio video mp3 dvd avi media player admin</tags>
     <summary>Play videos, movies, DVDs, music, tv streams, teletext, radio streams, podcasts and much more using this powerful and intuitive media player</summary>
     <description>
-BS.Player is one of the best media player on the market today. Main advantages of the player are high quality playback, support for wide range of media files and it is low in CPU and memory consumption.
+BS.Player is a Windows ® player, which supports the playback of all sorts of files, such as AVI, MPG, ASF, WMV, WAV, MP3, etc., with a special focus on video and DivX.
 
-BS.Player is used by more than 70 millions of users throughout the world and it has been translated into more than 90 languages. All the downloaded versions of free player surpass the sum of all downloads of competitive video players and payable DVD players. Because it does not use much processing power it is suitable for all those who use slightly less capable computers but still want to have excellent video and audio quality. The multimedia playback has not been – and never will be – disturbed by any annoying technical problem, much too often experienced with software of this kind.
-
-Most importantly, BS.Player, a free media movie player, is a product for the world multi media market and is therefore equipped with advanced subtitle options which enable the users to watch video content with subtitles from many popular subtitle formats (MicroDVD .sub, VobSub .sub + .idx, SubViewer .sub, (Advanced) SubStation Alpha .ssa or .ass, SubRip .srt, VPlayer .txt...). BS.Player is also a AVCHD player and enables you to display AVCHD video format movies (Advanced Video Codec High Definition) used in digital tapeless camcorders. It can automatically search and download missing subtitles for currently playing video, if available.
-
-BSplayer Features:
-
+## Features
+* Support for all popular media formats
+* Support for new file formats such as Matroska and OGM with embedded chapters, subtitles and multiple audio streams
 * Playlists support
-
-The playlists support is great. They may be imported from BST and M3U (Winamp) records, saved, edited and added new files from any folder, as well as URLs.
-
-* Display subtitles
-
-Beside the basic functions such as font type and size selection, the program supports many others: shadows, outlines, subtitle location on the screen, etc. Bad subtitle timings can be fixed within the program itself with simple keyboard shortcuts.
-
-* BS.MediaLibrary
-
-All multimedia files on your computer's hard drive will now be listed in the BS.MediaLibrary™. From now on they will always be within your reach. MultilingualBS.Player™ is an international product, targeted to all and any user worldwide.
-
-* Resolution changing
-
-Use the resolution changing feature and avoid the oversized picture if you wish to watch your movie on your TV screen, projector or plasma screen. The feature will adjust the TV resolution and optimize the quality of movie reproduction.
-
+* BS.MediaLibrary media file manager
+* Pan-scan and custom pan-scan option
+* Support for multiple audio streams and switching between them
+* Support a lot of subtitles formats (MicroDVD, SubRip, Subviewer...), custom subtitles position, color, font, transparency...
+* Support switching between multiple (different language) subtitles
+* Fast forward and fast rewind option
+* Frame stepping
+* Frame capture
+* Bookmarks support
+* Chapters support
+* Equalizer
+* Multilingual
 * Fully skinnable
+* Custom aspect ratios
+* WinLIRC support
+* Almost every action can be assigned to user selected key (even two keys) and different keys can be assigned for full screen and windowed mode
+* Every action can also be assigned to WinLIRC button
+* Support Winamp DSP plugins
+* Multiple audio stream switching
+* Command line support
+* Playback of incomplete AVI files and locked files (files in use, files still downloading or recording)
+* BSI/INI files support and dynamic DirectShow filters loading (so everything can be burned on CD and played without installing anything)
+* Plugin support
 
-Though the BS.Player™ proudly bears a modern look that sets new standards in this field, developers have included an easy skin selection option and the option of adding your own custom skins. You may create your own dream look or choose from the many pre-prepared ones found at SKIN section.
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/dev/readme_imgs/bsplayer.png)
-    </description>
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/bsplayer.png)
+</description>
     <releaseNotes>
 #### Program
 * [Changelog](http://forum.bsplayer.com/news-updates/)

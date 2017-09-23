@@ -3,6 +3,7 @@ Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 $releases = 'https://www.axcrypt.net/download/'
 $downloadraw_url = 'https://account.axcrypt.net/download/'
+$versionnum = 'https://www.axcrypt.net/cryptographic-hashes-files/'
 
 function global:au_SearchReplace {
   @{
@@ -20,12 +21,13 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $version_page = Invoke-WebRequest -Uri $versionnum -UseBasicParsing
 
   $regex = 'AxCrypt-(\d+)-Setup.exe'
   $url = ([regex]::match($download_page.Content, $regex))
 
-  $versionRegEx = 'Windows:\s+(\d+)\.(\d+)\.(\d+)'
-  $version = ([regex]::match($download_page.Content, $versionRegEx) -replace ("Windows: ", ""))
+  $versionRegEx = '(\d+).(\d+).(\d+).(\d+)-Setup.exe'
+  $version = ([regex]::match($version_page.Content, $versionRegEx) -replace ('-Setup.exe', ''))
 
   $url32 = $downloadraw_url + $url
 

@@ -24,7 +24,7 @@ Foreach ($registry in $registrypaths) {
   }
 }
 
-if ($installedVersion -match $version) {
+if ($installedVersion -eq $version) {
   Write-Output $(
     "AxCrypt $installedVersion is already installed. " +
     "Skipping download and installation."
