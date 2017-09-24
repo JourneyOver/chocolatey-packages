@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>any2ico.portable</id>
     <version>2.2.3.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/any2ico.portable</packageSourceUrl>
     <owners>JourneyOver</owners>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/any2ico</packageSourceUrl>
     <title>Quick Any2Ico (portable)</title>
     <authors>Carifred</authors>
     <projectUrl>http://www.carifred.com/quick_any2ico/#index</projectUrl>
@@ -13,17 +14,27 @@
     <copyright>Copyright Carifred © 2010 - 2017, all rights reserved.</copyright>
     <licenseUrl>http://www.carifred.com/License.php</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<projectSourceUrl></projectSourceUrl> -->
     <docsUrl>http://www.carifred.com/quick_any2ico/#selecting_source</docsUrl>
-    <tags>Quick Any2Ico extract icons portable</tags>
-    <summary>Quick Any2Ico is a free portable application that creates high quality icon files from any file, folder or resource.</summary>
+    <mailingListUrl>http://www.carifred.com/contact/</mailingListUrl>
+    <!--<bugTrackerUrl></bugTrackerUrl> -->
+    <tags>Icon-Extractor Extract-Icon Image-to-Icon Extract Create Convert Icon Icons Quick-Any2Ico Portable</tags>
+    <summary>Quick Any2Ico is a small, intuitive program that can be used to convert images to icons of various sizes.</summary>
     <description>
-Quick Any2Ico is a free portable application that creates high quality icon files from any file, folder or resource.
+There are a number of icons that are included with programs and images, that users might need to work with. Quick Any2Ico is an application that allows users to extract icons from various different file formats, then convert them into either PNG or ICO images in several different resolution options.
 
-It can also add or remove image formats from icon files, save the extracted icons in the PNG format and much more
-    </description>
+## Features
+* A single window interface that displays all the programs options and settings within a single window
+* A lack of advanced options and customization within the application that makes it more basic
+* A reasonable application for users only interested in the basic icon extraction and nothing else
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/any2ico.png)
+</description>
     <releaseNotes>
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

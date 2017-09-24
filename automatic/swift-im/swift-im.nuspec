@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>swift-im</id>
     <version>3.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/swift-im</packageSourceUrl>
@@ -11,13 +12,25 @@
     <projectUrl>https://www.swift.im/swift.html</projectUrl>
     <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/swift-im.png</iconUrl>
     <copyright>© Isode Ltd. 2015 - 2016</copyright>
-    <licenseUrl>http://www.gnu.org/licenses/gpl.html</licenseUrl>
+    <licenseUrl>https://github.com/swift/swift/blob/master/COPYING.gpl</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <docsUrl>https://www.swift.im/swift.html</docsUrl>
+    <projectSourceUrl>https://github.com/swift/swift</projectSourceUrl>
+    <docsUrl>https://swift.im/swift.html</docsUrl>
+    <mailingListUrl>https://swift.im/lists/mailman/listinfo/swift-users</mailingListUrl>
+    <bugTrackerUrl>https://github.com/swift/swift/issues</bugTrackerUrl>
     <tags>swift swift.im XMPP admin</tags>
     <summary>Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.</summary>
     <description>
-Swift is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.
+Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.
+
+## Features
+* sending and receiving plain text messages
+* emoticons
+* basic statuses
+* avatar support
+* mailbox status support
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/swift-im.png)
 </description>
     <releaseNotes>
 #### Program
@@ -25,6 +38,8 @@ Swift is an elegant, secure, adaptable and intuitive XMPP client, with features 
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>axcrypt</id>
     <version>2.1.1541</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/axcrypt</packageSourceUrl>
@@ -13,26 +14,43 @@
     <copyright>Copyright © 2017 AxCrypt AB, All rights reserved.</copyright>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://bitbucket.org/axantum/axcrypt-net</projectSourceUrl>
     <docsUrl>https://www.axcrypt.net/documentation</docsUrl>
+    <mailingListUrl>https://www.axcrypt.net/forums/</mailingListUrl>
+    <bugTrackerUrl>https://bitbucket.org/axantum/axcrypt-net/issues</bugTrackerUrl>
     <tags>axcrypt AxCrypt cloud storage crypt password collab admin</tags>
     <summary>AxCrypt is a free and open-source encryption app for Microsoft Windows, developed in Sweden by Svante Seleborg for AxCrypt AB. It can compress, delete, encrypt and edit files.</summary>
     <description>
-AxCrypt - Personal Privacy and Security with AES-256 File Encryption and Compression for Windows. Double-click to automatically decrypt and open documents.
+AxCrypt is a highly secure data encryption app that provides AES-128/256 file encryption and compression for Windows. It has a simple interface and works with a single double-click to automatically decrypt and open documents. It has seamless integration with Windows Explorer with no configuration required.
 
-Features
-* Seamless integration with Windows Explorer.
-* Double-click to decrypt, open and re-encrypt.
-* No configuration required.
-* Many languages supported.
-    </description>
+AxCrypt is used to share and work with stored documents and e-mail attachments, in a secure manner. If your documents reside on a document sharing service or file server, AxCrypt is well suited and is able to seamlessly integrate, and makes both sharing and storing sensitive data a simple task.
+
+## Features*
+* Collaboration.
+* Strong encryption with AES 128-bit or 256-bit encryption.
+* Cloud storage awareness.
+* Multilingual: English, French, Swedish, Spanish.
+* Password management.
+* Intuitive interface.
+* Secured folders.
+* Offline encryption/decryption.
+* Support via email and forum.
+* AxCrypt is a great tool for protecting your documents such as private correspondence, employment information, medical information, and financial details. It doesn't matter whether this data is stored on a local hard disk or network server, encrypting it is easy. Simply right-click any document file and encrypt it via the explorer interface.
+
+*Some features are only available in AxCrypt Premium.
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/axcrypt.png)
+</description>
     <releaseNotes>
 #### Program
 * [Changelog](https://www.axcrypt.net/documentation/release-notes/)
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
-    </metadata>
-    <files>
-      <file src="tools\**" target="tools" />
-    </files>
+    <!-- <dependencies>
+    </dependencies> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
 </package>

@@ -1,13 +1,12 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 
 $packageName = 'any2ico.portable'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$scriptDir = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 $url = 'http://www.carifred.com/quick_any2ico/Quick_Any2Ico.exe'
 $checksum = 'C040F95DF54B5C8EEAEB359640874A6840760A5742EA1105F4CC2197A2AE283A'
 $shortcutName = 'Quick_Any2Ico.lnk'
 $exe = 'Quick_Any2Ico.exe'
-$installerPackage = Join-Path $scriptDir $Exe
+$installerPackage = Join-Path $toolsDir $Exe
 
 $packageArgs = @{
   packageName  = $packageName

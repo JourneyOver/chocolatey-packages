@@ -1,4 +1,4 @@
-# Kill BSplayer process before uninstall if running
+# Kill BSplayer process before install/upgrade/uninstall if running
 $killBS = Get-Process bsplayer -ErrorAction SilentlyContinue
 if ($killBS) {
   # try gracefully first
