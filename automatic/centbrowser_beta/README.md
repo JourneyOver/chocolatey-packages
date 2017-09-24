@@ -17,4 +17,4 @@ Cent Browser is an enhanced version of the Chromium web browser that bundles man
 * QR Code Generator
 * Privacy Protection
 
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/dev/readme_imgs/centbrowser.png)
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/centbrowser.png)

@@ -25,7 +25,16 @@ DuckieTV is an application that takes care of TV-Show addicts by providing a per
 
 With the integrated DuckieTorrent client you can connect DuckieTV to your local Torrent client and be updated on the download progress without switching applications. Support is available for clients of BiglyBT, Deluge, Ktorrent, qBittorrent, rTorrent, Tixati, Transmission, µTorrent/BitTorrent and Vuze.
 
-As of v0.60 DuckieTV also is also finally becoming a worthy SickBeard competitor by introducing an automatic downloading of shows that have aired and translations into 15 languages (English, Deutch, Español, Français, Italiano, 日本, 한국어, Nederlands, Norsk bokmål, Português, Русский, Română, Slovenščina, Svenska, 简体中文).
+## Features
+* Your main screen is a beautiful calendar with backgrounds tailored to the shows you are watching
+* Instant access to Torrent client features from the calendar
+* Add your favorite shows by selecting them off TraktTV's Trending Shows list, or search manually
+* Navigate to any of your shows easily by opening your local library panel
+* View series, season and episode details about your shows
+* Track and mark which shows you have downloaded, and which ones you have watched.
+* Control various settings to adjust DuckieTV to your needs, translated into your choice of 12 languages
+* You can either completely turn off Torrent integration or tune it to your preference
+* DuckieTorrent Torrent clients built-in (µTorrent/BitTorrent, qBittorrent, Tixati, Transmission)
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/duckietv.png)
 </description>

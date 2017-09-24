@@ -17,4 +17,4 @@ It offers a robust list of capabilities including default process priorities and
 * Stand-alone process management engine (uses as little as 1MB of RAM)
 * Event logging
 
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/dev/readme_imgs/plasso.png)
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/plasso.png)

@@ -28,3 +28,6 @@ The project was inspired by other Usenet/BitTorrent movie downloaders such as Co
 ## Community
 * [Discord](https://discord.gg/AD3UP37)
 * [Reddit](https://www.reddit.com/r/radarr)
+
+## Notes
+Installs as a service, to get to Radarr open browser and go to http://localhost:7878/
