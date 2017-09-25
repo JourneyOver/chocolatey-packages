@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'swift-im'
-$programUninstallEntryName = "Swift*"
+$programUninstallEntryName = 'Swift*'
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString
