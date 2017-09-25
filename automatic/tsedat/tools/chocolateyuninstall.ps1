@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'tsedat'
-$programUninstallEntryName = "TheSage*"
+$programUninstallEntryName = 'TheSage*'
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString
