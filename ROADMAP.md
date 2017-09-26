@@ -28,6 +28,8 @@
 
 `~` infinity
 
+`~` BleachBit
+
 ## Cinst-gh packages
 
 `~` cleanmem
