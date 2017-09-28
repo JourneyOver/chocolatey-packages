@@ -1,12 +1,12 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'CentBrowser'
-$url = 'http://static.centbrowser.com/installer_32/centbrowser_2.8.5.75.exe'
-$url64 = 'http://static.centbrowser.com/installer_64/centbrowser_2.8.5.75_x64.exe'
-$checksum = '61321d3f95d6f7fa32953402aea9356772ff182d6011d687562c8f1b68c81884'
-$checksum64 = 'd40aab989927f9958ba5188517d7d22ac3f6cd66c307670446a049884e1262b4'
+$url = 'http://static.centbrowser.com/installer_32/centbrowser_2.9.4.34.exe'
+$url64 = 'http://static.centbrowser.com/installer_64/centbrowser_2.9.4.34_x64.exe'
+$checksum = '049623030d5757dd5f2a5d88201f914f2b943c0f4b8c4e25397111c09d0c2499'
+$checksum64 = '47cd44155024118ec778a1ac5a98634c5f9e2fd794cee4a41715700818573a13'
 $registrypaths = @('HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\CentBrowser', 'HKCU:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\CentBrowser')
-$version = '2.8.5.75'
+$version = '2.9.4.34'
 
 $packageArgs = @{
   packageName    = $packageName
