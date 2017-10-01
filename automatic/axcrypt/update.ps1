@@ -1,5 +1,4 @@
 Import-Module au
-Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 $releases = 'https://www.axcrypt.net/download/'
 $downloadraw_url = 'https://account.axcrypt.net/download/'
@@ -13,10 +12,6 @@ function global:au_SearchReplace {
       "([$]version\s*=\s*)('.*')"  = "`$1'$($Latest.Version)'"
     }
   }
-}
-
-function global:au_AfterUpdate {
-  Set-DescriptionFromReadme -SkipFirst 1
 }
 
 function global:au_GetLatest {

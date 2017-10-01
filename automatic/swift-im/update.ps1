@@ -1,5 +1,4 @@
 Import-Module au
-Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 $releases = 'http://swift.im/downloads.html'
 $fjoin = 'http://swift.im'
@@ -16,10 +15,6 @@ function global:au_SearchReplace {
       "(\*\s+\[(\w+)\])(.*)" = "`$1($($Latest.Changelog))"
     }
   }
-}
-
-function global:au_AfterUpdate {
-  Set-DescriptionFromReadme -SkipFirst 1
 }
 
 function global:au_GetLatest {
