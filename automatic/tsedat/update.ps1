@@ -1,5 +1,4 @@
 Import-Module au
-Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 $releases = 'http://www2.fs.u-bunkyo.ac.jp/~gilner/_files'
 $fakelink = 'http://www2.fs.u-bunkyo.ac.jp/~gilner/_files/TheSage_Setup_0-0-0000.exe'
@@ -12,10 +11,6 @@ function global:au_SearchReplace {
       "([$]version\s*=\s*)('.*')"  = "`$1'$($Latest.Version)'"
     }
   }
-}
-
-function global:au_AfterUpdate {
-  Set-DescriptionFromReadme -SkipFirst 1
 }
 
 function global:au_GetLatest {

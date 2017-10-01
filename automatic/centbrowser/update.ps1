@@ -1,5 +1,4 @@
 Import-Module au
-Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 $releases_32 = 'http://static.centbrowser.com/installer_32/'
 $releases_64 = 'http://static.centbrowser.com/installer_64/'
@@ -14,10 +13,6 @@ function global:au_SearchReplace {
       "([$]version\s*=\s*)('.*')"    = "`$1'$($Latest.Version)'"
     }
   }
-}
-
-function global:au_AfterUpdate {
-  Set-DescriptionFromReadme -SkipFirst 1
 }
 
 function global:au_GetLatest {
