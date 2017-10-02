@@ -10,7 +10,6 @@ trim_trailing_whitespace = true
 
 [*.ps1]
 charset = utf-8-bom
-insert_final_newline = true
 
 [*.nuspec]
 end_of_line = lf # Possibly have crlf for this as well (believe AU uses Windows Line Endings and utf-8-bom)

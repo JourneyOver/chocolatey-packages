@@ -18,14 +18,18 @@ It offers a robust list of capabilities including default process priorities and
 - Stand-alone process management engine (uses as little as 1MB of RAM)
 - Event logging
 
-## Package parameters
+## Installer parameters
 
-- `/language=` - This indicates the language to use. - defaults to "English"
-- `/gui_start_type=` - This indicates whether to start the GUI at login for ALL users (all), for only the current user (current), or neither (manual). The current user is the user context in which the installer is running. - defaults to "all,uac"
-- `/governor_start_type=` - This indicates whether to start the core engine (processgovernor) at login for ALL users (all), for only the current user (current), or neither (manual). The current user is the user context in which the installer is running. - defaults to "all,uac"
-- `/launch_gui=` - This indicates whether or not to launch the GUI after installation. Even when the GUI is launched, it remains minimized to the system tray. - defaults to "false"
-- `/logfolder=` - This indicates to use a global log folder for ALL users on the system. By default, each user has his or her own log folder in their respective application data directory. However, it is sometimes desirable to consolidate all log events into a single log folder. Be sure that this log folder is writable by all users on the system. - defaults to "%appdata%\ProcessLasso\logs"
-- `/configfolder=` - This indicates to use a global configuration folder for ALL users on the system. By default, each user has his or her own configuration in their respective application data directory. However,it is sometimes desirable to use the same configuration for all users, and is required when the governor is run as a service. Be sure that this configuration folder is at least readable by all users, and writable by those who you wish to allow configuration changes. - defaults to "%appdata%\ProcessLasso\config"
+Usage `-installArgs "'/key=value key2=value'"`
+
+- `/language=` - This indicates the language to use. - if not passed defaults to "English"
+- `/gui_start_type=` - This indicates whether to start the GUI at login for ALL users (all), for only the current user (current), or neither (manual). The current user is the user context in which the installer is running. - if not passed defaults to "all,uac"
+- `/governor_start_type=` - This indicates whether to start the core engine (processgovernor) at login for ALL users (all), for only the current user (current), or neither (manual). The current user is the user context in which the installer is running. - if not passed defaults to "all,uac"
+- `/launch_gui=` - This indicates whether or not to launch the GUI after installation. Even when the GUI is launched, it remains minimized to the system tray. - if not passed defaults to "true"
+- `/logfolder=` - This indicates to use a global log folder for ALL users on the system. By default, each user has his or her own log folder in their respective application data directory. However, it is sometimes desirable to consolidate all log events into a single log folder. Be sure that this log folder is writable by all users on the system. - if not passed defaults to "%appdata%\ProcessLasso\logs"
+- `/configfolder=` - This indicates to use a global configuration folder for ALL users on the system. By default, each user has his or her own configuration in their respective application data directory. However,it is sometimes desirable to use the same configuration for all users, and is required when the governor is run as a service. Be sure that this configuration folder is at least readable by all users, and writable by those who you wish to allow configuration changes. - if not passed defaults to "%appdata%\ProcessLasso\config"
+
+for more [information and other installer parameters](https://bitsum.com/process-lasso-unattended-install/)
 
 ## Notes
 
