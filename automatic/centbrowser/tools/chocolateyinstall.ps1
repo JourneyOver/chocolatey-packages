@@ -3,8 +3,8 @@
 $packageName = 'CentBrowser'
 $url = 'http://static.centbrowser.com/installer_32/centbrowser_2.9.4.39.exe'
 $url64 = 'http://static.centbrowser.com/installer_64/centbrowser_2.9.4.39_x64.exe'
-$checksum = 'e8be3065ccfc8c11aefd5b51f14a6bf95bbff9261f3e498067b3867441131e4f'
-$checksum64 = '770ccaedf7e3151d7eb8d8d46c0653b18c9d0fec92c7ad158fd11f9316d8f35d'
+$checksum = 'b60cf66a6256b3581efcf124c3bd27aaed6c53a9fc630a608dad74bac352a44c'
+$checksum64 = '51ac462f961161109748cc477b53f02dd22532deb4ca5cc1958800d718a25b22'
 $registrypaths = @('HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\CentBrowser', 'HKCU:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\CentBrowser')
 $version = '2.9.4.39'
 
