@@ -17,18 +17,27 @@ $packageArgs = @{
 }
 
 Foreach ($registry in $registrypaths) {
-  if (Test-Path $registry) {
+  If (Test-Path $registry) {
     $installedVersion = (
       Get-ItemProperty -Path $registry -Name 'DisplayVersion'
     ).DisplayVersion
   }
 }
 
-if ($installedVersion -match $version) {
+If ($installedVersion -match $version) {
   Write-Output $(
     "Jackett $installedVersion is already installed. " +
     "Skipping download and installation."
   )
-} else {
+} Else {
   Install-ChocolateyPackage @packageArgs
+}
+
+If (Get-Service "$packageName" -ErrorAction SilentlyContinue) {
+  $running = Get-Service $packageName
+  if ($running.Status -eq "Running") {
+    Write-Host 'Service is already running'
+  } Elseif ($running.Status -eq "Stopped") {
+    Start-Service $packageName
+  }
 }

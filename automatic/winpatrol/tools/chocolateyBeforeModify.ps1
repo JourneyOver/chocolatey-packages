@@ -1,4 +1,4 @@
-# Kill Winpatrol process before uninstall if running
+# Kill Winpatrol process before upgrade/uninstall if running
 $killWP = Get-Process WinPatrolEx -ErrorAction SilentlyContinue
 if ($killWP) {
   # try gracefully first
