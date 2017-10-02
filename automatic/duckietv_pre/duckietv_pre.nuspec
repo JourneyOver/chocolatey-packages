@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>duckietv</id>
-    <version>2017.1001.0130-nightly</version>
+    <version>2017.1002.0130-nightly</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/duckietv</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>DuckieTV</title>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>https://github.com/SchizoDuckie/DuckieTV/issues</bugTrackerUrl>
     <tags>tv series-database calendar angularjs javascript episodes search-engine torrent-client remote-control angular nwjs qbittorrent series trakt automation utorrent js nightlies admin</tags>
     <summary>DuckieTV is the TV-Show calendar you've been waiting for. A personalized calendar that tracks the shows you like that can search on multiple torrent sites</summary>
-    <description>
-DuckieTV is an application that takes care of TV-Show addicts by providing a personalized TV-Show calendar. DuckieTV makes sure the information is always up-to-date and gives you an integrated blocking-resistant torrent search to help you get to the right download as easy as possible.
+    <description><![CDATA[DuckieTV is an application that takes care of TV-Show addicts by providing a personalized TV-Show calendar. DuckieTV makes sure the information is always up-to-date and gives you an integrated blocking-resistant torrent search to help you get to the right download as easy as possible.
 
 With the integrated DuckieTorrent client you can connect DuckieTV to your local Torrent client and be updated on the download progress without switching applications. Support is available for clients of BiglyBT, Deluge, Ktorrent, qBittorrent, rTorrent, Tixati, Transmission, µTorrent/BitTorrent and Vuze.
 
@@ -37,7 +36,7 @@ With the integrated DuckieTorrent client you can connect DuckieTV to your local 
 * DuckieTorrent Torrent clients built-in (µTorrent/BitTorrent, qBittorrent, Tixati, Transmission)
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/duckietv.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/DuckieTV/Nightlies/releases)
