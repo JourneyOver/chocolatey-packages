@@ -18,7 +18,7 @@ Uninstall-ChocolateyPackage @packageArgs
 
 #remove Jackett folder that gets left behind
 $fexist = Test-Path $env:ProgramData\Jackett
-If ($fexist) {
+if ($fexist) {
   Write-Host "Removing Jackett Folder that's left behind"
   Remove-Item $env:ProgramData\Jackett -Recurse -Force
 } else {

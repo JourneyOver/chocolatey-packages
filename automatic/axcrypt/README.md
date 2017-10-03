@@ -6,16 +6,16 @@ AxCrypt is used to share and work with stored documents and e-mail attachments, 
 
 ## Features*
 
-- Collaboration.
-- Strong encryption with AES 128-bit or 256-bit encryption.
-- Cloud storage awareness.
-- Multilingual: English, French, Swedish, Spanish.
-- Password management.
-- Intuitive interface.
-- Secured folders.
-- Offline encryption/decryption.
-- Support via email and forum.
-- AxCrypt is a great tool for protecting your documents such as private correspondence, employment information, medical information, and financial details. It doesn't matter whether this data is stored on a local hard disk or network server, encrypting it is easy. Simply right-click any document file and encrypt it via the explorer interface.
+-   Collaboration.
+-   Strong encryption with AES 128-bit or 256-bit encryption.
+-   Cloud storage awareness.
+-   Multilingual: English, French, Swedish, Spanish.
+-   Password management.
+-   Intuitive interface.
+-   Secured folders.
+-   Offline encryption/decryption.
+-   Support via email and forum.
+-   AxCrypt is a great tool for protecting your documents such as private correspondence, employment information, medical information, and financial details. It doesn't matter whether this data is stored on a local hard disk or network server, encrypting it is easy. Simply right-click any document file and encrypt it via the explorer interface.
 
 *Some features are only available in AxCrypt Premium.
 

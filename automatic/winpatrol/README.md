@@ -6,10 +6,10 @@ WinPatrol was the pioneer in using a heuristic behavioral approach to detecting 
 
 ## Features
 
-- Block installation of add-ons and toolbars.
-- Know and reverse unwanted system changes.
-- Starts protecting immediately upon installation.
-- Does NOT slow down your computer!
-- Speed up computer Start-up.
+-   Block installation of add-ons and toolbars.
+-   Know and reverse unwanted system changes.
+-   Starts protecting immediately upon installation.
+-   Does NOT slow down your computer!
+-   Speed up computer Start-up.
 
 ![Screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/winpatrol.jpeg)

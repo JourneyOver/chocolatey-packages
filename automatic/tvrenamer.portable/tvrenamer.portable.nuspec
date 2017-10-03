@@ -26,11 +26,11 @@ It will take an ugly filename like **Lost.S06E05.DD51.720p.WEB-DL.AVC-FUSiON.mkv
 
 ## Features
 
-- Rename many different shows at once from information from [TheTVDB](http://thetvdb.com/)
-- Customise the format and content of the resulting filename
-- Native look and feel for your operating system
-- Drag and Drop or standard 'add file' interface
-- Optionally move renamed files, i.e. a NAS or external HDD
+-   Rename many different shows at once from information from [TheTVDB](http://thetvdb.com/)
+-   Customise the format and content of the resulting filename
+-   Native look and feel for your operating system
+-   Drag and Drop or standard 'add file' interface
+-   Optionally move renamed files, i.e. a NAS or external HDD
 
 ![Screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tvrenamer.png)
 </description>

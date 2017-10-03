@@ -1,4 +1,5 @@
 $ErrorActionPreference = 'Stop'
+$pp = Get-PackageParameters
 
 $packageName = 'CentBrowser'
 $url = 'http://static.centbrowser.com/beta_32/centbrowser_2.9.3.26.exe'
@@ -9,12 +10,14 @@ $registrypaths = @('HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Ce
 $version = '2.9.3.26-beta'
 $nobeta = $version -replace('-beta')
 
+if (!$pp['dir']) { $pp['dir'] = "$env:LOCALAPPDATA" }
+
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
   url            = $url
   url64Bit       = $url64
-  silentArgs     = '--cb-auto-update'
+  silentArgs     = "--cb-auto-update --cb-install-path=$($pp['dir'])"
   validExitCodes = @(0)
   checksum       = $checksum
   checksum64     = $checksum64
