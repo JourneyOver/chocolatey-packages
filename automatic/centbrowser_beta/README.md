@@ -23,11 +23,11 @@ Cent Browser is an enhanced version of the Chromium web browser that bundles man
 Pass as `--params /option:value`
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
 
-# Install parameters
+#### Install parameters
 
 -   `/dir:` - Indicates where you want to install the application. - defaults to %localappdata%
 
-# Uninstall parameters
+#### Uninstall parameters
 
 Pass as `--params /option`
 
