@@ -1,5 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $ServerOS = (Get-WmiObject -class Win32_OperatingSystem).Caption
+$pp = Get-PackageParameters
 
 $packageName = 'plasso'
 $url = 'https://bitsum.com/files/processlassosetup32.exe'
@@ -15,12 +16,19 @@ $schecksum64 = '6a0a043e3ee78601c332bae2d17fb5d8e16369ca39bd6cfa5a03ba74100a247a
 $registrypaths = @('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso', 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso')
 $version = '9.0.0.402'
 
+if (!$pp['language']) { $pp['language'] = 'English' }
+if (!$pp['gui_start_type']) { $pp['gui_start_type'] = 'all,uac' }
+if (!$pp['governor_start_type']) { $pp['governor_start_type'] = 'all,uac' }
+if (!$pp['launch_gui']) { $pp['launch_gui'] = 'false' }
+if (!$pp['logfolder']) { $pp['logfolder'] = "$env:APPDATA\ProcessLasso\logs" }
+if (!$pp['configfolder']) { $pp['configfolder'] = "$env:APPDATA\ProcessLasso\config" }
+
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
   url            = $url
   url64Bit       = $url64
-  silentArgs     = '/S'
+  silentArgs     = "/S /language=$($pp['language']) /gui_start_type=$($pp['gui_start_type']) /governor_start_type=$($pp['governor_start_type']) /launch_gui=$($pp['launch_gui']) /logfolder=$($pp['logfolder']) /configfolder=$($pp['configfolder'])"
   validExitCodes = @(0)
   checksum       = $checksum
   checksum64     = $checksum64
@@ -36,19 +44,19 @@ Foreach ($registry in $registrypaths) {
   }
 }
 
-If ($installedVersion -eq $version) {
+if ($installedVersion -eq $version) {
   Write-Output $(
     "Process Lasso $installedVersion is already installed. " +
     "Skipping download and installation."
   )
-} Elseif ($ServerOS -match "Server") {
+} elseif ($ServerOS -match "Server") {
   write-host Installing Server Version
   $packageArgs.url = $surl
   $packageArgs.url64Bit = $surl64
   $packageArgs.checksum = $schecksum
   $packageArgs.checksum64 = $schecksum64
   Install-ChocolateyPackage @packageArgs
-} Else {
+} else {
   Write-Host Installing Workstations Version
   Install-ChocolateyPackage @packageArgs
 }

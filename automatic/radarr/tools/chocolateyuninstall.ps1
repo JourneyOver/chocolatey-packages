@@ -18,7 +18,7 @@ Uninstall-ChocolateyPackage @packageArgs
 
 #remove Radarr folder that gets left behind
 $fexist = Test-Path $env:ProgramData\Radarr
-If ($fexist) {
+if ($fexist) {
   Write-Host "Removing Radarr Folder that's left behind"
   Remove-Item $env:ProgramData\Radarr -Recurse -Force
 } else {

@@ -15,3 +15,12 @@ $packageArgs = @{
 }
 
 Install-ChocolateyPackage @packageArgs
+
+if (Get-Service "$packageName" -ErrorAction SilentlyContinue) {
+  $running = Get-Service $packageName
+  if ($running.Status -eq "Running") {
+    Write-Host 'Service is already running'
+  } elseif ($running.Status -eq "Stopped") {
+    Start-Service $packageName
+  }
+}
