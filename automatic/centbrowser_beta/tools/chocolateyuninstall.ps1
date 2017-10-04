@@ -4,13 +4,13 @@ $pp = Get-PackageParameters
 $packageName = 'CentBrowser'
 $programUninstallEntryName = 'Cent Browser*'
 
-if (!$pp['userdata ']) { $pp['userdata '] = "0" }
+if (!$pp['del_userdata ']) { $pp['del_userdata '] = "0" }
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString
 $Arg_chk = ($file -match "--system-level")
 $chromiumArgs = @{$true = "--uninstall --system-level"; $false = "--uninstall"}[ $Arg_chk ]
-$silentArgs = @{$true = "--uninstall --system-level --cb-silent-uninstall-type=$($pp['userdata'])"; $false = "--uninstall --cb-silent-uninstall-type=$($pp['userdata'])"}[ $Arg_chk ]
+$silentArgs = @{$true = "--uninstall --system-level --cb-silent-uninstall-type=$($pp['del_userdata'])"; $false = "--uninstall --cb-silent-uninstall-type=$($pp['del_userdata'])"}[ $Arg_chk ]
 $myfile = $file -replace ( $chromiumArgs )
 
 $packageArgs = @{

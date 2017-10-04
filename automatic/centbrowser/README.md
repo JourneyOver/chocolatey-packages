@@ -29,8 +29,8 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 
 #### Uninstall parameters
 
-Pass as `--params /option`
+Pass as `--params /option` or `--params /option:value`  (value being a 1 for true.)
 
-- `/userdata` - Indicates if you want the user data folder to be deleted - defaults to false
+- `/del_userdata` - Indicates if you want the user data folder to be deleted - defaults to false
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/centbrowser.png)
