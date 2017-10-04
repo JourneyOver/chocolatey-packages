@@ -4,19 +4,19 @@ Cent Browser is an enhanced version of the Chromium web browser that bundles man
 
 ## Features
 
--   Google Chrome Based
--   Mouse Gesture
--   Scrollable Tab Bar
--   Super Drag
--   Lots of Tab Options
--   Incognito Tab
--   Memory Optimization
--   More Convenient
--   Auto Hide
--   Bookmark Bar
--   Customizable New Tab
--   QR Code Generator
--   Privacy Protection
+- Google Chrome Based
+- Mouse Gesture
+- Scrollable Tab Bar
+- Super Drag
+- Lots of Tab Options
+- Incognito Tab
+- Memory Optimization
+- More Convenient
+- Auto Hide
+- Bookmark Bar
+- Customizable New Tab
+- QR Code Generator
+- Privacy Protection
 
 ## Package parameters
 
@@ -25,12 +25,12 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 
 #### Install parameters
 
--   `/dir:` - Indicates where you want to install the application. - defaults to %localappdata%
+- `/dir:` - Indicates where you want to install the application. - defaults to %localappdata%
 
 #### Uninstall parameters
 
 Pass as `--params /option`
 
--   `/userdata` - Indicates if you want the user data folder to be deleted - defaults to true
+- `/userdata` - Indicates if you want the user data folder to be deleted - defaults to false
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/centbrowser.png)

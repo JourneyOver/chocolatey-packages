@@ -4,7 +4,7 @@ $pp = Get-PackageParameters
 $packageName = 'CentBrowser'
 $programUninstallEntryName = 'Cent Browser*'
 
-if (!$pp['userdata ']) { $pp['userdata '] = "1" }
+if (!$pp['userdata ']) { $pp['userdata '] = "0" }
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString
