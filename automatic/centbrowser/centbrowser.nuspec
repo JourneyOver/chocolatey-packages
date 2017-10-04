@@ -52,7 +52,7 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 
 Pass as `--params /option`
 
-- `/userdata` - Indicates if you want the user data folder to be deleted - defaults to true
+- `/userdata` - Indicates if you want the user data folder to be deleted - defaults to false
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/centbrowser.png)
 </description>
