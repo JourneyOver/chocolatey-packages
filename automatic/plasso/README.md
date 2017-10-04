@@ -20,8 +20,7 @@ It offers a robust list of capabilities including default process priorities and
 
 ## Package parameters
 
-Pass as `--params /option:value`
-if `/launch_gui` is passed pass as just `/launch_gui` to be true.
+To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
 
 - `/language:` - This indicates the language to use. - defaults to "English"

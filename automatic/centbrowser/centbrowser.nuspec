@@ -41,16 +41,17 @@ Cent Browser is an enhanced version of the Chromium web browser that bundles man
 
 ## Package parameters
 
-Pass as `--params /option:value`
+To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
 
 #### Install parameters
 
 - `/dir:` - Indicates where you want to install the application. - defaults to %localappdata%
+- `/NoDesktopIcon` - Don't add a desktop icon.
+- `/NoTaskbarIcon` - Don't add a taskbar icon.
+- `/NoStartmenuIcon` - Don't add a startmenu icon.
 
 #### Uninstall parameters
-
-Pass as `--params /option` or `--params /option:value`  (value being a 1 for true.)
 
 - `/del_userdata` - Indicates if you want the user data folder to be deleted - defaults to false
 
