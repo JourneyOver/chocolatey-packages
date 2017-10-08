@@ -2,6 +2,10 @@ Import-Module au
 
 $releases = 'http://www.carifred.com/quick_any2ico/'
 
+function global:au_BeforeUpdate {
+if (!(Test-Path ".\tools" -PathType Container)) { New-Item -ItemType Directory ".\tools" }
+}
+
 function global:au_SearchReplace { @{} }
 
 function global:au_GetLatest {

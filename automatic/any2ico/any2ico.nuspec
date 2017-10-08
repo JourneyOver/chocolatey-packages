@@ -38,7 +38,7 @@ There are a number of icons that are included with programs and images, that use
       <dependency id="any2ico.portable" version="2.2.3.0" />
     </dependencies>
   </metadata>
-  <!--<files>
+  <files>
     <file src="tools\**" target="tools" />
-  </files> -->
+  </files>
 </package>
