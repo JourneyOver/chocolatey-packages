@@ -1,4 +1,4 @@
-$packageName = 'tvrenamer.portable'
+$packageName = 'tvrenamer'
 $shortcutName = 'TVRenamer.lnk'
 
 remove-item "$env:Public\Desktop\$shortcutName" -Force -ErrorAction 'SilentlyContinue'

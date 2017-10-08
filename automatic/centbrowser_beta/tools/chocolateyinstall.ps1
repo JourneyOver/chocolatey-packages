@@ -25,6 +25,10 @@ $packageArgs = @{
   checksumType64 = 'sha256'
 }
 
+if ($pp['NoDesktopIcon'] -eq 'true') { $packageArgs.silentArgs += " --do-not-create-desktop-shortcut" }
+if ($pp['NoTaskbarIcon'] -eq 'true') { $packageArgs.silentArgs += " --do-not-create-taskbar-shortcut" }
+if ($pp['NoStartmenuIcon'] -eq 'true') { $packageArgs.silentArgs += " --do-not-create-startmenu-shortcut" }
+
 Foreach ($registry in $registrypaths) {
   if (Test-Path $registry) {
     $installedVersion = (
