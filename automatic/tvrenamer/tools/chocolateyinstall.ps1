@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'tvrenamer.portable'
+$packageName = 'tvrenamer'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url = 'https://github.com/tvrenamer/tvrenamer/releases/download/v0.8/TVRenamer-0.8-win32.exe'
 $url64 = 'https://github.com/tvrenamer/tvrenamer/releases/download/v0.8/TVRenamer-0.8-win64.exe'
