@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>radarr</id>
-    <version>0.2.0.852</version>
+    <version>0.2.0.870</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/radarr</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Radarr</title>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>https://github.com/radarr/radarr/issues</bugTrackerUrl>
     <tags>pvr p2p filesharing torrent nntp admin</tags>
     <summary>Movie PVR for Usenet and BitTorrent</summary>
-    <description>
-Radarr is an **independent** fork of [Sonarr](https://github.com/Sonarr/Sonarr) reworked for automatically downloading movies via Usenet and BitTorrent.
+    <description><![CDATA[Radarr is an **independent** fork of [Sonarr](https://github.com/Sonarr/Sonarr) reworked for automatically downloading movies via Usenet and BitTorrent.
 
 The project was inspired by other Usenet/BitTorrent movie downloaders such as CouchPotato.
 
@@ -55,7 +54,7 @@ The project was inspired by other Usenet/BitTorrent movie downloaders such as Co
 ## Notes
 
 Installs as a service, to get to Radarr open browser and go [here](http://localhost:7878/)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/Radarr/Radarr/releases)
