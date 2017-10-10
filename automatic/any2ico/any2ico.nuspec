@@ -35,7 +35,7 @@ There are a number of icons that are included with programs and images, that use
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
     <dependencies>
-      <dependency id="any2ico.portable" version="2.2.3.0" />
+      <dependency id="any2ico.portable" version="[2.2.3.0]" />
     </dependencies>
   </metadata>
   <files>
