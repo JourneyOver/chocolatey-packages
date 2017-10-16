@@ -4,13 +4,21 @@ $releases = 'https://github.com/DuckieTV/Nightlies/releases'
 
 function global:au_SearchReplace {
   @{
-    ".\tools\chocolateyInstall.ps1" = @{
-      "([$]url\s*=\s*)('.*')"        = "`$1'$($Latest.URL32)'"
-      "([$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
-      "([$]checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
-      "([$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+    ".\legal\verification.txt" = @{
+      "(?i)(url:\s+).*"        = "`${1}$($Latest.URL32)"
+      "(?i)(url64:\s+).*"      = "`${1}$($Latest.URL64)"
+      "(?i)(checksum:\s+).*"   = "`${1}$($Latest.Checksum32)"
+      "(?i)(checksum64:\s+).*" = "`${1}$($Latest.Checksum64)"
     }
   }
+}
+
+function global:au_BeforeUpdate {
+  If (!(Test-Path "$PSScriptRoot\tools" -PathType Container)) { New-Item -ItemType Directory "$PSScriptRoot\tools" }
+  Copy-Item "$PSScriptRoot\..\duckietv\tools" "$PSScriptRoot" -Force -Recurse
+  Copy-Item "$PSScriptRoot\..\duckietv\legal" "$PSScriptRoot" -Force -Recurse
+
+  Get-RemoteFiles -Purge -NoSuffix
 }
 
 function global:au_GetLatest {
@@ -30,4 +38,4 @@ function global:au_GetLatest {
   return $Latest
 }
 
-update
+update -ChecksumFor none
