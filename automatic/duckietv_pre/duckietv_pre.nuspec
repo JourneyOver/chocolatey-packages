@@ -49,5 +49,6 @@ With the integrated DuckieTorrent client you can connect DuckieTV to your local 
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
