@@ -1,37 +1,41 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'duckietv'
-$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x32.zip'
-$url64 = 'https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x64.zip'
-$checksum = '9d294285da2dfe73473b7682279d566e092b21dce38350cc64151eeab0bef650'
-$checksum64 = '215ec0b23ff40f976ef7a7579654a52eb87b7f181cd7e847376fd5041a210e58'
-$silentArgs = '/S'
-$validExitCodes = @(0)
-$bits = Get-ProcessorBits
-$fileLocation = "$env:ChocolateyInstall\lib\$packageName\tools\DuckieTV-$env:ChocolateyPackageVersion-windows-x$bits.exe"
+
+$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
+$embedded_path = if ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') {
+  Write-Host "Installing 64 bit version"; Get-Item "$toolsDir\*-x64.zip"
+} else { Write-Host "Installing 32 bit version"; Get-Item "$toolsDir\*-x32.zip" }
 
 $packageArgs = @{
-  packageName    = $packageName
-  fileType       = 'ZIP'
-  url            = $url
-  url64Bit       = $url64
-  unzipLocation  = $toolsDir
-  checksum       = $checksum
-  checksum64     = $checksum64
-  checksumType   = 'sha256'
-  checksumType64 = 'sha256'
+  packageName  = $packageName
+  FileFullPath = $embedded_path
+  Destination  = $toolsDir
 }
 
-Install-ChocolateyZipPackage @packageArgs
+Get-ChocolateyUnzip @packageArgs
+
+$fileLocation = Get-Item "$toolsDir\*.exe"
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'EXE'
-  file           = $fileLocation
-  silentArgs     = $silentArgs
-  validExitCodes = $validExitCodes
   softwareName   = 'DuckieTV*'
+  file           = $fileLocation
+  silentArgs     = '/S'
+  validExitCodes = @(0)
 }
 
 Install-ChocolateyInstallPackage @packageArgs
+
+Remove-Item $toolsDir\*.zip -ea 0 -force
+Remove-Item $toolsDir\*.exe -ea 0 -force
+
+$installLocation = Get-AppInstallLocation $packageArgs.softwareName
+if ($installLocation) {
+  Write-Host "$($packageArgs.packageName) installed to '$installLocation'"
+  Register-Application "$installLocation\DuckieTV.exe"
+  Register-Application "$installLocation\DuckieTV.exe" "DTV"
+} else {
+  Write-Warning "Can't find $($packageArgs.packageName) install location"
+}
