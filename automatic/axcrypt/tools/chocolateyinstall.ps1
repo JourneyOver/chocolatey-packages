@@ -1,7 +1,10 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'axcrypt'
-$url = 'https://account.axcrypt.net/download/AxCrypt-2-Setup.exe'
+
+$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
+$embedded_path = Get-Item "$toolsDir\*.exe"
+
 $checksum = 'b20929f8825194e5f9a398ed4be8b3121304ca979f356ce4d4b9bbfcf7d58327'
 $registrypaths = @('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{9E15EF89-8322-C117-CAF2-E79EFAC71395}', 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{9E15EF89-8322-C117-CAF2-E79EFAC71395}')
 $version = '2.1.1541.0'
@@ -9,7 +12,7 @@ $version = '2.1.1541.0'
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  url            = $url
+  file           = "$embedded_path"
   silentArgs     = '/S'
   validExitCodes = @(0)
   checksum       = $checksum
@@ -30,5 +33,8 @@ if ($installedVersion -eq $version) {
     "Skipping download and installation."
   )
 } else {
-  Install-ChocolateyPackage @packageArgs
+  Install-ChocolateyInstallPackage @packageArgs
+
+  # Remove the installers as there is no more need for it
+  Remove-Item $toolsDir\*.exe -ea 0 -force
 }
