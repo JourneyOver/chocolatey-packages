@@ -16,7 +16,7 @@ function New-Package {
     [string] $Name,
 
     #Type of the package
-    [ValidateSet('EInstaller', 'MInstaller', 'EPortable', 'ZPortable', 'CExtension', 'FExtension', 'PBundle')]
+    [ValidateSet('EInstaller', 'MInstaller', 'EPortable', 'ZPortable', 'EEmbed', 'ZEmbed', 'CExtension', 'FExtension', 'PBundle')]
     [string] $Type,
 
     #Github repository in the form username/repository
@@ -60,6 +60,15 @@ function New-Package {
       Write-Verbose 'Using zip portable template'
       Move-Item "$LowerName\tools\chocolateyZipPortInstall.ps1" "$LowerName\tools\chocolateyinstall.ps1"
       Move-Item "$LowerName\tools\chocolateyPortUninstall.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
+    }
+    'EEmbed' {
+      Write-Verbose 'Using exe embedded template'
+      Move-Item "$LowerName\tools\chocolateyInstallEmbeddedExe.ps1" "$LowerName\tools\chocolateyinstall.ps1"
+      Move-Item "$LowerName\tools\chocolateyUninstallExe.ps1" "$LowerName\tools\chocolateyuninstall.ps1"
+    }
+    'ZEmbed' {
+      Write-Verbose 'Using zip embedded template'
+      Move-Item "$LowerName\tools\chocolateyInstallEmbeddedZip.ps1" "$LowerName\tools\chocolateyinstall.ps1"
     }
     'CExtension' {
       Write-Verbose 'Using chrome extension template'

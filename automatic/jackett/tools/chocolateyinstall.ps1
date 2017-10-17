@@ -1,19 +1,19 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'jackett'
-$url = 'https://github.com/Jackett/Jackett/releases/download/v0.8.277/Jackett.Installer.Windows.exe'
-$checksum = '51a0e19df97e6c8699c15467e98984b2b491db25a64b30f6ece815d9cd07254e'
+
+$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
+$fileLocation = Get-Item "$toolsDir\*.exe"
+
 $registrypaths = @('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C2A9FC00-AA48-4F17-9A72-62FBCEE2785B}_is1', 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{C2A9FC00-AA48-4F17-9A72-62FBCEE2785B}_is1')
 $version = '0.8.277'
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  url            = $url
+  file           = $fileLocation
   silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   validExitCodes = @(0)
-  checksum       = $checksum
-  checksumType   = 'sha256'
 }
 
 Foreach ($registry in $registrypaths) {
@@ -30,7 +30,10 @@ if ($installedVersion -match $version) {
     "Skipping download and installation."
   )
 } else {
-  Install-ChocolateyPackage @packageArgs
+  Install-ChocolateyInstallPackage @packageArgs
+
+  # Remove the installers as there is no more need for it
+  Remove-Item $toolsDir\*.exe -ea 0 -force
 }
 
 if (Get-Service "$packageName" -ErrorAction SilentlyContinue) {

@@ -1,0 +1,27 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Package can be verified like this:
+
+1. Go to
+
+  url: https://account.axcrypt.net/download/AxCrypt-2-Setup.exe
+
+  to download the installer.
+
+2. You can use one of the following methods to obtain the checksum:
+  - Use powershell function 'Get-FileHash'
+  - Use Chocolatey utility 'checksum.exe'
+  - check https://www.axcrypt.net/cryptographic-hashes-files/ latest setup.exe file
+
+  checksum type: sha256
+  checksum: B20929F8825194E5F9A398ED4BE8B3121304CA979F356CE4D4B9BBFCF7D58327
+
+Using AU:
+
+  Get-RemoteChecksum
+
+File 'LICENSE.txt' is obtained from:
+  https://www.axcrypt.net/documentation/license/ at "Software License"
