@@ -43,5 +43,6 @@ Installs as a service, to get to Jackett open any web browser and go [here](http
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
