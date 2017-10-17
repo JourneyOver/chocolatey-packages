@@ -2,14 +2,15 @@
 
 $packageName = 'duckietv'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x32.zip'
-$url64 = 'https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x64.zip'
-$checksum = '9d294285da2dfe73473b7682279d566e092b21dce38350cc64151eeab0bef650'
-$checksum64 = '215ec0b23ff40f976ef7a7579654a52eb87b7f181cd7e847376fd5041a210e58'
+$url = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201710160130/DuckieTV-201710160130-windows-x32.zip'
+$url64 = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201710160130/DuckieTV-201710160130-windows-x64.zip'
+$checksum = '43d1e1b417beeed28ffec60e3abcc93be5908505204f418c0bb5ce647a388c5a'
+$checksum64 = '845f3b1fc7f9d8a00a39f823e820933c9a60f29bbe200f9cecefe35702e314c3'
 $silentArgs = '/S'
 $validExitCodes = @(0)
 $bits = Get-ProcessorBits
-$fileLocation = "$env:ChocolateyInstall\lib\$packageName\tools\DuckieTV-$env:ChocolateyPackageVersion-windows-x$bits.exe"
+$fversion = $env:ChocolateyPackageVersion.replace('.', '').replace('-nightly', '')
+$fileLocation = "$env:ChocolateyInstall\lib\$packageName\tools\DuckieTV-$fversion-windows-x$bits.exe"
 
 $packageArgs = @{
   packageName    = $packageName

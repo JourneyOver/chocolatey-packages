@@ -53,6 +53,5 @@ AxCrypt is used to share and work with stored documents and e-mail attachments, 
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
-    <file src="legal\**" target="legal" />
   </files>
 </package>

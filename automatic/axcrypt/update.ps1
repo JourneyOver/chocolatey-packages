@@ -7,19 +7,11 @@ $versionnum = 'https://www.axcrypt.net/cryptographic-hashes-files/'
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
+      "([$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
       "([$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
       "([$]version\s*=\s*)('.*')"  = "`$1'$($Latest.Version)'"
     }
-
-    ".\legal\verification.txt"      = @{
-      "(?i)(url:\s+).*"      = "`${1}$($Latest.URL32)"
-      "(?i)(checksum:\s+).*" = "`${1}$($Latest.Checksum32)"
-    }
   }
-}
-
-function global:au_BeforeUpdate {
-  Get-RemoteFiles -Purge -NoSuffix
 }
 
 function global:au_GetLatest {
@@ -38,4 +30,4 @@ function global:au_GetLatest {
   return $Latest
 }
 
-update -ChecksumFor none
+update -ChecksumFor 32
