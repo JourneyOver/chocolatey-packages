@@ -1,0 +1,25 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Package can be verified like this:
+
+1. Go to
+
+  url: https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x32.zip
+  url64: https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x64.zip
+
+  to download the installer.
+
+2. You can use one of the following methods to obtain the checksum:
+  - Use powershell function 'Get-FileHash'
+  - Use Chocolatey utility 'checksum.exe'
+  - check https://www.axcrypt.net/cryptographic-hashes-files/ latest setup.exe file
+
+  checksum type: sha256
+  checksum: 9D294285DA2DFE73473B7682279D566E092B21DCE38350CC64151EEAB0BEF650
+  checksum64: 215EC0B23FF40F976EF7A7579654A52EB87B7F181CD7E847376FD5041A210E58
+
+File 'LICENSE.md' is obtained from:
+  https://github.com/SchizoDuckie/DuckieTV/blob/angular/LICENSE.md
