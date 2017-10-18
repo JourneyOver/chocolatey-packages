@@ -7,7 +7,7 @@ $versionnum = 'https://www.axcrypt.net/cryptographic-hashes-files/'
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "([$]version\s*=\s*)('.*')"  = "`$1'$($Latest.Version)'"
+      "([$]version\s*=\s*)('.*')" = "`$1'$($Latest.Version)'"
     }
 
     ".\legal\verification.txt"      = @{

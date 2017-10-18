@@ -5,8 +5,8 @@ $releases = 'https://github.com/Radarr/Radarr/releases'
 function global:au_SearchReplace {
   @{
     ".\legal\verification.txt" = @{
-      "(?i)(url:\s+).*"        = "`${1}$($Latest.URL32)"
-      "(?i)(checksum:\s+).*"   = "`${1}$($Latest.Checksum32)"
+      "(?i)(url:\s+).*"      = "`${1}$($Latest.URL32)"
+      "(?i)(checksum:\s+).*" = "`${1}$($Latest.Checksum32)"
     }
   }
 }

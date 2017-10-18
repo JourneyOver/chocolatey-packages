@@ -11,7 +11,7 @@ function global:au_SearchReplace {
       "([$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
     }
 
-    ".\legal\verification.txt" = @{
+    ".\legal\verification.txt"      = @{
       "(?i)(url:\s+).*"        = "`${1}$($Latest.URL32)"
       "(?i)(url64:\s+).*"      = "`${1}$($Latest.URL64)"
       "(?i)(checksum:\s+).*"   = "`${1}$($Latest.Checksum32)"
