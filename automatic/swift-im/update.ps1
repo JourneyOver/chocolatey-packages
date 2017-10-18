@@ -6,15 +6,19 @@ $clog = 'http://swift.im/'
 
 function global:au_SearchReplace {
   @{
-    ".\tools\chocolateyInstall.ps1" = @{
-      "([$]url\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
-      "([$]checksum\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+    ".\legal\verification.txt" = @{
+      "(?i)(url:\s+).*"      = "`${1}$($Latest.URL32)"
+      "(?i)(checksum:\s+).*" = "`${1}$($Latest.Checksum32)"
     }
 
-    ".\swift-im.nuspec"             = @{
+    ".\swift-im.nuspec"        = @{
       "(\*\s+\[(\w+)\])(.*)" = "`$1($($Latest.Changelog))"
     }
   }
+}
+
+function global:au_BeforeUpdate {
+  Get-RemoteFiles -Purge -NoSuffix
 }
 
 function global:au_GetLatest {
@@ -34,4 +38,4 @@ function global:au_GetLatest {
   return $Latest
 }
 
-update -ChecksumFor 32
+update -ChecksumFor none

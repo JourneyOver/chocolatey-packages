@@ -8,7 +8,7 @@ $checksum = '16d65b37c3c040edeb93c0d6f612d1226cd7736540aa7f2926833a74f4b9ecd9'
 $checksum64 = '7254908504a13e38df1caca0c905e8243d942ca9a91ade7f21de4f46c2fbd8e9'
 $registrypaths = @('HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\CentBrowser', 'HKCU:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\CentBrowser')
 $version = '2.9.3.26-beta'
-$nobeta = $version -replace('-beta')
+$nobeta = $version -replace ('-beta')
 
 if (!$pp['dir']) { $pp['dir'] = "$env:LOCALAPPDATA" }
 

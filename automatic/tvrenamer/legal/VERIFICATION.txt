@@ -1,0 +1,28 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Package can be verified like this:
+
+1. Go to
+
+  url: https://github.com/tvrenamer/tvrenamer/releases/download/v0.8/TVRenamer-0.8-win32.exe
+  url64: https://github.com/tvrenamer/tvrenamer/releases/download/v0.8/TVRenamer-0.8-win64.exe
+
+  to download the installer.
+
+2. You can use one of the following methods to obtain the SHA256 checksum:
+  - Use powershell function 'Get-FileHash'
+  - Use Chocolatey utility 'checksum.exe'
+
+  checksum type: sha256
+  checksum: 2d6cc43ef0e694eafb54de47450955e62765dc6620fc55b3fbdcbf891f530fb3
+  checksum64: 81f45ae5b676970003b0a102d614fca8f0aee9d0e4d6f4d1e555cca7e6a1e27c
+
+Using AU:
+
+  Get-RemoteChecksum
+
+File 'license.txt' is obtained from:
+https://github.com/tvrenamer/tvrenamer/blob/master/LICENSE

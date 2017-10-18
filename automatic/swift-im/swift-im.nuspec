@@ -44,5 +44,6 @@ Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with featur
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
