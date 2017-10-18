@@ -1,21 +1,24 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'radarr'
-$url = 'https://github.com/Radarr/Radarr/releases/download/v0.2.0.870/Radarr.develop.0.2.0.870.installer.exe'
-$checksum = 'cade414bb7d1a7a683f02047e30adc74bd72dff3f2c9b1b42e64ec59b5e8edaf'
+
+$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
+$fileLocation = Get-Item "$toolsDir\*.exe"
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  url            = $url
+  file           = $fileLocation
   silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   validExitCodes = @(0)
-  checksum       = $checksum
-  checksumType   = 'sha256'
 }
 
-Install-ChocolateyPackage @packageArgs
+Install-ChocolateyInstallPackage @packageArgs
 
+# Remove the installers as there is no more need for it
+Remove-Item $toolsDir\*.exe -ea 0 -force
+
+# Start service if it's not running
 if (Get-Service "$packageName" -ErrorAction SilentlyContinue) {
   $running = Get-Service $packageName
   if ($running.Status -eq "Running") {

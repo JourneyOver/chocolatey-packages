@@ -66,5 +66,6 @@ Installs as a service, to get to Radarr open browser and go [here](http://localh
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
   </files>
 </package>
