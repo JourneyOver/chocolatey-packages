@@ -6,7 +6,7 @@ $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 $fileLocation = Get-Item "$toolsDir\*.exe"
 
 $registrypaths = @('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C2A9FC00-AA48-4F17-9A72-62FBCEE2785B}_is1', 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{C2A9FC00-AA48-4F17-9A72-62FBCEE2785B}_is1')
-$version = '0.8.285'
+$version = '0.8.300'
 
 $packageArgs = @{
   packageName    = $packageName
