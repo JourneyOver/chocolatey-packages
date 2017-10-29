@@ -16,9 +16,9 @@ Package can be verified like this:
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:
+  checksum: 8445234e84379b582bfbe7a8450acc4229c9f9edc85548b3a5ab2aa145151d96
 
-Using AU: 8445234e84379b582bfbe7a8450acc4229c9f9edc85548b3a5ab2aa145151d96
+Using AU:
 
   Get-RemoteChecksum
 
