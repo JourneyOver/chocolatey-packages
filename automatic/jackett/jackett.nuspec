@@ -38,8 +38,9 @@ Installs as a service, to get to Jackett open any web browser and go [here](http
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
-    <!-- <dependencies>
-    </dependencies> -->
+    <dependencies>
+      <dependency id="DotNet4.5.2" version="4.5.2.20140902" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
