@@ -13,6 +13,9 @@ $surl64 = 'https://bitsum.com/files/server/processlassosetup64.exe'
 $schecksum = '07b11b7c56f494e14076a79b23d18e95acac4a70a31ff99022a1d75e03e8ed50'
 $schecksum64 = '6a0a043e3ee78601c332bae2d17fb5d8e16369ca39bd6cfa5a03ba74100a247a'
 
+$registrypaths = @('HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso', 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\ProcessLasso')
+$version = '9.0.0.402'
+
 if (!$pp['language']) { $pp['language'] = 'English' }
 if (!$pp['gui_start_type']) { $pp['gui_start_type'] = 'all,uac' }
 if (!$pp['governor_start_type']) { $pp['governor_start_type'] = 'all,uac' }
@@ -33,7 +36,20 @@ $packageArgs = @{
   checksumType64 = 'sha256'
 }
 
-if ($ServerOS -match "Server") {
+Foreach ($registry in $registrypaths) {
+  if (Test-Path $registry) {
+    $installedVersion = (
+      Get-ItemProperty -Path $registry -Name 'DisplayVersion'
+    ).DisplayVersion
+  }
+}
+
+if ($installedVersion -eq $version) {
+  Write-Output $(
+    "Process Lasso $installedVersion is already installed. " +
+    "Skipping download and installation."
+  )
+} elseif ($ServerOS -match "Server") {
   write-host Installing Server Version
   $packageArgs.url = $surl
   $packageArgs.url64Bit = $surl64

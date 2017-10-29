@@ -1,13 +1,14 @@
-﻿$ErrorActionPreference = 'Stop'
+$ErrorActionPreference = 'Stop'
 $pp = Get-PackageParameters
 
 $packageName = 'CentBrowser'
-$url = 'http://static.centbrowser.com/installer_32/centbrowser_2.9.4.39.exe'
-$url64 = 'http://static.centbrowser.com/installer_64/centbrowser_2.9.4.39_x64.exe'
-$checksum = 'b60cf66a6256b3581efcf124c3bd27aaed6c53a9fc630a608dad74bac352a44c'
-$checksum64 = '51ac462f961161109748cc477b53f02dd22532deb4ca5cc1958800d718a25b22'
+$url = 'http://static.centbrowser.com/beta_32/centbrowser_2.9.3.26.exe'
+$url64 = 'http://static.centbrowser.com/beta_64/centbrowser_2.9.3.26_x64.exe'
+$checksum = '16d65b37c3c040edeb93c0d6f612d1226cd7736540aa7f2926833a74f4b9ecd9'
+$checksum64 = '7254908504a13e38df1caca0c905e8243d942ca9a91ade7f21de4f46c2fbd8e9'
 $registrypaths = @('HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\CentBrowser', 'HKCU:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\CentBrowser')
-$version = '2.9.4.39'
+$version = '2.9.3.26-beta'
+$nobeta = $version -replace ('-beta')
 
 if (!$pp['dir']) { $pp['dir'] = "$env:LOCALAPPDATA" }
 
@@ -36,7 +37,7 @@ Foreach ($registry in $registrypaths) {
   }
 }
 
-if ($installedVersion -eq $version) {
+if ($installedVersion -eq $nobeta) {
   Write-Output $(
     "Cent Browser $installedVersion is already installed. " +
     "Skipping download and installation."
