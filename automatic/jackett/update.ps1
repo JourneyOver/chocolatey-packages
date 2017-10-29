@@ -4,11 +4,7 @@ $releases = 'https://github.com/Jackett/Jackett/releases'
 
 function global:au_SearchReplace {
   @{
-    ".\tools\chocolateyInstall.ps1" = @{
-      "([$]version\s*=\s*)('.*')" = "`$1'$($Latest.Version)'"
-    }
-
-    ".\legal\verification.txt"      = @{
+    ".\legal\verification.txt" = @{
       "(?i)(url:\s+).*"      = "`${1}$($Latest.URL32)"
       "(?i)(checksum:\s+).*" = "`${1}$($Latest.Checksum32)"
     }

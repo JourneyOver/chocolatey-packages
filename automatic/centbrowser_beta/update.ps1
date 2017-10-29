@@ -10,9 +10,16 @@ function global:au_SearchReplace {
       "([$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
       "([$]checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
       "([$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
-      "([$]version\s*=\s*)('.*')"    = "`$1'$($Latest.Version)'"
     }
   }
+}
+
+function global:au_BeforeUpdate {
+  If (!(Test-Path "$PSScriptRoot\tools" -PathType Container)) { New-Item -ItemType Directory "$PSScriptRoot\tools" }
+  Copy-Item "$PSScriptRoot\..\centbrowser\tools" "$PSScriptRoot" -Force -Recurse
+
+  $Latest.Checksum32 = Get-RemoteChecksum $Latest.URL32
+  $Latest.Checksum64 = Get-RemoteChecksum $Latest.URL64
 }
 
 function global:au_GetLatest {
@@ -38,4 +45,4 @@ function global:au_GetLatest {
   return $Latest
 }
 
-update
+update -ChecksumFor none

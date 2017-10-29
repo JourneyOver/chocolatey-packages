@@ -21,7 +21,6 @@ function global:au_SearchReplace {
       "([$]surl64\s*=\s*)('.*')"      = "`$1'$($Latest.SURL64)'"
       "([$]schecksum\s*=\s*)('.*')"   = "`$1'$($Latest.SChecksum32)'"
       "([$]schecksum64\s*=\s*)('.*')" = "`$1'$($Latest.SChecksum64)'"
-      "([$]version\s*=\s*)('.*')"     = "`$1'$($Latest.Version)'"
     }
   }
 }
