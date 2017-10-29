@@ -16,6 +16,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate {
   If (!(Test-Path "$PSScriptRoot\tools" -PathType Container)) { New-Item -ItemType Directory "$PSScriptRoot\tools" }
   Copy-Item "$PSScriptRoot\..\duckietv\tools" "$PSScriptRoot" -Force -Recurse
+  If (!(Test-Path "$PSScriptRoot\legal" -PathType Container)) { New-Item -ItemType Directory "$PSScriptRoot\legal" }
   Copy-Item "$PSScriptRoot\..\duckietv\legal" "$PSScriptRoot" -Force -Recurse
 
   Get-RemoteFiles -Purge -NoSuffix
