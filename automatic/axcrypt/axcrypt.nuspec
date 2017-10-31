@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>axcrypt</id>
-    <version>2.1.1541.0</version>
+    <version>2.1.1543.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/axcrypt</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>AxCrypt</title>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>https://bitbucket.org/axantum/axcrypt-net/issues</bugTrackerUrl>
     <tags>axcrypt AxCrypt cloud storage crypt password collab admin</tags>
     <summary>AxCrypt is a free and open-source encryption app for Microsoft Windows, developed in Sweden by Svante Seleborg for AxCrypt AB. It can compress, delete, encrypt and edit files.</summary>
-    <description>
-AxCrypt is a highly secure data encryption app that provides AES-128/256 file encryption and compression for Windows. It has a simple interface and works with a single double-click to automatically decrypt and open documents. It has seamless integration with Windows Explorer with no configuration required.
+    <description><![CDATA[AxCrypt is a highly secure data encryption app that provides AES-128/256 file encryption and compression for Windows. It has a simple interface and works with a single double-click to automatically decrypt and open documents. It has seamless integration with Windows Explorer with no configuration required.
 
 AxCrypt is used to share and work with stored documents and e-mail attachments, in a secure manner. If your documents reside on a document sharing service or file server, AxCrypt is well suited and is able to seamlessly integrate, and makes both sharing and storing sensitive data a simple task.
 
@@ -41,7 +40,7 @@ AxCrypt is used to share and work with stored documents and e-mail attachments, 
 `*` Some features are only available in AxCrypt Premium.
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/axcrypt.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](https://www.axcrypt.net/documentation/release-notes/)
