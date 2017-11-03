@@ -19,6 +19,7 @@ $Options = [ordered]@{
     'Internal Server Error'
     'Service Temporarily Unavailable'
   )
+
   RepeatOn         = @(                                      #Error message parts on which to repeat package updater
     'Could not create SSL/TLS secure channel'             # https://github.com/chocolatey/chocolatey-coreteampackages/issues/718
     'Could not establish trust relationship'              # -||-
@@ -28,6 +29,7 @@ $Options = [ordered]@{
     'The operation has timed out'
     'Internal Server Error'
     'An exception occurred during a WebClient request'
+    'Job returned no object, Vector smash ?'
   )
   RepeatSleep      = 120                                    #How much to sleep between repeats in seconds, by default 0
   RepeatCount      = 2                                      #How many times to repeat on errors, by default 1
@@ -88,7 +90,7 @@ $Options = [ordered]@{
     param($PackageName, $Options )
     . $Options.UpdateIconScript $PackageName.ToLowerInvariant() -Quiet -ThrowErrorOnIconNotFound
 
-    $p = $Options.ForcedPackages | ? { $_ -match "^${PackageName}(?:\:(.+))*$" }
+    $p = $Options.ForcedPackages | Where-Object { $_ -match "^${PackageName}(?:\:(.+))*$" }
     if (!$p) { return }
 
     $global:au_Force = $true
