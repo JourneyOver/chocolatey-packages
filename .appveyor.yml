@@ -113,7 +113,7 @@ artifacts:
 - path: Update-History.md
 - path: au_temp.zip
 
-#notifications:
+notifications:
 - provider: Email
   to: $(mail_user)
   on_build_success: false
