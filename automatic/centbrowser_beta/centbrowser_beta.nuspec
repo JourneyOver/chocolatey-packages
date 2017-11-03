@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>CentBrowser</id>
-    <version>2.9.3.26-beta</version>
+    <version>3.0.4.21-beta</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Cent Browser</title>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>https://www.centbrowser.com/forum/forumdisplay.php?fid=4</bugTrackerUrl>
     <tags>Chrome CENTBROWSER centbrowser chromium browser surf webbrowser web admin beta</tags>
     <summary>Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.</summary>
-    <description>
-Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.
+    <description><![CDATA[Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.
 
 ## Features
 
@@ -56,7 +55,7 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 - `/del_userdata` - Indicates if you want the user data folder to be deleted - defaults to false
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/centbrowser.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
