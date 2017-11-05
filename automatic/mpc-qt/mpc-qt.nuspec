@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>mpc-qt</id>
+    <version>17.11</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/mpc-qt</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>MPC QT</title>
+    <authors>cmdrkotori</authors>
+    <projectUrl>https://github.com/cmdrkotori/mpc-qt</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/mpc-qt.png</iconUrl>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/cmdrkotori/mpc-qt/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <projectSourceUrl></projectSourceUrl> -->
+    <docsUrl>https://github.com/cmdrkotori/mpc-qt/wiki</docsUrl>
+    <!-- <mailingListUrl></mailingListUrl> -->
+    <bugTrackerUrl>https://github.com/cmdrkotori/mpc-qt/issues</bugTrackerUrl>
+    <tags>media-player libmpv mpc-qt mpc-hc cross-platform clone mpv</tags>
+    <summary>A clone of Media Player Classic reimplemented in Qt.</summary>
+    <description>
+Media Player Classic Qute Theater (mpc-qt) is a clone of Media Player Classic (mpc-hc) reimplemented in Qt. It aims to reproduce most of the interface and functionality of mpc-hc while using libmpv to play video instead of DirectShow.
+
+## Features
+
+- Multiple playlists
+- Quick queuing
+- Playlist searching
+- Screenshot templates
+- Looped playback
+- Custom metadata
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/mpc-qt.png)
+</description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://github.com/cmdrkotori/mpc-qt/releases)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
