@@ -114,7 +114,8 @@ artifacts:
 
 notifications:
 - provider: Email
-  to: $(mail_user)
+  to:
+  - $(mail_user)
   on_build_success: false
   on_build_failure: true
   on_build_status_changed: true
