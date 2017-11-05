@@ -59,13 +59,12 @@ install:
       If ($chocov -eq "$newestVersion") {
         write-host Chocolatey is up to date
       } Else {
-        choco upgrade chocolatey | Out-Null
+        choco upgrade chocolatey > $null
       }
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
 - git --version
-- cinst autohotkey.portable | Out-Null
-- cinst chocolatey-core.extension | Out-Null
+- cinst autohotkey.portable chocolatey-core.extension > $null
 - ps: |
     git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
     . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
