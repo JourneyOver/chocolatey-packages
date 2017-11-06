@@ -40,9 +40,8 @@ Media Player Classic Qute Theater (mpc-qt) is a clone of Media Player Classic (m
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
-    <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.3.3" />
-    </dependencies>
+    <!-- <dependencies>
+    </dependencies> -->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
