@@ -1,6 +1,6 @@
 Import-Module au
 
-$releases = 'http://www.winpatrosl.com/download.html'
+$releases = 'http://www.winpatrol.com/download.html'
 
 function global:au_SearchReplace {
   @{
