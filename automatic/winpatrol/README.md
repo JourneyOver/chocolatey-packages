@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/a260a824cb735b549cf5f1216c09f40d6807ea72/icons/winpatrol.ico" width="48" height="48"/> [WinPatrol](https://chocolatey.org/packages/nuget.commandline)
+# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/a260a824cb735b549cf5f1216c09f40d6807ea72/icons/winpatrol.ico" width="48" height="48"/> [WinPatrol](https://chocolatey.org/packages/winpatrol)
 
 WinPatrol alerts you to hijackings, malware attacks and critical changes made to your computer without your permission. As a multipurpose support utility, WinPatrol replaces multiple system utilities with its enhanced functionality.
 
