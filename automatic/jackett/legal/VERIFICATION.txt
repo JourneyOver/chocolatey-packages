@@ -7,7 +7,7 @@ Package can be verified like this:
 
 1. Go to
 
-  url: https://github.com/Jackett/Jackett/releases/download/v0.8.396/Jackett.Installer.Windows.exe
+  url: https://github.com/Jackett/Jackett/releases/download/v0.8.398/Jackett.Installer.Windows.exe
 
   to download the installer.
 
@@ -16,7 +16,7 @@ Package can be verified like this:
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: CD454ADF6748D70DE265050513522AE8F3A60008BBD741850B4320FA400E4565
+  checksum: 07EB8378DCA9072D3C8B25FB39237B235D7B9CA733D3E803D3CD69E02DB4E039
 
 Using AU:
 
