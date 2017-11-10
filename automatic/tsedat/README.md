@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/tsedat.png" width="48" height="48"/> [TheSage English Dictionary and Thesaurus](https://chocolatey.org/packages/tsedat)
+# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/259e160c7aab687bf1353571456c1b1d0b7c8e0e/icons/tsedat.png" width="48" height="48"/> [TheSage English Dictionary and Thesaurus](https://chocolatey.org/packages/tsedat)
 
 TheSage's English Dictionary and Thesaurus is a professional software package that integrates a complete dictionary and multifaceted thesaurus of the English language into a single and powerful language reference system.
 TheSage can look up words directly from almost any program (IE, Word, Firefox, Outlook, Thunderbird, etc...).
