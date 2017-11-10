@@ -23,6 +23,7 @@ $options = [ordered]@{
   Force       = $true
   Push        = $false
   Threads     = 10
+
   IgnoreOn    = @(                                      #Error message parts to set the package ignore status
     'Could not create SSL/TLS secure channel'
     'Could not establish trust relationship'
@@ -43,7 +44,7 @@ $options = [ordered]@{
     'An exception occurred during a WebClient request'
     'Job returned no object, Vector smash ?'
   )
-  RepeatSleep = 120                                      #How much to sleep between repeats in seconds, by default 0
+  RepeatSleep = 60                                      #How much to sleep between repeats in seconds, by default 0
   RepeatCount = 2                                       #How many times to repeat on errors, by default 1
 
   Report      = @{
@@ -53,7 +54,7 @@ $options = [ordered]@{
       Github_UserRepo = $Env:github_user_repo         #  Markdown: shows user info in upper right corner
       NoAppVeyor      = $true                             #  Markdown: do not show AppVeyor build shield
       Title           = "Update Force Test - Group ${n}"
-      UserMessage     = "[Update report](https://gist.github.com/$Env:gist_id) | **USING AU NEXT VERSION**"       #  Markdown, Text: Custom user message to show
+      UserMessage     = "[Ignored](#ignored) | [Update report](https://gist.github.com/$Env:gist_id) | [Build](https://ci.appveyor.com/project/JourneyOver/chocolatey-packages-khbb9) | **USING AU NEXT VERSION**"       #  Markdown, Text: Custom user message to show
     }
   }
 
