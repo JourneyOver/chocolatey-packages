@@ -40,7 +40,7 @@ $Options = [ordered]@{
     Params = @{                                          #Report parameters:
       Github_UserRepo = $Env:github_user_repo         #  Markdown: shows user info in upper right corner
       NoAppVeyor      = $false                            #  Markdown: do not show AppVeyor build shield
-      UserMessage     = "[Ignored](#ignored) | [History](#update-history) | [Force Test](https://gist.github.com/$Env:gist_id_test) | **USING AU NEXT VERSION**"       #  Markdown, Text: Custom user message to show
+      UserMessage     = "[Ignored](#ignored) | [History](#update-history) | [Force Test](https://gist.github.com/$Env:gist_id_test) | **TESTING AU STREAMS VERSION**"       #  Markdown, Text: Custom user message to show
       NoIcons         = $false                            #  Markdown: don't show icon
       IconSize        = 32                                #  Markdown: icon size
       Title           = ''                                #  Markdown, Text: TItle of the report, by default 'Update-AUPackages'
@@ -64,8 +64,13 @@ $Options = [ordered]@{
     Password = $Env:github_api_key                      #Password if username is not empty, otherwise api key
   }
 
+  GitReleases  = @{
+    ApiToken    = $Env:github_api_key                   #Your github api key
+    ReleaseType = 'package'                             #Either 1 release per date, or 1 release per package
+  }
+
   RunInfo          = @{
-    Exclude = 'password', 'apikey'                      #Option keys which contain those words will be removed
+    Exclude = 'password', 'apikey', 'apitoken'          #Option keys which contain those words will be removed
     Path    = "$PSScriptRoot\update_info.xml"           #Path where to save the run info
   }
 
@@ -78,7 +83,7 @@ $Options = [ordered]@{
       Port        = $Env:mail_port
       EnableSsl   = $Env:mail_enablessl -eq 'true'
       Attachment  = "$PSScriptRoot\update_info.xml"
-      UserMessage = ''
+      UserMessage = "<p>Update status: https://gist.github.com/$Env:gist_id</p>"
       SendAlways  = $false                        #Send notifications every time
     }
   }
