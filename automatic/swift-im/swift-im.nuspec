@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
@@ -10,7 +10,7 @@
     <title>Swift</title>
     <authors>Isode Ltd</authors>
     <projectUrl>https://www.swift.im/swift.html</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/swift-im.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/259e160c7aab687bf1353571456c1b1d0b7c8e0e/icons/swift-im.png</iconUrl>
     <copyright>© Isode Ltd. 2015 - 2016</copyright>
     <licenseUrl>https://github.com/swift/swift/blob/master/COPYING.gpl</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
