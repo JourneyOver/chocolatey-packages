@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/a260a824cb735b549cf5f1216c09f40d6807ea72/icons/winpatrol.ico" width="48" height="48"/> [WinPatrol](https://chocolatey.org/packages/winpatrol)
+# <img src="https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/winpatrol.png" width="48" height="48"/> [WinPatrol](https://chocolatey.org/packages/winpatrol)
 
 WinPatrol alerts you to hijackings, malware attacks and critical changes made to your computer without your permission. As a multipurpose support utility, WinPatrol replaces multiple system utilities with its enhanced functionality.
 
@@ -12,4 +12,4 @@ WinPatrol was the pioneer in using a heuristic behavioral approach to detecting 
 - Does NOT slow down your computer!
 - Speed up computer Start-up.
 
-![Screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/winpatrol.jpeg)
+![Screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/winpatrol.png)

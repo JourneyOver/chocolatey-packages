@@ -31,7 +31,7 @@ $Options = [ordered]@{
     'An exception occurred during a WebClient request'
     'Job returned no object, Vector smash ?'
   )
-  RepeatSleep      = 120                                    #How much to sleep between repeats in seconds, by default 0
+  RepeatSleep      = 60                                    #How much to sleep between repeats in seconds, by default 0
   RepeatCount      = 2                                      #How many times to repeat on errors, by default 1
 
   Report           = @{
@@ -40,7 +40,7 @@ $Options = [ordered]@{
     Params = @{                                          #Report parameters:
       Github_UserRepo = $Env:github_user_repo         #  Markdown: shows user info in upper right corner
       NoAppVeyor      = $false                            #  Markdown: do not show AppVeyor build shield
-      UserMessage     = "[Ignored](#ignored) | [History](#update-history) | [Force Test](https://gist.github.com/$Env:gist_id_test) | **TESTING AU STREAMS VERSION**"       #  Markdown, Text: Custom user message to show
+      UserMessage     = "[Ignored](#ignored) | [History](#update-history) | [Force Test](https://gist.github.com/$Env:gist_id_test) | **USING AU NEXT VERSION**"       #  Markdown, Text: Custom user message to show
       NoIcons         = $false                            #  Markdown: don't show icon
       IconSize        = 32                                #  Markdown: icon size
       Title           = ''                                #  Markdown, Text: TItle of the report, by default 'Update-AUPackages'
