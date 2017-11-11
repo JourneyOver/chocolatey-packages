@@ -64,7 +64,7 @@ $Options = [ordered]@{
     Password = $Env:github_api_key                      #Password if username is not empty, otherwise api key
   }
 
-  GitReleases  = @{
+  GitReleases      = @{
     ApiToken    = $Env:github_api_key                   #Your github api key
     ReleaseType = 'package'                             #Either 1 release per date, or 1 release per package
   }
@@ -86,8 +86,7 @@ $Options = [ordered]@{
       UserMessage = "<p>Update status: https://gist.github.com/$Env:gist_id</p>"
       SendAlways  = $false                        #Send notifications every time
     }
-  }
-  else {}
+  } else {}
 
   ForcedPackages   = $ForcedPackages -split ' '
   UpdateIconScript = "$PSScriptRoot\scripts\Update-IconUrl.ps1"

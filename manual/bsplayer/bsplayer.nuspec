@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>bsplayer</id>
     <version>2.71.1081</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/bsplayer</packageSourceUrl>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/manual/bsplayer</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>BSPlayer</title>
     <authors>AB Team Ltd.</authors>
