@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>CentBrowser</id>
-    <version>2.9.4.39</version>
+    <version>3.0.4.27</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Cent Browser</title>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>https://www.centbrowser.com/forum/forumdisplay.php?fid=4</bugTrackerUrl>
     <tags>Chrome CENTBROWSER centbrowser chromium browser surf webbrowser web admin</tags>
     <summary>Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.</summary>
-    <description>
-Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.
+    <description><![CDATA[Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.
 
 ## Features
 
@@ -56,7 +55,7 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 - `/del_userdata` - Indicates if you want the user data folder to be deleted - defaults to false
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/centbrowser.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](https://www.centbrowser.com/history.html)
