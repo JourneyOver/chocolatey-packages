@@ -1,9 +1,9 @@
 # Automatic Chocolatey Packages built by appveyor
 
 [![Build status](https://ci.appveyor.com/api/projects/status/github/JourneyOver/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/JourneyOver/chocolatey-packages)
-[![](https://img.shields.io/badge/gist-update%20status-blue.svg)](https://gist.github.com/JourneyOver/508bb89c4cc35b67842940c60310532b)
-[![](https://img.shields.io/badge/gist-force--tests-red.svg)](https://gist.github.com/JourneyOver/13f08beca5db513521762b5c4ce53d58)
-[![](https://img.shields.io/badge/chocolatey-JourneyOver-884b2e.svg)](https://chocolatey.org/profiles/JourneyOver)
+[![Update Status](https://img.shields.io/badge/Update-Status-blue.svg)](https://gist.github.com/JourneyOver/508bb89c4cc35b67842940c60310532b)
+[![Force Test Status](https://img.shields.io/badge/Update-Force%20Test%20Status-red.svg)](https://gist.github.com/JourneyOver/13f08beca5db513521762b5c4ce53d58)
+[![chocolatey/JourneyOver](https://img.shields.io/badge/Chocolatey-JourneyOver-008b85.svg)](https://chocolatey.org/profiles/JourneyOver)
 
 If you have any issues with one of the packages hosted in this repository, please feel free to open an issue (preferred instead of using `Contact Maintainers` on chocolatey.org).
 

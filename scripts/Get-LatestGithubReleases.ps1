@@ -3,7 +3,7 @@ function resolveRelease {
     $response,
     [boolean] $usePrerelease
   )
-  $verRegex = "((\d+)(\.\d+){1,3}(\-[a-z]+[0-9]+)?)$";
+  $verRegex = "((\d+)(\.\d+){0,3}(\-[a-z]+[0-9]+)?)$";
   if ($usePrerelease) {
     $release = $response | ? tag_name -Match $verRegex | select -First 1;
   } else {
@@ -16,7 +16,7 @@ function resolveRelease {
 
   $version = $matches[1];
 
-  [array]$assetUrls = $release.assets | ? name -Match "\.(msi|exe)$" | select -expand browser_download_url;
+  [array]$assetUrls = $release.assets | ? name -Match "\.(msi|exe|zip)$" | select -expand browser_download_url;
   $assetUrls += @($release.tarball_url; $release.zipball_url)
 
   return @{
