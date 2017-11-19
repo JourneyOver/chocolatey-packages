@@ -1,4 +1,5 @@
 Import-Module au
+Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 $repoUser = "Radarr"
 $repoName = "Radarr"

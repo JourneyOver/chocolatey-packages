@@ -3,9 +3,11 @@ VERIFICATION
 Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
-The embedded software has been downloaded from the listed download location on <https://github.com/SchizoDuckie/DuckieTV/releases> and can be verified by doing the following:
+The embedded software has been downloaded from the listed download
+location on <https://github.com/SchizoDuckie/DuckieTV/releases>
+and can be verified by doing the following:
 
-1. Download the following
+1. Download the following:
 
   url: <https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x32.zip>
   url64: <https://github.com/SchizoDuckie/DuckieTV/releases/download/1.1.5/DuckieTV-1.1.5-windows-x64.zip>
