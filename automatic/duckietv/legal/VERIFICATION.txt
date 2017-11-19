@@ -22,5 +22,5 @@ Using AU:
 
   Get-RemoteChecksum
 
-The file 'LICENSE.md' is obtained from:
+The file 'LICENSE.txt' is obtained from:
   <https://github.com/SchizoDuckie/DuckieTV/blob/angular/LICENSE.md>

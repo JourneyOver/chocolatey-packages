@@ -1,7 +1,47 @@
-* text eol=lf
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
 
-*.ps1 text eol=crlf
+# Documents
+*.doc	 diff=astextplain
+*.DOC	 diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.pdf  diff=astextplain
+*.PDF	 diff=astextplain
+*.markdown   text
+*.md         text
+*.mdwn       text
+*.mdown      text
+*.mkd        text
+*.mkdn       text
+*.mdtxt      text
+*.mdtext     text
 
-*.png binary diff=exif
-#*.msi filter=lfs diff=lfs merge=lfs -text
-#*.exe filter=lfs diff=lfs merge=lfs -text
+# Archives
+*.7z  binary
+*.gz  binary
+*.jar binary
+*.rar binary
+*.tar binary
+*.zip binary
+
+# Executables
+*.exe binary
+*.msi binary
+
+# Other
+*.dll binary
+*.cer binary
+
+# Graphics
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.svg binary
+
+# License files should be the only files allowed to use tabs in indentation
+# to have them be as equal to the original license as possible
+LICENSE.txt text whitespace=-tab-in-indent

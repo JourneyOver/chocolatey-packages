@@ -20,5 +20,5 @@ Using AU:
 
   Get-RemoteChecksum
 
-The file 'COPYING.gpl' is obtained from:
+The file 'LICENSE.txt' is obtained from:
   <https://github.com/swift/swift/blob/master/COPYING.gpl>
