@@ -9,10 +9,11 @@ $breleases_64 = 'http://static.centbrowser.com/beta_64/'
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "([$]url\s*=\s*)('.*')"        = "`$1'$($Latest.URL32)'"
-      "([$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.URL64)'"
-      "([$]checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
-      "([$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+      "(?i)(^\s*[$]url(32)?\s*=\s*)('.*')"      = "`$1'$($Latest.URL32)'"
+      "(?i)(^\s*[$]url64\s*=\s*)('.*')"         = "`$1'$($Latest.URL64)'"
+      "(?i)(^\s*[$]checksum(32)?\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
+      "(?i)(^\s*[$]checksum64\s*=\s*)('.*')"    = "`$1'$($Latest.Checksum64)'"
+      "(?i)(^\s*[$]checksumType\s*=\s*)('.*')"  = "`$1'$($Latest.ChecksumType32)'"
     }
   }
 }
