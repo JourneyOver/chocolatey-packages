@@ -1,8 +1,11 @@
-# Chocolatey Packages (JourneyOver)
+# Automatic Chocolatey Packages built by appveyor
 
-[![](https://img.shields.io/appveyor/ci/JourneyOver/chocolatey-packages/master.svg?style=flat-square)](https://ci.appveyor.com/project/JourneyOver/chocolatey-packages/branch/master)
-[![](https://img.shields.io/badge/gist-update%20status-blue.svg?style=flat-square)](https://gist.github.com/JourneyOver/508bb89c4cc35b67842940c60310532b)
-[![](https://img.shields.io/badge/gist-force--tests-red.svg?style=flat-square)](https://gist.github.com/JourneyOver/13f08beca5db513521762b5c4ce53d58)
-[![](https://img.shields.io/badge/chocolatey-JourneyOver-884b2e.svg?style=flat-square)](https://chocolatey.org/profiles/JourneyOver)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/JourneyOver/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/JourneyOver/chocolatey-packages)
+[![Update Status](https://img.shields.io/badge/Update-Status-blue.svg)](https://gist.github.com/JourneyOver/508bb89c4cc35b67842940c60310532b)
+[![Force Test Status](https://img.shields.io/badge/Update-Force%20Test%20Status-red.svg)](https://gist.github.com/JourneyOver/13f08beca5db513521762b5c4ce53d58)
+[![chocolatey/JourneyOver](https://img.shields.io/badge/Chocolatey-JourneyOver-008b85.svg)](https://chocolatey.org/profiles/JourneyOver)
 
-> Automatic chocolatey package updater for packages that don't maintain their own chocolatey packages.
+If you have any issues with one of the packages hosted in this repository, please feel free to open an issue (preferred instead of using `Contact Maintainers` on chocolatey.org).
+
+This repository contains [chocolatey automatic packages](https://chocolatey.org/docs/automatic-packages).
+The repository is setup so that you can manage your packages entirely from the GitHub web interface (using AppVeyor to update and push packages) and/or using the local repository copy.

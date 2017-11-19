@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>any2ico.portable</id>
     <version>2.2.3.0</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/any2ico.portable</packageSourceUrl>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/manual/any2ico.portable</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Quick Any2Ico (portable)</title>
     <authors>Carifred</authors>
@@ -31,9 +31,7 @@ There are a number of icons that are included with programs and images, that use
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/any2ico.png)
 </description>
-    <releaseNotes>
-#### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <releaseNotes>none</releaseNotes>
     <!-- <dependencies>
     </dependencies> -->
   </metadata>

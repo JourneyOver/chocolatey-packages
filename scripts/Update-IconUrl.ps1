@@ -180,8 +180,7 @@ function Optimize-Image {
     if ($sizeAfter -lt $originalSize) {
       $format = Format-Size ($originalSize - $sizeAfter)
       Write-Host "$fileName size decreased by $format"
-    }
-    elseif ($sizeAfter -gt $originalSize) {
+    } elseif ($sizeAfter -gt $originalSize) {
       $format = Format-Size ($sizeAfter - $originalSize)
       Write-Warning "$fileName size increased by $format"
     }
@@ -203,8 +202,7 @@ function Test-Icon {
     $message = "($Name) Updated icon"
     if ((git log --oneline -1) -match "$([regex]::Escape($message))$") {
       git commit --amend -m "$message" "$path" | Out-Null
-    }
-    else {
+    } else {
       git commit -m "$message" "$path" | Out-Null;
     }
   }
@@ -334,8 +332,7 @@ if ($UseStopwatch) {
 
 If ($Name) {
   Update-IconUrl -Name $Name -IconName $IconName -IconDir "$PSScriptRoot/$RelativeIconDir" -GithubRepository $GithubRepository -Quiet $Quiet -Optimize $Optimize
-}
-else {
+} else {
   $directories = Get-ChildItem -Path "$PSScriptRoot/$PackagesDirectory" -Directory;
 
   foreach ($directory in $directories) {
@@ -353,8 +350,7 @@ if ($UseStopwatch) {
 }
 if ($counts.replaced -eq 0 -and !$Quiet) {
   Write-Host "Congratulations, all found icon urls is up to date."
-}
-elseif (!$Quiet) {
+} elseif (!$Quiet) {
   Write-Host "Updated $($counts.replaced) icon url(s)";
 }
 if ($counts.uptodate -gt 0 -and !$Quiet) {
@@ -369,24 +365,20 @@ if ($counts.missing -gt 1) {
     [int]$defaultChoice = 1
     $message = "Do you want to view the package names?";
     $choice = $host.ui.PromptForChoice($caption, $message, $options, $defaultChoice);
-  }
-  elseif ($Quiet) {
+  } elseif ($Quiet) {
     $choice = 1
-  }
-  else {
+  } else {
     $choice = 0
   }
   if ($choice -eq 0) {
     Write-Warning "We did not found an icon for the following packages"
     $missingIcons -join "`n";
   }
-}
-elseif ($counts.missing -eq 1) {
+} elseif ($counts.missing -eq 1) {
   $package = $missingIcons[0]
   if ($ThrowErrorOnIconNotFound) {
     throw "Unable to find icon url for $package"
-  }
-  else {
+  } else {
     Write-Warning "Unable to find icon url for $package"
   }
 }

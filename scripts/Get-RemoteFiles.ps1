@@ -90,6 +90,5 @@ function Get-RemoteFiles {
       $global:Latest.ChecksumType32 = $Algorithm
       $global:Latest.FileName64 = $file_name
     }
-  }
-  catch { throw $_ } finally { $client.Dispose() }
+  } catch { throw $_ } finally { $client.Dispose() }
 }

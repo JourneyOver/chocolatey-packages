@@ -1,9 +1,10 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'any2ico.portable'
-$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$toolsDir = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 $url = 'http://www.carifred.com/quick_any2ico/Quick_Any2Ico.exe'
-$checksum = 'C040F95DF54B5C8EEAEB359640874A6840760A5742EA1105F4CC2197A2AE283A'
+$checksum = 'c040f95df54b5c8eeaeb359640874a6840760a5742ea1105f4cc2197a2ae283a'
+$checksumType = 'sha256'
 $shortcutName = 'Quick_Any2Ico.lnk'
 $exe = 'Quick_Any2Ico.exe'
 $installerPackage = Join-Path $toolsDir $Exe
@@ -13,9 +14,8 @@ $packageArgs = @{
   fileType     = 'EXE'
   url          = $url
   FileFullPath = $installerPackage
-  softwareName = ''
   checksum     = $checksum
-  checksumType = 'sha256'
+  checksumType = $checksumType
 }
 
 Get-ChocolateyWebFile @packageArgs

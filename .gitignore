@@ -1,40 +1,51 @@
 # Default Gitignore
-*~
-*.bak
+automatic/_output
+obj
+_ReSharper*
+New Text Document*
+
+*.resharper
 *.cache
-*.old
-*.orig
+*~
 *.swp
 *.swo
 *.suo
+*.user
+*.bak
+*.orig
+*.old
 *.test
 *.work
 *.handover
 *.new
 *.exist
 *-orig.*
+*.stackdump
+
 Thumbs.db
 .DS_Store
-_ReSharper*
-*.resharper
+
 New folder*
-New Text Document*.txt
-obj
 */working
 ketarin/soluto.xml
-*.stackdump
 /Update-AUPackages.md
 /Update-History.md
 /Update-Force-Test*.md
 /update_vars.ps1
 /update_info.xml
 
+.vscode
+
 # ignore certain files in automatic/manual Packages
 automatic/*/*.nupkg
 automatic/*/*.exe
+automatic/*/*.msi
+automatic/*/*.vsix
 automatic/*/*.zip
 automatic/*/*.7z
 manual/*/*.nupkg
 manual/*/*.exe
+manual/*/*.msi
+manual/*/*.vsix
 manual/*/*.zip
 manual/*/*.7z

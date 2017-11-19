@@ -34,8 +34,7 @@ function Get-EventLogs {
     $log = $_
     try {
       $r += Get-EventLog -Log $log -Newest $Newest -EntryType $EntryType -ea 0
-    }
-    catch { Write-Warning "$log - $_" }
+    } catch { Write-Warning "$log - $_" }
   }
   $r = $r | sort TimeWritten -Descending
   if ($Raw) {$r} else { $r | select Source, TimeWritten, Message }

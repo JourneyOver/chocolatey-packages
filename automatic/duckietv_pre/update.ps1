@@ -1,41 +1,41 @@
 Import-Module au
+Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$releases = 'https://github.com/DuckieTV/Nightlies/releases'
+$repoUser = "DuckieTV"
+$repoName = "Nightlies"
 
 function global:au_SearchReplace {
   @{
-    ".\legal\verification.txt" = @{
-      "(?i)(url:\s+).*"        = "`${1}$($Latest.URL32)"
-      "(?i)(url64:\s+).*"      = "`${1}$($Latest.URL64)"
-      "(?i)(checksum:\s+).*"   = "`${1}$($Latest.Checksum32)"
-      "(?i)(checksum64:\s+).*" = "`${1}$($Latest.Checksum64)"
+    ".\legal\VERIFICATION.txt" = @{
+      "(?i)(^\s*location on\:?\s*)\<.*\>" = "`${1}<$($Latest.ReleaseUri)>"
+      "(?i)(^\s*url(32)?\:\s*).*"         = "`${1}<$($Latest.URL32)>"
+      "(?i)(^\s*url64:\s*).*"             = "`${1}<$($Latest.URL64)>"
+      "(?i)(^\s*checksum(32)?\:\s*).*"    = "`${1}$($Latest.Checksum32)"
+      "(?i)(^\s*checksum64:\s*).*"        = "`${1}$($Latest.Checksum64)"
+      "(?i)(^\s*checksum\s*type\:\s*).*"  = "`${1}$($Latest.ChecksumType32)"
     }
   }
 }
 
 function global:au_BeforeUpdate {
-  If (!(Test-Path "$PSScriptRoot\tools" -PathType Container)) { New-Item -ItemType Directory "$PSScriptRoot\tools" }
+  if (!(Test-Path "$PSScriptRoot\tools" -PathType Container)) { New-Item -ItemType Directory "$PSScriptRoot\tools" }
   Copy-Item "$PSScriptRoot\..\duckietv\tools" "$PSScriptRoot" -Force -Recurse
-  If (!(Test-Path "$PSScriptRoot\legal" -PathType Container)) { New-Item -ItemType Directory "$PSScriptRoot\legal" }
+  if (!(Test-Path "$PSScriptRoot\legal" -PathType Container)) { New-Item -ItemType Directory "$PSScriptRoot\legal" }
   Copy-Item "$PSScriptRoot\..\duckietv\legal" "$PSScriptRoot" -Force -Recurse
 
   Get-RemoteFiles -Purge -NoSuffix
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $release = Get-LatestGithubReleases $repoUser $repoName $true
 
-  $regex = 'x(\d+).zip$'
-  $url = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 2
+  $url32 = $release.latest.Assets | Where-Object { $_ -match 'x32\.zip$' } | Select-Object -First 1
+  $url64 = $release.latest.Assets | Where-Object { $_ -match 'x64\.zip$' } | Select-Object -First 1
 
-  $bversion = $url[0] -split 'nightly-|/' | Select-Object -Last 1 -Skip 1
-  $version = $bversion -replace '(....(?!$))', '$1.'
+  $nightly = $release.latest.Version -replace '(....(?!$))', '$1.'
   $build = '-nightly'
 
-  $url32 = 'https://github.com' + $url[0]
-  $url64 = 'https://github.com' + $url[1]
-
-  $Latest = @{ PackageName = 'duckietv'; URL32 = $url32; URL64 = $url64; Version = ($version + $build)}
+  $Latest = @{ packageName = 'duckietv'; URL32 = $url32; URL64 = $url64; Version = ($nightly + $build); ReleaseUri = $release.latest.ReleaseUrl }
   return $Latest
 }
 

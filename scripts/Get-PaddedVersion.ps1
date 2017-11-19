@@ -1,3 +1,4 @@
+<# AUTHOR: AdmiringWorm; SOURCE: https://github.com/chocolatey/chocolatey-coreteampackages/blob/master/scripts/Get-PaddedVersion.ps1 #>
 <#
 .SYNOPSIS
   Pad the revision number if the passed version is using a 4-part version scheme.
@@ -46,8 +47,7 @@ function Get-PaddedVersion() {
   if ($Version -match "^([\d]+\.){1,2}[\d]+$") {
     Write-Debug "There is no need to pad the version information"
     return $Version
-  }
-  elseif ($Version -notmatch "^[\d\.]+$") {
+  } elseif ($Version -notmatch "^[\d\.]+$") {
     Write-Warning "Padding of pre release versions is not supported";
     return $Version
   }
@@ -75,8 +75,7 @@ function Get-PaddedVersion() {
         $paddedRev++ | Out-Null
       }
     }
-  }
-  elseif ($newVersion -and $newVersion -eq $versionInfo) {
+  } elseif ($newVersion -and $newVersion -eq $versionInfo) {
     return $Version
   }
 

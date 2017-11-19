@@ -70,8 +70,7 @@ function CheckPackageSizes() {
       $friendlySize = $size / 1024 / 1024
       WriteOutput -type Error "The package $packageName is too large. Maximum allowed size is 300 MB. Actual size was $friendlySize MB!"
       SetAppveyorExitCode -ExitCode 2
-    }
-    else {
+    } else {
       $index = 0
       $suffix = @('Bytes'; 'KB'; 'MB')
       $friendlySize = $size
@@ -250,8 +249,7 @@ function GetPackagesFromDiff() {
   $paths = git diff "${diffAgainst}..." --name-only | % {
     if ($_.StartsWith('..')) {
       $path = Split-Path -Parent $_
-    }
-    else {
+    } else {
       $root = Resolve-Path "$PSScriptRoot\.." -Relative
       $path = Split-Path -Parent "$root\$_"
     }
@@ -403,8 +401,7 @@ function RunChocoProcess() {
           }
           $previousPercentage = $progressMatch
         }
-      }
-      else { WriteChocoOutput $_ }
+      } else { WriteChocoOutput $_ }
 
       if ($_ -match "Failures") {
         $failureOccurred = $true
@@ -423,8 +420,7 @@ function RunChocoProcess() {
         Stop-Process -ProcessName "*$($arguments[1])*" -ErrorAction Ignore
       }
     }
-  }
-  finally {
+  } finally {
     if ($LastExitCode -ne 0) {
       SetAppveyorExitCode $LastExitCode
       $res = $false
@@ -462,14 +458,12 @@ function InstallPackage() {
   if ($dependentSource) {
     try {
       RunChocoPackProcess -path $dependentSource | WriteChocoOutput
-    }
-    catch {
+    } catch {
       WriteOutput "$_" -type Error
       return $package.Name
     }
     $sources = "$($_.Directory);$dependentSource;chocolatey"
-  }
-  else {
+  } else {
     $sources = "$($_.Directory);chocolatey"
   }
 
@@ -483,8 +477,7 @@ function InstallPackage() {
 
   try {
     if (!(RunChocoProcess @arguments)) { return $package.Name }
-  }
-  catch {
+  } catch {
     WriteOutput "$_" -type Error
     return $package.Name
   }
@@ -510,12 +503,10 @@ function TestAuUpdatePackages() {
   try {
     pushd "$PSScriptRoot\.."
     .\test_all.ps1 -Name $packageNames -ThrowOnErrors
-  }
-  catch {
+  } catch {
     SetAppveyorExitCode $LastExitCode
     throw "An exception ocurred during AU update. Cancelling all other checks."
-  }
-  finally {
+  } finally {
     MoveLogFile -packageName 'au' -commandType 'update'
     popd
   }
@@ -538,12 +529,10 @@ function RunUpdateScripts {
     try {
       pushd $_.Directory
       .\update.ps1
-    }
-    catch {
+    } catch {
       SetAppveyorExitCode 1
       throw "An exception ocurred during the manual update of $name. Cancelling all other checks."
-    }
-    finally {
+    } finally {
       popd
     }
   }
@@ -607,14 +596,12 @@ function UninstallPackage() {
   if ($dependentSource) {
     try {
       RunChocoPackProcess -path $dependentSource | WriteOutput
-    }
-    catch {
+    } catch {
       WriteOutput "$_" -type Error
       return $package.Name
     }
     $packageNames = @($package.Name ; $package.DependentPackage)
-  }
-  else {
+  } else {
     $packageNames = @($package.Name)
   }
 
@@ -627,8 +614,7 @@ function UninstallPackage() {
   }
   try {
     if (!(RunChocoProcess @arguments)) { return $package.Name }
-  }
-  catch {
+  } catch {
     WriteOutput "$_" -type Error
     return $package.Name
   }
@@ -664,8 +650,7 @@ function TestUninstallAllPackages() {
     if ($packageFailed) {
       WriteOutput "$name failed to install, skipping uninstall test..." -type Warning
       return ""
-    }
-    else {
+    } else {
       pushd $_.Directory
       if ($runChocoWithAu) { Test-Package -Uninstall | WriteChocoOutput }
       else {
@@ -684,8 +669,7 @@ function TestUninstallAllPackages() {
 
 if ($packageName) {
   $packages = GetPackagesFromName -packageName $packageName
-}
-else {
+} else {
   $packages = GetPackagesFromDiff -diffAgainst 'origin/master'
 }
 
@@ -716,8 +700,7 @@ if (@('all', 'update').Contains($type)) {
 if (@('all', 'install').Contains($type)) {
   [array]$failedInstalls = TestInstallAllPackages @arguments
   if (!$runChocoWithAu) { CreateSnapshotArchive -packages $packages -artifactsDirectory $artifactsDirectory }
-}
-else { $failedInstalls = @() }
+} else { $failedInstalls = @() }
 if (@('all', 'uninstall').Contains($type)) {
   [array]$failedUninstalls = TestUninstallAllPackages @arguments -failedInstalls $failedInstalls
 }

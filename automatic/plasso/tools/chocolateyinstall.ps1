@@ -1,5 +1,5 @@
 $ErrorActionPreference = 'Stop'
-$ServerOS = (Get-WmiObject -class Win32_OperatingSystem).Caption
+$ServerOS = (Get-WmiObject -Class Win32_OperatingSystem).Caption
 $pp = Get-PackageParameters
 
 $packageName = 'plasso'
@@ -7,6 +7,8 @@ $url = 'https://bitsum.com/files/processlassosetup32.exe'
 $url64 = 'https://bitsum.com/files/processlassosetup64.exe'
 $checksum = '98f17ecaa61d08e75fc466e3f3fa43a8ab39744c0c7c8707da86ce1bddf9dffb'
 $checksum64 = '7558e631c38c27d96135df9cfedf6a97a85e85aca169ef045bdba0fa39dd1f85'
+
+$checksumType = 'sha256'
 
 $surl = 'https://bitsum.com/files/server/processlassosetup32.exe'
 $surl64 = 'https://bitsum.com/files/server/processlassosetup64.exe'
@@ -29,18 +31,18 @@ $packageArgs = @{
   validExitCodes = @(0)
   checksum       = $checksum
   checksum64     = $checksum64
-  checksumType   = 'sha256'
-  checksumType64 = 'sha256'
+  checksumType   = $checksumType
+  checksumType64 = $checksumType
 }
 
 if ($ServerOS -match "Server") {
-  write-host Installing Server Version
+  Write-Host 'Installing Server Version'
   $packageArgs.url = $surl
   $packageArgs.url64Bit = $surl64
   $packageArgs.checksum = $schecksum
   $packageArgs.checksum64 = $schecksum64
   Install-ChocolateyPackage @packageArgs
 } else {
-  Write-Host Installing Workstations Version
+  Write-Host 'Installing Workstations Version'
   Install-ChocolateyPackage @packageArgs
 }

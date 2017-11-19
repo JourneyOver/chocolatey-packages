@@ -16,4 +16,4 @@ $packageArgs = @{
 Install-ChocolateyInstallPackage @packageArgs
 
 # Remove the installers as there is no more need for it
-Remove-Item $toolsDir\*.exe -ea 0 -force
+Remove-Item $toolsDir\*.exe -ea 0 -Force

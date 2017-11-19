@@ -57,7 +57,7 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/centbrowser.png)
 ]]></description>
     <releaseNotes>
-#### Program
+#### Program (Beta versions don't have a changelog)
 * [Changelog](https://www.centbrowser.com/history.html)
 
 #### Package

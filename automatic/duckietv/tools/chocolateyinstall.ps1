@@ -28,8 +28,8 @@ $packageArgs = @{
 
 Install-ChocolateyInstallPackage @packageArgs
 
-Remove-Item $toolsDir\*.zip -ea 0 -force
-Remove-Item $toolsDir\*.exe -ea 0 -force
+Remove-Item $toolsDir\*.zip -ea 0 -Force
+Remove-Item $toolsDir\*.exe -ea 0 -Force
 
 $installLocation = Get-AppInstallLocation $packageArgs.softwareName
 if ($installLocation) {
