@@ -10,8 +10,8 @@ $shortcutName = 'TVRenamer.lnk'
 Install-ChocolateyShortcut -shortcutFilePath "$env:Public\Desktop\$shortcutName" -targetPath "$fileLocation" -WorkingDirectory "$toolsDir\"
 Install-ChocolateyShortcut -shortcutFilePath "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\$shortcutName" -targetPath "$fileLocation" -WorkingDirectory "$toolsDir\"
 
-If ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') {
-  Remove-Item $toolsDir\*-win32.exe -ea 0 -force
+if ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') {
+  Remove-Item $toolsDir\*-win32.exe -ea 0 -Force
 } else {
-  Remove-Item $toolsDir\*-win64.exe -ea 0 -force
+  Remove-Item $toolsDir\*-win64.exe -ea 0 -Force
 }

@@ -13,14 +13,15 @@ function global:au_BeforeUpdate {
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "([$]url\s*=\s*)('.*')"         = "`$1'$($Latest.URL32)'"
-      "([$]url64\s*=\s*)('.*')"       = "`$1'$($Latest.URL64)'"
-      "([$]checksum\s*=\s*)('.*')"    = "`$1'$($Latest.Checksum32)'"
-      "([$]checksum64\s*=\s*)('.*')"  = "`$1'$($Latest.Checksum64)'"
-      "([$]surl\s*=\s*)('.*')"        = "`$1'$($Latest.SURL32)'"
-      "([$]surl64\s*=\s*)('.*')"      = "`$1'$($Latest.SURL64)'"
-      "([$]schecksum\s*=\s*)('.*')"   = "`$1'$($Latest.SChecksum32)'"
-      "([$]schecksum64\s*=\s*)('.*')" = "`$1'$($Latest.SChecksum64)'"
+      "(?i)(^\s*[$]url(32)?\s*=\s*)('.*')"       = "`$1'$($Latest.URL32)'"
+      "(?i)(^\s*[$]url64\s*=\s*)('.*')"          = "`$1'$($Latest.URL64)'"
+      "(?i)(^\s*[$]checksum(32)?\s*=\s*)('.*')"  = "`$1'$($Latest.Checksum32)'"
+      "(?i)(^\s*[$]checksum64\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum64)'"
+      "(?i)(^\s*[$]surl(32)?\s*=\s*)('.*')"      = "`$1'$($Latest.SURL32)'"
+      "(?i)(^\s*[$]surl64\s*=\s*)('.*')"         = "`$1'$($Latest.SURL64)'"
+      "(?i)(^\s*[$]schecksum(32)?\s*=\s*)('.*')" = "`$1'$($Latest.SChecksum32)'"
+      "(?i)(^\s*[$]schecksum64\s*=\s*)('.*')"    = "`$1'$($Latest.SChecksum64)'"
+      "(?i)(^\s*[$]checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
     }
   }
 }
@@ -30,7 +31,7 @@ function global:au_GetLatest {
   $version_number = Invoke-WebRequest -Uri $vrelease -UseBasicParsing
 
   $regex = '.exe$'
-  $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 6 -expand href
+  $url = $download_page.links | Where-Object href -Match $regex | Select-Object -First 6 -Expand href
 
   $versionRegEx = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
   $version = ([regex]::match($version_number.Content, $versionRegEx))

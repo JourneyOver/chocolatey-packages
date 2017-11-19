@@ -26,8 +26,8 @@ function global:au_GetLatest {
 
   $regex = '.exe$'
 
-  $url_32 = $download_page_32.links | Where-Object href -match $regex | Select-Object -Last 2 -expand href
-  $url_64 = $download_page_64.links | Where-Object href -match $regex | Select-Object -Last 2 -expand href
+  $url_32 = $download_page_32.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
+  $url_64 = $download_page_64.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
   $version = $url_32[0] -split 'centbrowser_|.exe' | Select-Object -Last 1 -Skip 1
   $version64 = $url_64[0] -split 'centbrowser_|_x64.exe' | Select-Object -Last 1 -Skip 1
 
@@ -35,8 +35,8 @@ function global:au_GetLatest {
     throw "32-bit and 64-bit versions do not match. Please investigate."
   }
 
-  $burl_32 = $bdownload_page_32.links | Where-Object href -match $regex | Select-Object -Last 2 -expand href
-  $burl_64 = $bdownload_page_64.links | Where-Object href -match $regex | Select-Object -Last 2 -expand href
+  $burl_32 = $bdownload_page_32.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
+  $burl_64 = $bdownload_page_64.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
   $bversion = $burl_32[0] -split 'centbrowser_|.exe' | Select-Object -Last 1 -Skip 1
   $bversion64 = $burl_64[0] -split 'centbrowser_|_x64.exe' | Select-Object -Last 1 -Skip 1
   $build = "-beta"
@@ -51,10 +51,10 @@ function global:au_GetLatest {
   $burl64 = $breleases_64 + $burl_64[0]
 
   if ($bversion -gt $version) {
-    $Latest = @{ PackageName = 'CentBrowser'; URL32 = $burl32; URL64 = $burl64; Version = ($bversion + $build)  }
+    $Latest = @{ packageName = 'CentBrowser'; URL32 = $burl32; URL64 = $burl64; Version = ($bversion + $build) }
     return $Latest
   } else {
-    $Latest = @{ PackageName = 'CentBrowser'; URL32 = $url32; URL64 = $url64; Version = $version  }
+    $Latest = @{ packageName = 'CentBrowser'; URL32 = $url32; URL64 = $url64; Version = $version }
     return $Latest
   }
 }

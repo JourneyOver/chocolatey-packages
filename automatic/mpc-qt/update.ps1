@@ -1,12 +1,16 @@
 Import-Module au
+Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$releases = 'https://github.com/cmdrkotori/mpc-qt/releases'
+$repoUser = "cmdrkotori"
+$repoName = "mpc-qt"
 
 function global:au_SearchReplace {
   @{
-    ".\legal\verification.txt" = @{
-      "(?i)(url:\s+).*"        = "`${1}$($Latest.URL32)"
-      "(?i)(checksum:\s+).*"   = "`${1}$($Latest.Checksum32)"
+    ".\legal\VERIFICATION.txt" = @{
+      "(?i)(^\s*location on\:?\s*)\<.*\>" = "`${1}<$($Latest.ReleaseUri)>"
+      "(?i)(^\s*url(32)?\:\s*).*"         = "`${1}<$($Latest.URL32)>"
+      "(?i)(^\s*checksum(32)?\:\s*).*"    = "`${1}$($Latest.Checksum32)"
+      "(?i)(^\s*checksum\s*type\:\s*).*"  = "`${1}$($Latest.ChecksumType32)"
     }
   }
 }
@@ -16,16 +20,11 @@ function global:au_BeforeUpdate {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $release = Get-LatestGithubReleases $repoUser $repoName $false
 
-  $regex = '.zip$'
-  $url = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 2
+  $url32 = $release.latestStable.Assets | Where-Object { $_ -match 'x64-(\d+)\.zip$' } | Select-Object -First 1
 
-  $version = (Split-Path ( Split-Path $url[0] ) -Leaf).Substring(1)
-
-  $url32 = 'https://github.com' + $url[0]
-
-  $Latest = @{ URL32 = $url32; Version = $version }
+  $Latest = @{ URL32 = $url32; Version = $release.latestStable.Version; ReleaseUri = $release.latestStable.ReleaseUrl }
   return $Latest
 }
 
