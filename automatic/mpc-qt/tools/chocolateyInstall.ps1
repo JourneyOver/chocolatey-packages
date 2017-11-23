@@ -5,8 +5,13 @@ $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 $embedded_path = Get-Item "$toolsDir\*.zip"
 $Destination = "$toolsDir\mpc-qt"
 
-Add-Type -Assembly "system.io.compression.filesystem"
-[io.compression.zipfile]::ExtractToDirectory($embedded_path, $destination)
+$packageArgs = @{
+  packageName    = $packageName
+  FileFullPath   = $embedded_path
+  Destination    = $Destination
+}
+
+Get-ChocolateyUnzip @packageArgs
 
 $fileLocation = Get-Item "$toolsDir\mpc-qt\*-qt.exe"
 $shortcutName = 'MPC-QT.lnk'
