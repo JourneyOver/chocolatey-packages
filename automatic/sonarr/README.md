@@ -22,4 +22,4 @@ Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can moni
 
 ## Notes
 
-Installs as a service, to get to Radarr open browser and go [here](http://localhost:8989/)
+Installs as a service, to get to Sonarr open browser and go [here](http://localhost:8989/)
