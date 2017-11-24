@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>sonarr</id>
+    <version>2.0.0.5054</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/sonarr</packageSourceUrl>
+    <owners>dtgm, JourneyOver</owners>
+    <title>Sonarr</title>
+    <authors>Mark McDowall, Keivan Beigi</authors>
+    <projectUrl>https://sonarr.tv/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/sonarr.png</iconUrl>
+    <copyright>© 2010 Mark McDowall, Keivan Beigi</copyright>
+    <licenseUrl>https://github.com/Sonarr/Sonarr/blob/develop/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/Sonarr/Sonarr</projectSourceUrl>
+    <docsUrl>https://wiki.sonarr.tv/</docsUrl>
+    <mailingListUrl>https://forums.sonarr.tv/</mailingListUrl>
+    <bugTrackerUrl>https://github.com/Sonarr/Sonarr/issues</bugTrackerUrl>
+    <tags>pvr p2p filesharing torrent nntp admin</tags>
+    <summary>TV PVR for Usenet and BitTorrent</summary>
+    <description>
+Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sorts and renames them. It can also configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
+
+## Features
+
+- Support for major platforms: Windows, Linux, macOS, Raspberry Pi, etc.
+- Automatically detects new episodes
+- Can scan your existing library and download any missing episodes
+- Can watch for better quality of the episodes you already have and do an automatic upgrade. eg. from DVD to Blu-Ray
+- Automatic failed download handling will try another release if one fails
+- Manual search so you can pick any release or to see why a release was not downloaded automatically
+- Fully configurable episode renaming
+- Full integration with SABnzbd and NZBGet
+- Full integration with Kodi, Plex (notification, library update, metadata)
+- Full support for specials and multi-episode releases
+- And a beautiful UI
+
+## Community
+- [IRC](http://webchat.freenode.net/?channels=#sonarr)
+- [Reddit](https://www.reddit.com/r/sonarr)
+
+## Notes
+
+Installs as a service, to get to Radarr open browser and go [here](http://localhost:8989/)</description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://github.com/Sonarr/Sonarr/releases)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
