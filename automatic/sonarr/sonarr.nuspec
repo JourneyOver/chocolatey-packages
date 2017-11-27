@@ -10,7 +10,7 @@
     <title>Sonarr</title>
     <authors>Mark McDowall, Keivan Beigi</authors>
     <projectUrl>https://sonarr.tv/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/7217602544a5334006b3145eaf2447c9eaaa8e4f/icons/sonarr.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/6029dec5a0fc50a2d29a682414b355763e44ca8b/icons/sonarr.png</iconUrl>
     <copyright>© 2010 Mark McDowall, Keivan Beigi</copyright>
     <licenseUrl>https://github.com/Sonarr/Sonarr/blob/develop/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
