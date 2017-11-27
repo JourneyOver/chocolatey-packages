@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>sonarr</id>
-    <version>0.0.0.0000</version>
+    <version>2.0.0.5054</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/sonarr</packageSourceUrl>
     <owners>dtgm, JourneyOver</owners>
     <title>Sonarr</title>
     <authors>Mark McDowall, Keivan Beigi</authors>
     <projectUrl>https://sonarr.tv/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/sonarr.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/7217602544a5334006b3145eaf2447c9eaaa8e4f/icons/sonarr.png</iconUrl>
     <copyright>© 2010 Mark McDowall, Keivan Beigi</copyright>
     <licenseUrl>https://github.com/Sonarr/Sonarr/blob/develop/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>https://github.com/Sonarr/Sonarr/issues</bugTrackerUrl>
     <tags>pvr p2p filesharing torrent nntp admin</tags>
     <summary>TV PVR for Usenet and BitTorrent</summary>
-    <description>
-Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sorts and renames them. It can also configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
+    <description><![CDATA[Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sorts and renames them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
 
 ## Features
 
@@ -43,7 +42,8 @@ Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can moni
 
 ## Notes
 
-Installs as a service, to get to Sonarr open browser and go [here](http://localhost:8989/)</description>
+Installs as a service, to get to Sonarr open browser and go [here](http://localhost:8989/)
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/Sonarr/Sonarr/releases)
