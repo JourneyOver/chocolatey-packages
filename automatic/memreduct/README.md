@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/memreduct.png" width="48" height="48"/> [Mem Reduct](https://chocolatey.org/packages/memreduct)
+# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/25bdfa16dc70cbc99cdfee77eaff56714fc57a14/icons/memreduct.png" width="48" height="48"/> [Mem Reduct](https://chocolatey.org/packages/memreduct)
 
 Lightweight real-time memory management application to monitor and clean system memory on your computer.
 

@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>memreduct</id>
-    <version>0.0</version>
+    <version>3.3</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/memreduct</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Mem Reduct</title>
     <authors>Henry++</authors>
     <projectUrl>https://www.henrypp.org/product/memreduct</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/memreduct.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/25bdfa16dc70cbc99cdfee77eaff56714fc57a14/icons/memreduct.png</iconUrl>
     <copyright>(c) 2011-2017 Henry++</copyright>
     <licenseUrl>https://github.com/henrypp/memreduct/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -20,7 +20,12 @@
     <bugTrackerUrl>https://github.com/henrypp/memreduct/issues</bugTrackerUrl>
     <tags>memory-management memory-monitoring memory cleaner admin</tags>
     <summary>Lightweight real-time memory management application to monitor and clean system memory on your computer.</summary>
-    <description>description</description>
+    <description><![CDATA[Lightweight real-time memory management application to monitor and clean system memory on your computer.
+
+The program used undocumented internal system features (Native API) to clear system cache (system working set, working set, standby page lists, modified page lists) with variable result ~10-50%. Application it is compatible with Windows XP SP3 and higher operating systems, but some general features available only since Windows Vista.
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/memreduct.png)
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/henrypp/memreduct/blob/master/CHANGELOG.md)
