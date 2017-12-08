@@ -1,19 +1,19 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 $ServerOS = (Get-WmiObject -Class Win32_OperatingSystem).Caption
 $pp = Get-PackageParameters
 
 $packageName = 'plasso'
 $url = 'https://bitsum.com/files/processlassosetup32.exe'
 $url64 = 'https://bitsum.com/files/processlassosetup64.exe'
-$checksum = '98f17ecaa61d08e75fc466e3f3fa43a8ab39744c0c7c8707da86ce1bddf9dffb'
-$checksum64 = '7558e631c38c27d96135df9cfedf6a97a85e85aca169ef045bdba0fa39dd1f85'
+$checksum = 'caf1204fee70129366e3eba6dbe7ea97c6b7fe64665fab0b60850007564f8aae'
+$checksum64 = '16610d66d53053d9eaf74f145cf31a6800f87e37609f03b2f15ce599f7ec7910'
 
 $checksumType = 'sha256'
 
 $surl = 'https://bitsum.com/files/server/processlassosetup32.exe'
 $surl64 = 'https://bitsum.com/files/server/processlassosetup64.exe'
-$schecksum = '07b11b7c56f494e14076a79b23d18e95acac4a70a31ff99022a1d75e03e8ed50'
-$schecksum64 = '6a0a043e3ee78601c332bae2d17fb5d8e16369ca39bd6cfa5a03ba74100a247a'
+$schecksum = 'febbffde7582cbee01a7d6a5cf91d70158bc613c106f91296861de50f831ca38'
+$schecksum64 = '239d5adf3df3024d8d121c40aa2530a4bf9e3034f13c89aba2df69f48ed49313'
 
 if (!$pp['language']) { $pp['language'] = 'English' }
 if (!$pp['gui_start_type']) { $pp['gui_start_type'] = 'all,uac' }

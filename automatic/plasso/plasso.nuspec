@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>plasso</id>
-    <version>9.0.0.402</version>
+    <version>9.0.0.420</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/plasso</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Process Lasso</title>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>https://bitsum.com/community/Bitsum/process-lasso-discussions/</bugTrackerUrl>
     <tags>Prioritize Process Process Manager Execute Process Process Priority Optimizer Manager admin</tags>
     <summary>Process Lasso is a process priority optimizer for Windows developed by Jeremy Collake of Bitsum LLC. It features a graphical user interface that allows for automating various process related tasks.</summary>
-    <description>
-Process Lasso is a tool designed to manage and edit how your processes and services run.
+    <description><![CDATA[Process Lasso is a tool designed to manage and edit how your processes and services run.
 
 It offers a robust list of capabilities including default process priorities and affinities, termination of disallowed processes, instance count limits, a system responsiveness graph, logging of processes, keep select processes running (auto-restart), and much more.
 
@@ -58,7 +57,7 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 - There is an option for `/governor_start_type:` option as a service, but at the current time this package does not support the option to start the governor as a service.
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/plasso.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](https://bitsum.com/changes/processlasso/#latest)
