@@ -16,7 +16,7 @@ and can be verified by doing the following:
     - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: CFC54F7D0B31AC25DEE1EE76E19E958409EA6BA4F8CB1BFE8F650454D00B937C
+  checksum: D790DD083B0458E75ADDCA8CF9359A630E7F464B0EB08DD9ABBAA0325F7B1C0C
 
 Using AU:
 
