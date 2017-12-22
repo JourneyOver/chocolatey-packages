@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>metropolislauncher</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/metropolislauncher</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>Metropolis Launcher</title>
+    <authors>MK2k</authors>
+    <projectUrl>https://metropolis-launcher.net/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/metropolislauncher.png</iconUrl>
+    <copyright>Copyright (C) 2017  MK2k</copyright>
+    <licenseUrl>https://github.com/theMK2k/MetropolisLauncher/blob/master/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/theMK2k/MetropolisLauncher</projectSourceUrl>
+    <docsUrl>https://documentation.metropolis-launcher.net/</docsUrl>
+    <!-- <mailingListUrl></mailingListUrl> -->
+    <bugTrackerUrl>https://github.com/theMK2k/MetropolisLauncher/issues</bugTrackerUrl>
+    <tags>emulation front-end launcher windows dot-net-client devexpress gaming</tags>
+    <summary>A data-heavy Emulation and Gaming front-end for Windows</summary>
+    <description>
+Metropolis Launcher has been created to be a great old-school launcher, emulation front-end and an extensive offline database of video game metadata thanks to [MobyGames](https://www.mobygames.com/) atheir strong user base.
+
+## Features
+
+- [Features](https://metropolis-launcher.net/#features)
+
+## Community
+
+- [Twitter](https://twitter.com/theMK2k)
+- [Reddit](https://www.reddit.com/r/metropolislauncher)
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/metropolislauncher.png)
+</description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://github.com/theMK2k/MetropolisLauncher/releases)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
