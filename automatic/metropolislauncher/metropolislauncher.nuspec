@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>metropolislauncher</id>
-    <version>0.0</version>
+    <version>1.1.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/metropolislauncher</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Metropolis Launcher</title>
     <authors>MK2k</authors>
     <projectUrl>https://metropolis-launcher.net/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/metropolislauncher.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/0410b2d62d32e37613c74029babe266245cb5a92/icons/metropolislauncher.png</iconUrl>
     <copyright>Copyright (C) 2017  MK2k</copyright>
     <licenseUrl>https://github.com/theMK2k/MetropolisLauncher/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>https://github.com/theMK2k/MetropolisLauncher/issues</bugTrackerUrl>
     <tags>emulation front-end launcher windows dot-net-client devexpress gaming</tags>
     <summary>A data-heavy Emulation and Gaming front-end for Windows</summary>
-    <description>
-Metropolis Launcher has been created to be a great old-school launcher, emulation front-end and an extensive offline database of video game metadata thanks to [MobyGames](https://www.mobygames.com/) atheir strong user base.
+    <description><![CDATA[Metropolis Launcher has been created to be a great old-school launcher, emulation front-end and an extensive offline database of video game metadata thanks to [MobyGames](https://www.mobygames.com/) and their strong user base.
 
 ## Features
 
@@ -33,7 +32,7 @@ Metropolis Launcher has been created to be a great old-school launcher, emulatio
 - [Reddit](https://www.reddit.com/r/metropolislauncher)
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/metropolislauncher.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/theMK2k/MetropolisLauncher/releases)
