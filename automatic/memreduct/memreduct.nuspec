@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>memreduct</id>
-    <version>3.3</version>
+    <version>3.3.1</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/memreduct</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Mem Reduct</title>
