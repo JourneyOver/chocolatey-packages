@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/theMK2k/MetropolisLauncher/releases/tag/v1.1.0>
+location on <https://github.com/theMK2k/MetropolisLauncher/releases/tag/v1.1.1>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/theMK2k/MetropolisLauncher/releases/download/v1.1.0/metropolis_launcher_1.1.0-mk2k.zip>
+  url: <https://github.com/theMK2k/MetropolisLauncher/releases/download/v1.1.1/metropolis_launcher_1.1.1-mk2k.zip>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 58967A8270C4CB0725DCC33D52073E311840873FF8297042E74A89E758FB80AC
+  checksum: 738F5DBADA582BBB9FD755BCCCE3D6FDCC2CEA8452D5A772647876C00E1F84F1
 
 Using AU:
 
