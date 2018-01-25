@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tsedat</id>
-    <version>7.18.2678</version>
+    <version>7.21.2680</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tsedat</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>TheSage English Dictionary and Thesaurus</title>
@@ -20,8 +20,7 @@
     <!-- <bugTrackerUrl></bugTrackerUrl> -->
     <tags>TheSage English Dictionary Thesaurus One-click lookup wildcard-search anagram concordancer speech pronunciation word-lists admin</tags>
     <summary>TheSage is a comprehensive English dictionary and thesaurus that provides a number of useful and in some cases unusual search tools.</summary>
-    <description>
-TheSage's English Dictionary and Thesaurus is a professional software package that integrates a complete dictionary and multifaceted thesaurus of the English language into a single and powerful language reference system.
+    <description><![CDATA[TheSage's English Dictionary and Thesaurus is a professional software package that integrates a complete dictionary and multifaceted thesaurus of the English language into a single and powerful language reference system.
 TheSage can look up words directly from almost any program (IE, Word, Firefox, Outlook, Thunderbird, etc...).
 
 ## Features
@@ -36,7 +35,7 @@ TheSage can look up words directly from almost any program (IE, Word, Firefox, O
 - Anagram Search - Only valid English words are returned.
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tsedat.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](http://www.sequencepublishing.com/1/thesage_news/changelog.txt)
