@@ -24,4 +24,3 @@ Using AU:
 
 The file 'license.txt' is obtained from:
   <https://github.com/Jackett/Jackett/blob/master/LICENSE>
- 
