@@ -1,0 +1,26 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The embedded software has been downloaded from the listed download
+location on <http://release.tinymediamanager.org/>
+and can be verified by doing the following:
+
+1. Download the following:
+
+  url: <http://release.tinymediamanager.org/dist/tmm_2.9.7_8513bee_win.zip>
+
+2. You can obtain the checksum using one of the following methods:
+  - Use powershell function 'Get-FileHash'
+  - Use Chocolatey utility 'checksum.exe'
+
+  checksum type: sha256
+  checksum: 29AF022F7B45415FA24DFD9C70AA179B4C1FCE6420803C54E159C253114936A9
+
+Using AU:
+
+  Get-RemoteChecksum
+
+The file 'LICENSE.txt' is obtained from:
+  <https://github.com/tinyMediaManager/tinyMediaManager/blob/master/LICENSE>
