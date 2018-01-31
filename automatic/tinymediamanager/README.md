@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/tmm.png" width="48" height="48"/> [tinyMediaManager](https://chocolatey.org/packages/tinymediamanager)
+# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/d61a42c79ab623058016374744a00e2b583650ed/icons/tmm.png" width="48" height="48"/> [tinyMediaManager](https://chocolatey.org/packages/tinymediamanager)
 
 [tinyMediaManager](http://www.tinymediamanager.org) is a media management tool written in Java/Swing. It is written to provide metadata for the XBOX Media Center (XBMC). Due to the fact that it is written in Java, tinyMediaManager will run on Windows, Linux and Mac OSX (and possible more OS).
 

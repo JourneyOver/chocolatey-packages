@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tinymediamanager</id>
-    <version>0.0</version>
+    <version>2.9.7</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tinymediamanager</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>tinyMediaManager</title>
     <authors>mlaggner, myron0815</authors>
     <projectUrl>http://www.tinymediamanager.org/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/tmm.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/d61a42c79ab623058016374744a00e2b583650ed/icons/tmm.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/tinyMediaManager/tinyMediaManager/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -20,15 +20,14 @@
     <bugTrackerUrl>https://github.com/tinyMediaManager/tinyMediaManager/issues</bugTrackerUrl>
     <tags>media managment tinyMediaManager metadata XBOX Media Center XBMC Plex Emby</tags>
     <summary>A multi-OS media managment tool</summary>
-    <description>
-[tinyMediaManager](http://www.tinymediamanager.org) is a media management tool written in Java/Swing. It is written to provide metadata for the XBOX Media Center (XBMC). Due to the fact that it is written in Java, tinyMediaManager will run on Windows, Linux and Mac OSX (and possible more OS).
+    <description><![CDATA[[tinyMediaManager](http://www.tinymediamanager.org) is a media management tool written in Java/Swing. It is written to provide metadata for the XBOX Media Center (XBMC). Due to the fact that it is written in Java, tinyMediaManager will run on Windows, Linux and Mac OSX (and possible more OS).
 
 ## Features
 
 - [All Features](http://www.tinymediamanager.org/features)
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tinymediamanager.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](http://www.tinymediamanager.org/changelog)

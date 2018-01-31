@@ -9,7 +9,7 @@ and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <http://release.tinymediamanager.org/dist/tmm_2.9.7_8513bee_win.zip>
+  url: <https://release.tinymediamanager.org/dist/tmm_2.9.7_8513bee_win.zip>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
