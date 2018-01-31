@@ -38,14 +38,14 @@ ketarin/soluto.xml
 
 # ignore certain files in automatic/manual Packages
 automatic/*/*.nupkg
-automatic/*/*.exe
-automatic/*/*.msi
-automatic/*/*.vsix
-automatic/*/*.zip
-automatic/*/*.7z
+automatic/*/*/*.exe
+automatic/*/*/*.msi
+automatic/*/*/*.vsix
+automatic/*/*/*.zip
+automatic/*/*/*.7z
 manual/*/*.nupkg
-manual/*/*.exe
-manual/*/*.msi
-manual/*/*.vsix
-manual/*/*.zip
-manual/*/*.7z
+manual/*/*/*.exe
+manual/*/*/*.msi
+manual/*/*/*.vsix
+manual/*/*/*.zip
+manual/*/*/*.7z
