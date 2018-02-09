@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/henrypp/memreduct/releases/tag/v.3.3.1>
+location on <https://github.com/henrypp/memreduct/releases/tag/v.3.3.2>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/henrypp/memreduct/releases/download/v.3.3.1/memreduct-3.3.1-setup.exe>
+  url: <https://github.com/henrypp/memreduct/releases/download/v.3.3.2/memreduct-3.3.2-setup.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: E77D887011E308E86DD272D27FE779B8EFE5CCE6DE388816861B8B3BAC38550F
+  checksum: 48B5FF6F23D82B92709279BD29DC6025B3F1DBBC7546A2B4C283236EF8342FE5
 
 Using AU:
 
