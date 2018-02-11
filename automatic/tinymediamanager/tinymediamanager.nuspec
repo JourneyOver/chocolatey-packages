@@ -16,7 +16,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/tinyMediaManager/tinyMediaManager</projectSourceUrl>
     <docsUrl>https://github.com/tinyMediaManager/tinyMediaManager/wiki</docsUrl>
-    <!-- <mailingListUrl></mailingListUrl> -->
+    <mailingListUrl>https://forum.kodi.tv/forumdisplay.php?fid=204</mailingListUrl>
     <bugTrackerUrl>https://github.com/tinyMediaManager/tinyMediaManager/issues</bugTrackerUrl>
     <tags>media managment tinyMediaManager metadata XBOX Media Center XBMC Plex Emby</tags>
     <summary>A multi-OS media managment tool</summary>
