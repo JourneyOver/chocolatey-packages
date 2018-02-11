@@ -34,8 +34,9 @@
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
-    <!-- <dependencies>
-    </dependencies> -->
+    <dependencies>
+      <dependency id="jre8" version="8.0.161" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
