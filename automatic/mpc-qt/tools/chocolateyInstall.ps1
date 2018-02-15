@@ -6,9 +6,9 @@ $embedded_path = Get-Item "$toolsDir\*.zip"
 $Destination = "$toolsDir\mpc-qt"
 
 $packageArgs = @{
-  packageName    = $packageName
-  FileFullPath   = $embedded_path
-  Destination    = $Destination
+  packageName  = $packageName
+  FileFullPath = $embedded_path
+  Destination  = $Destination
 }
 
 Get-ChocolateyUnzip @packageArgs
