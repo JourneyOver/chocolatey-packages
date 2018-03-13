@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>plasso</id>
-    <version>9.0.0.426</version>
+    <version>9.0.0.440</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/plasso</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Process Lasso</title>
