@@ -9,14 +9,14 @@ and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <http://swift.im/downloads/releases/swift-3.0/Swift-3.0.msi>
+  url: <http://swift.im/downloads/releases/swift-4.0/Swift-4.0.msi>
 
 2. You can use one of the following methods to obtain the SHA256 checksum:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 8445234e84379b582bfbe7a8450acc4229c9f9edc85548b3a5ab2aa145151d96
+  checksum: 5CAA4806B96379C504378AD185BDCDD771E5DA058BF5477D42A54F702AD8F6E2
 
 Using AU:
 

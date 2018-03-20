@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>swift-im</id>
-    <version>3.0</version>
+    <version>4.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/swift-im</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Swift</title>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>https://github.com/swift/swift/issues</bugTrackerUrl>
     <tags>swift swift.im XMPP admin</tags>
     <summary>Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.</summary>
-    <description>
-Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.
+    <description><![CDATA[Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.
 
 ## Features
 
@@ -32,10 +31,10 @@ Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with featur
 - mailbox status support
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/swift-im.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
-* [Changelog](http://swift.im/docs/changelog-3-0.html)
+* [Changelog](http://swift.im/docs/changelog-4-0.html)
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
