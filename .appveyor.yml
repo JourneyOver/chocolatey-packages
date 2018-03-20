@@ -93,12 +93,12 @@ install:
 build_script:
 - ps: |
     $ErrorActionPreference = 'Continue'
-    
+
     . ./scripts/EventLogs.ps1
     Clear-EventLogs
-    
+
     if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
-    
+
     if (($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne $null) -and ($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne '')) {
       Set-Service wuauserv -StartupType Manual
       ./scripts/Test-RepoPackage.ps1 -CleanFiles
@@ -107,12 +107,12 @@ build_script:
       # Clean the choco logs as it's quite large
       rm "$env:ChocolateyInstall\logs\*.log"
     }
-    
+
     if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {
         switch -regex ($Env:APPVEYOR_REPO_COMMIT_MESSAGE)
         {
             '\[AU (.+?)\]'   { $forced = $Matches[1] }
-            
+
             '\[PUSH (.+?)\]' {
                 $packages = $Matches[1] -split ' '
                 Write-Host "PUSHING PACKAGES: $packages"
@@ -129,7 +129,7 @@ build_script:
             }
         }
     }
-    
+
     ./update_all.ps1 -ForcedPackages $forced
     Get-EventLogs * | ? Source -eq 'Schannel' | fl * |  out-file eventlogs.txt
 
