@@ -1,6 +1,6 @@
 # AU Packages Template: https://github.com/majkinetor/au-packages-template
 
-param([string] $Name, [string] $ForcedPackages, [string] $Root = "$PSScriptRoot\automatic")
+param([string[]] $Name, [string] $ForcedPackages, [string] $Root = "$PSScriptRoot\automatic")
 
 if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 
@@ -11,6 +11,7 @@ $Options = [ordered]@{
   UpdateTimeout    = 1200                                    #Update timeout in seconds
   Threads          = 10                                      #Number of background jobs to use
   Push             = $Env:au_Push -eq 'true'                 #Push to chocolatey
+  PushAll          = $true                                   #Allow to push multiple packages at once
   PluginPath       = ''                                      #Path to user plugins
   IgnoreOn         = @(                                      #Error message parts to set the package ignore status
     'Could not create SSL/TLS secure channel'
@@ -18,6 +19,7 @@ $Options = [ordered]@{
     'The operation has timed out'
     'Internal Server Error'
     'Service Temporarily Unavailable'
+    'The connection was closed unexpectedly.'
   )
 
   RepeatOn         = @(                                      #Error message parts on which to repeat package updater
@@ -29,7 +31,9 @@ $Options = [ordered]@{
     'The operation has timed out'
     'Internal Server Error'
     'An exception occurred during a WebClient request'
+    'remote session failed with an unexpected state'
     'Job returned no object, Vector smash ?'
+    'The connection was closed unexpectedly.'
   )
   RepeatSleep      = 60                                    #How much to sleep between repeats in seconds, by default 0
   RepeatCount      = 2                                      #How many times to repeat on errors, by default 1
@@ -40,7 +44,7 @@ $Options = [ordered]@{
     Params = @{                                          #Report parameters:
       Github_UserRepo = $Env:github_user_repo         #  Markdown: shows user info in upper right corner
       NoAppVeyor      = $false                            #  Markdown: do not show AppVeyor build shield
-      UserMessage     = "[Ignored](#ignored) | [History](#update-history) | [Force Test](https://gist.github.com/$Env:gist_id_test) | **USING AU NEXT VERSION**"       #  Markdown, Text: Custom user message to show
+      UserMessage     = "[Ignored](#ignored) | [History](#update-history) | [Force Test](https://gist.github.com/$Env:gist_id_test) | [Releases](https://github.com/$Env:github_user_repo/tags)"       #  Markdown, Text: Custom user message to show
       NoIcons         = $false                            #  Markdown: don't show icon
       IconSize        = 32                                #  Markdown: icon size
       Title           = ''                                #  Markdown, Text: TItle of the report, by default 'Update-AUPackages'
@@ -48,7 +52,7 @@ $Options = [ordered]@{
   }
 
   History          = @{
-    Lines           = 90                                          #Number of lines to show
+    Lines           = 120                                          #Number of lines to show
     Github_UserRepo = $Env:github_user_repo             #User repo to be link to commits
     Path            = "$PSScriptRoot\Update-History.md"            #Path where to save history
   }
@@ -90,15 +94,20 @@ $Options = [ordered]@{
 
   ForcedPackages   = $ForcedPackages -split ' '
   UpdateIconScript = "$PSScriptRoot\scripts\Update-IconUrl.ps1"
+  ModulePaths      = @("$PSScriptRoot\scripts\au_extensions.psm1"; "Wormies-AU-Helpers")
   BeforeEach       = {
     param($PackageName, $Options )
+    $Options.ModulePaths | % { Import-Module $_ }
     . $Options.UpdateIconScript $PackageName.ToLowerInvariant() -Quiet -ThrowErrorOnIconNotFound
+    if (Test-Path tools) { Expand-Aliases -Directory tools }
 
-    $p = $Options.ForcedPackages | Where-Object { $_ -match "^${PackageName}(?:\:(.+))*$" }
+    $pattern = "^${PackageName}(?:\\(?<stream>[^:]+))?(?:\:(?<version>.+))?$"
+    $p = $Options.ForcedPackages | ? { $_ -match $pattern }
     if (!$p) { return }
 
     $global:au_Force = $true
-    $global:au_Version = ($p -split ':')[1]
+    $global:au_IncludeStream = $Matches['stream']
+    $global:au_Version = $Matches['version']
   }
 }
 
