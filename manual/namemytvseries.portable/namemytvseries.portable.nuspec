@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>namemytvseries.portable</id>
+    <version>	1.8.4</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/manual/namemytvseries</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>Name My TV Series (Portable)</title>
+    <authors>Hans Luijten</authors>
+    <projectUrl>https://www.tweaking4all.com/home-theatre/rename-your-tv-series-files/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/namemytvseries.png</iconUrl>
+    <copyright>©2000-2018 Hans Luijten</copyright>
+    <!-- <licenseUrl></licenseUrl> -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <projectSourceUrl></projectSourceUrl>
+    <docsUrl></docsUrl> -->
+    <mailingListUrl>https://www.tweaking4all.com/home-theatre/rename-your-tv-series-files/#comments</mailingListUrl>
+    <!-- <bugTrackerUrl></bugTrackerUrl> -->
+    <tags>file-management tv-show utility-computing episodes recording naming rename rename-tv-series tv-series-renamer search-episode portable</tags>
+    <summary>Simple application to assist you in renaming TV Series files.</summary>
+    <description><![CDATA[Name My TV Series is free and available for Windows, Linux and Mac OS X. It retrieves data for the proper episode names from TheTVDB and/or EPGuide to assist you in renaming your downloaded TV Show episodes individually or in bulk. It supports drag and drop, all common video formats, is flexible in the renaming patterns, and renames related files (.nfo, .srt, etc).
+
+    ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/namemytvseries.png)
+]]></description>
+    <releaseNotes>none</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

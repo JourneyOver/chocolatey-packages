@@ -11,7 +11,7 @@
     <authors>Cent Studio</authors>
     <projectUrl>https://www.centbrowser.com</projectUrl>
     <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/centbrowser.png</iconUrl>
-    <copyright>Copyright © 2015-2017 Cent Studio. All rights reserved.</copyright>
+    <copyright>Copyright © 2015-2018 Cent Studio. All rights reserved.</copyright>
     <licenseUrl>https://www.chromium.org/chromium-os/licenses</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!-- <projectSourceUrl></projectSourceUrl> -->

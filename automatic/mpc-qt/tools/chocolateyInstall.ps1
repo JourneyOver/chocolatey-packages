@@ -19,4 +19,13 @@ $shortcutName = 'MPC-QT.lnk'
 Install-ChocolateyShortcut -shortcutFilePath "$env:Public\Desktop\$shortcutName" -targetPath "$fileLocation" -WorkingDirectory "$toolsDir\mpc-qt"
 Install-ChocolateyShortcut -shortcutFilePath "$env:ProgramData\Microsoft\Windows\Start Menu\Programs\$shortcutName" -targetPath "$fileLocation" -WorkingDirectory "$toolsDir\mpc-qt"
 
+$files = get-childitem $toolsDir -include *.exe -recurse
+
+foreach ($file in $files) {
+  if (!($file.Name.Contains("mpc-qt.exe"))) {
+    #generate an ignore file
+    New-Item "$file.ignore" -type file -force | Out-Null
+  }
+}
+
 Remove-Item $toolsDir\*.zip -ea 0 -Force

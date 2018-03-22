@@ -4,14 +4,14 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>any2ico</id>
-    <version>2.2.3.0</version>
+    <version>2.3.0.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/manual/any2ico</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Quick Any2Ico (Meta)</title>
     <authors>Carifred</authors>
     <projectUrl>http://www.carifred.com/quick_any2ico/#index</projectUrl>
     <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/1e63e1f77337f67003290d824b7ddf3d08fb44e9/icons/any2ico.png</iconUrl>
-    <copyright>Copyright Carifred © 2010 - 2017, all rights reserved.</copyright>
+    <copyright>Copyright Carifred © 2010 - 2018, all rights reserved.</copyright>
     <licenseUrl>http://www.carifred.com/License.php</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!--<projectSourceUrl></projectSourceUrl> -->
@@ -20,8 +20,7 @@
     <!--<bugTrackerUrl></bugTrackerUrl> -->
     <tags>Icon-Extractor Extract-Icon Image-to-Icon Extract Create Convert Icon Icons Quick-Any2Ico Portable</tags>
     <summary>Quick Any2Ico is a small, intuitive program that can be used to convert images to icons of various sizes.</summary>
-    <description>
-There are a number of icons that are included with programs and images, that users might need to work with. Quick Any2Ico is an application that allows users to extract icons from various different file formats, then convert them into either PNG or ICO images in several different resolution options.
+    <description><![CDATA[There are a number of icons that are included with programs and images, that users might need to work with. Quick Any2Ico is an application that allows users to extract icons from various different file formats, then convert them into either PNG or ICO images in several different resolution options.
 
 ## Features
 
@@ -30,10 +29,10 @@ There are a number of icons that are included with programs and images, that use
 - A reasonable application for users only interested in the basic icon extraction and nothing else
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/any2ico.png)
-</description>
+]]></description>
     <releaseNotes>none</releaseNotes>
     <dependencies>
-      <dependency id="any2ico.portable" version="[2.2.3.0]" />
+      <dependency id="any2ico.portable" version="[2.3.0.0]" />
     </dependencies>
   </metadata>
   <files>

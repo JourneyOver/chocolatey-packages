@@ -1,6 +1,8 @@
 # AU template: https://github.com/majkinetor/au-packages-template
 
 version: '{build}'
+pull_requests:
+  do_not_increment_build_number: true
 max_jobs: 1
 image: WMF 5
 # History plugin requires complete log
@@ -46,6 +48,10 @@ environment:
   api_key:
     secure: 2NnnfrwVZD5wmP4ZEW3sAV6QLMv3gsRrRWWnQ2++lXudfmGhi9M1yjjD2DnDOaXr # https://ci.appveyor.com/tools/encrypt
 
+  #Chocolatey version we want to use when checking for updates.
+  choco_version: '0.10.8'
+  nupkg_cache_path: C:\packages
+
 init:
 - git config --global user.email "timtag1190@gmail.com"
 - git config --global user.name "JourneyOver"
@@ -53,22 +59,26 @@ init:
 
 install:
 - ps: |
-    #Chocolatey version check and update if there is one.
-      $chocov = choco --version
-      $versions = Invoke-Webrequest -UseBasicParsing `
-          "https://chocolatey.org/api/v2/package-versions/chocolatey" |
-        Select-Object -Expand Content  | ConvertFrom-Json
-      $newestVersion = $versions[-1]
-
-      If ($chocov -eq "$newestVersion") {
-        write-host Chocolatey is up to date
-      } Else {
-        choco upgrade chocolatey > $null
+    if (($Env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null) -or ($Env:APPVEYOR_PULL_REQUEST_NUMBER -eq '')) {
+      # We only want to update chocolatey if we're running a normal build, not during PR testing
+      if (!(Test-Path "$env:nupkg_cache_path")) { mkdir -Force "$env:nupkg_cache_path" }
+      @{
+        'chocolatey' = $Env:choco_version
+        #'optipng'    = '0.7.6'
+        #'pngquant'   = '2.10.1'
+        #'jpegoptim'  = '1.2.4.4'
+        'wormies-au-helpers' = '0.2.0'
+        'autohotkey.portable' = '1.1.28.00'
+        'chocolatey-core.extension' = '1.3.3'
+      }.GetEnumerator() | % {
+        if (!(Test-Path "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg")) { rm "${env:nupkg_cache_path}\$($_.Key).*.nupkg" ; iwr "https://chocolatey.org/api/v2/package/$($_.Key)/$($_.Value)" -OutFile "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg" }
+        if ($_.Key -eq 'chocolatey') { cup $_.Key --version $_.Value --source ${env:nupkg_cache_path} }
+        else { cinst $_.Key --version $_.Value --source ${env:nupkg_cache_path} --ignore-dependencies }
       }
+    }
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
 - git --version
-- cinst autohotkey.portable chocolatey-core.extension > $null
 - choco --version
 - ps: |
     git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
@@ -84,7 +94,19 @@ build_script:
 - ps: |
     $ErrorActionPreference = 'Continue'
 
+    . ./scripts/EventLogs.ps1
+    Clear-EventLogs
+
     if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
+
+    if (($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne $null) -and ($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne '')) {
+      Set-Service wuauserv -StartupType Manual
+      ./scripts/Test-RepoPackage.ps1 -CleanFiles
+      return
+    } else {
+      # Clean the choco logs as it's quite large
+      rm "$env:ChocolateyInstall\logs\*.log"
+    }
 
     if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {
         switch -regex ($Env:APPVEYOR_REPO_COMMIT_MESSAGE)
@@ -100,7 +122,7 @@ build_script:
                     if (!$package_dir) { Write-Warning "Can't find package '$package'"; continue }
                     pushd $package_dir
                       if (Test-Path update.ps1 -ea 0) { ./update.ps1 }
-                      choco pack; Push-Package;
+                      choco pack; Push-Package -All;
                     popd
                 }
                 return
@@ -109,13 +131,20 @@ build_script:
     }
 
     ./update_all.ps1 -ForcedPackages $forced
-    7z a au_temp.zip $Env:TEMP\chocolatey\au\*
+    Get-EventLogs * | ? Source -eq 'Schannel' | fl * |  out-file eventlogs.txt
 
-artifacts:
-- path: update_info.xml
-- path: Update-AUPackages.md
-- path: Update-History.md
-- path: au_temp.zip
+on_finish:
+- ps: |
+    if (Test-Path $Env:TEMP\chocolatey\au) { 7z a  -mx9 au_temp.7z $Env:TEMP\chocolatey\au\* }
+    $paths = @(
+      Resolve-Path "$env:TEMP\artifacts\*" -ea 0
+      'au_temp.7z'
+      'update_info.xml'
+      'Update-AUPackages.md'
+      'eventlogs.txt'
+    )
+    $paths | ? { Test-Path $_ } | % { Push-AppveyorArtifact $_ }
+#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 notifications:
 - provider: Email
@@ -125,5 +154,5 @@ notifications:
   on_build_failure: true
   on_build_status_changed: true
 
-#on_finish:
-#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+cache:
+  - '%nupkg_cache_path% -> .appveyor.yml'

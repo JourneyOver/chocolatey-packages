@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
   Test the au updating of changed packages, as well as the install and uninstall of those packages.
 
@@ -362,6 +362,7 @@ function RunChocoProcess() {
       '--all-versions'
       '--autouninstaller'
       '--fail-on-autouninstaller'
+      '--force'
     )
   }
   $packFailed = $false
