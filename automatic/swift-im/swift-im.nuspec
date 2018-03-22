@@ -11,7 +11,7 @@
     <authors>Isode Ltd</authors>
     <projectUrl>https://www.swift.im/swift.html</projectUrl>
     <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/259e160c7aab687bf1353571456c1b1d0b7c8e0e/icons/swift-im.png</iconUrl>
-    <copyright>© Isode Ltd. 2015 - 2016</copyright>
+    <copyright>© Isode Ltd. 2015 - 2018</copyright>
     <licenseUrl>https://github.com/swift/swift/blob/master/COPYING.gpl</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/swift/swift</projectSourceUrl>

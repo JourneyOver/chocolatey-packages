@@ -11,7 +11,7 @@
     <authors>galli-leo</authors>
     <projectUrl>https://radarr.video/</projectUrl>
     <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/radarr.png</iconUrl>
-    <copyright>© 2010-2017 Radarr. All rights reserved.</copyright>
+    <copyright>© 2018 Radarr. All rights reserved.</copyright>
     <licenseUrl>https://github.com/Radarr/Radarr/blob/develop/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/radarr/radarr</projectSourceUrl>
