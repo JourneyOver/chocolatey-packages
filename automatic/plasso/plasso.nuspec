@@ -38,7 +38,7 @@ It offers a robust list of capabilities including default process priorities and
 - Stand-alone process management engine (uses as little as 1MB of RAM)
 - Event logging
 
-## Package parameters
+## Package parameters 
 
 To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
