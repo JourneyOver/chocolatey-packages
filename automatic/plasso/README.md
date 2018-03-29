@@ -32,6 +32,8 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 
 ## Notes
 
+- This will always install the latest version of Process Lasso, regardless of the version specified in the package.
+
 - When using a user-defined config and log path, we recommend storing the config in a sub-folder, e.g. “C:\\ProcessLasso\\Config” and the logs in another sub-folder “C:\\ProcessLasso\\Logs”. The reason we suggest this is because, otherwise, every time the log is written to, it will trigger a file system change notification event on that folder and cause the configuration file to be checked to see if it changed. It won’t be reloaded, so not much overhead, but a little. The granularity of file system change notifications in Windows is limited to folders, thus putting the config in it’s own folder makes sure that only writes to it cause a change notification event.
 
 - There is an option for `/governor_start_type:` option as a service, but at the current time this package does not support the option to start the governor as a service.
