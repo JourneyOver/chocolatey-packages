@@ -5,15 +5,15 @@ $pp = Get-PackageParameters
 $packageName = 'plasso'
 $url = 'https://bitsum.com/files/processlassosetup32.exe'
 $url64 = 'https://bitsum.com/files/processlassosetup64.exe'
-$checksum = '4a3844c31248636e6fd23afde76e96abeb1a589e9fceadb995b2b486295ef9f4'
-$checksum64 = 'f020912dd40b20d06897c65931921e8e4c1c0259490842706835173f9455e449'
+$checksum = 'fc58608db5a242fad466dd41491c34295c364eddfdf0591a7b50bb3c177cc138'
+$checksum64 = '65ce6abe325883593d976b2cb19f9d3117609c2cefa408d10a29e9f879eb982f'
 
 $checksumType = 'sha256'
 
 $surl = 'https://bitsum.com/files/server/processlassosetup32.exe'
 $surl64 = 'https://bitsum.com/files/server/processlassosetup64.exe'
-$schecksum = 'cdc17f68275d10a2ff41e9c9b416e72bfedcc812d5f990441895c71fe62c5d14'
-$schecksum64 = 'a885f39daa5da4606cbfe66b6206480d47f7c55e6f5784ae99e0652dfd2cd19a'
+$schecksum = '68b2ceba6a175584a9ad23d112f294d73f87b094ffdbfc3b3e268bbaf9e50bcd'
+$schecksum64 = '500cfb4432b8715747d9a1ec00d131ee44757028c44917361410842ea84081bb'
 
 if (!$pp['language']) { $pp['language'] = 'English' }
 if (!$pp['gui_start_type']) { $pp['gui_start_type'] = 'all,uac' }
