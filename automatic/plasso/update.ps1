@@ -41,8 +41,19 @@ function global:au_GetLatest {
   $surl32 = $url[5]
   $surl64 = $url[4]
 
+  # Check checksum of one url to determine if checksums are out of date.
+  $current_checksum = (gi ".\tools\chocolateyInstall.ps1" | sls '^[$]checksum64\b') -split "=|'" | Select -Last 1 -Skip 1
+  if ($current_checksum.Length -ne 64) { throw "Can't find current checksum" }
+  $remote_checksum = Get-RemoteChecksum $url[0]
+  if ($current_checksum -ne $remote_checksum) {
+    Write-Host 'Remote checksum is different then the current one, forcing update'
+    $global:au_old_force = $global:au_force
+    $global:au_force = $true
+  }
+
   $Latest = @{ URL32 = $url32; URL64 = $url64; SURL32 = $surl32; SURL64 = $surl64; Version = $version }
   return $Latest
 }
 
 update
+if ($global:au_old_force -is [bool]) { $global:au_force = $global:au_old_force }
