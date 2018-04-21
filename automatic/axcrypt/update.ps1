@@ -23,7 +23,7 @@ function global:au_GetLatest {
   $url = $download_page.links | Where-Object href -Match $regex | Select-Object -First 1 -Expand href
 
   $versionRegEx = 'AxCrypt-2\.(\d+)\.(\d+)\.(\d+)'
-  $version = ([regex]::match($download_page.Content, $versionRegEx))
+  $version = ([regex]::match($download_page.Content, $versionRegEx)) -replace ('AxCrypt-', '')
 
   $url32 = $url;
 
