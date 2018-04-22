@@ -15,9 +15,9 @@
     <licenseUrl></licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance> -->
     <!-- <projectSourceUrl></projectSourceUrl> -->
-    <docsUrl>http://wiki.bsplayer.com/?english</docsUrl>
-    <mailingListUrl>http://bsplayer.com/bsplayer-english/contact-us.html</mailingListUrl>
-    <bugTrackerUrl>http://forum.bsplayer.com/bug-reports-codecs/</bugTrackerUrl>
+    <!-- <docsUrl></docsUrl>
+    <mailingListUrl></mailingListUrl>
+    <bugTrackerUrl></bugTrackerUrl> -->
     <tags>multimedia audio video mp3 dvd avi media player admin</tags>
     <summary>A multi-platform desktop app for finding movies and TV shows.</summary>
     <description>A multi-platform desktop app for finding movies and TV shows.</description>
