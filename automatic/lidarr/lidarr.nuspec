@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>lidarr</id>
-    <version>0.0.0</version>
+    <version>0.2.0.371</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/lidarr</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Lidarr</title>
     <authors>Qstick</authors>
     <projectUrl>http://lidarr.audio</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/lidarr.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/1717a5416f03ead383e4994a3468f62892f32389/icons/lidarr.png</iconUrl>
     <copyright>© 2018 Lidarr. All rights reserved.</copyright>
     <licenseUrl>https://github.com/lidarr/Lidarr/blob/develop/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
