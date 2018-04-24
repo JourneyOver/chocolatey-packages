@@ -25,7 +25,7 @@ At times there may be a reason you need to have your IP address set to static. A
 </description>
     <releaseNotes>none</releaseNotes>
     <dependencies>
-      <dependency id="autohotkey.portable" version="1.1.26.01" />
+      <dependency id="autohotkey.portable" version="1.1.28.02" />
     </dependencies>
   </metadata>
   <files>

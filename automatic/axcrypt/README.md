@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/cb45c3b13afef4d9f6d7de610a7bf8c30d1c8ff8/icons/axcrypt.png" width="48" height="48"/> [AxCrypt](https://chocolatey.org/packages/axcrypt)
+# [<img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/cb45c3b13afef4d9f6d7de610a7bf8c30d1c8ff8/icons/axcrypt.png" height="48" width="48" /> ![AxCrypt](https://img.shields.io/chocolatey/v/axcrypt.svg?label=AxCrypt&style=for-the-badge)](https://chocolatey.org/packages/axcrypt)
 
 AxCrypt is a highly secure data encryption app that provides AES-128/256 file encryption and compression for Windows. It has a simple interface and works with a single double-click to automatically decrypt and open documents. It has seamless integration with Windows Explorer with no configuration required.
 

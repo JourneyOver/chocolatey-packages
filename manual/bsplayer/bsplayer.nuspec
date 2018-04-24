@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
@@ -62,7 +62,7 @@ BS.Player is a Windows ® player, which supports the playback of all sorts of fi
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey" version="0.10.8" />
-      <dependency id="autohotkey.portable" version="1.1.26.01" />
+      <dependency id="autohotkey.portable" version="1.1.28.02" />
     </dependencies>
   </metadata>
   <files>

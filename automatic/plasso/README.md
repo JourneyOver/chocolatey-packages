@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/c28e2ded32fc8910b6227c10fdaf5cd0c17091c3/icons/plasso.png" width="48" height="48"/> [Process Lasso](https://chocolatey.org/packages/plasso)
+# [<img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/c28e2ded32fc8910b6227c10fdaf5cd0c17091c3/icons/plasso.png" height="48" width="48" /> ![Process Lasso](https://img.shields.io/chocolatey/v/plasso.svg?label=Process Lasso&style=for-the-badge)](https://chocolatey.org/packages/plasso)
 
 Process Lasso is a tool designed to manage and edit how your processes and services run.
 

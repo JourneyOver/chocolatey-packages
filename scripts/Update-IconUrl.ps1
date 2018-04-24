@@ -1,3 +1,4 @@
+
 <#
 .SYNOPSIS
   Updates Icon Url with correct hashes in the nuspec file
@@ -91,7 +92,7 @@
 #>
 
 param(
-  [string]$Name,
+  [string]$Name = $null,
   [string]$IconName = $null,
   [string]$GithubRepository = "JourneyOver/chocolatey-packages",
   [string]$RelativeIconDir = "../icons",
@@ -192,14 +193,15 @@ function Test-Icon {
     [string]$Name,
     [string]$Extension,
     [string]$IconDir,
-    [bool]$Optimize
+    [bool]$Optimize,
+    [string]$PackageName = $Name
   )
   $path = "$IconDir/$Name.$Extension"
   if (!(Test-Path $path)) { return $false; }
   if ($Optimize) { Optimize-Image $path }
   if ((git status "$path" -s)) {
     git add $path | Out-Null;
-    $message = "($Name) Updated icon"
+    $message = "($PackageName) Updated icon"
     if ((git log --oneline -1) -match "$([regex]::Escape($message))$") {
       git commit --amend -m "$message" "$path" | Out-Null
     } else {
@@ -233,7 +235,8 @@ function Replace-IconUrl {
     [string]$NuspecPath,
     [string]$CommitHash,
     [string]$IconPath,
-    [string]$GithubRepository
+    [string]$GithubRepository,
+    [switch]$NoReadme
   )
 
   $nuspec = gc "$NuspecPath" -Encoding UTF8
@@ -250,8 +253,11 @@ function Replace-IconUrl {
     return;
   }
   [System.IO.File]::WriteAllText("$NuspecPath", $output, $encoding);
-  $readMePath = (Split-Path -Parent $NuspecPath) + "\Readme.md"
-  Update-Readme -ReadmePath $readMePath -Url $url
+
+  if (!($NoReadme)) {
+    $readMePath = (Split-Path -Parent $NuspecPath) + "\Readme.md"
+    Update-Readme -ReadmePath $readMePath -Url $url
+  }
   $counts.replaced++;
 }
 
@@ -265,15 +271,45 @@ function Update-IconUrl {
     [bool]$Optimize
   )
 
+  # Before we do any checking in the fallback icons directory,
+  # we check if there exists an icon directory in the package root path
+  if (Test-Path "$PSScriptRoot/$PackagesDirectory/$Name/icons") {
+    # Get the last item inside the icons directory, we only sort it by the first value splitted by x
+    $iconPath = Get-ChildItem "$PSScriptRoot/$PackagesDirectory/$Name/icons" | sort -Descending { [int]($_ -split 'x' | select -first 1) } | select -expand FullName -first 1
+
+    if ($iconPath) {
+      $iconName = [System.IO.Path]::GetFileNameWithoutExtension($iconPath)
+      $extension = [System.IO.Path]::GetExtension($iconPath).TrimStart('.')
+      $commitHash = Test-Icon -Name $iconName -Extension $extension -IconDir "$PSScriptRoot/$PackagesDirectory/$Name/icons" -Optimize $Optimize -PackageName $Name;
+      $resolvedPath = Resolve-Path $iconPath -Relative;
+      $trimming = @(".", "\")
+      $iconPath = $resolvedPath.TrimStart($trimming) -replace '\\', '/';
+      if (Test-Path "$PSscriptRoot/$PackagesDirectory/$Name/icons/48x48.$extension") {
+        Replace-IconUrl `
+          -NuspecPath "$PSScriptRoot/$PackagesDirectory/$Name/$Name.nuspec" `
+          -CommitHash $commitHash `
+          -IconPath $iconPath `
+          -GithubRepository $GithubRepository
+        $commitHash = Test-Icon -Name "48x48" -Extension $extension -IconDir "$PSScriptRoot/$PackagesDirectory/$Name/icons" -Optimize $Optimize -PackageName $Name;
+        $url = "https://cdn.rawgit.com/$GithubRepository/$CommitHash/$($iconPath -replace "$iconName",'48x48')"
+        $readMePath = "$PSScriptRoot/$PackagesDirectory/$Name/Readme.md"
+        Update-Readme -ReadmePath $readMePath -Url $url
+      } else {
+        Replace-IconUrl `
+          -NuspecPath "$PSScriptRoot/$PackagesDirectory/$Name/$Name.nuspec" `
+          -CommitHash $commitHash `
+          -IconPath $iconPath `
+          -GithubRepository $GithubRepository
+      }
+      return;
+    }
+  }
+
   $possibleNames = @($Name);
-  if ($IconName) { $possibleNames = @($IconName) + $possibleNames }
 
-  $validSuffixes = @(".install"; ".portable"; ".commandline")
-
-  $suffixMatch = $validSuffixes | ? { $Name.EndsWith($_) } | select -first 1
-
-  if ($suffixMatch) {
-    $possibleNames += $Name.Substring(0, $Name.Length - $suffixMatch.Length)
+  $dotIndex = $Name.IndexOf('.')
+  if ($dotIndex -gt 0) {
+    $possibleNames += $Name.Remove($dotIndex)
   }
 
   # Let check if the package already contains a url, and get the filename from that
@@ -292,7 +328,7 @@ function Update-IconUrl {
     $index = $url.LastIndexOf('/')
     if ($index -gt 0) {
       $fileName = $url.Substring($index + 1)
-      $index = $fileName.IndexOf('.')
+      $index = $fileName.LastIndexOf('.')
       if ($index -gt 0) {
         $fileName = $fileName.Substring(0, $index)
         $possibleNames += @($fileName)
@@ -304,7 +340,7 @@ function Update-IconUrl {
 
     foreach ($extension in $validExtensions) {
       $iconNameWithExtension = "$possibleName.$extension";
-      $commitHash = Test-Icon -Name $possibleName -Extension $extension -IconDir $IconDir -Optimize $Optimize;
+      $commitHash = Test-Icon -Name $possibleName -Extension $extension -IconDir $IconDir -Optimize $Optimize -PackageName $Name;
       if ($commitHash) { break; }
     }
     if ($commitHash) { break; }
