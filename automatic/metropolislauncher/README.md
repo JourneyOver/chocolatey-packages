@@ -1,4 +1,4 @@
-# [<img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/0410b2d62d32e37613c74029babe266245cb5a92/icons/metropolislauncher.png" height="48" width="48" /> ![Metropolis Launcher](https://img.shields.io/chocolatey/v/metropolislauncher.svg?label=Metropolis Launcher&style=for-the-badge)](https://chocolatey.org/packages/metropolislauncher)
+# [<img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/0410b2d62d32e37613c74029babe266245cb5a92/icons/metropolislauncher.png" height="48" width="48" /> ![Metropolis Launcher](https://img.shields.io/chocolatey/v/metropolislauncher.svg?label=Metropolis%20Launcher&style=for-the-badge)](https://chocolatey.org/packages/metropolislauncher)
 
 Metropolis Launcher has been created to be a great old-school launcher, emulation front-end and an extensive offline database of video game metadata thanks to [MobyGames](https://www.mobygames.com/) and their strong user base.
 
