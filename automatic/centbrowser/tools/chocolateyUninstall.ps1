@@ -1,5 +1,5 @@
-$ErrorActionPreference = 'Stop'
-$pp = Get-PackageParameters
+﻿$ErrorActionPreference = 'Stop'
+$pp = Get-PackageParametersBuiltIn
 
 $packageName = 'CentBrowser'
 $programUninstallEntryName = 'Cent Browser*'

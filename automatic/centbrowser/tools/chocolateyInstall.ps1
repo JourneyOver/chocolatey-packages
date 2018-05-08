@@ -1,11 +1,11 @@
 ﻿$ErrorActionPreference = 'Stop'
-$pp = Get-PackageParameters
+$pp = Get-PackageParametersBuiltIn
 
 $packageName = 'CentBrowser'
-$url = 'http://static.centbrowser.com/beta_32/centbrowser_3.3.2.15.exe'
-$url64 = 'http://static.centbrowser.com/beta_64/centbrowser_3.3.2.15_x64.exe'
-$checksum = '0a2be2f604ce044bbc6529460330b37ddd76f920b635280da6dea340964a4c37'
-$checksum64 = '1a2a1e68a9f8b6234a9248eeb03a034a73c943b0c0311122c3075ea6e28c875e'
+$url = 'http://static.centbrowser.com/beta_32/centbrowser_3.4.3.25.exe'
+$url64 = 'http://static.centbrowser.com/beta_64/centbrowser_3.4.3.25_x64.exe'
+$checksum = '5a18a173312ec5f0cb5904f692362118732a6eb47aea64f92aab87d8ab617289'
+$checksum64 = '95c8b619badc25ca49acc894eb3d2ee5c1443bf8b9387f3112c9070ff55aea74'
 $checksumType = 'sha256'
 
 if (!$pp['dir']) { $pp['dir'] = "$env:LOCALAPPDATA" }
