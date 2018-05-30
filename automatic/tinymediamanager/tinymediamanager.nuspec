@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tinymediamanager</id>
-    <version>2.9.11</version>
+    <version>2.9.12</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tinymediamanager</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>tinyMediaManager</title>
@@ -35,7 +35,7 @@
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
     <dependencies>
-      <dependency id="jre8" version="8.0.161" />
+      <dependency id="jre8" version="8.0.171" />
     </dependencies>
   </metadata>
   <files>

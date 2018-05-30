@@ -1,6 +1,7 @@
 $allDeps = @(
   'chocolatey-core.extension'
   'autohotkey.portable'
+  'jre8'
   'kb2999226'
   'kb3033929'
   'kb3035131'

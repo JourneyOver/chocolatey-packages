@@ -62,7 +62,7 @@ BS.Player is a Windows ® player, which supports the playback of all sorts of fi
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
     <dependencies>
       <dependency id="chocolatey" version="0.10.8" />
-      <dependency id="autohotkey.portable" version="1.1.28.02" />
+      <dependency id="autohotkey.portable" version="1.1.29.00" />
     </dependencies>
   </metadata>
   <files>
