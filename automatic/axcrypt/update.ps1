@@ -19,8 +19,8 @@ function global:au_BeforeUpdate {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $version_page = Invoke-WebRequest -Uri $versionnum -UseBasicParsing
+  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing -Headers @{ "Accept-Encoding" = 'gzip' }
+  $version_page = Invoke-WebRequest -Uri $versionnum -UseBasicParsing -Headers @{ "Accept-Encoding" = 'gzip' }
 
   $regex = 'AxCrypt-(\d+)-Setup.exe'
   $url = ([regex]::match($download_page.Content, $regex))
