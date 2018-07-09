@@ -1,7 +1,6 @@
 Import-Module au
 
-$releases = 'http://www2.fs.u-bunkyo.ac.jp/~gilner/_files'
-$fakelink = 'http://www2.fs.u-bunkyo.ac.jp/~gilner/_files/TheSage_Setup_0-0-0000.exe'
+$releases = 'http://www.sequencepublishing.website/_files/'
 
 function global:au_SearchReplace {
   @{
@@ -22,7 +21,7 @@ function global:au_GetLatest {
   $realnum = $url -split 'TheSage_Setup_|.exe' | Select-Object -Last 1 -Skip 1
 
   $version = $realnum -replace ('-', '.');
-  $url32 = $fakelink -replace ("(\d+)\-(\d+)\-(\d+)", "$realnum");
+  $url32 = $releases + 'TheSage_Setup_0-0-0000.exe' -replace ("(\d+)\-(\d+)\-(\d+)", "$realnum");
 
   $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest
