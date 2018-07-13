@@ -51,7 +51,11 @@ function global:au_GetLatest {
     $global:au_force = $true
   }
 
-  $Latest = @{ URL32 = $url32; URL64 = $url64; SURL32 = $surl32; SURL64 = $surl64; Version = $version }
+  if ($current_checksum -ne $remote_checksum) {
+  $Latest = @{ URL32 = $url32; URL64 = $url64; SURL32 = $surl32; SURL64 = $surl64; Version = "$version" + "01" }
+  } else {
+  $Latest = @{ URL32 = $url32; URL64 = $url64; SURL32 = $surl32; SURL64 = $surl64; Version = "$version" + "00" }
+  }
   return $Latest
 }
 
