@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/cmdrkotori/mpc-qt/releases/tag/v18.03>
+location on <https://github.com/cmdrkotori/mpc-qt/releases/tag/v18.08>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/cmdrkotori/mpc-qt/releases/download/v18.03/mpc-qt-win-x64-1803.zip>
+  url: <https://github.com/cmdrkotori/mpc-qt/releases/download/v18.08/mpc-qt-win-x64-1808.zip>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 1EF6EECE12D04A8428ACA3E16CB8A6288C77EFE32A7129DC655BDF5047EA3426
+  checksum: D798243940C2B9D27225D5C7DC68B71FB22DD18CADABE6A929E187565B1533A6
 
 Using AU:
 
