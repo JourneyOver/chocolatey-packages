@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>duckietv</id>
-    <version>2018.0812.0130-nightly</version>
+    <version>2018.0813.0130-nightly</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/duckietv</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>DuckieTV</title>
     <authors>SchizoDuckie</authors>
     <projectUrl>http://schizoduckie.github.io/DuckieTV/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/575bc31abcf0249da6533821231a854255a2cc4e/icons/duckietv.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/duckietv.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/SchizoDuckie/DuckieTV/blob/angular/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
