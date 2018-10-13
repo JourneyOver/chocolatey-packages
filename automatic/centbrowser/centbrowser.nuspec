@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>CentBrowser</id>
-    <version>3.5.3.50</version>
+    <version>3.6.8.58-beta</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Cent Browser</title>
     <authors>Cent Studio</authors>
     <projectUrl>https://www.centbrowser.com</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/475edf21f7a9a51c8bc5aabfb123bd8e41101f73/icons/centbrowser.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/centbrowser.png</iconUrl>
     <copyright>Copyright © 2015-2018 Cent Studio. All rights reserved.</copyright>
     <licenseUrl>https://www.chromium.org/chromium-os/licenses</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
