@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>metropolislauncher</id>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/metropolislauncher</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Metropolis Launcher</title>
     <authors>MK2k</authors>
     <projectUrl>https://metropolis-launcher.net/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/0410b2d62d32e37613c74029babe266245cb5a92/icons/metropolislauncher.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/metropolislauncher.png</iconUrl>
     <copyright>Copyright (C) 2017  MK2k</copyright>
     <licenseUrl>https://github.com/theMK2k/MetropolisLauncher/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
