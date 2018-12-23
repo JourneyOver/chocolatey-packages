@@ -13,7 +13,7 @@ if (($Name.Length -gt 0) -and ($Name[0] -match '^random (.+)')) {
   Write-Host "TESTING GROUP $($n+1) of $group"
 
   $group_size = [int]($lsau.Count / $group) + 1
-  $Name = $lsau | Select-Object -First $group_size -Skip ($group_size * $n) | ForEach-Object { $_.Name }
+  $Name = $lsau | select -First $group_size -Skip ($group_size * $n) | % { $_.Name }
 
   Write-Host ($Name -join ' ')
   Write-Host ('-' * 80)
@@ -55,7 +55,7 @@ $options = [ordered]@{
       Github_UserRepo = $Env:github_user_repo         #  Markdown: shows user info in upper right corner
       NoAppVeyor      = $true                             #  Markdown: do not show AppVeyor build shield
       Title           = "Update Force Test - Group ${n}"
-      UserMessage     = "[Ignored](#ignored) | [Update report](https://gist.github.com/$Env:gist_id) | [Build](https://ci.appveyor.com/project/JourneyOver/chocolatey-packages-khbb9)"       #  Markdown, Text: Custom user message to show
+      UserMessage     = "[Ignored](#ignored) | [Update report](https://gist.github.com/$Env:gist_id) | [Build](https://ci.appveyor.com/project/JourneyOver/chocolatey-packages-khbb9) | **USING AU NEXT VERSION**"       #  Markdown, Text: Custom user message to show
     }
   }
 
@@ -71,12 +71,18 @@ $options = [ordered]@{
   BeforeEach  = {
     param($PackageName, $Options )
     $Options.ModulePaths | % { Import-Module $_ }
+    $global:au_Force = $true # Some of the helper scripts rely on this one
   }
 }
 
+[System.Net.ServicePointManager]::SecurityProtocol = 3072 -bor
+768 -bor
+[System.Net.SecurityProtocolType]::Tls -bor
+[System.Net.SecurityProtocolType]::Ssl3
+
 $global:info = updateall -Name $Name -Options $Options
 
-$au_errors = $global:info | Where-Object { $_.Error } | Select-Object -ExpandProperty Error
+$au_errors = $global:info | ? { $_.Error } | select -ExpandProperty Error
 
 if ($ThrowOnErrors -and $au_errors.Count -gt 0) {
   throw 'Errors during update'

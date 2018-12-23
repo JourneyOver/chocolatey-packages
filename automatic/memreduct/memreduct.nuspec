@@ -10,7 +10,7 @@
     <title>Mem Reduct</title>
     <authors>Henry++</authors>
     <projectUrl>https://www.henrypp.org/product/memreduct</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/25bdfa16dc70cbc99cdfee77eaff56714fc57a14/icons/memreduct.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@25bdfa16dc70cbc99cdfee77eaff56714fc57a14/icons/memreduct.png</iconUrl>
     <copyright>(c) 2009-2018 Henry++</copyright>
     <licenseUrl>https://github.com/henrypp/memreduct/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

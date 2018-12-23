@@ -4,7 +4,7 @@ version: '{build}'
 pull_requests:
   do_not_increment_build_number: true
 max_jobs: 1
-image: WMF 5
+#image: Visual Studio 2015
 # History plugin requires complete log
 #clone_depth: 5
 branches:
@@ -17,13 +17,13 @@ environment:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
   au_version: master
   au_push: true
-  # Force test: use 1 to test all, or N to split testing into N groups
-  au_test_groups: 1
+  # Use 1 to test all, or N to split testing into N groups
+  au_test_groups: 4
 
   # Github token to commit pushed packages to repository
   github_user_repo: JourneyOver/chocolatey-packages
   github_api_key:
-    secure: pjjxVtx3PPBrCQGTPgRgG6AZS55C0yq5tfRmUgUU+7yOixqxSvPZRgVYG0zt7nzx #https://ci.appveyor.com/tools/encrypt
+    secure: pjjxVtx3PPBrCQGTPgRgG6AZS55C0yq5tfRmUgUU+7yOixqxSvPZRgVYG0zt7nzx
 
   github_username: JourneyOver
   github_password:
@@ -32,24 +32,24 @@ environment:
   # Mail credentials - for error notifications
   mail_user: timtag1190@gmail.com
   mail_pass:
-    secure: LQuYAWiJYGHylakKg8Cf5XXdUw6r431guFDFRMWopsg= #https://ci.appveyor.com/tools/encrypt
+    secure: LQuYAWiJYGHylakKg8Cf5XXdUw6r431guFDFRMWopsg=
   mail_server: smtp.gmail.com
   mail_port: 587
   mail_enablessl: true
 
-  # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
-  # Optional, leave empty to create anonymous gist
+  #ID of the gist used to save run results
   gist_id: 508bb89c4cc35b67842940c60310532b
 
-  # Force test: gist id for test results
+  #ID of the gist used to save test run results
   gist_id_test: 13f08beca5db513521762b5c4ce53d58
 
-  # Chocolatey API key - to push updated packages
+  #Chocolatey API key - to push updated packages
   api_key:
-    secure: 2NnnfrwVZD5wmP4ZEW3sAV6QLMv3gsRrRWWnQ2++lXudfmGhi9M1yjjD2DnDOaXr # https://ci.appveyor.com/tools/encrypt
+    secure: 2NnnfrwVZD5wmP4ZEW3sAV6QLMv3gsRrRWWnQ2++lXudfmGhi9M1yjjD2DnDOaXr
 
   #Chocolatey version we want to use when checking for updates.
-  choco_version: '0.10.10'
+  choco_version: '0.10.8'
+  choco_version_pr: '0.10.8' # Should be kept to the version available one year ago
   nupkg_cache_path: C:\packages
 
 init:
@@ -59,23 +59,19 @@ init:
 
 install:
 - ps: |
-    if (($Env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null) -or ($Env:APPVEYOR_PULL_REQUEST_NUMBER -eq '')) {
-      # We only want to update chocolatey if we're running a normal build, not during PR testing
-      if (!(Test-Path "$env:nupkg_cache_path")) { mkdir -Force "$env:nupkg_cache_path" }
-      @{
-        'chocolatey' = $Env:choco_version
-        #'optipng'    = '0.7.6'
-        #'pngquant'   = '2.10.1'
-        #'jpegoptim'  = '1.2.4.4'
-        'wormies-au-helpers' = '0.2.2'
-        'autohotkey.portable' = '1.1.28.00'
-        'chocolatey-core.extension' = '1.3.3'
-      }.GetEnumerator() | % {
-        if (!(Test-Path "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg")) { rm "${env:nupkg_cache_path}\$($_.Key).*.nupkg" ; iwr "https://chocolatey.org/api/v2/package/$($_.Key)/$($_.Value)" -OutFile "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg" }
-        if ($_.Key -eq 'chocolatey') { cup $_.Key --version $_.Value --source ${env:nupkg_cache_path} }
-        else { cinst $_.Key --version $_.Value --source ${env:nupkg_cache_path} --ignore-dependencies }
-      }
+    $chocoVersion = if (($Env.APPVEYOR_PULL_REQUEST_NUMBER -eq $null) -or ($ENV:APPVEYOR_PULL_REQUEST_NUMBER -eq '')) { $Env:choco_version } else { $Env:choco_version_pr }
+    if (!(Test-Path "$env:nupkg_cache_path")) { mkdir -Force "$env:nupkg_cache_path" }
+    @{
+      'chocolatey' = $chocoVersion
+      'wormies-au-helpers' = '0.3.1'
+      'autohotkey.portable' = '1.1.30.01'
+      'chocolatey-core.extension' = '1.3.3'
+    }.GetEnumerator() | % {
+      if (!(Test-Path "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg")) { rm "${env:nupkg_cache_path}\$($_.Key).*.nupkg" ; iwr "https://chocolatey.org/api/v2/package/$($_.Key)/$($_.Value)" -OutFile "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg" }
+      if ($_.Key -eq 'chocolatey') { cup $_.Key --version $_.Value --source ${env:nupkg_cache_path} --allow-downgrade }
+      else { cinst $_.Key --version $_.Value --source ${env:nupkg_cache_path} --ignore-dependencies }
     }
+    rm "$env:ChocolateyInstall\logs\*.log"
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
 - git --version
@@ -101,7 +97,7 @@ build_script:
 
     if (($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne $null) -and ($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne '')) {
       Set-Service wuauserv -StartupType Manual
-      ./scripts/Test-RepoPackage.ps1 -CleanFiles
+      ./scripts/Test-RepoPackage.ps1 -CleanFiles -TakeScreenshots
       return
     } else {
       # Clean the choco logs as it's quite large
@@ -119,6 +115,7 @@ build_script:
                 foreach ($package in $packages) {
                     Write-Host ("{0}`n{1}`n" -f ('-'*60), "PACKAGE: $package")
                     $package_dir = ls -recurse | ? { $_.Name -eq "$package.nuspec"} | select -First 1 | % Directory
+
                     if (!$package_dir) { Write-Warning "Can't find package '$package'"; continue }
                     pushd $package_dir
                       if (Test-Path update.ps1 -ea 0) { ./update.ps1 }
@@ -138,9 +135,11 @@ on_finish:
     if (Test-Path $Env:TEMP\chocolatey\au) { 7z a  -mx9 au_temp.7z $Env:TEMP\chocolatey\au\* }
     $paths = @(
       Resolve-Path "$env:TEMP\artifacts\*" -ea 0
+      Resolve-Path "$env:ChocolateyInstall\logs\*.log" -ea 0
       'au_temp.7z'
       'update_info.xml'
       'Update-AUPackages.md'
+      'Update-History.md'
       'eventlogs.txt'
     )
     $paths | ? { Test-Path $_ } | % { Push-AppveyorArtifact $_ }
@@ -148,11 +147,12 @@ on_finish:
 
 notifications:
 - provider: Email
-  to:
-  - $(mail_user)
+  to: $(mail_user)
   on_build_success: false
   on_build_failure: true
   on_build_status_changed: true
+- provider: GitHubPullRequest
+  template: "{{#passed}}:white_check_mark: Package verification completed without issues. PR is now pending human review{{/passed}}{{#failed}}:x: Package verification failed, please review the [Appveyor Logs]({{buildUrl}}) and the provided [Artifacts]({{buildUrl}}/artifacts) before requesting a human reviewer to take a look.{{/failed}}"
 
 cache:
   - '%nupkg_cache_path% -> .appveyor.yml'

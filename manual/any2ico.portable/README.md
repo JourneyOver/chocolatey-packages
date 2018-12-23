@@ -1,4 +1,4 @@
-# <img src="https://cdn.rawgit.com/JourneyOver/chocolatey-packages/1e63e1f77337f67003290d824b7ddf3d08fb44e9/icons/any2ico.png" width="48" height="48"/> [Quick Any2Ico](https://chocolatey.org/packages/any2ico.portable)
+# <img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/any2ico.png" width="48" height="48"/> [Quick Any2Ico](https://chocolatey.org/packages/any2ico.portable)
 
 There are a number of icons that are included with programs and images, that users might need to work with. Quick Any2Ico is an application that allows users to extract icons from various different file formats, then convert them into either PNG or ICO images in several different resolution options.
 

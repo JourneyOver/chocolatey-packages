@@ -10,7 +10,7 @@
     <title>MPC QT</title>
     <authors>cmdrkotori</authors>
     <projectUrl>https://github.com/cmdrkotori/mpc-qt</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/99d016983c05d8e7891da1a3233c5d9cd660d1a0/icons/mpc-qt.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/mpc-qt.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/cmdrkotori/mpc-qt/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
