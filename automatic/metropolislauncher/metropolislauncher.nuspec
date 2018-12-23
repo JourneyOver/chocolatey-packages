@@ -10,7 +10,7 @@
     <title>Metropolis Launcher</title>
     <authors>MK2k</authors>
     <projectUrl>https://metropolis-launcher.net/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/metropolislauncher.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/metropolislauncher.png</iconUrl>
     <copyright>Copyright (C) 2017  MK2k</copyright>
     <licenseUrl>https://github.com/theMK2k/MetropolisLauncher/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

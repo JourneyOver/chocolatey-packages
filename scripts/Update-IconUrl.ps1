@@ -1,4 +1,3 @@
-
 <#
 .SYNOPSIS
   Updates Icon Url with correct hashes in the nuspec file
@@ -6,7 +5,7 @@
 .DESCRIPTION
   Searches for icons matching the package name and
   extracts the latest commit hash for that icon (committing it first if it has changed).
-  It then updates the package nuspec file with the correct rawgit url.
+  It then updates the package nuspec file with the correct jsdelivr url.
 
 .PARAMETER Name
   If specified it only updates the package matching the specified name
@@ -16,7 +15,7 @@
   Is ignored if no Name parameter is specified.
 
 .PARAMETER GithubRepository
-  The github user/repository to use in the rawgit url
+  The github user/repository to use in the jsdelivr url
 
 .PARAMETER RelativeIconDir
   The relative path to where icons are located (relative to the location of this script)
@@ -52,20 +51,20 @@
 .EXAMPLE
   ps> .\Update-IconUrl.ps1
   Updates all nuspec files with matching icons
--    <iconUrl>https://cdn.rawgit.com/AdmiringWorm/chocolatey-packages/e4a49519947c3cff55c17a0b08266c56b0613e64/icons/thunderbird.png</iconUrl>
-+    <iconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/edba4a5849ff756e767cba86641bea97ff5721fe/icons/thunderbird.png</iconUrl>
+-    <iconUrl>https://cdn.jsdelivr.net/gh/AdmiringWorm/chocolatey-packages@e4a49519947c3cff55c17a0b08266c56b0613e64/icons/thunderbird.png</iconUrl>
++    <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey/chocolatey-coreteampackages@edba4a5849ff756e767cba86641bea97ff5721fe/icons/thunderbird.png</iconUrl>
 
 .EXAMPLE
   ps> .\Update-IconUrl.ps1 -Name 'SQLite'
   Updates only a single nuspec file with the specified name with its matching icon
--    <iconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/e4a49519947c3cff55c17a0b08266c56b0613e64/icons/speccy.png</iconUrl>
-+    <iconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/edba4a5849ff756e767cba86641bea97ff5721fe/icons/speccy.png</iconUrl>
+-    <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey/chocolatey-coreteampackages@e4a49519947c3cff55c17a0b08266c56b0613e64/icons/speccy.png</iconUrl>
++    <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey/chocolatey-coreteampackages@edba4a5849ff756e767cba86641bea97ff5721fe/icons/speccy.png</iconUrl>
 
 .EXAMPLE
   ps> .\Updates-IconUrl.ps1 -Name 'youtube-dl' -IconName 'y-dl'
   Updates only a single nuspec file with the specified name with the icon matching the specified IconName
--    <iconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/e4a49519947c3cff55c17a0b08266c56b0613e64/icons/y-dl.svg</iconUrl>
-+    <iconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/a42da86c9cc480a5f3f23677e0d73d88416a3b3c/icons/y-dl.svg</iconUrl>
+-    <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey/chocolatey-coreteampackages@e4a49519947c3cff55c17a0b08266c56b0613e64/icons/y-dl.svg</iconUrl>
++    <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey/chocolatey-coreteampackages@a42da86c9cc480a5f3f23677e0d73d88416a3b3c/icons/y-dl.svg</iconUrl>
 
 .EXAMPLE
   ps> .\Updates-IconUrl.ps1 -Name "thunderbird" -UseStopwatch
@@ -92,16 +91,33 @@
 #>
 
 param(
-  [string]$Name = $null,
+  [string]$Name,
   [string]$IconName = $null,
-  [string]$GithubRepository = "JourneyOver/chocolatey-packages",
+  [string]$GithubRepository = $null,
   [string]$RelativeIconDir = "../icons",
   [string]$PackagesDirectory = "../automatic",
+  [ValidateSet('jsdelivr', 'staticaly', 'githack')]
+  [string]$template = 'jsdelivr',
   [switch]$UseStopwatch,
   [switch]$Quiet,
   [switch]$ThrowErrorOnIconNotFound,
   [switch]$Optimize
 )
+
+if (!$GithubRepository) {
+  $allRemotes = . git remote
+  $remoteName = if ($allRemotes | ? { $_ -eq 'upstream' }) { "upstream" }
+  elseif ($allRemotes | ? { $_ -eq 'origin' }) { 'origin' }
+  else { $allRemotes | select -first 1 }
+
+  if ($remoteName) { $remoteUrl = . git remote get-url $remoteName }
+
+  if ($remoteUrl) {
+    $GithubRepository = ($remoteUrl -split '\/' | select -last 2) -replace '\.git$', '' -join '/'
+  } else {
+    $GithubRepository = "USERNAME/REPOSITORY-NAME"
+  }
+}
 
 $counts = @{
   replaced = 0
@@ -243,7 +259,14 @@ function Replace-IconUrl {
 
   $oldContent = ($nuspec | Out-String) -replace '\r\n?', "`n"
 
-  $url = "https://cdn.rawgit.com/$GithubRepository/$CommitHash/$iconPath"
+  # Old rawgit url, just for history purposes
+  # $url = "https://cdn.rawgit.com/$GithubRepository/$CommitHash/$iconPath"
+  $url = switch ($template) {
+    'jsdelivr' { "https://cdn.jsdelivr.net/gh/${GithubRepository}@${CommitHash}/$iconPath" }
+    'staticaly' { "https://cdn.staticaly.com/gh/${GithubRepository}/${CommitHash}/$iconPath" }
+    'githack' { "https://rawcdn.githack.com/${GithubRepository}/${CommitHash}/$iconPath" }
+    Default { throw "$template is Unsupported" }
+  }
 
   $nuspec = $nuspec -replace '<iconUrl>.*', "<iconUrl>$url</iconUrl>"
 
@@ -270,40 +293,6 @@ function Update-IconUrl {
     [bool]$Quiet,
     [bool]$Optimize
   )
-
-  # Before we do any checking in the fallback icons directory,
-  # we check if there exists an icon directory in the package root path
-  if (Test-Path "$PSScriptRoot/$PackagesDirectory/$Name/icons") {
-    # Get the last item inside the icons directory, we only sort it by the first value splitted by x
-    $iconPath = Get-ChildItem "$PSScriptRoot/$PackagesDirectory/$Name/icons" | sort -Descending { [int]($_ -split 'x' | select -first 1) } | select -expand FullName -first 1
-
-    if ($iconPath) {
-      $iconName = [System.IO.Path]::GetFileNameWithoutExtension($iconPath)
-      $extension = [System.IO.Path]::GetExtension($iconPath).TrimStart('.')
-      $commitHash = Test-Icon -Name $iconName -Extension $extension -IconDir "$PSScriptRoot/$PackagesDirectory/$Name/icons" -Optimize $Optimize -PackageName $Name;
-      $resolvedPath = Resolve-Path $iconPath -Relative;
-      $trimming = @(".", "\")
-      $iconPath = $resolvedPath.TrimStart($trimming) -replace '\\', '/';
-      if (Test-Path "$PSscriptRoot/$PackagesDirectory/$Name/icons/48x48.$extension") {
-        Replace-IconUrl `
-          -NuspecPath "$PSScriptRoot/$PackagesDirectory/$Name/$Name.nuspec" `
-          -CommitHash $commitHash `
-          -IconPath $iconPath `
-          -GithubRepository $GithubRepository
-        $commitHash = Test-Icon -Name "48x48" -Extension $extension -IconDir "$PSScriptRoot/$PackagesDirectory/$Name/icons" -Optimize $Optimize -PackageName $Name;
-        $url = "https://cdn.rawgit.com/$GithubRepository/$CommitHash/$($iconPath -replace "$iconName",'48x48')"
-        $readMePath = "$PSScriptRoot/$PackagesDirectory/$Name/Readme.md"
-        Update-Readme -ReadmePath $readMePath -Url $url
-      } else {
-        Replace-IconUrl `
-          -NuspecPath "$PSScriptRoot/$PackagesDirectory/$Name/$Name.nuspec" `
-          -CommitHash $commitHash `
-          -IconPath $iconPath `
-          -GithubRepository $GithubRepository
-      }
-      return;
-    }
-  }
 
   $possibleNames = @($Name);
 
@@ -380,7 +369,7 @@ If ($Name) {
 
 if ($UseStopwatch) {
   $stopWatch.Stop();
-  if (!Quiet) {
+  if (!$Quiet) {
     Write-Host "Time Used: $($stopWatch.Elapsed)"
   }
 }

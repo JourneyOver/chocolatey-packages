@@ -64,11 +64,11 @@ function CheckPackageSizes() {
 
   $nupkgFiles | % {
     $size = $_.Length
-    $maxSize = 300MB
+    $maxSize = 200MB
     $packageName = $_.Directory.Name
     if ($size -gt $maxSize) {
       $friendlySize = $size / 1024 / 1024
-      WriteOutput -type Error "The package $packageName is too large. Maximum allowed size is 300 MB. Actual size was $friendlySize MB!"
+      WriteOutput -type Error "The package $packageName is too large. Maximum allowed size is $($maxSize / 1024 / 1024) MB. Actual size was $friendlySize MB!"
       SetAppveyorExitCode -ExitCode 2
     } else {
       $index = 0
@@ -98,7 +98,7 @@ function CreateSnapshotArchive() {
     'a'
     '-mx9'
     "`"$artifactsDirectory\install_snapshot.7z`""
-  ) + $directories
+  ) + ($directories | select -Unique)
 
   . 7z $arguments
 }
@@ -238,6 +238,7 @@ function GetPackagesFromDiff() {
   <#
   Gets the changed packages that have changed since the
   latest common ancestor of the current branch, and the specified $diffAgainst branch.
+
 .PARAMETER diffAgainst
   The branch we should run git diff against.
 #>
@@ -356,13 +357,14 @@ function RunChocoProcess() {
   $args = @($arguments) + @(
     '--yes'
     "--execution-timeout=$timeout"
+    "--ignorepackagecodes"
   )
   if ($arguments[0] -eq 'uninstall') {
     $args += @(
       '--all-versions'
       '--autouninstaller'
       '--fail-on-autouninstaller'
-      '--force'
+      #'--force'
     )
   }
   $packFailed = $false

@@ -10,7 +10,7 @@
     <title>WinPatrol</title>
     <authors>Ruiware</authors>
     <projectUrl>https://www.winpatrol.com/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/JourneyOver/chocolatey-packages/259e160c7aab687bf1353571456c1b1d0b7c8e0e/icons/winpatrol.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/winpatrol.png</iconUrl>
     <copyright>Copyright 1997 - 2018 WinPatrol | All Rights Reserved</copyright>
     <licenseUrl>http://www.winpatrol.com/license.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
