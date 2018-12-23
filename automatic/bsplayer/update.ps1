@@ -2,7 +2,7 @@ Import-Module au
 
 $releases = 'http://bsplayer.com/bsplayer-english/download-free.html'
 $buildreal = 'http://www.softpedia.com/get/Multimedia/Video/Video-Players/BS-Player.shtml'
-$download = 'http://download2.bsplayer.com/download/file/mirror1/bsplayer000.setup.exe'
+$download = 'http://download11.bsplayer.com/download/file/mirror1/bsplayer000.setup.exe'
 
 function global:au_SearchReplace {
   @{
