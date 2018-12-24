@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>bsplayer</id>
-    <version>2.71.1081</version>
+    <version>2.73.1084</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/manual/bsplayer</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>BSPlayer</title>
@@ -20,8 +20,7 @@
     <bugTrackerUrl>http://forum.bsplayer.com/bug-reports-codecs/</bugTrackerUrl>
     <tags>multimedia audio video mp3 dvd avi media player admin</tags>
     <summary>Play videos, movies, DVDs, music, tv streams, teletext, radio streams, podcasts and much more using this powerful and intuitive media player</summary>
-    <description>
-BS.Player is a Windows ® player, which supports the playback of all sorts of files, such as AVI, MPG, ASF, WMV, WAV, MP3, etc., with a special focus on video and DivX.
+    <description><![CDATA[BS.Player is a Windows ® player, which supports the playback of all sorts of files, such as AVI, MPG, ASF, WMV, WAV, MP3, etc., with a special focus on video and DivX.
 
 ## Features
 
@@ -53,7 +52,7 @@ BS.Player is a Windows ® player, which supports the playback of all sorts of fi
 - Plugin support
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/bsplayer.png)
-</description>
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](http://forum.bsplayer.com/news-updates/)
