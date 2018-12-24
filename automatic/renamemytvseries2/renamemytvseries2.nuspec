@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>renamemytvseries2</id>
+    <version>0.0.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/renamemytvseries2</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>Rename My TV Series 2</title>
+    <authors>Hans Luijten</authors>
+    <projectUrl>https://www.tweaking4all.com/home-theatre/rename-my-tv-series-v2/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/renamemytvseries2.png</iconUrl>
+    <copyright>©2000-2018 Hans Luijten</copyright>
+    <!-- <licenseUrl></licenseUrl> -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <projectSourceUrl></projectSourceUrl>
+    <docsUrl></docsUrl> -->
+    <mailingListUrl>https://www.tweaking4all.com/home-theatre/rename-my-tv-series-v2/#comments</mailingListUrl>
+    <!-- <bugTrackerUrl></bugTrackerUrl> -->
+    <tags>file-management tv-show utility-computing episodes recording naming rename rename-tv-series tv-series-renamer search-episode admin</tags>
+    <summary>Simple application to assist you in renaming TV Series files.</summary>
+    <description>
+Originally the application was built as a purpose to learn more about Lazarus Pascal and cross-platform development.
+
+In the meanwhile, my tool is being used be a lot of users to help them rename TV-Series files.
+Just keep in mind that this tool is not to promote illegal downloading or illegal sharing of copyrighted materials. It’s just a handy tool to occasionally rename some of your TV show files.
+
+The philosophy is a simple work flow; you have a few odd named TV Show episodes and you’d like to give them a proper name, based on the TV Show name, season, episode and title of the episode. This has been expanded with features like resolution, year, data first aired, etc.
+
+This tool by no means pretends to be anything else than just that.
+
+Some features
+
+Support the new TheTVDB.com API (v2)
+Caching shows and banners (so reloading at the later time could go faster)
+Dark Theme support (MacOS and Linux only, accent color observed)
+Automatically move files into a desired directory structure
+Define your own file and directory name format
+Create NFO files for the TV Show and for the individual Episodes
+Store a banner for the TV Show
+Merge 2 Episodes into 1 (filename only of course)
+Detection of resolution, video format, Audio and Video codec, and audio channels
+Log file of what files have been renamed
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/renamemytvseries2.png)
+    </description>
+    <releaseNotes>
+#### Package
+ * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

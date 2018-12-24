@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>namemytvseries.portable</id>
-    <version>	1.8.4</version>
+    <version>1.8.4</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/manual/namemytvseries</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Name My TV Series (Portable)</title>
