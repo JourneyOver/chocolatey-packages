@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tvrenamer.portable</id>
     <version>0.8</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tvrenamer.portable</packageSourceUrl>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/deprecated/tvrenamer.portable</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>TVRenamer (portable)</title>
     <authors>daveharris vipuldelwadia</authors>

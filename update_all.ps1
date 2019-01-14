@@ -5,15 +5,15 @@ param([string[]] $Name, [string] $ForcedPackages, [string] $Root = "$PSScriptRoo
 if (Test-Path $PSScriptRoot/update_vars.ps1) { . $PSScriptRoot/update_vars.ps1 }
 
 $Options = [ordered]@{
-  WhatIf           = $au_WhatIf                              #Whatif all packages
-  Force            = $false                                  #Force all packages
-  Timeout          = 100                                     #Connection timeout in seconds
-  UpdateTimeout    = 1200                                    #Update timeout in seconds
-  Threads          = 10                                      #Number of background jobs to use
-  Push             = $Env:au_Push -eq 'true'                 #Push to chocolatey
-  PushAll          = $true                                   #Allow to push multiple packages at once
-  PluginPath       = ''                                      #Path to user plugins
-  IgnoreOn         = @(                                      #Error message parts to set the package ignore status
+  WhatIf                    = $au_WhatIf                              #Whatif all packages
+  Force                     = $false                                  #Force all packages
+  Timeout                   = 100                                     #Connection timeout in seconds
+  UpdateTimeout             = 1200                                    #Update timeout in seconds
+  Threads                   = 10                                      #Number of background jobs to use
+  Push                      = $Env:au_Push -eq 'true'                 #Push to chocolatey
+  PushAll                   = $true                                   #Allow to push multiple packages at once
+  PluginPath                = ''                                      #Path to user plugins
+  IgnoreOn                  = @(                                      #Error message parts to set the package ignore status
     'Could not create SSL/TLS secure channel'
     'Could not establish trust relationship'
     'The operation has timed out'
@@ -22,7 +22,7 @@ $Options = [ordered]@{
     'The connection was closed unexpectedly.'
   )
 
-  RepeatOn         = @(                                      #Error message parts on which to repeat package updater
+  RepeatOn                  = @(                                      #Error message parts on which to repeat package updater
     'Could not create SSL/TLS secure channel'             # https://github.com/chocolatey/chocolatey-coreteampackages/issues/718
     'Could not establish trust relationship'              # -||-
     'Unable to connect'
@@ -35,10 +35,10 @@ $Options = [ordered]@{
     'Job returned no object, Vector smash ?'
     'The connection was closed unexpectedly.'
   )
-  RepeatSleep      = 60                                    #How much to sleep between repeats in seconds, by default 0
-  RepeatCount      = 2                                      #How many times to repeat on errors, by default 1
+  RepeatSleep               = 60                                    #How much to sleep between repeats in seconds, by default 0
+  RepeatCount               = 2                                      #How many times to repeat on errors, by default 1
 
-  Report           = @{
+  Report                    = @{
     Type   = 'markdown'                                   #Report type: markdown or text
     Path   = "$PSScriptRoot\Update-AUPackages.md"         #Path where to save the report
     Params = @{                                          #Report parameters:
@@ -51,34 +51,34 @@ $Options = [ordered]@{
     }
   }
 
-  History          = @{
+  History                   = @{
     Lines           = 120                                          #Number of lines to show
     Github_UserRepo = $Env:github_user_repo             #User repo to be link to commits
     Path            = "$PSScriptRoot\Update-History.md"            #Path where to save history
   }
 
-  Gist             = @{
+  Gist                      = @{
     Id     = $Env:gist_id                               #Your gist id; leave empty for new private or anonymous gist
     ApiKey = $Env:github_api_key                        #Your github api key - if empty anoymous gist is created
     Path   = "$PSScriptRoot\Update-AUPackages.md", "$PSScriptRoot\Update-History.md"       #List of files to add to the gist
   }
 
-  Git              = @{
+  Git                       = @{
     User     = ''                                       #Git username, leave empty if github api key is used
     Password = $Env:github_api_key                      #Password if username is not empty, otherwise api key
   }
 
-  GitReleases      = @{
+  GitReleases               = @{
     ApiToken    = $Env:github_api_key                   #Your github api key
     ReleaseType = 'package'                             #Either 1 release per date, or 1 release per package
   }
 
-  RunInfo          = @{
+  RunInfo                   = @{
     Exclude = 'password', 'apikey', 'apitoken'          #Option keys which contain those words will be removed
     Path    = "$PSScriptRoot\update_info.xml"           #Path where to save the run info
   }
 
-  Mail             = if ($Env:mail_user) {
+  Mail                      = if ($Env:mail_user) {
     @{
       To          = $Env:mail_user
       Server      = $Env:mail_server
@@ -92,13 +92,15 @@ $Options = [ordered]@{
     }
   } else {}
 
-  ForcedPackages   = $ForcedPackages -split ' '
-  UpdateIconScript = "$PSScriptRoot\scripts\Update-IconUrl.ps1"
-  ModulePaths      = @("$PSScriptRoot\scripts\au_extensions.psm1"; "Wormies-AU-Helpers")
-  BeforeEach       = {
+  ForcedPackages            = $ForcedPackages -split ' '
+  UpdateIconScript          = "$PSScriptRoot\scripts\Update-IconUrl.ps1"
+  UpdatePackageSourceScript = "$PSScriptRoot\scripts\Update-PackageSourceUrl.ps1"
+  ModulePaths               = @("$PSScriptRoot\scripts\au_extensions.psm1"; "Wormies-AU-Helpers")
+  BeforeEach                = {
     param($PackageName, $Options )
     $Options.ModulePaths | % { Import-Module $_ }
     . $Options.UpdateIconScript $PackageName.ToLowerInvariant() -Quiet -ThrowErrorOnIconNotFound
+    . $Options.UpdatePackageSourceScript $PackageName.ToLowerInvariant() -Quiet
     if (Test-Path tools) { Expand-Aliases -Directory tools }
 
     $pattern = "^${PackageName}(?:\\(?<stream>[^:]+))?(?:\:(?<version>.+))?$"

@@ -5,7 +5,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>duckietv</id>
     <version>2018.1114.0130-nightly</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/duckietv</packageSourceUrl>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/deprecated/duckietv_pre</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>DuckieTV</title>
     <authors>SchizoDuckie</authors>
