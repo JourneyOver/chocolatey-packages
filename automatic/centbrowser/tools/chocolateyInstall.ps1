@@ -1,5 +1,5 @@
 ﻿$ErrorActionPreference = 'Stop'
-$pp = Get-PackageParametersBuiltIn
+$pp = Get-PackageParameters
 
 $packageName = 'CentBrowser'
 $url = 'http://static.centbrowser.com/installer_32/centbrowser_3.7.2.33.exe'

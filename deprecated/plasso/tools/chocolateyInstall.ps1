@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 $ServerOS = (Get-WmiObject -Class Win32_OperatingSystem).Caption
-$pp = Get-PackageParametersBuiltIn
+$pp = Get-PackageParameters
 
 $packageName = 'plasso'
 $url = 'https://bitsum.com/files/processlassosetup32.exe'
