@@ -57,8 +57,9 @@ Installs as a service, to get to Sonarr open browser and go [here](http://localh
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
-    <!-- <dependencies>
-    </dependencies> -->
+    <dependencies>
+      <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
