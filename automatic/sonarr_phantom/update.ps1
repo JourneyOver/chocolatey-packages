@@ -26,7 +26,7 @@ function global:au_GetLatest {
 
   Invoke-WebRequest -Uri $url -OutFile $dest
   $version = (Get-Item $dest).VersionInfo.FileVersion -replace ('\s', '')
-  $build = "-beta"
+  $build = "-phantom"
   rm -force $dest
 
   $Latest = @{ packageName = 'sonarr'; URL32 = $url; Version = ($version + $build)}
