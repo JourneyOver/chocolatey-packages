@@ -1,0 +1,26 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The embedded software has been downloaded from the listed download
+location on <https://sonarr.tv/>
+and can be verified by doing the following:
+
+1. Download the following:
+
+  url: <https://download.sonarr.tv/v2/master/latest/NzbDrone.master.exe>
+
+  2. You can obtain the checksum using one of the following methods:
+    - Use powershell function 'Get-FileHash'
+    - Use Chocolatey utility 'checksum.exe'
+
+  checksum type: sha256
+  checksum: 29F29DC1EF886ABF23F87C098E16485355BDD871808CA8FDE8A8F28087EF3571
+
+Using AU:
+
+  Get-RemoteChecksum
+
+The file 'license.txt' is obtained from:
+  <https://github.com/Sonarr/Sonarr/blob/develop/LICENSE.md>

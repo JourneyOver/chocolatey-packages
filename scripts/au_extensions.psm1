@@ -5,10 +5,8 @@
 # but the file containing the functions is expected
 # to be named using the same name.
 $funcs = @(
-  'Get-RedirectedUrl'
-  'Set-DescriptionFromReadme'
-  'Update-ChangelogVersion'
   'Get-LatestGithubReleases'
+  'Get-AllGithubReleases'
 )
 
 $funcs | % {
