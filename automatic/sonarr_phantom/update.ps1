@@ -19,16 +19,17 @@ function global:au_BeforeUpdate {
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-  $regex = '.exe$'
-  $url = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 1
+  $regex = 'installer=true'
+  $url = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 1 | % { ($_) -replace ('//s', 'https://s') } | % { Get-RedirectedUrl ($_) } | % { ($_) -replace ('zip', 'exe') }
 
-  $dest = "$env:TEMP\Sonarr.exe"
+  $dest = "$env:TEMP\Sonarr_phantom.exe"
 
   Invoke-WebRequest -Uri $url -OutFile $dest
   $version = (Get-Item $dest).VersionInfo.FileVersion -replace ('\s', '')
+  $build = "-beta"
   rm -force $dest
 
-  $Latest = @{ URL32 = $url; Version = $version }
+  $Latest = @{ packageName = 'sonarr'; URL32 = $url; Version = ($version + $build)}
   return $Latest
 }
 

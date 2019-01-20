@@ -1,7 +1,6 @@
 Import-Module au
 
-$releases = 'https://www.axcrypt.net/download/'
-$downloadraw_url = 'https://account.axcrypt.net/download/'
+$releases = 'https://www.axcrypt.net/downloads/4519/'
 $versionnum = 'https://www.axcrypt.net/cryptographic-hashes-files/'
 
 function global:au_SearchReplace {
@@ -19,16 +18,12 @@ function global:au_BeforeUpdate {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing -Headers @{ "Accept-Encoding" = 'gzip' }
   $version_page = Invoke-WebRequest -Uri $versionnum -UseBasicParsing -Headers @{ "Accept-Encoding" = 'gzip' }
-
-  $regex = 'AxCrypt-(\d+)-Setup.exe'
-  $url = ([regex]::match($download_page.Content, $regex))
 
   $versionRegEx = '(\d+).(\d+).(\d+).(\d+)-Setup.exe'
   $version = ([regex]::match($version_page.Content, $versionRegEx) -replace ('-Setup.exe', ''))
 
-  $url32 = $downloadraw_url + $url
+  $url32 = Get-RedirectedUrl $releases
 
   $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest

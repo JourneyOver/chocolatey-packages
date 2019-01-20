@@ -5,10 +5,10 @@ $toolsPath = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
   packageName    = $packageName
-  fileType        = 'exe'
-  silentArgs      = '"/U:C:\Program Files (x86)\Simple Static IP\Uninstall\uninstall.xml"'
+  fileType       = 'exe'
+  silentArgs     = '"/U:C:\Program Files (x86)\Simple Static IP\Uninstall\uninstall.xml"'
   validExitCodes = @(0)
-  File            = "C:\Windows\Simple Static IP\uninstall.exe"
+  File           = "C:\Windows\Simple Static IP\uninstall.exe"
 }
 
 Start-Process 'AutoHotkey' "$toolsPath\uninstall.ahk"
