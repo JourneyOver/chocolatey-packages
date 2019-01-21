@@ -1,4 +1,4 @@
-Import-Module au
+﻿Import-Module au
 
 $releases = 'https://bitsum.com/changes/processlasso/'
 $vrelease = 'https://bitsum.com/userservices/versioninfo.php?ProductName=ProcessLasso'
@@ -42,7 +42,7 @@ function global:au_GetLatest {
   $surl64 = $url[4]
 
   # Check checksum of one url to determine if checksums are out of date.
-  $current_checksum = (gi ".\tools\chocolateyInstall.ps1" | sls '^[$]checksum64\b') -split "=|'" | Select -Last 1 -Skip 1
+  $current_checksum = (Get-Item ".\tools\chocolateyInstall.ps1" | Select-String '^[$]checksum64\b') -split "=|'" | Select-Object -Last 1 -Skip 1
   if ($current_checksum.Length -ne 64) { throw "Can't find current checksum" }
   $remote_checksum = Get-RemoteChecksum $url[0]
   if ($current_checksum -ne $remote_checksum) {

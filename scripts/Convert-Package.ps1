@@ -111,15 +111,15 @@ if (!$packagePath) {
   throw "Package with the name $PackageName was not found"
 }
 
-$iconPath = Get-ChildItem -File -Path $packagePath.FullName -Recurse -Include "*.png", "*.svg" | select -first 1 -expand FullName
+$iconPath = Get-ChildItem -File -Path $packagePath.FullName -Recurse -Include "*.png", "*.svg" | Select-Object -first 1 -expand FullName
 
 if (!$iconPath) {
-  $iconPath = Get-ChildItem -File -Path $IconsDirectory -Filter "$PackageName.*" | % FullName
+  $iconPath = Get-ChildItem -File -Path $IconsDirectory -Filter "$PackageName.*" | ForEach-Object FullName
 }
 
 $package = @{
   DirectoryPath = $packagePath.FullName
-  NuspecPath    = Get-ChildItem -File -Path $packagePath.FullName -Filter "$PackageName.nuspec" | % FullName
+  NuspecPath    = Get-ChildItem -File -Path $packagePath.FullName -Filter "$PackageName.nuspec" | ForEach-Object FullName
   IconPath      = $iconPath
 }
 
@@ -129,7 +129,7 @@ if ($package.IconPath -and !($package.IconPath.StartsWith($IconsDirectory))) {
   $extension = [System.IO.Path]::GetExtension($package.IconPath).TrimStart('.')
   $fileName = "$($PackageName.ToLowerInvariant())$extension"
   Move-Item -Force $package.IconPath "$IconsDirectory\$fileName"
-  $package.IconPath = Get-ChildItem -File -Path $IconsDirectory -Filter $fileName | % FullName
+  $package.IconPath = Get-ChildItem -File -Path $IconsDirectory -Filter $fileName | ForEach-Object FullName
 
 } elseif (!$package.IconPath) {
   # The icon is hosted remotely, or doesn't exist
@@ -142,7 +142,7 @@ if ($package.IconPath -and !($package.IconPath.StartsWith($IconsDirectory))) {
     Write-Host "Downloading icon to the specified icon directory"
     $fileName = $PackageName.ToLowerInvariant() + [System.IO.Path]::GetExtension($iconUrl)
     Invoke-WebRequest -UseBasicParsing -Uri $iconUrl -OutFile "$IconsDirectory\$fileName"
-    $package.IconPath = Get-ChildItem -File -Path $IconsDirectory -Filter $fileName | % FullName
+    $package.IconPath = Get-ChildItem -File -Path $IconsDirectory -Filter $fileName | ForEach-Object FullName
   } else {
     Write-Warning "No icon was found, please add one when this script is done"
   }
@@ -173,7 +173,7 @@ Add-Element $newNuspec "id" $metadata $id | Out-Null
 if ($oldNuspec.package.metadata.version -match "^[\d\.]+$") {
   Add-MetadataElement $newNuspec $oldNuspec $metadata "version"
 } else {
-  $version = (. choco info $id -r) -split '\|' | select -last 1
+  $version = (. choco info $id -r) -split '\|' | Select-Object -last 1
   if (!$version) {
     $version = "0.0"
   }
@@ -209,7 +209,7 @@ if ($remotes -match 'upstream') {
 
 $remoteUrl = $remoteUrl.TrimEnd('.git').ToLowerInvariant() + "/tree/master"
 
-$repoRoot = Resolve-Path "$PSScriptRoot\.." | % Path
+$repoRoot = Resolve-Path "$PSScriptRoot\.." | ForEach-Object Path
 $packageSourceUrl = ($package.DirectoryPath -replace [regex]::Escape($repoRoot), $remoteUrl) -replace '\\', '/'
 
 Add-Element $newNuspec "packageSourceUrl" $metadata $packageSourceUrl | Out-Null
@@ -261,7 +261,7 @@ Add-MetadataElement $newNuspec $oldNuspec $metadata "releaseNotes" "__REPLACE_OR
 #Add-MetadataElement $newNuspec $oldNuspec $metadata "dependencies"
 $dependencies = Add-Element $newNuspec "dependencies" $metadata
 $addCoreExtension = $true
-$oldNuspec.package.metadata.dependencies.dependency | % {
+$oldNuspec.package.metadata.dependencies.dependency | ForEach-Object {
   if (!$_.id) { return }
   if ($_.id -eq 'chocolatey-core.extension' -or $_.id -eq 'chocolatey-uninstall.extension' -or $_.id -eq 'mm-choco.extension') {
     $addCoreExtension = $true
@@ -277,7 +277,7 @@ $oldNuspec.package.metadata.dependencies.dependency | % {
 if ($uninstallScript -or $addCoreExtension) {
   $element = Add-Element $newNuspec "dependency" $dependencies
   $element.SetAttribute("id", "chocolatey-core.extension")
-  $version = (. choco info 'chocolatey-core.extension' -r) -split '\|' | select -last 1
+  $version = (. choco info 'chocolatey-core.extension' -r) -split '\|' | Select-Object -last 1
   if ($version) {
     $element.SetAttribute("version", $version)
   }
@@ -474,7 +474,7 @@ do {
 
   $download_page = Invoke-WebRequest -UseBasicParsing -Uri $ReleaseUrl
   Write-Host "The regex matched the following urls (the first one will be grabbed)"
-  $download_page.links | ? href -match $url32Re | % { Write-Host "  $($_.href)" }
+  $download_page.links | Where-Object href -match $url32Re | ForEach-Object { Write-Host "  $($_.href)" }
 } while ((yesno "Do this look correct?") -eq 0)
 $writer.WriteLine("  `$re = '$url32Re'")
 $writer.WriteLine('  $url32 = $download_page.Links | ? href -match $re | select -first 1 -expand href')
@@ -485,7 +485,7 @@ if ($supportsX64) {
     if (!$url64Re) { break; }
     $download_page = Invoke-WebRequest -UseBasicParsing -Uri $ReleaseUrl
     Write-Host "The regex matched the following urls (the first one will be grabbed)"
-    $download_page.links | ? href -match $url64Re | % { Write-Host "  $($_.href)" } | Out-Null
+    $download_page.links | Where-Object href -match $url64Re | ForEach-Object { Write-Host "  $($_.href)" } | Out-Null
   } while ((yesno "Do this look correct?") -eq 0)
   $writer.WriteLine("  `$re = '$url64Re'")
   $writer.WriteLine('  $url64 = $download_page.links | ? href -match $re | select -first 1 -expand href')

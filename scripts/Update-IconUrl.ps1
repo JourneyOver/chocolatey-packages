@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Updates Icon Url with correct hashes in the nuspec file
 
@@ -106,14 +106,14 @@ param(
 
 if (!$GithubRepository) {
   $allRemotes = . git remote
-  $remoteName = if ($allRemotes | ? { $_ -eq 'upstream' }) { "upstream" }
-  elseif ($allRemotes | ? { $_ -eq 'origin' }) { 'origin' }
-  else { $allRemotes | select -first 1 }
+  $remoteName = if ($allRemotes | Where-Object { $_ -eq 'upstream' }) { "upstream" }
+  elseif ($allRemotes | Where-Object { $_ -eq 'origin' }) { 'origin' }
+  else { $allRemotes | Select-Object -first 1 }
 
   if ($remoteName) { $remoteUrl = . git remote get-url $remoteName }
 
   if ($remoteUrl) {
-    $GithubRepository = ($remoteUrl -split '\/' | select -last 2) -replace '\.git$', '' -join '/'
+    $GithubRepository = ($remoteUrl -split '\/' | Select-Object -last 2) -replace '\.git$', '' -join '/'
   } else {
     $GithubRepository = "USERNAME/REPOSITORY-NAME"
   }
@@ -180,18 +180,18 @@ function Optimize-Image {
   $extension = [System.IO.Path]::GetExtension($iconPath)
   $fileName = [System.IO.Path]::GetFileName($iconPath)
 
-  $supportedOptimizers | ? {
+  $supportedOptimizers | Where-Object {
     $name = if ($_.ExeName) { $_.ExeName } else { $_.DisplayName }
     return $_.Extensions.Contains($extension) -and (Get-Command $name -ea 0)
-  } | % {
+  } | ForEach-Object {
     Write-Host "Optimizing the icon $fileName using $($_.DisplayName)"
-    $originalSize = Get-Item $iconPath | % Length
+    $originalSize = Get-Item $iconPath | ForEach-Object Length
     $name = if ($_.ExeName) { $_.ExeName } else { $_.DisplayName }
     $path = Get-Command $name
     do {
-      $sizeBefore = Get-Item $iconPath | % Length
+      $sizeBefore = Get-Item $iconPath | ForEach-Object Length
       Start-Process -FilePath $path -ArgumentList $_.Arguments -Wait -NoNewWindow
-      $sizeAfter = Get-Item $iconPath | % Length
+      $sizeAfter = Get-Item $iconPath | ForEach-Object Length
     } while ($sizeAfter -lt $sizeBefore)
 
     if ($sizeAfter -lt $originalSize) {
@@ -255,7 +255,7 @@ function Replace-IconUrl {
     [switch]$NoReadme
   )
 
-  $nuspec = gc "$NuspecPath" -Encoding UTF8
+  $nuspec = Get-Content "$NuspecPath" -Encoding UTF8
 
   $oldContent = ($nuspec | Out-String) -replace '\r\n?', "`n"
 
@@ -302,16 +302,16 @@ function Update-IconUrl {
   }
 
   # Let check if the package already contains a url, and get the filename from that
-  $content = gc "$PSScriptRoot/$PackagesDirectory/$Name/$Name.nuspec" -Encoding UTF8
+  $content = Get-Content "$PSScriptRoot/$PackagesDirectory/$Name/$Name.nuspec" -Encoding UTF8
 
-  if ($content | ? { $_ -match 'Icon(Url)?:\s*Skip( check)?' }) {
+  if ($content | Where-Object { $_ -match 'Icon(Url)?:\s*Skip( check)?' }) {
     if (!($Quiet)) {
       Write-Warning "Skipping icon check for $Name"
     }
     return;
   }
 
-  $content | ? { $_ -match "\<iconUrl\>(.+)\<\/iconUrl\>" } | Out-Null
+  $content | Where-Object { $_ -match "\<iconUrl\>(.+)\<\/iconUrl\>" } | Out-Null
   if ($Matches) {
     $url = $Matches[1]
     $index = $url.LastIndexOf('/')

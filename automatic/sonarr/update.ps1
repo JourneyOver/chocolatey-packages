@@ -1,4 +1,4 @@
-Import-Module au
+﻿Import-Module au
 
 $releases = 'https://sonarr.tv'
 $dev_releases = 'https://download.sonarr.tv/v2/develop/latest/'
@@ -23,19 +23,19 @@ function global:au_GetLatest {
 
   $regex = '.exe$'
   $url = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 1
-  $url_dev = $download_page_dev.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 1 | % { ($dev_releases + $_) }
+  $url_dev = $download_page_dev.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 1 | ForEach-Object { ($dev_releases + $_) }
 
   $dest = "$env:TEMP\Sonarr.exe"
   $dest_dev = "$env:TEMP\Sonarr_dev.exe"
 
   Invoke-WebRequest -Uri $url -OutFile $dest
   $version = (Get-Item $dest).VersionInfo.FileVersion -replace ('\s', '')
-  rm -force $dest
+  Remove-Item -force $dest
 
   Invoke-WebRequest -Uri $url_dev -OutFile $dest_dev
   $version_dev = (Get-Item $dest_dev).VersionInfo.FileVersion -replace ('\s', '')
   $build = "-beta"
-  rm -force $dest_dev
+  Remove-Item -force $dest_dev
 
   if ($version_dev -gt $version) {
     $Latest = @{ packageName = 'sonarr'; URL32 = $url_dev; Version = ($version_dev + $build) }

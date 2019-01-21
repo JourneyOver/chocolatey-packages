@@ -3,7 +3,7 @@
 $packageName = 'duckietv'
 
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$embedded_path = if ((Get-ProcessorBits 64) -and $env:chocolateyForceX86 -ne 'true') {
+$embedded_path = if ((Get-OSArchitectureWidth 64) -and $env:chocolateyForceX86 -ne 'true') {
   Write-Host "Installing 64 bit version"; Get-Item "$toolsDir\*-x64.zip"
 } else { Write-Host "Installing 32 bit version"; Get-Item "$toolsDir\*-x32.zip" }
 

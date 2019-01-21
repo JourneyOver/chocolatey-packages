@@ -1,4 +1,4 @@
-Import-Module au
+﻿Import-Module au
 
 $releases = 'https://sonarr.tv'
 
@@ -20,14 +20,14 @@ function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
   $regex = 'installer=true'
-  $url = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 1 | % { ($_) -replace ('//s', 'https://s') } | % { Get-RedirectedUrl ($_) } | % { ($_) -replace ('zip', 'exe') }
+  $url = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 1 | ForEach-Object { ($_) -replace ('//s', 'https://s') } | ForEach-Object { Get-RedirectedUrl ($_) } | ForEach-Object { ($_) -replace ('zip', 'exe') }
 
   $dest = "$env:TEMP\Sonarr_phantom.exe"
 
   Invoke-WebRequest -Uri $url -OutFile $dest
   $version = (Get-Item $dest).VersionInfo.FileVersion -replace ('\s', '')
   $build = "-phantom"
-  rm -force $dest
+  Remove-Item -force $dest
 
   $Latest = @{ packageName = 'sonarr'; URL32 = $url; Version = ($version + $build)}
   return $Latest
