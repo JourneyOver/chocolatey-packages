@@ -1,4 +1,4 @@
-param(
+﻿param(
   [Parameter(Mandatory = $true)]
   [string]$OldDependencyName,
   [string]$NewDependencyName = $OldDependencyName,
@@ -10,12 +10,12 @@ if (!($Version)) {
 
   if (!($nuspecFile)) {
     # Lets check with choco
-    $Version = ((choco search $NewDependencyName -r | select -first 1) | ? { $_ -match "^$NewDependencyName\|" }) -split '\|' | select -last 1
+    $Version = ((choco search $NewDependencyName -r | Select-Object -first 1) | Where-Object { $_ -match "^$NewDependencyName\|" }) -split '\|' | Select-Object -last 1
   } else {
-    gc $nuspecFile.FullName | ? { $_ -match "\<version\>(.+)\<\/version\>" } | Out-Null
+    Get-Content $nuspecFile.FullName | Where-Object { $_ -match "\<version\>(.+)\<\/version\>" } | Out-Null
     $Version = $Matches[1]
     if ($Version -eq "{{PackageVersion}}") {
-      $Version = ((choco info $NewDependencyName -r) | ? { $_ -match "^$NewDependencyName\|" }) -split '\|' | select -last 1
+      $Version = ((choco info $NewDependencyName -r) | Where-Object { $_ -match "^$NewDependencyName\|" }) -split '\|' | Select-Object -last 1
     }
   }
 
@@ -28,7 +28,7 @@ if (!($Version)) {
 $re = "\<dependency\s*id=`"$OldDependencyName`"(\s*version=`".+`")?"
 $versionRe = "\<dependency\s*id=`"$NewDependencyName`"\s*version=`"$Version`""
 
-$filesWithDependency = Get-ChildItem -Path "$PSScriptRoot/../" -Include "*.nuspec" -Recurse | ? { gc $_.FullName | ? { $_ -match $re -and $_ -notmatch $versionRe } } | select -expand FullName
+$filesWithDependency = Get-ChildItem -Path "$PSScriptRoot/../" -Include "*.nuspec" -Recurse | Where-Object { Get-Content $_.FullName | Where-Object { $_ -match $re -and $_ -notmatch $versionRe } } | Select-Object -expand FullName
 
 $encoding = New-Object System.Text.UTF8Encoding($false)
 

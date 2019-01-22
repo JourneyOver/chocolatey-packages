@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>sonarr</id>
-    <version>2.0.0.5298-beta</version>
+    <version>3.0.1.363-phantom</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/sonarr</packageSourceUrl>
     <owners>dtgm, JourneyOver</owners>
     <title>Sonarr</title>
@@ -52,8 +52,9 @@ Installs as a service, to get to Sonarr open browser and go [here](http://localh
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
-    <!-- <dependencies>
-    </dependencies> -->
+    <dependencies>
+      <dependency id="dotnet4.6.1" version="4.6.01055.20170308" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

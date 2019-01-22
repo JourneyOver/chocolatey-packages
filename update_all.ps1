@@ -1,4 +1,4 @@
-# AU Packages Template: https://github.com/majkinetor/au-packages-template
+﻿# AU Packages Template: https://github.com/majkinetor/au-packages-template
 
 param([string[]] $Name, [string] $ForcedPackages, [string] $Root = "$PSScriptRoot\automatic")
 
@@ -98,13 +98,13 @@ $Options = [ordered]@{
   ModulePaths               = @("$PSScriptRoot\scripts\au_extensions.psm1"; "Wormies-AU-Helpers")
   BeforeEach                = {
     param($PackageName, $Options )
-    $Options.ModulePaths | % { Import-Module $_ }
+    $Options.ModulePaths | ForEach-Object { Import-Module $_ }
     . $Options.UpdateIconScript $PackageName.ToLowerInvariant() -Quiet -ThrowErrorOnIconNotFound
     . $Options.UpdatePackageSourceScript $PackageName.ToLowerInvariant() -Quiet
     if (Test-Path tools) { Expand-Aliases -Directory tools }
 
     $pattern = "^${PackageName}(?:\\(?<stream>[^:]+))?(?:\:(?<version>.+))?$"
-    $p = $Options.ForcedPackages | ? { $_ -match $pattern }
+    $p = $Options.ForcedPackages | Where-Object { $_ -match $pattern }
     if (!$p) { return }
 
     $global:au_Force = $true

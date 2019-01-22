@@ -1,4 +1,4 @@
-<# Installs package directly from Github repository
+﻿<# Installs package directly from Github repository
   To use with your own repo:
     - Set the path to your packages root in $Repo
     - Create short link to this raw github script via for example goo.gl
@@ -15,14 +15,14 @@ function cinst-gh {
   $Repo = "https://github.com/JourneyOver/chocolatey-packages/tree/master/cinst-gh_packages"
 
   $name = $args[0]
-  $download_page = iwr $Repo/$name -UseBasicParsing
+  $download_page = Invoke-WebRequest $Repo/$name -UseBasicParsing
   $url = $download_page.Links.href -like '*.nupkg'
-  $p = $url -split '/' | select -last 1
+  $p = $url -split '/' | Select-Object -last 1
 
   $raw = $Repo -replace 'github.com', 'rawgit.com' -replace 'tree/'
-  iwr "$raw/$(($p -split '\.')[0])/$p" -Out $p
-  $a = $args | select -Skip 1
+  Invoke-WebRequest "$raw/$(($p -split '\.')[0])/$p" -Out $p
+  $a = $args | Select-Object -Skip 1
   $cmd = "cinst $p $a"
-  Write-Host $cmd; iex $cmd
-  rm $p
+  Write-Host $cmd; Invoke-Expression $cmd
+  Remove-Item $p
 }

@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Test the au updating of changed packages, as well as the install and uninstall of those packages.
 
@@ -62,7 +62,7 @@ param(
 function CheckPackageSizes() {
   $nupkgFiles = Get-ChildItem "$PSScriptRoot\.." -Filter "*.nupkg" -Recurse
 
-  $nupkgFiles | % {
+  $nupkgFiles | ForEach-Object {
     $size = $_.Length
     $maxSize = 200MB
     $packageName = $_.Directory.Name
@@ -87,10 +87,10 @@ function CreateSnapshotArchive() {
   if (!(Get-Command 7z.exe -ea 0)) { WriteOutput -type Warning "7zip was not found in path, skipping creation of 7zip archive."; return }
 
   if (!(Test-Path $artifactsDirectory)) { mkdir $artifactsDirectory }
-  $directories = $packages | ? {
+  $directories = $packages | Where-Object {
     Test-path "$env:ChocolateyInstall\.chocolatey\$($_.Name)*"
-  } | % {
-    $directory = Resolve-Path "$env:ChocolateyInstall\.chocolatey\$($_.Name)*" | select -last 1
+  } | ForEach-Object {
+    $directory = Resolve-Path "$env:ChocolateyInstall\.chocolatey\$($_.Name)*" | Select-Object -last 1
     "`"$directory`""
   }
 
@@ -98,7 +98,7 @@ function CreateSnapshotArchive() {
     'a'
     '-mx9'
     "`"$artifactsDirectory\install_snapshot.7z`""
-  ) + ($directories | select -Unique)
+  ) + ($directories | Select-Object -Unique)
 
   . 7z $arguments
 }
@@ -174,10 +174,10 @@ function CleanFiles() {
     "$PSScriptRoot\..\Update-Force-Test*.md"
   )
   if ($TakeScreenshots) { $pathsToClean += @("$screenShotDir\*") }
-  $pathsToClean += Get-ChildItem -Recurse "$PSScriptRoot\.." -Filter "*.nupkg" | select -Expand FullName
+  $pathsToClean += Get-ChildItem -Recurse "$PSScriptRoot\.." -Filter "*.nupkg" | Select-Object -Expand FullName
 
-  $pathsToClean | % {
-    if (Test-Path $_) { rm $_ -Recurse }
+  $pathsToClean | ForEach-Object {
+    if (Test-Path $_) { Remove-Item $_ -Recurse }
   }
 }
 
@@ -190,11 +190,11 @@ function GetDependentPackage() {
     [Parameter(Mandatory = $true)]
     [string]$packageDirectory
   )
-  $packageName = $PackageDirectory -split '[\/\\]' | select -last 1
+  $packageName = $PackageDirectory -split '[\/\\]' | Select-Object -last 1
   $nuspecPath = Get-Item "$PackageDirectory\*.nuspec"
   $content = Get-Content -Encoding UTF8 $nuspecPath
   $Matches = $null
-  $content | ? { $_ -match "\<dependency.*id=`"(${packageName}.(install|portable|app|commandline))" } | select -First 1 | WriteOutput
+  $content | Where-Object { $_ -match "\<dependency.*id=`"(${packageName}.(install|portable|app|commandline))" } | Select-Object -First 1 | WriteOutput
   $result = if ($Matches) { $Matches[1].ToLowerInvariant() } else { $null }
   return $result
 }
@@ -208,7 +208,7 @@ function GetPackagePath() {
   if ($packageName -eq $null -or $packageName -eq '') {
     return $null
   }
-  $sourcePath = gci "$PSScriptRoot\.." -Recurse -Filter "$packageName.nuspec" | select -First 1 -Expand Directory
+  $sourcePath = Get-ChildItem "$PSScriptRoot\.." -Recurse -Filter "$packageName.nuspec" | Select-Object -First 1 -Expand Directory
   if (!$sourcePath) {
     WriteOutput "No path was found for the package: $packageName" -type Warning
   }
@@ -222,7 +222,7 @@ function GetPackageSelectQuery() {
   )
   begin { $queries = @() }
   process {
-    $queries += $InputObject | select `
+    $queries += $InputObject | Select-Object `
     @{Name = 'NuspecPath'; Expression = {Resolve-Path "$_\*.nuspec"}},
     @{Name = 'Directory'; Expression = {Resolve-Path $_}},
     @{Name = 'Name'; Expression = {[System.IO.Path]::GetFileName($_).ToLowerInvariant()}},
@@ -247,7 +247,7 @@ function GetPackagesFromDiff() {
     [ValidateNotNull()]
     [string]$diffAgainst
   )
-  $paths = git diff "${diffAgainst}..." --name-only | % {
+  $paths = git diff "${diffAgainst}..." --name-only | ForEach-Object {
     if ($_.StartsWith('..')) {
       $path = Split-Path -Parent $_
     } else {
@@ -258,7 +258,7 @@ function GetPackagesFromDiff() {
       $path = Split-Path -Parent $path
     }
     if ($path) { $path }
-  } | select -Unique
+  } | Select-Object -Unique
 
   return $paths | GetPackageSelectQuery
 }
@@ -269,7 +269,7 @@ function GetPackagesFromName() {
     [ValidateNotNullOrEmpty()]
     [string]$packageName
   )
-  return Get-ChildItem "$PSScriptRoot\..\" -Recurse -Filter "$packageName.nuspec" | select -Unique -expand Directory | GetPackageSelectQuery
+  return Get-ChildItem "$PSScriptRoot\..\" -Recurse -Filter "$packageName.nuspec" | Select-Object -Unique -expand Directory | GetPackageSelectQuery
 }
 
 function MoveLogFile() {
@@ -286,7 +286,7 @@ function MoveLogFile() {
   )
 
   if (Test-Path "$env:ChocolateyInstall\logs\chocolatey.log") {
-    mv "$env:ChocolateyInstall\logs\chocolatey.log" "$env:ChocolateyInstall\logs\${commandType}_${packageName}.log" | WriteOutput
+    Move-Item "$env:ChocolateyInstall\logs\chocolatey.log" "$env:ChocolateyInstall\logs\${commandType}_${packageName}.log" | WriteOutput
   }
 }
 
@@ -295,9 +295,9 @@ function RemoveDependentPackages() {
     [object]$packages
   )
 
-  [array]$dependentPackages = $packages | ? { $_.DependentPackage -ne $null -and $_.DependentPackage -ne '' } | select -expand DependentPackage
+  [array]$dependentPackages = $packages | Where-Object { $_.DependentPackage -ne $null -and $_.DependentPackage -ne '' } | Select-Object -expand DependentPackage
   if ($dependentPackages -ne $null -and $dependentPackages.Count -gt 0) {
-    $packages = $packages | ? { !$dependentPackages.Contains($_.Name) }
+    $packages = $packages | Where-Object { !$dependentPackages.Contains($_.Name) }
   }
   return $packages
 }
@@ -308,12 +308,12 @@ function RunChocoPackProcess() {
   Function responsible for running choco pack when a nupkg file have not already been created.
 #>
   param([string]$path)
-  if ($path -ne $null -and $path -ne '') { pushd $path }
+  if ($path -ne $null -and $path -ne '') { Push-Location $path }
   if (!(Test-Path "*.nupkg")) {
     . choco pack | WriteChocoOutput
-    if ($LastExitCode -ne 0) { popd; throw "Choco pack failed with code: $LastExitCode"; return }
+    if ($LastExitCode -ne 0) { Pop-Location; throw "Choco pack failed with code: $LastExitCode"; return }
   }
-  if ($path -ne $null -and $path -ne '') { popd}
+  if ($path -ne $null -and $path -ne '') { Pop-Location}
 }
 
 function SetAppveyorExitCode() {
@@ -371,12 +371,12 @@ function RunChocoProcess() {
   $errorFilePath = "$screenShotDir\$($arguments[0])Error_$($arguments[1]).jpg"
   if (!(Test-Path "$screenShotDir")) { mkdir "$screenShotDir" -Force | Out-Null }
 
-  $packageName = $arguments[1] -split ' ' | select -first 1
-  $pkgDir = Get-ChildItem -Path "$PSScriptRoot\.." -Filter "$packageName" -Recurse -Directory | select -first 1
-  $nupkgFile = Get-ChildItem -Path $pkgDir.FullName -Filter "*.nupkg" | select -first 1
-  $pkgNameVersion = Split-Path -Leaf $nupkgFile | % { ($_ -replace '((\.\d+)+(-[^-\.]+)?).nupkg', ':$1').Replace(':.', ':') -split ':' }
-  $packageName = $pkgNameVersion | select -first 1
-  $version = $pkgNameVersion | select -last 1
+  $packageName = $arguments[1] -split ' ' | Select-Object -first 1
+  $pkgDir = Get-ChildItem -Path "$PSScriptRoot\.." -Filter "$packageName" -Recurse -Directory | Select-Object -first 1
+  $nupkgFile = Get-ChildItem -Path $pkgDir.FullName -Filter "*.nupkg" | Select-Object -first 1
+  $pkgNameVersion = Split-Path -Leaf $nupkgFile | ForEach-Object { ($_ -replace '((\.\d+)+(-[^-\.]+)?).nupkg', ':$1').Replace(':.', ':') -split ':' }
+  $packageName = $pkgNameVersion | Select-Object -first 1
+  $version = $pkgNameVersion | Select-Object -last 1
   if ($packageName -ne $arguments[1]) { $args[1] = $packageName }
 
   try {
@@ -392,7 +392,7 @@ function RunChocoProcess() {
     $failureOccurred = $false
     $previousPercentage = -1;
     $progressRegex = 'Progress\:.*\s+([\d]+)\%'
-    . choco $args | % {
+    . choco $args | ForEach-Object {
       $matches = $null
       if ($failureOccurred) { WriteOutput "$_" -type ChocoError }
       # We are only showing progress per 10th value
@@ -410,11 +410,11 @@ function RunChocoProcess() {
         $failureOccurred = $true
         $res = $false
         # Allow everything to complete before we continue
-        sleep -Seconds 5
+        Start-Sleep -Seconds 5
         if ($takeScreenshot) {
           Take-ScreenShot -file $errorFilePath -imagetype jpeg
           # Wait for a second so the screenshot can be taken before we continue
-          sleep -Seconds 1
+          Start-Sleep -Seconds 1
         }
         if ($arguments[0] -eq 'uninstall') {
           Stop-Process -ProcessName "unins*" -ErrorAction Ignore
@@ -429,7 +429,7 @@ function RunChocoProcess() {
       $res = $false
     }
     if ($takeScreenshot -and !$packFailed) {
-      if ($timeoutBeforeScreenshot -gt 0) { sleep -Seconds $timeoutBeforeScreenshot }
+      if ($timeoutBeforeScreenshot -gt 0) { Start-Sleep -Seconds $timeoutBeforeScreenshot }
       WriteOutput "Taking screenshot after $($arguments[0])"
       # We take a screenshot when install/uninstall have finished to see if a program have started that isn't monitored by choco
       $filePath = "$screenShotDir\$($arguments[0])_$($arguments[1]).jpg"
@@ -496,22 +496,22 @@ function TestAuUpdatePackages() {
   param(
     $packages
   )
-  [array]$packageNames = $packages | ? IsAutomatic | select -expand Name
-  $packageNames += $packages | ? { $_.DependentPackage -ne $null -and $_.DependentPackage -ne '' } | select -expand DependentPackage
+  [array]$packageNames = $packages | Where-Object IsAutomatic | Select-Object -expand Name
+  $packageNames += $packages | Where-Object { $_.DependentPackage -ne $null -and $_.DependentPackage -ne '' } | Select-Object -expand DependentPackage
   if (!$packageNames) {
     WriteOutput "No Automatic packages was found. Skipping AU update test."
     return
   }
 
   try {
-    pushd "$PSScriptRoot\.."
+    Push-Location "$PSScriptRoot\.."
     .\test_all.ps1 -Name $packageNames -ThrowOnErrors
   } catch {
     SetAppveyorExitCode $LastExitCode
     throw "An exception ocurred during AU update. Cancelling all other checks."
   } finally {
     MoveLogFile -packageName 'au' -commandType 'update'
-    popd
+    Pop-Location
   }
 }
 
@@ -519,24 +519,24 @@ function RunUpdateScripts {
   param(
     $packages
   )
-  [array]$manualPackages = $packages | ? { !$_.IsAutomatic -and (Test-Path "$($_.Directory)\update.ps1") }
+  [array]$manualPackages = $packages | Where-Object { !$_.IsAutomatic -and (Test-Path "$($_.Directory)\update.ps1") }
   # Currently we do not support dependent packages
   if (!$manualPackages) {
     WriteOutput "No manual packages that contain an update script"
     return
   }
 
-  $manualPackages | % {
+  $manualPackages | ForEach-Object {
     $name = $_.Name
     WriteOutput "Running update.ps1 for $name"
     try {
-      pushd $_.Directory
+      Push-Location $_.Directory
       .\update.ps1
     } catch {
       SetAppveyorExitCode 1
       throw "An exception ocurred during the manual update of $name. Cancelling all other checks."
     } finally {
-      popd
+      Pop-Location
     }
   }
 }
@@ -561,8 +561,8 @@ function TestInstallAllPackages() {
     [object[]]$ignoredValues
   )
 
-  $packages | % {
-    pushd $_.Directory
+  $packages | ForEach-Object {
+    Push-Location $_.Directory
     if ($runChocoWithAu) { Test-Package -Install | WriteChocoOutput }
     else {
       InstallPackage `
@@ -573,8 +573,8 @@ function TestInstallAllPackages() {
         -screenShotDir $screenShotDir
       MoveLogFile -packageName $_.Name -commandType 'install'
     }
-    popd
-  } | ? { $_ -ne $null -and $_ -ne '' }
+    Pop-Location
+  } | Where-Object { $_ -ne $null -and $_ -ne '' }
 }
 
 function UninstallPackage() {
@@ -647,14 +647,14 @@ function TestUninstallAllPackages() {
     [object[]]$ignoredValues
   )
 
-  $packages | % {
+  $packages | ForEach-Object {
     $name = $_.Name
-    $packageFailed = $failedInstalls | ? { $_ -eq $name }
+    $packageFailed = $failedInstalls | Where-Object { $_ -eq $name }
     if ($packageFailed) {
       WriteOutput "$name failed to install, skipping uninstall test..." -type Warning
       return ""
     } else {
-      pushd $_.Directory
+      Push-Location $_.Directory
       if ($runChocoWithAu) { Test-Package -Uninstall | WriteChocoOutput }
       else {
         UninstallPackage `
@@ -665,9 +665,9 @@ function TestUninstallAllPackages() {
           -screenShotDir $screenShotDir
         MoveLogFile -packageName $name -commandType 'uninstall'
       }
-      popd
+      Pop-Location
     }
-  } | ? { $_ -ne $null -and $_ -ne '' }
+  } | Where-Object { $_ -ne $null -and $_ -ne '' }
 }
 
 if ($packageName) {

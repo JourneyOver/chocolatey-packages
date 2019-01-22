@@ -1,10 +1,7 @@
 Import-Module au
 
-$releases_32 = 'http://static.centbrowser.com/installer_32/'
-$releases_64 = 'http://static.centbrowser.com/installer_64/'
-
-$breleases_32 = 'http://static.centbrowser.com/beta_32/'
-$breleases_64 = 'http://static.centbrowser.com/beta_64/'
+$stableReleases = 'http://static.centbrowser.com/installer_32/'
+$betaReleases = 'http://static.centbrowser.com/beta_32/'
 
 function global:au_SearchReplace {
   @{
@@ -18,45 +15,47 @@ function global:au_SearchReplace {
   }
 }
 
-function global:au_GetLatest {
-  $download_page_32 = Invoke-WebRequest -Uri $releases_32 -UseBasicParsing
-  $download_page_64 = Invoke-WebRequest -Uri $releases_64 -UseBasicParsing
-  $bdownload_page_32 = Invoke-WebRequest -Uri $breleases_32 -UseBasicParsing
-  $bdownload_page_64 = Invoke-WebRequest -Uri $breleases_64 -UseBasicParsing
+function GetStableVersion() {
+  $download_page = Invoke-WebRequest -Uri $stableReleases -UseBasicParsing
 
   $regex = '.exe$'
+  $url = $download_page.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
+  $version = $url[0] -split 'centbrowser_|.exe' | Select-Object -Last 1 -Skip 1
 
-  $url_32 = $download_page_32.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
-  $url_64 = $download_page_64.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
-  $version = $url_32[0] -split 'centbrowser_|.exe' | Select-Object -Last 1 -Skip 1
-  $version64 = $url_64[0] -split 'centbrowser_|_x64.exe' | Select-Object -Last 1 -Skip 1
-
-  if ($version -ne $version64) {
-    throw "32-bit and 64-bit versions do not match. Please investigate."
+  @{
+    PackageName = "CentBrowser"
+    Version     = $version
+    URL32       = "http://static.centbrowser.com/installer_32/centbrowser_${version}.exe"
+    URL64       = "http://static.centbrowser.com/installer_64/centbrowser_${version}_x64.exe"
   }
+}
 
-  $burl_32 = $bdownload_page_32.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
-  $burl_64 = $bdownload_page_64.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
-  $bversion = $burl_32[0] -split 'centbrowser_|.exe' | Select-Object -Last 1 -Skip 1
-  $bversion64 = $burl_64[0] -split 'centbrowser_|_x64.exe' | Select-Object -Last 1 -Skip 1
+function GetBetaVersion() {
+  $download_page = Invoke-WebRequest -Uri $betaReleases -UseBasicParsing
+
+  $regex = '.exe$'
+  $url = $download_page.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
+  $version = $url[0] -split 'centbrowser_|.exe' | Select-Object -Last 1 -Skip 1
   $build = "-beta"
 
-  if ($bversion -ne $bversion64) {
-    throw "32-bit and 64-bit beta versions do not match. Please investigate."
+  @{
+    PackageName = "CentBrowser"
+    Version     = ($version + $build)
+    URL32       = "http://static.centbrowser.com/beta_32/centbrowser_${version}.exe"
+    URL64       = "http://static.centbrowser.com/beta_64/centbrowser_${version}_x64.exe"
+  }
+}
+
+function global:au_GetLatest {
+  $stableStream = GetStableVersion
+  $betaStream = GetBetaVersion
+
+  $streams = [ordered] @{
+    stable = $stableStream
+    beta   = $betaStream
   }
 
-  $url32 = $releases_32 + $url_32[0]
-  $url64 = $releases_64 + $url_64[0]
-  $burl32 = $breleases_32 + $burl_32[0]
-  $burl64 = $breleases_64 + $burl_64[0]
-
-  if ($bversion -gt $version) {
-    $Latest = @{ packageName = 'CentBrowser'; URL32 = $burl32; URL64 = $burl64; Version = ($bversion + $build) }
-    return $Latest
-  } else {
-    $Latest = @{ packageName = 'CentBrowser'; URL32 = $url32; URL64 = $url64; Version = $version }
-    return $Latest
-  }
+  return @{ Streams = $streams }
 }
 
 update

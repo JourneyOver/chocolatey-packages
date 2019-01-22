@@ -1,4 +1,4 @@
-
+﻿
 function resolveLatestRelease {
   param(
     $response,
@@ -6,9 +6,9 @@ function resolveLatestRelease {
   )
   $verRegex = "((\d+)(\.\d+){0,3}(\-[a-z]+[0-9]+)?)$";
   if ($usePrerelease) {
-    $release = $response | ? tag_name -Match $verRegex | select -First 1;
+    $release = $response | Where-Object tag_name -Match $verRegex | Select-Object -First 1;
   } else {
-    $release = $response | ? prerelease -EQ $usePrerelease | ? tag_name -Match $verRegex | select -First 1;
+    $release = $response | Where-Object prerelease -EQ $usePrerelease | Where-Object tag_name -Match $verRegex | Select-Object -First 1;
   }
 
   if (!$release) {
@@ -17,7 +17,7 @@ function resolveLatestRelease {
 
   $version = $matches[1];
 
-  [array]$assetUrls = $release.assets | ? name -Match "\.(msi|exe|zip|7z)$" | select -expand browser_download_url;
+  [array]$assetUrls = $release.assets | Where-Object name -Match "\.(msi|exe|zip|7z)$" | Select-Object -expand browser_download_url;
   $assetUrls += @($release.tarball_url; $release.zipball_url)
 
   return @{
