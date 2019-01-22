@@ -17,6 +17,15 @@ function global:au_BeforeUpdate {
   Get-RemoteFiles -Purge -NoSuffix
 }
 
+function global:au_AfterUpdate {
+  . "$PSScriptRoot/update_helper.ps1"
+  if ($Latest.Version -like '*phantom*') {
+    addDependency ".\*.nuspec" 'dotnet4.6.1' '4.6.01055.20170308'
+  } else {
+    removeDependencies ".\*.nuspec"
+  }
+}
+
 function GetStableVersion() {
   $download_page = Invoke-WebRequest -Uri $Releases -UseBasicParsing
 
