@@ -39,12 +39,3 @@ Install-ChocolateyInstallPackage @packageArgs
 
 Remove-Item $toolsDir\*.zip -ea 0 -Force
 Remove-Item $toolsDir\*.exe -ea 0 -Force
-
-$installLocation = Get-AppInstallLocation $packageArgs.softwareName
-if ($installLocation) {
-  Write-Host "$($packageArgs.packageName) installed to '$installLocation'"
-  Register-Application "$installLocation\DuckieTV.exe"
-  Register-Application "$installLocation\DuckieTV.exe" "DTV"
-} else {
-  Write-Warning "Can't find $($packageArgs.packageName) install location"
-}
