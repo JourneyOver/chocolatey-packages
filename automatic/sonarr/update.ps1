@@ -15,6 +15,12 @@ function global:au_SearchReplace {
 
 function global:au_BeforeUpdate {
   Get-RemoteFiles -Purge -NoSuffix
+
+  if ($Latest.Version -like '*phantom*') {
+    cp "$PSScriptRoot\README.phantom.md" "$PSScriptRoot\README.md" -Force
+  } else {
+    cp "$PSScriptRoot\README.stable.md" "$PSScriptRoot\README.md" -Force
+  }
 }
 
 function global:au_AfterUpdate {
