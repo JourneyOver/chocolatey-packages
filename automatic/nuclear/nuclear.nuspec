@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>nuclear</id>
-    <version>0.0</version>
+    <version>0.4.3</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/nuclear</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Nuclear</title>
     <authors>nukeop</authors>
     <projectUrl>https://nuclear.gumblert.tech/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/nuclear.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@c7d0f1c33f7a421c3d78c1d393d76d6e44bf7d18/icons/nuclear.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/nukeop/nuclear/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
