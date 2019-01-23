@@ -1,0 +1,26 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The embedded software has been downloaded from the listed download
+location on <https://github.com/nukeop/nuclear/releases/tag/v0.4.3>
+and can be verified by doing the following:
+
+1. Download the following:
+
+  url: <https://github.com/nukeop/nuclear/releases/download/v0.4.3/nuclear.Setup.0.4.3.exe>
+
+2. You can obtain the checksum using one of the following methods:
+  - Use powershell function 'Get-FileHash'
+  - Use Chocolatey utility 'checksum.exe'
+
+  checksum type: sha256
+  checksum:440D310CDFCCFB5DA272B2693D4B194E2302AB9CD0998FD244F7C12BE9468611
+
+Using AU:
+
+  Get-RemoteChecksum
+
+The file 'license.txt' is obtained from:
+  <https://github.com/nukeop/nuclear/blob/master/LICENSE>
