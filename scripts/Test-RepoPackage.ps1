@@ -295,8 +295,8 @@ function RemoveDependentPackages() {
     [object]$packages
   )
 
-  [array]$dependentPackages = $packages | Where-Object { $_.DependentPackage -ne $null -and $_.DependentPackage -ne '' } | Select-Object -expand DependentPackage
-  if ($dependentPackages -ne $null -and $dependentPackages.Count -gt 0) {
+  [array]$dependentPackages = $packages | Where-Object { $null -ne $_.DependentPackage -and $_.DependentPackage -ne '' } | Select-Object -expand DependentPackage
+  if ($null -ne $dependentPackages -and $dependentPackages.Count -gt 0) {
     $packages = $packages | Where-Object { !$dependentPackages.Contains($_.Name) }
   }
   return $packages
@@ -313,7 +313,7 @@ function RunChocoPackProcess() {
     . choco pack | WriteChocoOutput
     if ($LastExitCode -ne 0) { Pop-Location; throw "Choco pack failed with code: $LastExitCode"; return }
   }
-  if ($path -ne $null -and $path -ne '') { Pop-Location}
+  if ($null -ne $path -and $path -ne '') { Pop-Location}
 }
 
 function SetAppveyorExitCode() {
@@ -417,10 +417,11 @@ function RunChocoProcess() {
           Start-Sleep -Seconds 1
         }
         if ($arguments[0] -eq 'uninstall') {
-          Stop-Process -ProcessName "unins*" -ErrorAction Ignore
+          Write-Verbose "Stopping any processes matching uninst*"
+          Stop-Process -ProcessName "unins*" -ErrorAction Ignore -Force
         }
-
-        Stop-Process -ProcessName "*$($arguments[1])*" -ErrorAction Ignore
+        Write-Verbose "Stopping any processes matching *$($arguments[1])*"
+        Stop-Process -ProcessName "*$($arguments[1])*" -ErrorAction Ignore -Force
       }
     }
   } finally {
@@ -497,7 +498,7 @@ function TestAuUpdatePackages() {
     $packages
   )
   [array]$packageNames = $packages | Where-Object IsAutomatic | Select-Object -expand Name
-  $packageNames += $packages | Where-Object { $_.DependentPackage -ne $null -and $_.DependentPackage -ne '' } | Select-Object -expand DependentPackage
+  $packageNames += $packages | Where-Object { $null -ne $_.DependentPackage -and $_.DependentPackage -ne '' } | Select-Object -expand DependentPackage
   if (!$packageNames) {
     WriteOutput "No Automatic packages was found. Skipping AU update test."
     return
