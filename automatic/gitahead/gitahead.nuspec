@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>gitahead</id>
-    <version>0.0</version>
+    <version>2.5.2</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/gitahead</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>GitAhead</title>
     <authors>SciTools™</authors>
     <projectUrl>https://gitahead.github.io/gitahead.com/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/gitahead.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@451c6c485dfe456f26e0e68f260a008c4ff08003/icons/gitahead.png</iconUrl>
     <copyright>Copyright © 2018 Scientific Toolworks, Inc.</copyright>
     <licenseUrl>https://github.com/gitahead/gitahead/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
