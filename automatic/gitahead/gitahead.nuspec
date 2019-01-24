@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>gitahead</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/gitahead</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>GitAhead</title>
+    <authors>SciTools™</authors>
+    <projectUrl>https://gitahead.github.io/gitahead.com/</projectUrl>
+    <iconUrl>gitahead.png</iconUrl>
+    <copyright>Copyright © 2018 Scientific Toolworks, Inc.</copyright>
+    <licenseUrl>https://github.com/gitahead/gitahead/blob/master/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/gitahead/gitahead</projectSourceUrl>
+    <docsUrl>http://stackoverflow.com/questions/tagged/gitahead</docsUrl>
+    <mailingListUrl>support@gitahead.com</mailingListUrl>
+    <bugTrackerUrl>https://github.com/gitahead/gitahead/issues</bugTrackerUrl>
+    <tags>git client gui</tags>
+    <summary>GitAhead is a graphical Git client designed to help you understand and manage your source code history</summary>
+    <description><![CDATA[GitAhead is a graphical Git client for Windows, Linux and macOS. It features a fast native interface designed to help you understand and manage your source code history.
+
+GitAhead was designed by SciTools™, the makers of Understand™. It has all of the features you expect from a commercial quality client, now completely free and open source.
+
+Git provideds a wealth of historical information that, too often, goes unexploited because it's cumbersome to explore with other tools. We believe that when you understand your history you'll make better choices today!
+]]></description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://github.com/gitahead/gitahead/releases)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!--<dependencies>
+    </dependencies>-->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
