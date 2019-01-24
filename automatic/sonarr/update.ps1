@@ -11,15 +11,27 @@ function global:au_SearchReplace {
       "(?i)(^\s*checksum\s*type\:\s*).*" = "`${1}$($Latest.ChecksumType32)"
     }
   }
+
+  @{
+    ".\tools\chocolateyBeforeModify.ps1" = @{
+      "(?i)(^\s*[$]service\s*=\s*)('.*')" = "`$1'$($Latest.Service)'"
+    }
+  }
+
+  @{
+    ".\tools\chocolateyInstall.ps1" = @{
+      "(?i)(^\s*[$]service\s*=\s*)('.*')" = "`$1'$($Latest.Service)'"
+    }
+  }
 }
 
 function global:au_BeforeUpdate {
   Get-RemoteFiles -Purge -NoSuffix
 
   if ($Latest.Version -like '*phantom*') {
-    cp "$PSScriptRoot\README.phantom.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\README.phantom.md" "$PSScriptRoot\README.md" -Force
   } else {
-    cp "$PSScriptRoot\README.stable.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\README.stable.md" "$PSScriptRoot\README.md" -Force
   }
 }
 
@@ -46,6 +58,7 @@ function GetStableVersion() {
 
   @{
     PackageName = "sonarr"
+    Service     = "NzbDrone"
     Version     = $version
     URL32       = $url
   }
@@ -66,6 +79,7 @@ function GetBetaVersion() {
 
   @{
     PackageName = "sonarr"
+    Service     = "NzbDrone"
     Version     = ($version + $build)
     URL32       = $url
   }
@@ -86,6 +100,7 @@ function GetPhantomVersion() {
 
   @{
     PackageName = "sonarr"
+    Service     = "Sonarr"
     Version     = ($version + $build)
     URL32       = $url
   }
