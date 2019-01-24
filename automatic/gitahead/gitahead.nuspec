@@ -10,13 +10,13 @@
     <title>GitAhead</title>
     <authors>SciTools™</authors>
     <projectUrl>https://gitahead.github.io/gitahead.com/</projectUrl>
-    <iconUrl>gitahead.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/gitahead.png</iconUrl>
     <copyright>Copyright © 2018 Scientific Toolworks, Inc.</copyright>
     <licenseUrl>https://github.com/gitahead/gitahead/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/gitahead/gitahead</projectSourceUrl>
     <docsUrl>http://stackoverflow.com/questions/tagged/gitahead</docsUrl>
-    <mailingListUrl>support@gitahead.com</mailingListUrl>
+    <mailingListUrl>mailto:support@gitahead.com</mailingListUrl>
     <bugTrackerUrl>https://github.com/gitahead/gitahead/issues</bugTrackerUrl>
     <tags>git client gui</tags>
     <summary>GitAhead is a graphical Git client designed to help you understand and manage your source code history</summary>
