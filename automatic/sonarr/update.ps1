@@ -11,27 +11,19 @@ function global:au_SearchReplace {
       "(?i)(^\s*checksum\s*type\:\s*).*" = "`${1}$($Latest.ChecksumType32)"
     }
   }
-
-  @{
-    ".\tools\chocolateyBeforeModify.ps1" = @{
-      "(?i)(^\s*[$]service\s*=\s*)('.*')" = "`$1'$($Latest.Service)'"
-    }
-  }
-
-  @{
-    ".\tools\chocolateyInstall.ps1" = @{
-      "(?i)(^\s*[$]service\s*=\s*)('.*')" = "`$1'$($Latest.Service)'"
-    }
-  }
 }
 
 function global:au_BeforeUpdate {
   Get-RemoteFiles -Purge -NoSuffix
 
   if ($Latest.Version -like '*phantom*') {
-    Copy-Item "$PSScriptRoot\README.phantom.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\version_switch\README.phantom.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyInstall.phantom.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyBeforeModify.phantom.ps1" "$PSScriptRoot\tools\chocolateyBeforeModify.ps1" -Force
   } else {
-    Copy-Item "$PSScriptRoot\README.stable.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\version_switch\README.stable.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyInstall.stable.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyBeforeModify.stable.ps1" "$PSScriptRoot\tools\chocolateyBeforeModify.ps1" -Force
   }
 }
 
@@ -58,7 +50,6 @@ function GetStableVersion() {
 
   @{
     PackageName = "sonarr"
-    Service     = "NzbDrone"
     Version     = $version
     URL32       = $url
   }
@@ -79,7 +70,6 @@ function GetBetaVersion() {
 
   @{
     PackageName = "sonarr"
-    Service     = "NzbDrone"
     Version     = ($version + $build)
     URL32       = $url
   }
@@ -100,7 +90,6 @@ function GetPhantomVersion() {
 
   @{
     PackageName = "sonarr"
-    Service     = "Sonarr"
     Version     = ($version + $build)
     URL32       = $url
   }
