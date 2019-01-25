@@ -9,17 +9,17 @@ The philosophy is a simple work flow; you have a few odd named TV Show episodes 
 
 This tool by no means pretends to be anything else than just that.
 
-## Some features:
+## Features
 
-* Support the new TheTVDB.com API (v2)
-* Caching shows and banners (so reloading at the later time could go faster)
-* Dark Theme support (MacOS and Linux only, accent color observed)
-* Automatically move files into a desired directory structure
-* Define your own file and directory name format
-* Create NFO files for the TV Show and for the individual Episodes
-* Store a banner for the TV Show
-* Merge 2 Episodes into 1 (filename only of course)
-* Detection of resolution, video format, Audio and Video codec, and audio channels
-* Log file of what files have been renamed
+- Support the new TheTVDB.com API (v2)
+- Caching shows and banners (so reloading at the later time could go faster)
+- Dark Theme support (MacOS and Linux only, accent color observed)
+- Automatically move files into a desired directory structure
+- Define your own file and directory name format
+- Create NFO files for the TV Show and for the individual Episodes
+- Store a banner for the TV Show
+- Merge 2 Episodes into 1 (filename only of course)
+- Detection of resolution, video format, Audio and Video codec, and audio channels
+- Log file of what files have been renamed
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/renamemytvseries2.png)

@@ -4,11 +4,11 @@ Media Player Classic Qute Theater (mpc-qt) is a clone of Media Player Classic (m
 
 ## Features
 
-* Multiple playlists
-* Quick queuing
-* Playlist searching
-* Screenshot templates
-* Looped playback
-* Custom metadata
+- Multiple playlists
+- Quick queuing
+- Playlist searching
+- Screenshot templates
+- Looped playback
+- Custom metadata
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/mpc-qt.png)

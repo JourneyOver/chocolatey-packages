@@ -1,5 +1,5 @@
 ﻿$ErrorActionPreference = 'Stop'
-$ServerOS = (Get-WmiObject -Class Win32_OperatingSystem).Caption
+$ServerOS = (Get-CimInstance -Class Win32_OperatingSystem).Caption
 $pp = Get-PackageParameters
 
 $packageName = 'plasso'

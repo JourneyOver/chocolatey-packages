@@ -7,19 +7,19 @@ It's also focusing more on audio. Imagine Spotify which you don't have to pay fo
 
 ## Features
 
-* Searching for and playing music from youtube (including integration with playlists), bandcamp (including albums), and soundcloud
-* Searching for related songs in youtube
-* Downloading from youtube
-* Searching for albums (powered by last.fm and musicbrainz), album view, automatic song lookup based on artist and track name (in progress, can be dodgy sometimes)
-* Song queue, which can be exported as a playlist
-* Loading saved playlists (stored in json files)
-* Scrobbling to last.fm (along with updating the 'now playing' status)
-* Newest releases with reviews - tracks and albums
-* Browsing by genre
+- Searching for and playing music from youtube (including integration with playlists), bandcamp (including albums), and soundcloud
+- Searching for related songs in youtube
+- Downloading from youtube
+- Searching for albums (powered by last.fm and musicbrainz), album view, automatic song lookup based on artist and track name (in progress, can be dodgy sometimes)
+- Song queue, which can be exported as a playlist
+- Loading saved playlists (stored in json files)
+- Scrobbling to last.fm (along with updating the 'now playing' status)
+- Newest releases with reviews - tracks and albums
+- Browsing by genre
 
 ## Community
 
-* [Mastodon](https://mstdn.io/@nuclear)
-* [Twitter](https://twitter.com/nuclear_player)
+- [Mastodon](https://mstdn.io/@nuclear)
+- [Twitter](https://twitter.com/nuclear_player)
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/nuclear.png)

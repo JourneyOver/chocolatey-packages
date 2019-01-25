@@ -4,10 +4,10 @@ Jackett works as a proxy server: it translates queries from apps ([Sonarr](https
 
 ## Features
 
-* [Supported Public Trackers](https://github.com/Jackett/Jackett/blob/master/README.md#supported-public-trackers)
-* [Supported Semi-Private Trackers](https://github.com/Jackett/Jackett/blob/master/README.md#supported-semi-private-trackers)
-* [Supported Private Trackers](https://github.com/Jackett/Jackett/blob/master/README.md#supported-private-trackers)
+- [Supported Public Trackers](https://github.com/Jackett/Jackett/blob/master/README.md#supported-public-trackers)
+- [Supported Semi-Private Trackers](https://github.com/Jackett/Jackett/blob/master/README.md#supported-semi-private-trackers)
+- [Supported Private Trackers](https://github.com/Jackett/Jackett/blob/master/README.md#supported-private-trackers)
 
 ## Notes
 
-Installs as a service, to get to Jackett open any web browser and go [here](http://localhost:9117/UI/Dashboard) or go to http://<your-ip>:9117/UI/Dashboard
+Installs as a service, to get to Jackett open any web browser and go [here](http://localhost:9117/UI/Dashboard) or go to `http://<your-ip>:9117/UI/Dashboard`

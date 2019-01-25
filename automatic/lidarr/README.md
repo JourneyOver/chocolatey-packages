@@ -4,23 +4,23 @@ Lidarr is a music collection manager for Usenet and BitTorrent users. It can mon
 
 ## Features
 
-* Support for major platforms: Windows, Linux, macOS, Raspberry Pi, etc.
-* Automatically detects new tracks.
-* Can scan your existing library and download any missing tracks.
-* Can watch for better quality of the tracks you already have and do an automatic upgrade.
-* Automatic failed download handling will try another release if one fails
-* Manual search so you can pick any release or to see why a release was not downloaded automatically
-* Fully configurable track renaming
-* Full integration with SABnzbd and NZBGet
-* Full integration with Kodi, Plex (notification, library update, metadata)
-* Full support for specials and multi-album releases
-* And a beautiful UI
+- Support for major platforms: Windows, Linux, macOS, Raspberry Pi, etc.
+- Automatically detects new tracks.
+- Can scan your existing library and download any missing tracks.
+- Can watch for better quality of the tracks you already have and do an automatic upgrade.
+- Automatic failed download handling will try another release if one fails
+- Manual search so you can pick any release or to see why a release was not downloaded automatically
+- Fully configurable track renaming
+- Full integration with SABnzbd and NZBGet
+- Full integration with Kodi, Plex (notification, library update, metadata)
+- Full support for specials and multi-album releases
+- And a beautiful UI
 
 ## Community
 
-* [Discord](https://discord.gg/8Y7rDc9)
-* [Reddit](https://www.reddit.com/r/Lidarr)
+- [Discord](https://discord.gg/8Y7rDc9)
+- [Reddit](https://www.reddit.com/r/Lidarr)
 
 ## Notes
 
-Installs as a service, to get to Lidarr open browser and go [here](http://localhost:8686/) or go to http://<your-ip>:8686/
+Installs as a service, to get to Lidarr open browser and go [here](http://localhost:8686/) or go to `http://<your-ip>:8686/`

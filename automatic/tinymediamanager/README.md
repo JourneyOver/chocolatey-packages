@@ -4,6 +4,6 @@
 
 ## Features
 
-* [All Features](http://www.tinymediamanager.org/features)
+- [All Features](http://www.tinymediamanager.org/features)
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tinymediamanager.png)

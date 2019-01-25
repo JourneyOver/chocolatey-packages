@@ -4,11 +4,11 @@ Metropolis Launcher has been created to be a great old-school launcher, emulatio
 
 ## Features
 
-* [Features](https://metropolis-launcher.net/#features)
+- [Features](https://metropolis-launcher.net/#features)
 
 ## Community
 
-* [Twitter](https://twitter.com/theMK2k)
-* [Reddit](https://www.reddit.com/r/metropolislauncher)
+- [Twitter](https://twitter.com/theMK2k)
+- [Reddit](https://www.reddit.com/r/metropolislauncher)
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/metropolislauncher.png)
