@@ -1,17 +1,13 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'swift-im'
-$programUninstallEntryName = 'Swift*'
+$programUninstallEntryName = 'Swift'
+$uninstallString = (Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, UninstallString | Where-Object { $_.DisplayName -like "$programUninstallEntryName*" }).UninstallString
+# get the uninstall string of the installed swift-im version from the registry
 
-$registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
-$file = $registry.UninstallString
+$uninstallString = "$uninstallString" -replace '[{]', '`{' # adding escape character to the braces
+$uninstallString = "$uninstallString" -replace '[}]', '`} /quiet /qn /norestart' # to work properly with the Invoke-Expression command, add silent arguments
 
-$packageArgs = @{
-  packageName    = $packageName
-  fileType       = 'msi'
-  silentArgs     = '/quiet /qn /norestart'
-  validExitCodes = @(0, 3010, 1641)
-  file           = $file
+if ($uninstallString -ne "") {
+  Invoke-Expression "$uninstallString" # start uninstaller
 }
-
-Uninstall-ChocolateyPackage @packageArgs

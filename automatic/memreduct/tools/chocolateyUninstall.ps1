@@ -3,8 +3,7 @@ $ErrorActionPreference = 'Stop'
 $packageName = 'memreduct'
 $programUninstallEntryName = 'Mem Reduct*'
 
-$registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
-$file = $registry.UninstallString
+$file = "$env:ProgramFiles\Mem Reduct\uninstall.exe"
 
 $packageArgs = @{
   packageName    = $packageName
