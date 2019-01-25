@@ -16,7 +16,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/gitahead/gitahead</projectSourceUrl>
     <docsUrl>http://stackoverflow.com/questions/tagged/gitahead</docsUrl>
-    <mailingListUrl>mailto:support@gitahead.com</mailingListUrl>
+    <!-- <mailingListUrl></mailingListUrl> -->
     <bugTrackerUrl>https://github.com/gitahead/gitahead/issues</bugTrackerUrl>
     <tags>git client gui</tags>
     <summary>GitAhead is a graphical Git client designed to help you understand and manage your source code history</summary>

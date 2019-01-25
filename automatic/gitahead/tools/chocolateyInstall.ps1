@@ -3,14 +3,14 @@
 $packageName = 'gitahead'
 
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$fileLocation = if ((Get-OSArchitectureWidth 64) -and $env:chocolateyForceX86 -ne 'true') {
-  Write-Host "Using 64 bit version"; Get-Item "$toolsDir\GitAhead-win64-*"
-} else { Write-Host "Using 32 bit version"; Get-Item "$toolsDir\GitAhead-win32-*" }
+$fileLocation = Get-Item "$toolsDir\GitAhead-win32-*"
+$fileLocation64 = Get-Item "$toolsDir\GitAhead-win64-*"
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
   file           = $fileLocation
+  file64         = $fileLocation64
   silentArgs     = "/S"
   validExitCodes = @(0)
 }
