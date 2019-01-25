@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>sickgear</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/sickgear</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>SickGear</title>
+    <authors>https://github.com/SickGear/SickGear/graphs/contributors</authors>
+    <projectUrl>https://github.com/SickGear/SickGear</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/sickgear.png</iconUrl>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/SickGear/SickGear/blob/master/COPYING.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <projectSourceUrl></projectSourceUrl> -->
+    <docsUrl>https://github.com/SickGear/SickGear/wiki</docsUrl>
+    <!-- <mailingListUrl></mailingListUrl> -->
+    <bugTrackerUrl>https://github.com/SickGear/SickGear/issues</bugTrackerUrl>
+    <tags>stable tvshows tvseries subtitle tvdb trakt fanart kodi emby plex usenet nzbget sabnzbd sickbeard seedbox quickbox swizzin qnap commandline tautulli</tags>
+    <summary>SickGear provides management of TV shows and/or Anime, it detects new episodes, links downloader apps, and more.</summary>
+    <description><![CDATA[SickGear provides management of TV shows and/or Anime, it detects new episodes, links downloader apps, and more.
+
+## Features
+
+* [Features](https://github.com/SickGear/SickGear#some-of-the-sick-innovative-gear-you-get)
+
+## Community
+
+* [Gitter](https://gitter.im/SickGear)
+* [Freenode channel `#SickGear`](irc.freenode.net)
+]]></description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://github.com/SickGear/SickGear/blob/master/CHANGES.md)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <dependencies>
+      <dependency id="git.install" version="2.20.1" />
+      <dependency id="python2" version="2.7.15" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

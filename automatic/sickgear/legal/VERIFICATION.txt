@@ -4,23 +4,23 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/Jackett/Jackett/releases/tag/v0.10.657>
+location on <https://github.com/SickGear/SickGear/releases/tag/release_0.18.10>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/Jackett/Jackett/releases/download/v0.10.657/Jackett.Installer.Windows.exe>
+  url: <https://github.com/SickGear/SickGear/archive/release_0.18.10.zip>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 2D07324567F43F421A7AE2ECEE4404A587A668EA42C8EACE2213C2FBDC8B99CB
+  checksum:F567B0840404651455F5C91E5DFB9AC02B0A1EB97C95090567E81FB61A36B3FE
 
 Using AU:
 
   Get-RemoteChecksum
 
-The file 'license.txt' is obtained from:
-  <https://github.com/Jackett/Jackett/blob/master/LICENSE>
+The file 'LICENSE.txt' is obtained from:
+  <https://github.com/SickGear/SickGear/blob/master/COPYING.txt>

@@ -17,9 +17,13 @@ function global:au_BeforeUpdate {
   Get-RemoteFiles -Purge -NoSuffix
 
   if ($Latest.Version -like '*phantom*') {
-    cp "$PSScriptRoot\README.phantom.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\version_switch\README.phantom.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyInstall.phantom.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyBeforeModify.phantom.ps1" "$PSScriptRoot\tools\chocolateyBeforeModify.ps1" -Force
   } else {
-    cp "$PSScriptRoot\README.stable.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\version_switch\README.stable.md" "$PSScriptRoot\README.md" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyInstall.stable.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyBeforeModify.stable.ps1" "$PSScriptRoot\tools\chocolateyBeforeModify.ps1" -Force
   }
 }
 
