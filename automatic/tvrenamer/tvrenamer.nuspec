@@ -12,7 +12,7 @@
     <projectUrl>http://www.tvrenamer.org/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/tvrenamer.png</iconUrl>
     <copyright></copyright>
-    <licenseUrl>https://github.com/tvrenamer/tvrenamer/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/tvrenamer/tvrenamer/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/tvrenamer/tvrenamer</projectSourceUrl>
     <docsUrl>https://github.com/tvrenamer/tvrenamer/wiki</docsUrl>

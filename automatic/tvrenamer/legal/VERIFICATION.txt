@@ -25,4 +25,4 @@ Using AU:
   Get-RemoteChecksum
 
 The file 'license.txt' is obtained from:
-  <https://github.com/tvrenamer/tvrenamer/blob/master/LICENSE>
+  <https://github.com/tvrenamer/tvrenamer/blob/master/LICENSE.txt>
