@@ -10,4 +10,4 @@ Jackett works as a proxy server: it translates queries from apps ([Sonarr](https
 
 ## Notes
 
-Installs as a service, to get to Jackett open any web browser and go [here](http://localhost:9117/UI/Dashboard) or go to `http://<your-ip>:9117/UI/Dashboard`
+Installs as a service, to get to Jackett open any web browser and go [here](http://localhost:9117/UI/Dashboard) or go to http://<your-ip>:9117/UI/Dashboard

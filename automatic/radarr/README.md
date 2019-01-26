@@ -33,4 +33,4 @@ The project was inspired by other Usenet/BitTorrent movie downloaders such as Co
 
 ## Notes
 
-Installs as a service, to get to Radarr open browser and go [here](http://localhost:7878/) or go to `http://<your-ip>:7878/`
+Installs as a service, to get to Radarr open browser and go [here](http://localhost:7878/) or go to http://<your-ip>:7878/
