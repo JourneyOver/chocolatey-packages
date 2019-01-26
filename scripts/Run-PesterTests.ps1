@@ -1,4 +1,4 @@
-function Install-Package() {
+﻿function Install-Package() {
   param(
     [Parameter(Mandatory = $true)][string]$packageName,
     [Parameter(Mandatory = $true)][string]$packagePath,
@@ -24,7 +24,7 @@ function Install-Package() {
   Write-Host ("{0}" -f ('=' * ([Math]::Max(0, $Host.UI.RawUI.BufferSize.Width))))
 
 
-  $chocoPath = Get-Command choco.exe | % Source
+  $chocoPath = Get-Command choco.exe | ForEach-Object Source
 
   . $chocoPath @arguments | Write-Host
 
@@ -66,7 +66,7 @@ function Uninstall-Package() {
   )
   if ($additionalArguments) { $arguments += $additionalArguments }
 
-  $chocoPath = Get-Command choco.exe | % Source
+  $chocoPath = Get-Command choco.exe | ForEach-Object Source
 
   Write-Host ("{0}" -f ('=' * ([Math]::Max(0, $Host.UI.RawUI.BufferSize.Width))))
   $line = "START CHOCOLATEY UNINSTALL COMMAND"
@@ -136,7 +136,7 @@ function Run-PesterTests() {
   Import-Module Pester
 
   Describe "$packageName package verification" {
-    if (!$skipUpdate) { rm "$packagePath\*.nupkg" }
+    if (!$skipUpdate) { Remove-Item "$packagePath\*.nupkg" }
     elseif (!(Test-Path "$packagePath\*.nupkg")) {
       Start-Process -Wait -FilePath "choco" -ArgumentList "pack", $(Resolve-Path "$packagePath\*.nuspec"), "$packagePath"
     }
@@ -145,15 +145,15 @@ function Run-PesterTests() {
       if (!$skipUpdate) {
         if ($streams) {
           # First remove the existing nupkg files
-          $streams | % {
+          $streams | ForEach-Object {
             $streamName = $_
             It "Should update and create a new nupkg file with stream: $streamName" {
               # First gather the current package count
-              $currentPkgCount = ([array](ls "$packagePath\*.nupkg")).Count
+              $currentPkgCount = ([array](Get-ChildItem "$packagePath\*.nupkg")).Count
               $expectedPkgCount = $currentPkgCount + 1
               . (Resolve-Path "$PSScriptRoot\..\update_all.ps1") -Name $packageName -ForcedPackage "$packageName\$streamName"
 
-              $nowPkgCount = ([array](ls "$packagePath\*.nupkg")).Count
+              $nowPkgCount = ([array](Get-ChildItem "$packagePath\*.nupkg")).Count
 
               $nowPkgCount | Should -BeExactly $expectedPkgCount
             }
@@ -162,7 +162,7 @@ function Run-PesterTests() {
           It "Should update and create a new nupkg file" {
             . (Resolve-Path "$PSScriptRoot\..\update_all.ps1") -Name $packageName -ForcedPackage "$packageName"
 
-            $nowPkgCount = ([array](ls "$packagePath\*.nupkg")).Count
+            $nowPkgCount = ([array](Get-ChildItem "$packagePath\*.nupkg")).Count
             $nowPkgCount | Should -BeExactly 1
           }
         }
@@ -171,18 +171,18 @@ function Run-PesterTests() {
       It "All packages should be less than 200MB in size" {
         $maxSize = 200MB
 
-        ls "$packagePath\*.nupkg" | % {
+        Get-ChildItem "$packagePath\*.nupkg" | ForEach-Object {
           $_.Length | Should -BeLessOrEqual $maxSize
         }
       }
 
       if ($expectedEmbeddedMatch) {
         It "All embedded files should match" {
-          [array]$allFiles = ls "$packagePath\tools" | ? { $_.Extension -match "^.*\.(exe|msi|zip|vsix|7z)$" }
+          [array]$allFiles = Get-ChildItem "$packagePath\tools" | Where-Object { $_.Extension -match "^.*\.(exe|msi|zip|vsix|7z)$" }
 
           $allFiles.Count | Should -BeGreaterThan 0
 
-          $allFiles | % {
+          $allFiles | ForEach-Object {
             $_.Name | Should -MatchExactly $expectedEmbeddedMatch
           }
         }
@@ -212,17 +212,17 @@ function Run-PesterTests() {
     }
 
     Context "Nuspec validation" {
-      $nuspecContent = gc -Encoding UTF8 -Path "$packagePath\$packageName.nuspec"
+      $nuspecContent = Get-Content -Encoding UTF8 -Path "$packagePath\$packageName.nuspec"
 
       if (!$metaPackage) {
         It "Nuspec should include tools directory" {
-          $hasMatch = $nuspecContent | ? { $_ -match '^\s*<file.*src="tools\\\*\*"' }
+          $hasMatch = $nuspecContent | Where-Object { $_ -match '^\s*<file.*src="tools\\\*\*"' }
 
           $hasMatch | Should -BeTrue
         }
 
         It "All dependencies should specify minimum version" {
-          [array]$dependencies = $nuspecContent | ? { $_ -match '\<dependency' } | % {
+          [array]$dependencies = $nuspecContent | Where-Object { $_ -match '\<dependency' } | ForEach-Object {
             $id = $_ -replace "\s*\<dependency.*id=`"([^`"]*)`".*", "`$1"
             $version = $_ -replace "\s*\<dependency.*version=`"[\[]?([^`"]*)[\]]?`".*", "`$1"
 
@@ -230,7 +230,7 @@ function Run-PesterTests() {
           }
 
           if ($dependencies.Count -gt 0) {
-            $dependencies | % {
+            $dependencies | ForEach-Object {
               $_.Version | Should -Not -BeNullOrEmpty
               $_.Version | Should -Match '^\d+\.[\d\.]+(\-[\-a-z\d]+)?$'
             }
@@ -238,7 +238,7 @@ function Run-PesterTests() {
         }
 
         It "All dependencies should exist on chocolatey.org" {
-          [array]$dependencies = $nuspecContent | ? { $_ -match '\<dependency' } | % {
+          [array]$dependencies = $nuspecContent | Where-Object { $_ -match '\<dependency' } | ForEach-Object {
             $id = $_ -replace "\s*\<dependency.*id=`"([^`"]*)`".*", "`$1"
             $version = $_ -replace "\s*\<dependency.*version=`"[\[]?([^`"]*)[\]]?`".*", "`$1"
 
@@ -246,12 +246,12 @@ function Run-PesterTests() {
           }
 
           if ($dependencies.Count -gt 0) {
-            $dependencies | % {
+            $dependencies | ForEach-Object {
               $dependency = $_
               try {
                 $url = "https://chocolatey.org/packages/$($dependency.Id)/$($dependency.Version)"
                 Write-Verbose "Calling $url"
-                iwr -UseBasicParsing -Uri "$url" | Out-Null
+                Invoke-WebRequest -UseBasicParsing -Uri "$url" | Out-Null
               } catch [System.Net.WebException] {
                 $statusCode = [int]$_.Exception.Response.StatusCode
                 if ($statusCode -eq 404) {
@@ -265,17 +265,17 @@ function Run-PesterTests() {
         }
       } else {
         It "Nuspec should have empty files section" {
-          $validMatch = $nuspecContent | ? { $_ -match '\<files' } | select -first 1
+          $validMatch = $nuspecContent | Where-Object { $_ -match '\<files' } | Select-Object -first 1
 
           $validMatch | Should -MatchExactly '^\s*\<files\s*\/\>\s*$'
         }
 
         It "Should use explicit version for dependency" {
-          [array]$dependencies = $nuspecContent | ? { $_ -match '\<dependency' }
+          [array]$dependencies = $nuspecContent | Where-Object { $_ -match '\<dependency' }
 
           $dependencies.Count | Should -BeGreaterOrEqual 1
 
-          $dependencies | % {
+          $dependencies | ForEach-Object {
             $version = $_ -replace '^.*version="([\d\.\[\]]+).*$', "`$1"
 
             $version | Should -Match "^\[\d+\.[\d\.]+\]$"
@@ -285,20 +285,20 @@ function Run-PesterTests() {
 
       if ($expectedEmbeddedMatch) {
         It "Nuspec should include legal directory" {
-          $hasMatch = $nuspecContent | ? { $_ -match '^\s*<file.*src="legal\\\*\*"' }
+          $hasMatch = $nuspecContent | Where-Object { $_ -match '^\s*<file.*src="legal\\\*\*"' }
 
           $hasMatch | Should -BeTrue
         }
       }
       It "Should have 'JourneyOver' as first owner" {
-        $nuspecContent | ? { $_ -match '\<owners\>'} | Should -Match "\<owners\>JourneyOver"
+        $nuspecContent | Where-Object { $_ -match '\<owners\>'} | Should -Match "\<owners\>JourneyOver"
       }
 
       It "Should only have 'JourneyOver' set once as owner" {
         $re = "^\s*\<owners\>(.*)\<\/owners\>"
-        [array]$owners = $nuspecContent | ? { $_ -match $re } | select -first 1 | % { ($_ -replace $re, "`$1") -split '[, ]' } | ? { $_ -notmatch "^\s*$" }
+        [array]$owners = $nuspecContent | Where-Object { $_ -match $re } | Select-Object -first 1 | ForEach-Object { ($_ -replace $re, "`$1") -split '[, ]' } | Where-Object { $_ -notmatch "^\s*$" }
 
-        [array]$matches = $owners | ? { $_ -eq 'JourneyOver' }
+        [array]$matches = $owners | Where-Object { $_ -eq 'JourneyOver' }
         $matches.Count | Should -BeExactly 1
       }
     }
@@ -315,7 +315,7 @@ function Run-PesterTests() {
         }
 
         if ($customInstallChecks) {
-          $customInstallChecks | % { . $_ }
+          $customInstallChecks | ForEach-Object { . $_ }
         }
 
         if ($expectedDefaultDirectory) {
@@ -325,7 +325,7 @@ function Run-PesterTests() {
         }
 
         if ($expectedShimFiles -and $expectedShimFiles.Count -gt 0) {
-          $expectedShimFiles | % {
+          $expectedShimFiles | ForEach-Object {
             $shimFile = $_
             It "Should have created shimfile $shimFile" {
               "${env:ChocolateyInstall}\bin\$shimFile" | Should -Exist
@@ -334,7 +334,7 @@ function Run-PesterTests() {
         }
 
         if ($notExpectedShimFiles -and $notExpectedShimFiles.Count -gt 0) {
-          $notExpectedShimFiles | % {
+          $notExpectedShimFiles | ForEach-Object {
             $shimFile = $_
             It "Should NOT have created shimfile $shimFile" {
               "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
@@ -345,7 +345,7 @@ function Run-PesterTests() {
         if ($filesAvailableOnPath) {
           Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
           Update-SessionEnvironment
-          $filesAvailableOnPath | % {
+          $filesAvailableOnPath | ForEach-Object {
             $file = $_
             It "$file should be available on path." {
               $file = Get-Command $file
@@ -360,7 +360,7 @@ function Run-PesterTests() {
         }
 
         if ($customUninstallChecks) {
-          $customUninstallChecks | % { . $_ }
+          $customUninstallChecks | ForEach-Object { . $_ }
         }
 
         if ($expectedDefaultDirectory) {
@@ -370,7 +370,7 @@ function Run-PesterTests() {
         }
 
         if ($expectedShimFiles -and $expectedShimFiles.Count -gt 0) {
-          $expectedShimFiles | % {
+          $expectedShimFiles | ForEach-Object {
             $shimFile = $_
             It "Should have removed shimfile $shimFile" {
               "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
@@ -381,7 +381,7 @@ function Run-PesterTests() {
         if ($filesAvailableOnPath) {
           Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
           Update-SessionEnvironment
-          $filesAvailableOnPath | % {
+          $filesAvailableOnPath | ForEach-Object {
             $file = $_
             It "$file should be removed from path." {
               $file = Get-Command $file -ea 0
@@ -401,7 +401,7 @@ function Run-PesterTests() {
           }
 
           if ($customInstallChecks) {
-            $customInstallChecks | % { . $_ }
+            $customInstallChecks | ForEach-Object { . $_ }
           }
 
           It "Should have created custom directory path" {
@@ -409,7 +409,7 @@ function Run-PesterTests() {
           }
 
           if ($expectedShimFiles -and $expectedShimFiles.Count -gt 0) {
-            $expectedShimFiles | % {
+            $expectedShimFiles | ForEach-Object {
               $shimFile = $_
               It "Should have created shimfile $shimFile when using custom directory" {
                 "${env:ChocolateyInstall}\bin\$shimFile" | Should -Exist
@@ -418,7 +418,7 @@ function Run-PesterTests() {
           }
 
           if ($notExpectedShimFiles -and $notExpectedShimFiles.Count -gt 0) {
-            $notExpectedShimFiles | % {
+            $notExpectedShimFiles | ForEach-Object {
               $shimFile = $_
               It "Should NOT have created shimfile $shimFile when using custom directory" {
                 "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
@@ -429,7 +429,7 @@ function Run-PesterTests() {
           if ($filesAvailableOnPath) {
             Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
             Update-SessionEnvironment
-            $filesAvailableOnPath | % {
+            $filesAvailableOnPath | ForEach-Object {
               $file = $_
               It "$file should be available on path." {
                 $file = Get-Command $file
@@ -444,7 +444,7 @@ function Run-PesterTests() {
           }
 
           if ($customUninstallChecks) {
-            $customUninstallChecks | % { . $_ }
+            $customUninstallChecks | ForEach-Object { . $_ }
           }
 
           It "Should have removed custom installation directory" {
@@ -452,7 +452,7 @@ function Run-PesterTests() {
           }
 
           if ($expectedShimFiles -and $expectedShimFiles.Count -gt 0) {
-            $expectedShimFiles | % {
+            $expectedShimFiles | ForEach-Object {
               $shimFile = $_
               It "Should have removed shimfile $shimFile" {
                 "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
@@ -463,7 +463,7 @@ function Run-PesterTests() {
           if ($filesAvailableOnPath) {
             Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
             Update-SessionEnvironment
-            $filesAvailableOnPath | % {
+            $filesAvailableOnPath | ForEach-Object {
               $file = $_
               It "$file should be removed from path." {
                 $file = Get-Command $file
@@ -481,7 +481,7 @@ function Run-PesterTests() {
           }
 
           if ($customInstallChecks) {
-            $customInstallChecks | % { . $_ }
+            $customInstallChecks | ForEach-Object { . $_ }
           }
 
           if ($expectedDefaultDirectory) {
@@ -497,7 +497,7 @@ function Run-PesterTests() {
           }
 
           if ($expectedShimFiles -and $expectedShimFiles.Count -gt 0) {
-            $expectedShimFiles | % {
+            $expectedShimFiles | ForEach-Object {
               $shimFile = $_
               It "Should have created shimfile $shimFile in 32bit mode" {
                 "${env:ChocolateyInstall}\bin\$shimFile" | Should -Exist
@@ -506,7 +506,7 @@ function Run-PesterTests() {
           }
 
           if ($notExpectedShimFiles -and $notExpectedShimFiles.Count -gt 0) {
-            $notExpectedShimFiles | % {
+            $notExpectedShimFiles | ForEach-Object {
               $shimFile = $_
               It "Should NOT have created shimfile $shimFile in 32bit mode" {
                 "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
@@ -517,7 +517,7 @@ function Run-PesterTests() {
           if ($filesAvailableOnPath) {
             Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
             Update-SessionEnvironment
-            $filesAvailableOnPath | % {
+            $filesAvailableOnPath | ForEach-Object {
               $file = $_
               It "$file should be available on path." {
                 $file = Get-Command $file
@@ -532,7 +532,7 @@ function Run-PesterTests() {
           }
 
           if ($customUninstallChecks) {
-            $customUninstallChecks | % { . $_ }
+            $customUninstallChecks | ForEach-Object { . $_ }
           }
 
           if ($expectedDefaultDirectory) {
@@ -548,7 +548,7 @@ function Run-PesterTests() {
           }
 
           if ($expectedShimFiles -and $expectedShimFiles.Count -gt 0) {
-            $expectedShimFiles | % {
+            $expectedShimFiles | ForEach-Object {
               $shimFile = $_
               It "Should have removed shimfile $shimFile in 32bit mode" {
                 "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
@@ -559,7 +559,7 @@ function Run-PesterTests() {
           if ($filesAvailableOnPath) {
             Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
             Update-SessionEnvironment
-            $filesAvailableOnPath | % {
+            $filesAvailableOnPath | ForEach-Object {
               $file = $_
               It "$file should be removed from path." {
                 $file = Get-Command $file
@@ -577,7 +577,7 @@ function Run-PesterTests() {
             }
 
             if ($customInstallChecks) {
-              $customInstallChecks | % { . $_ }
+              $customInstallChecks | ForEach-Object { . $_ }
             }
 
             It "Should have created custom installation directory in 32bit mode" {
@@ -585,7 +585,7 @@ function Run-PesterTests() {
             }
 
             if ($expectedShimFiles -and $expectedShimFiles.Count -gt 0) {
-              $expectedShimFiles | % {
+              $expectedShimFiles | ForEach-Object {
                 $shimFile = $_
                 It "Should have created shimfile $shimFile when using custom directory in 32bit mode" {
                   "${env:ChocolateyInstall}\bin\$shimFile" | Should -Exist
@@ -594,7 +594,7 @@ function Run-PesterTests() {
             }
 
             if ($notExpectedShimFiles -and $notExpectedShimFiles.Count -gt 0) {
-              $notExpectedShimFiles | % {
+              $notExpectedShimFiles | ForEach-Object {
                 $shimFile = $_
                 It "Should NOT have created shimfile $shimFile when using custom directory in 32bit mode" {
                   "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
@@ -605,7 +605,7 @@ function Run-PesterTests() {
             if ($filesAvailableOnPath) {
               Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
               Update-SessionEnvironment
-              $filesAvailableOnPath | % {
+              $filesAvailableOnPath | ForEach-Object {
                 $file = $_
                 It "$file should be available on path." {
                   $file = Get-Command $file
@@ -620,7 +620,7 @@ function Run-PesterTests() {
             }
 
             if ($customUninstallChecks) {
-              $customUninstallChecks | % { . $_ }
+              $customUninstallChecks | ForEach-Object { . $_ }
             }
 
             It "Should have removed custom installation directory in 32bit mode" {
@@ -628,7 +628,7 @@ function Run-PesterTests() {
             }
 
             if ($expectedShimFiles -and $expectedShimFiles.Count -gt 0) {
-              $expectedShimFiles | % {
+              $expectedShimFiles | ForEach-Object {
                 $shimFile = $_
                 It "Should have removed shimfile $shimFile in 32bit mode" {
                   "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
@@ -639,7 +639,7 @@ function Run-PesterTests() {
             if ($filesAvailableOnPath) {
               Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
               Update-SessionEnvironment
-              $filesAvailableOnPath | % {
+              $filesAvailableOnPath | ForEach-Object {
                 $file = $_
                 It "$file should be removed from path." {
                   $file = Get-Command $file

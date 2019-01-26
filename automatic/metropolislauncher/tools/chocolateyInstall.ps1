@@ -2,8 +2,8 @@ $ErrorActionPreference = 'Stop'
 
 $packageName = 'metropolislauncher'
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$url = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201901200130/DuckieTV-201901200130-windows-x32.zip'
-$checksum = '7414179c2824e34b0fb101f58e09a69728a0f3546eaaf81e4fe21592a343a962'
+$url = ''
+$checksum = ''
 
 $packageArgs = @{
   packageName    = $packageName

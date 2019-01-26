@@ -1,4 +1,4 @@
-param(
+﻿param(
   [string]$artifactsDirectory = "$env:TEMP\artifacts",
   [string]$validateAgainst = "origin/master",
   [switch]$runAllTests
@@ -10,7 +10,7 @@ function GetTestPathsFromDiff() {
     [ValidateNotNull()]
     [string]$diffAgainst
   )
-  $paths = git diff "${diffAgainst}..." --name-only | % {
+  $paths = git diff "${diffAgainst}..." --name-only | ForEach-Object {
     if ($_.StartsWith('..')) {
       $path = Split-Path -Parent $_
     } else {
@@ -23,7 +23,7 @@ function GetTestPathsFromDiff() {
     }
 
     if ($path) { $path }
-  } | select -Unique
+  } | Select-Object -Unique
 
   return $paths
 }
@@ -36,7 +36,7 @@ function Invoke-PesterTests() {
   )
 
   if ($runAllTests) {
-    $paths = gci .. -Filter "*.Tests.ps1" -Recurse | % { Split-path -Parent $_.FullName } | select -Unique
+    $paths = Get-ChildItem .. -Filter "*.Tests.ps1" -Recurse | ForEach-Object { Split-path -Parent $_.FullName } | Select-Object -Unique
   } else {
     $paths = GetTestPathsFromDiff -diffAgainst $validateAgainst
   }
@@ -45,7 +45,7 @@ function Invoke-PesterTests() {
   if (!(Test-Path $testResultDirectory)) { mkdir -Force $testResultDirectory }
   $shouldFail = $false
   $failedCount = 0
-  $paths | % {
+  $paths | ForEach-Object {
     $packageName = Split-Path -Leaf $_
     $testFile = "${testResultDirectory}\$packageName.xml"
     $res = Invoke-Pester -Script (Resolve-path "$_\*.Tests.ps1") -OutputFormat "NUnitXml" -OutputFile $testFile -PassThru
