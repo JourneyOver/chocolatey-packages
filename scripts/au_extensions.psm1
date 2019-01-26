@@ -7,6 +7,7 @@
 $funcs = @(
   'Get-LatestGithubReleases'
   'Get-AllGithubReleases'
+  'Get-ValidOpenSourceLicense'
 )
 
 $funcs | % {
