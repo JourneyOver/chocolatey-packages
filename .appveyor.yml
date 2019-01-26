@@ -10,6 +10,8 @@ max_jobs: 1
 branches:
   only:
   - master
+skip_tags: true
+skip_branch_with_pr: true
 #build:
 #  verbosity: minimal
 
@@ -24,10 +26,6 @@ environment:
   github_user_repo: JourneyOver/chocolatey-packages
   github_api_key:
     secure: pjjxVtx3PPBrCQGTPgRgG6AZS55C0yq5tfRmUgUU+7yOixqxSvPZRgVYG0zt7nzx
-
-  github_username: JourneyOver
-  github_password:
-    secure: NTaQtg1cKJNu44zgrQ4loQ==
 
   # Mail credentials - for error notifications
   mail_user: timtag1190@gmail.com
@@ -49,7 +47,6 @@ environment:
 
   #Chocolatey version we want to use when checking for updates.
   choco_version: '0.10.8'
-  choco_version_pr: '0.10.8' # Should be kept to the version available one year ago
   nupkg_cache_path: C:\packages
 
 init:
@@ -59,19 +56,15 @@ init:
 
 install:
 - ps: |
-    $chocoVersion = if (($Env.APPVEYOR_PULL_REQUEST_NUMBER -eq $null) -or ($ENV:APPVEYOR_PULL_REQUEST_NUMBER -eq '')) { $Env:choco_version } else { $Env:choco_version_pr }
     if (!(Test-Path "$env:nupkg_cache_path")) { mkdir -Force "$env:nupkg_cache_path" }
     @{
-      'chocolatey' = $chocoVersion
-      'wormies-au-helpers' = '0.3.1'
-      'autohotkey.portable' = '1.1.30.01'
-      'chocolatey-core.extension' = '1.3.3'
+      'chocolatey' = $Env:choco_version
+      'wormies-au-helpers' = '0.3.2'
     }.GetEnumerator() | % {
       if (!(Test-Path "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg")) { rm "${env:nupkg_cache_path}\$($_.Key).*.nupkg" ; iwr "https://chocolatey.org/api/v2/package/$($_.Key)/$($_.Value)" -OutFile "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg" }
-      if ($_.Key -eq 'chocolatey') { cup $_.Key --version $_.Value --source ${env:nupkg_cache_path} --allow-downgrade }
+      if ($_.Key -eq 'chocolatey') { cup $_.Key --version $_.Value --source ${env:nupkg_cache_path} }
       else { cinst $_.Key --version $_.Value --source ${env:nupkg_cache_path} --ignore-dependencies }
     }
-    rm "$env:ChocolateyInstall\logs\*.log"
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
 - git --version
@@ -92,18 +85,8 @@ build_script:
 
     . ./scripts/EventLogs.ps1
     Clear-EventLogs
-
-    if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
-
-    if (($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne $null) -and ($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne '')) {
-      Set-Service wuauserv -StartupType Manual
-      ./scripts/Test-RepoPackage.ps1 -CleanFiles -TakeScreenshots
-      return
-    } else {
       # Clean the choco logs as it's quite large
       rm "$env:ChocolateyInstall\logs\*.log"
-    }
-
     if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {
         switch -regex ($Env:APPVEYOR_REPO_COMMIT_MESSAGE)
         {
@@ -146,11 +129,6 @@ on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 notifications:
-- provider: Email
-  to: $(mail_user)
-  on_build_success: false
-  on_build_failure: true
-  on_build_status_changed: true
 - provider: GitHubPullRequest
   template: "{{#passed}}:white_check_mark: Package verification completed without issues. PR is now pending human review{{/passed}}{{#failed}}:x: Package verification failed, please review the [Appveyor Logs]({{buildUrl}}) and the provided [Artifacts]({{buildUrl}}/artifacts) before requesting a human reviewer to take a look.{{/failed}}"
 
