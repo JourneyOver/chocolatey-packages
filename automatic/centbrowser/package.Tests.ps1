@@ -13,17 +13,17 @@ Describe "CentBrowser parameters verification" {
       Install-Package `
         -packageName "CentBrowser" `
         -packagePath $PSScriptRoot `
-        -additionalArguments "--package-parameters='`"/NoDesktopIcon /NoTaskbarIcon /NoStartmenuIcon`"'"
+        -additionalArguments "--package-parameters='`"/dir:$env:APPDATA /NoDesktopIcon /NoTaskbarIcon`"'"
+    }
+
+    It "Should have created a custom directory during install" {
+      $cdirectory = [System.Environment]::GetFolderPath('ApplicationData')
+      "$cdirectory\CentBrowser\Application" | Should -Exist
     }
 
     It "Should have not created desktop icon during install" {
       $desktop = [System.Environment]::GetFolderPath('DesktopDirectory')
       "$desktop\Cent Browser.lnk" | Should -Not -Exist
-    }
-
-    It "Should have not created start menu icon during install" {
-      $startmenu = [System.Environment]::GetFolderPath('StartMenu')
-      "$startmenu\Programs\Cent Browser.lnk" | Should -Not -Exist
     }
 
     It "Should have not created taskbar icon during install" {
