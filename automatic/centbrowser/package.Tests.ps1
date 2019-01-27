@@ -4,7 +4,6 @@ Run-PesterTests `
   -packageName "CentBrowser" `
   -packagePath "$PSScriptRoot" `
   -streams "stable", "beta" `
-  -customDirectoryArgument "/dir:" `
   -expectedDefaultDirectory "${env:LOCALAPPDATA}\CentBrowser\Application" `
   -test32bit
 
