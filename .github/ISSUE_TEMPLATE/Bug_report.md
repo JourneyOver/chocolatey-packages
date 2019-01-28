@@ -7,15 +7,12 @@ labels: ''
 assignees: ''
 ---
 
-<!-- Provide a general summary of the issue in the Title above, prefixed with (packageName) -->
-
 **Describe the bug**
-<!-- If describing a bug, tell us what happens instead of the expected behavior -->
-<!-- If suggesting a change/improvement, explain the difference from current behavior -->
+<!-- A clear and concise description of what the bug is. -->
+
 
 **To Reproduce**
 <!-- Provide a link to a live example, or an unambiguous set of steps to -->
-<!-- reproduce this bug. Include code to reproduce, if relevant -->
 
 1. Go to '...'
 2. Click on '....'
@@ -23,8 +20,7 @@ assignees: ''
 4. See error
 
 **Expected behavior**
-<!-- If you're describing a bug, tell us what should happen -->
-<!-- If you're suggesting a change/improvement, tell us how it should work -->
+<!-- A clear and concise description of what you expected to happen. -->
 
 **Screenshots**
 <!-- If applicable, add screenshots to help explain your problem. -->

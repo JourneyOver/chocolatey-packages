@@ -28,7 +28,6 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 - `/dir:` - Indicates where you want to install the application. - defaults to %localappdata%
 - `/NoDesktopIcon` - Don't add a desktop icon.
 - `/NoTaskbarIcon` - Don't add a taskbar icon.
-- `/NoStartmenuIcon` - Don't add a startmenu icon.
 
 ### Uninstall parameters
 

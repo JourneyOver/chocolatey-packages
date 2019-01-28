@@ -16,9 +16,9 @@ function global:au_SearchReplace {
 
 function global:au_BeforeUpdate($Package) {
   $licenseFile = "$PSScriptRoot\legal\LICENSE.txt"
-  if (Test-Path $licenseFile) { rm -Force $licenseFile }
+  if (Test-Path $licenseFile) { Remove-Item -Force $licenseFile }
 
-  iwr -UseBasicParsing -Uri $($Package.nuspecXml.package.metadata.licenseUrl -replace 'blob', 'raw') -OutFile $licenseFile
+  Invoke-WebRequest -UseBasicParsing -Uri $($Package.nuspecXml.package.metadata.licenseUrl -replace 'blob', 'raw') -OutFile $licenseFile
   if (!(Get-ValidOpenSourceLicense -path "$licenseFile")) {
     throw "Unknown license download. Please verify it still contains distribution rights."
   }

@@ -1,4 +1,4 @@
-function Get-ValidOpenSourceLicense() {
+﻿function Get-ValidOpenSourceLicense() {
   param(
     [Parameter(Mandatory = $true, ParameterSetName = "text")]
     [string[]]$content,
@@ -20,9 +20,9 @@ function Get-ValidOpenSourceLicense() {
     $content = Get-Content -Encoding UTF8 -Path $path
   }
 
-  $hasMatch = $content | ? {
+  $hasMatch = $content | Where-Object {
     $line = $_
-    $validMatches | % { $line -match $validMatches }
+    $validMatches | ForEach-Object { $line -match $validMatches }
   }
 
   if ($hasMatch) { return $true } else { return $false }

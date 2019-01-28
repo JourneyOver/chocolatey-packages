@@ -70,11 +70,11 @@ $Options = [ordered]@{
 
   GitReleases               = @{
     ApiToken    = $Env:github_api_key                   #Your github api key
-    ReleaseType = 'package'                             #Either 1 release per date, or 1 release per package
+    ReleaseType = 'date'                             #Either 1 release per date, or 1 release per package
   }
 
   RunInfo                   = @{
-    Exclude = 'password', 'apikey', 'apitoken'          #Option keys which contain those words will be removed
+    Exclude = 'password', 'apikey', 'UserName', 'To', 'ApiToken'          #Option keys which contain those words will be removed
     Path    = "$PSScriptRoot\update_info.xml"           #Path where to save the run info
   }
 
@@ -87,7 +87,7 @@ $Options = [ordered]@{
       Port        = $Env:mail_port
       EnableSsl   = $Env:mail_enablessl -eq 'true'
       Attachment  = "$PSScriptRoot\update_info.xml"
-      UserMessage = "<p>Update status: https://gist.github.com/$Env:gist_id</p>"
+      UserMessage = "Update status: https://gist.github.com/JourneyOver/$Env:gist_id"
       SendAlways  = $false                        #Send notifications every time
     }
   } else {}
