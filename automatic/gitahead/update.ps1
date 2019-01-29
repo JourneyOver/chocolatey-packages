@@ -39,4 +39,4 @@ function global:au_GetLatest {
   return $Latest
 }
 
-Write-Host $ignore; 'ignore'
+update -ChecksumFor none
