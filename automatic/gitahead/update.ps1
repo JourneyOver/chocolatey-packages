@@ -39,4 +39,9 @@ function global:au_GetLatest {
   return $Latest
 }
 
-update -ChecksumFor none
+try {
+  update -ChecksumFor none
+} catch {
+  $ignore = '403 Forbidden'
+  if ($_ -match $ignore) { Write-Host $ignore; 'ignore' }  else { throw $_ }
+}
