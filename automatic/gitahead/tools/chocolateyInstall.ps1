@@ -1,21 +1,23 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'gitahead'
-
-$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$fileLocation = Get-Item "$toolsDir\GitAhead-win32-*"
-$fileLocation64 = Get-Item "$toolsDir\GitAhead-win64-*"
+$url = ''
+$url64 = ''
+$checksum = ''
+$checksum64 = ''
+$checksumType = 'sha256'
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  file           = $fileLocation
-  file64         = $fileLocation64
+  url            = $url
+  url64Bit       = $url64
   silentArgs     = "/S"
   validExitCodes = @(0)
+  checksum       = $checksum
+  checksum64     = $checksum64
+  checksumType   = $checksumType
+  checksumType64 = $checksumType
 }
 
-Install-ChocolateyInstallPackage @packageArgs
-
-# Remove the installers as there is no more need for it
-Remove-Item $toolsDir\*.exe -ea 0 -Force
+Install-ChocolateyPackage @packageArgs
