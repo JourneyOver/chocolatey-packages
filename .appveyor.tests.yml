@@ -29,7 +29,7 @@ environment:
     secure: pjjxVtx3PPBrCQGTPgRgG6AZS55C0yq5tfRmUgUU+7yOixqxSvPZRgVYG0zt7nzx
 
   #ID of the gist used to save test run results
-  gist_id: 13f08beca5db513521762b5c4ce53d58
+  gist_id: c14815ee16a432c8215f3f63fb8b7133
 
   #Chocolatey version we want to use when checking for updates.
   choco_version: '0.10.8'

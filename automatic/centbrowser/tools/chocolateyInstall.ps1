@@ -15,7 +15,7 @@ $packageArgs = @{
   fileType       = 'exe'
   url            = $url
   url64Bit       = $url64
-  silentArgs     = "--cb-auto-update --cb-install-path=$($pp['dir'])"
+  silentArgs     = "--cb-auto-update --do-not-launch-chrome --cb-install-path=$($pp['dir'])"
   validExitCodes = @(0)
   checksum       = $checksum
   checksum64     = $checksum64
