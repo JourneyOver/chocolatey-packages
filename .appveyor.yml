@@ -85,6 +85,7 @@ build_script:
 
     . ./scripts/EventLogs.ps1
     Clear-EventLogs
+    if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
       # Clean the choco logs as it's quite large
       rm "$env:ChocolateyInstall\logs\*.log"
     if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {

@@ -29,7 +29,7 @@ environment:
     secure: pjjxVtx3PPBrCQGTPgRgG6AZS55C0yq5tfRmUgUU+7yOixqxSvPZRgVYG0zt7nzx
 
   #ID of the gist used to save test run results
-  gist_id: 13f08beca5db513521762b5c4ce53d58
+  gist_id: c14815ee16a432c8215f3f63fb8b7133
 
   #Chocolatey version we want to use when checking for updates.
   choco_version: '0.10.8'
@@ -62,6 +62,7 @@ nuget:
 build: off
 
 test_script:
+- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 - ps: |
     if ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') {
       .\scripts\Invoke-PesterTests.ps1
