@@ -21,6 +21,7 @@ $Options = [ordered]@{
     'Service Temporarily Unavailable'
     'The connection was closed unexpectedly.'
     'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
+    'and no approved stable releases'             # Hopefully ignores issues when package is brand new and hasn't been approved yet and a new release happens.
   )
 
   RepeatOn                  = @(                                      #Error message parts on which to repeat package updater
