@@ -20,6 +20,7 @@ $Options = [ordered]@{
     'Internal Server Error'
     'Service Temporarily Unavailable'
     'The connection was closed unexpectedly.'
+    'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
   )
 
   RepeatOn                  = @(                                      #Error message parts on which to repeat package updater
@@ -34,6 +35,7 @@ $Options = [ordered]@{
     'remote session failed with an unexpected state'
     'Job returned no object, Vector smash ?'
     'The connection was closed unexpectedly.'
+    'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
   )
   RepeatSleep               = 60                                    #How much to sleep between repeats in seconds, by default 0
   RepeatCount               = 2                                      #How many times to repeat on errors, by default 1
