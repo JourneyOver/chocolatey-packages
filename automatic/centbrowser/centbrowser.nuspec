@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>CentBrowser</id>
-    <version>3.8.5.52-beta</version>
+    <version>3.8.5.69</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Cent Browser</title>
@@ -43,14 +43,13 @@
 To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
 
-#### Install parameters
+### Install parameters
 
 - `/dir:` - Indicates where you want to install the application. - defaults to %localappdata%
 - `/NoDesktopIcon` - Don't add a desktop icon.
 - `/NoTaskbarIcon` - Don't add a taskbar icon.
-- `/NoStartmenuIcon` - Don't add a startmenu icon.
 
-#### Uninstall parameters
+### Uninstall parameters
 
 - `/del_userdata` - Indicates if you want the user data folder to be deleted - defaults to false
 
