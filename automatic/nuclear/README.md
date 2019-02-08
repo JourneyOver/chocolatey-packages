@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@c7d0f1c33f7a421c3d78c1d393d76d6e44bf7d18/icons/nuclear.png" height="48" width="48" /> ![Nuclear](https://img.shields.io/chocolatey/v/nuclear.svg?label=Nuclear&style=for-the-badge)](https://chocolatey.org/packages/nuclear)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@14ad96a17d17d841cf0801bcd84e2f7178e8e48c/icons/nuclear.png" height="48" width="48" /> ![Nuclear](https://img.shields.io/chocolatey/v/nuclear.svg?label=Nuclear&style=for-the-badge)](https://chocolatey.org/packages/nuclear)
 
 nuclear is a free music streaming program that pulls content from free sources all over the internet.
 
