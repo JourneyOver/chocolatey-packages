@@ -24,4 +24,9 @@ Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can moni
 
 ## Notes
 
+This is the pre-release versions of Sonarr V3 otherwise known as Phantom.
+
+-   Sonarr v2 migration
+    - Sonarr v3 will automatically convert the existing Sonarr v2 installation. Sonarr v2 stored it's database in `C:\ProgramData\NzbDrone`, which will be automatically converted to `C:\ProgramData\Sonarr`. It's advisable to make a backup of the v2 data first.
+
 Installs as a service, to get to Sonarr open browser and go [here](http://localhost:8989/) or go to http://<your-ip>:8989/
