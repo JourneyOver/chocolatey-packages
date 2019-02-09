@@ -308,7 +308,7 @@ function Run-PesterTests() {
       Context "Install script validation" {
         $installScriptContent = Get-Content -Encoding UTF8 -Path "$packagePath\tools\chocolateyInstall.ps1"
         It "Should add/update checksums when not embedding packages" {
-          $re = "^\s*checksum(?:32|64)?\s*=\s*['`"](?<checksum>.+)['`"]"
+          $re = "^\s*[$]checksum(?:32|64)?\s*=\s*['`"](?<checksum>.+)['`"]"
 
           [array]$matches = $installScriptContent | Where-Object { $_ -match $re }
 

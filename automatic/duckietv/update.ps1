@@ -41,6 +41,7 @@ function GetNightlyVersion() {
   $version = $release.latest.Version -replace '(....(?!$))', '$1.'
   $build = '-nightly'
 
+if (Test-Path "./hashcheck.txt") {
   $hashRegEx = ' - (\w+)'
   $hash = ([regex]::match($release.latest.Body, $hashRegEx))
   $hashnew = $hash
@@ -51,6 +52,9 @@ function GetNightlyVersion() {
   }
 
   Set-Content "./hashcheck.txt" $hashnew
+} else {
+  echo "file does not exist proceed to update"
+}
 
   @{
     PackageName = "duckietv"

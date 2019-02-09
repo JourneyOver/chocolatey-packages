@@ -5,5 +5,5 @@ Run-PesterTests `
   -packagePath "$PSScriptRoot" `
   -expectedEmbeddedMatch '^GitAhead-win(32|64)-[\d\.]+\.exe$' `
   -licenseShouldMatch 'MIT License' `
-  -expectedDefaultDirectory "${env:ProgramFiles}\GitAhead"
+  -expectedDefaultDirectory "${env:ProgramFiles}\GitAhead" `
   -test32bit
