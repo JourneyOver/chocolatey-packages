@@ -109,6 +109,7 @@ function Run-PesterTests() {
     [string[]]$expectedShimFiles,
     [string[]]$notExpectedShimFiles,
     [string[]]$filesAvailableOnPath,
+    [string[]]$expectedUninstallKeys,
     [scriptblock[]] $customInstallChecks,
     [scriptblock[]] $customUninstallChecks,
     [boolean]$testChoco = $true,
@@ -355,6 +356,19 @@ function Run-PesterTests() {
           }
         }
 
+        if ($expectedUninstallKeys) {
+          Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+
+          $expectedUninstallKeys | ForEach-Object {
+            $key = $_
+            It "Should have created uninstall registry key '$key" {
+              [array]$foundKeys = Get-UninstallRegistryKey $key
+
+              $foundKeys.Count | Should -BeGreaterOrEqual 1
+            }
+          }
+        }
+
         if ($filesAvailableOnPath) {
           Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
           Update-SessionEnvironment
@@ -387,6 +401,19 @@ function Run-PesterTests() {
             $shimFile = $_
             It "Should have removed shimfile $shimFile" {
               "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
+            }
+          }
+        }
+
+        if ($expectedUninstallKeys) {
+          Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+
+          $expectedUninstallKeys | ForEach-Object {
+            $key = $_
+            It "Should have removed uninstall registry key '$key" {
+              [array]$foundKeys = Get-UninstallRegistryKey $key
+
+              $foundKeys.Count | Should -Be 0
             }
           }
         }
@@ -439,6 +466,19 @@ function Run-PesterTests() {
             }
           }
 
+          if ($expectedUninstallKeys) {
+            Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+
+            $expectedUninstallKeys | ForEach-Object {
+              $key = $_
+              It "Should have created uninstall registry key '$key" {
+                [array]$foundKeys = Get-UninstallRegistryKey $key
+
+                $foundKeys.Count | Should -BeGreaterOrEqual 1
+              }
+            }
+          }
+
           if ($filesAvailableOnPath) {
             Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
             Update-SessionEnvironment
@@ -469,6 +509,19 @@ function Run-PesterTests() {
               $shimFile = $_
               It "Should have removed shimfile $shimFile" {
                 "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
+              }
+            }
+          }
+
+          if ($expectedUninstallKeys) {
+            Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+
+            $expectedUninstallKeys | ForEach-Object {
+              $key = $_
+              It "Should have removed uninstall registry key '$key" {
+                [array]$foundKeys = Get-UninstallRegistryKey $key
+
+                $foundKeys.Count | Should -Be 0
               }
             }
           }
@@ -527,6 +580,19 @@ function Run-PesterTests() {
             }
           }
 
+          if ($expectedUninstallKeys) {
+            Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+
+            $expectedUninstallKeys | ForEach-Object {
+              $key = $_
+              It "Should have created uninstall registry key '$key" {
+                [array]$foundKeys = Get-UninstallRegistryKey $key
+
+                $foundKeys.Count | Should -BeGreaterOrEqual 1
+              }
+            }
+          }
+
           if ($filesAvailableOnPath) {
             Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
             Update-SessionEnvironment
@@ -565,6 +631,19 @@ function Run-PesterTests() {
               $shimFile = $_
               It "Should have removed shimfile $shimFile in 32bit mode" {
                 "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
+              }
+            }
+          }
+
+          if ($expectedUninstallKeys) {
+            Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+
+            $expectedUninstallKeys | ForEach-Object {
+              $key = $_
+              It "Should have removed uninstall registry key '$key" {
+                [array]$foundKeys = Get-UninstallRegistryKey $key
+
+                $foundKeys.Count | Should -Be 0
               }
             }
           }
@@ -615,6 +694,19 @@ function Run-PesterTests() {
               }
             }
 
+            if ($expectedUninstallKeys) {
+              Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+
+              $expectedUninstallKeys | ForEach-Object {
+                $key = $_
+                It "Should have created uninstall registry key '$key" {
+                  [array]$foundKeys = Get-UninstallRegistryKey $key
+
+                  $foundKeys.Count | Should -BeGreaterOrEqual 1
+                }
+              }
+            }
+
             if ($filesAvailableOnPath) {
               Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
               Update-SessionEnvironment
@@ -645,6 +737,19 @@ function Run-PesterTests() {
                 $shimFile = $_
                 It "Should have removed shimfile $shimFile in 32bit mode" {
                   "${env:ChocolateyInstall}\bin\$shimFile" | Should -Not -Exist
+                }
+              }
+            }
+
+            if ($expectedUninstallKeys) {
+              Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+
+              $expectedUninstallKeys | ForEach-Object {
+                $key = $_
+                It "Should have removed uninstall registry key '$key" {
+                  [array]$foundKeys = Get-UninstallRegistryKey $key
+
+                  $foundKeys.Count | Should -Be 0
                 }
               }
             }
