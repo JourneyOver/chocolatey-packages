@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>renamemytvseries2</id>
-    <version>2.0.2</version>
+    <version>2.0.4</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/renamemytvseries2</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Rename My TV Series 2</title>
@@ -29,7 +29,7 @@ The philosophy is a simple work flow; you have a few odd named TV Show episodes 
 
 This tool by no means pretends to be anything else than just that.
 
-## Some features:
+## Features
 
 - Support the new TheTVDB.com API (v2)
 - Caching shows and banners (so reloading at the later time could go faster)
