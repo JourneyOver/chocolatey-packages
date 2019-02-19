@@ -1,4 +1,4 @@
-Import-Module au
+﻿Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 function global:au_SearchReplace {
@@ -41,7 +41,6 @@ function GetNightlyVersion() {
   $version = $release.latest.Version -replace '(....(?!$))', '$1.'
   $build = '-nightly'
 
-if (Test-Path "./hashcheck.txt") {
   $hashRegEx = ' - (\w+)'
   $hash = ([regex]::match($release.latest.Body, $hashRegEx))
   $hashnew = $hash
@@ -52,9 +51,6 @@ if (Test-Path "./hashcheck.txt") {
   }
 
   Set-Content "./hashcheck.txt" $hashnew
-} else {
-  echo "file does not exist proceed to update"
-}
 
   @{
     PackageName = "duckietv"
