@@ -5,6 +5,6 @@ $packageName = Split-Path -Leaf $PSScriptRoot
 Run-PesterTests `
   -packageName "$packageName" `
   -packagePath "$PSScriptRoot" `
-  -expectedEmbeddedMatch '^axcrypt-[\d\.]+-setup\.exe$' `
+  -expectedEmbeddedMatch '^Lidarr\.develop\.[\d\.]+\.windows-installer\.exe$' `
   -licenseShouldMatch 'GNU GENERAL PUBLIC LICENSE' `
-  -expectedDefaultDirectory "${env:ProgramData}\Package Cache\{4802bd28-932d-4070-99e2-068ea74d872d}"
+  -expectedDefaultDirectory "${env:ProgramData}\Lidarr"

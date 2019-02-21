@@ -1,7 +1,9 @@
 . "$PSScriptRoot\..\..\scripts\Run-PesterTests.ps1"
 
+$packageName = Split-Path -Leaf $PSScriptRoot
+
 Run-PesterTests `
-  -packageName "gitahead" `
+  -packageName "$packageName" `
   -packagePath "$PSScriptRoot" `
   -expectedEmbeddedMatch '^GitAhead-win(32|64)-[\d\.]+\.exe$' `
   -licenseShouldMatch 'MIT License' `
