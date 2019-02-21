@@ -11,9 +11,16 @@ Run-PesterTests `
 
 Describe "memreduct ini file" {
   Context "Is it created?" {
+    Install-Package `
+      -packageName "memreduct" `
+      -packagePath $PSScriptRoot
+
     It "Should have created a ini file in the programs install folder" {
       $cdirectory = [System.Environment]::GetFolderPath('ProgramFiles')
       "$cdirectory\Mem Reduct\memreduct.ini" | Should -Exist
     }
+
+    Uninstall-Package `
+      -packageName "memreduct"
   }
 }
