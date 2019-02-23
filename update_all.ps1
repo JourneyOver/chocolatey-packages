@@ -106,7 +106,14 @@ $Options = [ordered]@{
     $Options.ModulePaths | ForEach-Object { Import-Module $_ }
     . $Options.UpdateIconScript $PackageName.ToLowerInvariant() -Quiet -ThrowErrorOnIconNotFound
     . $Options.UpdatePackageSourceScript $PackageName.ToLowerInvariant() -Quiet
-    if (Test-Path tools) { Expand-Aliases -Directory tools }
+    if (Test-Path tools) {
+      Expand-Aliases -Directory tools -AliasWhitelist @(
+        'Get-PackageParameters'
+        'Get-UninstallRegistryKey'
+        'Install-ChocolateyInstallPackage'
+        'Uninstall-ChocolateyPackage'
+      )
+    }
 
     $pattern = "^${PackageName}(?:\\(?<stream>[^:]+))?(?:\:(?<version>.+))?$"
     $p = $Options.ForcedPackages | Where-Object { $_ -match $pattern }
