@@ -17,7 +17,15 @@ Install-ChocolateyInstallPackage @packageArgs
 
 # Remove the installers as there is no more need for it
 Remove-Item $toolsDir\*.exe -ea 0 -Force
-New-Item -Path "$env:ProgramFiles\Mem Reduct" -Name "memreduct.ini" -ItemType File
+
+# Check to see if memreduct.ini already exists or not.
+$fexist = Test-Path "$env:ProgramFiles\Mem Reduct\memreduct.ini"
+if ($fexist) {
+  Write-Host "memreduct.ini already exists"
+} else {
+  # Make memreduct.ini file to turn product portable for easier uninstall
+  New-Item -Path "$env:ProgramFiles\Mem Reduct" -Name "memreduct.ini" -ItemType File
+}
 
 # Run memreduct if not already running
 if ( get-process | Where-Object {$_.path -eq "$env:programfiles\Mem Reduct\memreduct.exe"} ) {
