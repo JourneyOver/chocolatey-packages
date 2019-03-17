@@ -119,7 +119,8 @@ function Run-PesterTests() {
     [switch]$metaPackage,
     [switch]$test32bit,
     [switch]$installWithPreRelease,
-    [switch]$failsOn32bit
+    [switch]$failsOn32bit,
+    [switch]$skipChecksumCheck
   )
 
   function installPackage([string[]]$additionalArguments) {
@@ -142,7 +143,7 @@ function Run-PesterTests() {
   Describe "$packageName package verification" {
     if (!$skipUpdate) { Remove-Item "$packagePath\*.nupkg" }
     elseif (!(Test-Path "$packagePath\*.nupkg")) {
-      Start-Process -Wait -FilePath "choco" -ArgumentList "pack", $(Resolve-Path "$packagePath\*.nuspec"), "$packagePath"
+      Start-Process -Wait -FilePath "choco" -ArgumentList "pack", $(Resolve-Path "$packagePath\*.nuspec"), "--output-directory=$packagePath"
     }
 
     Context "Updating" {
@@ -219,10 +220,18 @@ function Run-PesterTests() {
       $nuspecContent = Get-Content -Encoding UTF8 -Path "$packagePath\$packageName.nuspec"
 
       if (!$metaPackage) {
-        It "Nuspec should include tools directory" {
-          $hasMatch = $nuspecContent | Where-Object { $_ -match '^\s*<file.*src="tools\\\*\*"' }
+        if ($packageName.EndsWith('.template')) {
+          It "Nuspec should include templates directory" {
+            $hasMatch = $nuspecContent | Where-Object { $_ -match '^\s*<file.*src="templates\\\*\*"' }
 
-          $hasMatch | Should -BeTrue
+            $hasMatch | Should -BeTrue
+          }
+        } else {
+          It "Nuspec should include tools directory" {
+            $hasMatch = $nuspecContent | Where-Object { $_ -match '^\s*<file.*src="tools\\\*\*"' }
+
+            $hasMatch | Should -BeTrue
+          }
         }
 
         It "All dependencies should specify minimum version" {
@@ -307,7 +316,7 @@ function Run-PesterTests() {
       }
     }
 
-    if (!$metaPackage -and !$expectedEmbeddedMatch) {
+    if (!$skipChecksumCheck -and !$metaPackage -and !$expectedEmbeddedMatch) {
       Context "Install script validation" {
         $installScriptContent = Get-Content -Encoding UTF8 -Path "$packagePath\tools\chocolateyInstall.ps1"
         It "Should add/update checksums when not embedding packages" {

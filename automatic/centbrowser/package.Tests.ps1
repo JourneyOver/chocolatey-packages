@@ -9,7 +9,7 @@ Run-PesterTests `
 
 Describe "CentBrowser parameters verification" {
   Context "Parameters" {
-    It "Should not create desktop/taskbar/startmenu icons on install" {
+    It "Should not create desktop/taskbar icons on install" {
       Install-Package `
         -packageName "CentBrowser" `
         -packagePath $PSScriptRoot `
