@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
-$packageName = 'radarr'
-$programUninstallEntryName = 'Radarr*'
+$packageName = 'sonarr'
+$programUninstallEntryName = 'Sonarr*'
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString
@@ -16,11 +16,11 @@ $packageArgs = @{
 
 Uninstall-ChocolateyPackage @packageArgs
 
-#remove Radarr folder that gets left behind
-$fexist = Test-Path $env:ProgramData\Radarr
+#remove Sonarr folder that gets left behind
+$fexist = Test-Path $env:ProgramData\Sonarr
 if ($fexist) {
-  Write-Host "Removing Radarr Folder that's left behind"
-  Remove-Item $env:ProgramData\Radarr -Recurse -Force
+  Write-Host "Removing Sonarr Folder that's left behind"
+  Remove-Item $env:ProgramData\Sonarr -Recurse -Force
 } else {
-  Write-Host Radarr Folder not found
+  Write-Host Sonarr Folder not found
 }
