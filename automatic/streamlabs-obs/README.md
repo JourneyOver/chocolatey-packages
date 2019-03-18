@@ -10,4 +10,8 @@ Level up your stream with our reliable, easy-to-setup desktop streaming applicat
 - Up to 2x Better Video Encoding
 - [More Features](https://streamlabs.com/)
 
+## Community
+
+- [Discord](https://discord.gg/stream)
+
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/streamlabs-obs.png)
