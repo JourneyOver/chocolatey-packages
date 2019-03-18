@@ -1,9 +1,9 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'streamlabs-obs'
-
-$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$fileLocation = Get-Item "$toolsDir\*.exe"
+$url64 = ''
+$checksum64 = ''
+$checksumType = 'sha256'
 
 if ((Get-OSArchitectureWidth 32) -or $env:ChocolateyForceX86) {
   throw ("This application currently only supports 64-bit Windows.")
@@ -12,12 +12,11 @@ if ((Get-OSArchitectureWidth 32) -or $env:ChocolateyForceX86) {
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  file           = $fileLocation
-  silentArgs     = '/S'
+  url64          = $url64
+  silentArgs     = "/S"
   validExitCodes = @(0)
+  checksum64     = $checksum64
+  checksumType   = $checksumType
 }
 
-Install-ChocolateyInstallPackage @packageArgs
-
-# Remove the installers as there is no more need for it
-Remove-Item $toolsDir\*.exe -ea 0 -Force
+Install-ChocolateyPackage @packageArgs
