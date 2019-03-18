@@ -8,7 +8,7 @@
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/swift-im</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Swift</title>
-    <authors>Isode Ltd</authors>
+    <authors>https://github.com/swift/swift/graphs/contributors</authors>
     <projectUrl>https://www.swift.im/swift.html</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/swift-im.png</iconUrl>
     <copyright>© Isode Ltd. 2015 - 2018</copyright>

@@ -11,7 +11,7 @@
     <authors>Sequence Publishing</authors>
     <projectUrl>http://www.sequencepublishing.com/1/thesage.html</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/tsedat.png</iconUrl>
-    <copyright>Copyright © 2001-2018 by Sequence Publishing. All Rights Reserved.</copyright>
+    <copyright>Copyright © 2001-2019 by Sequence Publishing. All Rights Reserved.</copyright>
     <!-- <licenseUrl></licenseUrl> -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!-- <projectSourceUrl></projectSourceUrl> -->

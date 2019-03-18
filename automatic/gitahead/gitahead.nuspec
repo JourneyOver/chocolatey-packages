@@ -8,7 +8,7 @@
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/gitahead</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>GitAhead</title>
-    <authors>SciTools™</authors>
+    <authors>https://github.com/gitahead/gitahead/graphs/contributors</authors>
     <projectUrl>https://gitahead.github.io/gitahead.com/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@451c6c485dfe456f26e0e68f260a008c4ff08003/icons/gitahead.png</iconUrl>
     <copyright>Copyright © 2018 Scientific Toolworks, Inc.</copyright>
