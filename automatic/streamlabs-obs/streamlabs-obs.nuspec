@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>streamlabs-obs</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/streamlabs-obs</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>StreamLabs OBS</title>
+    <authors>https://github.com/stream-labs/streamlabs-obs/graphs/contributors</authors>
+    <projectUrl>https://streamlabs.com/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/streamlabs-obs.png</iconUrl>
+    <copyright>© Streamlabs. All Rights Reserved.</copyright>
+    <licenseUrl>https://github.com/stream-labs/streamlabs-obs/blob/staging/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/stream-labs/streamlabs-obs</projectSourceUrl>
+    <docsUrl>https://github.com/stream-labs/streamlabs-obs/wiki</docsUrl>
+    <mailingListUrl>https://discord.gg/stream</mailingListUrl>
+    <bugTrackerUrl>https://tracker.streamlabs.com/my_view_page.php</bugTrackerUrl>
+    <tags>twitch open foss broadcast streaming video recording</tags>
+    <summary>Free and open source streaming software built on OBS and Electron.</summary>
+    <description><![CDATA[[Level up your stream with our reliable, easy-to-setup desktop streaming application built for professional streamers.
+
+## Features
+
+- Face Masks - Next Level Alerts
+- Super Easy Setup & Go Live in 60s
+- Four Screens into One
+- Up to 2x Better Video Encoding
+- [More Features](https://streamlabs.com/)
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/streamlabs-obs.png)
+]]></description>
+    <releaseNotes>
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!--<dependencies>
+    </dependencies> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
