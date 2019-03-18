@@ -4,7 +4,7 @@ pull_request_rules:
       - "#approved-reviews-by>=1"
       - status-success=continuous-integration/appveyor/pr
       - status-success=WIP
-      - base=dev
+      - base=master
     actions:
       merge:
         strict: smart
@@ -14,7 +14,7 @@ pull_request_rules:
       - author=JourneyOver
       - status-success=continuous-integration/appveyor/pr
       - status-success=WIP
-      - base=dev
+      - base=master
     actions:
       merge:
         strict: smart
@@ -22,8 +22,7 @@ pull_request_rules:
   - name: automatic merge when user is imgbot[bot]
     conditions:
       - author=imgbot[bot]
-      - status-success=continuous-integration/appveyor/pr
-      - base=dev
+      - base=master
     actions:
       merge:
         strict: smart
