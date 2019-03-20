@@ -4,12 +4,12 @@ $packageName = 'vortex'
 $programUninstallEntryName = 'Vortex*'
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
-$file = $registry.UninstallString
+$file = $registry.UninstallString -replace ('/allusers', '')
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  silentArgs     = '/S'
+  silentArgs     = '/allusers /S'
   validExitCodes = @(0)
   file           = $file
 }
