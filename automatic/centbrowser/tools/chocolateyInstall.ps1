@@ -2,10 +2,10 @@
 $pp = Get-PackageParameters
 
 $packageName = 'CentBrowser'
-$url = 'http://static.centbrowser.com/beta_32/centbrowser_3.9.2.29.exe'
-$url64 = 'http://static.centbrowser.com/beta_64/centbrowser_3.9.2.29_x64.exe'
-$checksum = '1056623ec209c00a8f87a816d2782e596cbc64343b1b63ff2a5124e44f94e51f'
-$checksum64 = '1b1cf4b418fcdffe8c27f696c24165ad4a68b615727601a45efc2783d4b0210f'
+$url = 'http://static.centbrowser.com/installer_32/centbrowser_3.9.2.45.exe'
+$url64 = 'http://static.centbrowser.com/installer_64/centbrowser_3.9.2.45_x64.exe'
+$checksum = 'c2b181a2d92f100046b95180aa7258d56c3716c7a5a309fdf8726c2ccada759e'
+$checksum64 = 'e39fe9b33030f70108ddfb5d60459cc635ef1989c643f749f99889af2c033503'
 $checksumType = 'sha256'
 
 if (!$pp['dir']) { $pp['dir'] = "$env:LOCALAPPDATA" }
