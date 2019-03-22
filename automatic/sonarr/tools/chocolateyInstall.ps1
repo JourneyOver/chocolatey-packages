@@ -1,26 +1,30 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'sonarr'
-$programUninstallEntryName = 'Sonarr*'
 
-$registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
-$file = $registry.UninstallString
+$toolsDir = Split-Path $MyInvocation.MyCommand.Definition
+$fileLocation = Get-Item "$toolsDir\*.exe"
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
+  file           = $fileLocation
+  silentArgs     = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /LOG=`"$($env:TEMP)\$($env:chocolateyPackageName).$($env:chocolateyPackageVersion).InnoInstall.log`""
   validExitCodes = @(0)
-  file           = $file
 }
 
-Uninstall-ChocolateyPackage @packageArgs
+Install-ChocolateyInstallPackage @packageArgs
 
-#remove Sonarr folder that gets left behind
-$fexist = Test-Path $env:ProgramData\NzbDrone
-if ($fexist) {
-  Write-Host "Removing Sonarr Folder that's left behind"
-  Remove-Item $env:ProgramData\NzbDrone -Recurse -Force
-} else {
-  Write-Host "Sonarr Folder not found"
+# Remove the installers as there is no more need for it
+Remove-Item $toolsDir\*.exe -ea 0 -Force
+
+# Start service if it's not running
+$service = 'NzbDrone'
+if (Get-Service "$service" -ErrorAction SilentlyContinue) {
+  $running = Get-Service $service
+  if ($running.Status -eq "Running") {
+    Write-Host 'Service is already running'
+  } elseif ($running.Status -eq "Stopped") {
+    Start-Service $service
+  }
 }

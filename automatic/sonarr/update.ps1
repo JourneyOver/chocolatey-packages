@@ -28,12 +28,12 @@ function global:au_BeforeUpdate($Package) {
   if ($Latest.Version -like '*phantom*') {
     Copy-Item "$PSScriptRoot\version_switch\README.phantom.md" "$PSScriptRoot\README.md" -Force
     Copy-Item "$PSScriptRoot\version_switch\chocolateyInstall.phantom.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
-    Copy-Item "$PSScriptRoot\version_switch\chocolateyUninstall.phantom.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyUninstall.phantom.ps1" "$PSScriptRoot\tools\chocolateyUninstall.ps1" -Force
     Copy-Item "$PSScriptRoot\version_switch\chocolateyBeforeModify.phantom.ps1" "$PSScriptRoot\tools\chocolateyBeforeModify.ps1" -Force
   } else {
     Copy-Item "$PSScriptRoot\version_switch\README.stable.md" "$PSScriptRoot\README.md" -Force
     Copy-Item "$PSScriptRoot\version_switch\chocolateyInstall.stable.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
-    Copy-Item "$PSScriptRoot\version_switch\chocolateyUninstall.stable.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
+    Copy-Item "$PSScriptRoot\version_switch\chocolateyUninstall.stable.ps1" "$PSScriptRoot\tools\chocolateyUninstall.ps1" -Force
     Copy-Item "$PSScriptRoot\version_switch\chocolateyBeforeModify.stable.ps1" "$PSScriptRoot\tools\chocolateyBeforeModify.ps1" -Force
   }
 }
