@@ -15,3 +15,12 @@ $packageArgs = @{
 }
 
 Uninstall-ChocolateyPackage @packageArgs
+
+#remove Sonarr folder that gets left behind
+$fexist = Test-Path $env:ProgramData\NzbDrone
+if ($fexist) {
+  Write-Host "Removing Sonarr Folder that's left behind"
+  Remove-Item $env:ProgramData\NzbDrone -Recurse -Force
+} else {
+  Write-Host "Sonarr Folder not found"
+}
