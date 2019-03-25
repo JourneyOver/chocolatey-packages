@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>loot</id>
+    <version>0.0.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/loot</packageSourceUrl>
+    <owners>JourneyOver, Der Archivar</owners>
+    <title>LOOT: The Load Order Optimisation Tool</title>
+    <authors>WrinklyNinja</authors>
+    <projectUrl>https://loot.github.io</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/loot.png</iconUrl>
+    <copyright>© WrinklyNinja</copyright>
+    <licenseUrl>https://github.com/loot/loot/blob/dev/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/loot/loot</projectSourceUrl>
+    <docsUrl>https://loot.github.io/docs</docsUrl>
+    <mailingListUrl>https://www.afkmods.com/index.php?/topic/5042-relz-loot-load-order-optimisation-tool</mailingListUrl>
+    <bugTrackerUrl>https://github.com/loot/loot/issues</bugTrackerUrl>
+    <tags>loot loadorder load order optimisation tool load-order mod mods modmanager mod-manager modding skyrim oblivion fallout tes elder scrolls tesiv tesv fallout3 fallout4 fo</tags>
+    <summary>A load order optimisation tool for the Elder Scrolls (Oblivion and later) and Fallout (3 and later) games.</summary>
+    <description><![CDATA[]]></description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://loot.readthedocs.io/en/0.0.0/app/changelog.html)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <dependencies>
+      <dependency id="vcredist2017" version="14.15.26706" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
