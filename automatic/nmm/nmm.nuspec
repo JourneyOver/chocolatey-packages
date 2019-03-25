@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>nmm</id>
+    <version>0.0.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/nmm</packageSourceUrl>
+    <owners>JourneyOver, Der Archivar</owners>
+    <title>Nexus Mod Manager</title>
+    <authors>Black Tree Gaming</authors>
+    <projectUrl>https://www.nexusmods.com/mods/modmanager</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/icons/nmm.png</iconUrl>
+    <copyright>© 2018 Black Tree Gaming</copyright>
+    <licenseUrl>https://github.com/Nexus-Mods/Nexus-Mod-Manager/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/Nexus-Mods/Nexus-Mod-Manager</projectSourceUrl>
+    <docsUrl>https://github.com/Nexus-Mods/Nexus-Mod-Manager/wiki</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/Nexus-Mods/Nexus-Mod-Manager/issues</bugTrackerUrl>
+    <tags>nmm nexus mod mods manager nexusmodmanager nexus-mod-manager modmanager mod-manager nexusmods nexus modding</tags>
+    <summary>The Nexus Mod Manager (NMM) is a free and open source piece of software that allows you to download, install, update and manage your mod files through an easy to use interface. It integrates with the Nexus sites to provide you with a fast, efficient and much less hassled modding experience.</summary>
+    <description><![CDATA[]]></description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://github.com/Nexus-Mods/Nexus-Mod-Manager/releases)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
