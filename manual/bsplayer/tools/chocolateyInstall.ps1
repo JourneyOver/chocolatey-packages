@@ -17,15 +17,3 @@ $packageArgs = @{
 
 Start-Process 'AutoHotkey' "$toolsPath\install.ahk"
 Install-ChocolateyPackage @packageArgs
-
-# Kill AutoHotKey process After Install if running
-$killAHK = Get-Process AutoHotKey -ErrorAction SilentlyContinue
-if ($killAHK) {
-  # try gracefully first
-  $killAHK.CloseMainWindow()
-  # kill after five seconds
-  Start-Sleep 5
-  if (!$killAHK.HasExited) {
-    $killAHK | Stop-Process -Force
-  }
-}
