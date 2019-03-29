@@ -12,4 +12,4 @@ LOOT is intended to make using mods easier, and mod users should still possess a
 
 - [Discord](https://loot.github.io/discord/)
 
-<img src="https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/loot.png" width="900" height="" />
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/loot.png)
