@@ -21,6 +21,7 @@ $Options = [ordered]@{
     'Service Temporarily Unavailable'
     'The connection was closed unexpectedly.'
     'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
+    'already exists on the repository'             # https://github.com/chocolatey/chocolatey.org/issues/613
     'and no approved stable releases'             # Hopefully ignores issues when package is brand new and hasn't been approved yet and a new release happens.
     'Conflict'
   )
@@ -38,6 +39,7 @@ $Options = [ordered]@{
     'Job returned no object, Vector smash ?'
     'The connection was closed unexpectedly.'
     'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
+    'already exists on the repository'             # https://github.com/chocolatey/chocolatey.org/issues/613
     'Conflict'
   )
   RepeatSleep               = 60                                    #How much to sleep between repeats in seconds, by default 0
