@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>vortex</id>
-    <version>0.17.10</version>
+    <version>0.17.11</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/vortex</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Vortex</title>
