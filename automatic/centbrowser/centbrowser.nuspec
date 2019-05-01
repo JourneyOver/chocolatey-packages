@@ -60,7 +60,8 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 * [Changelog](https://www.centbrowser.com/history.html)
 
 #### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
+* If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
     <dependencies>
       <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>

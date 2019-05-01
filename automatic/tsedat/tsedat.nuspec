@@ -41,7 +41,8 @@ TheSage can look up words directly from almost any program (IE, Word, Firefox, O
 * [Changelog](http://www.sequencepublishing.com/1/thesage_news/changelog.txt)
 
 #### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
+* If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
     <!-- <dependencies>
     </dependencies> -->
   </metadata>

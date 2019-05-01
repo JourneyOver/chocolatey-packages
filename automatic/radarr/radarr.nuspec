@@ -60,7 +60,8 @@ Installs as a service, to get to Radarr open browser and go [here](http://localh
 * [Changelog](https://github.com/Radarr/Radarr/releases)
 
 #### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
+* If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
     <!-- <dependencies>
     </dependencies> -->
   </metadata>

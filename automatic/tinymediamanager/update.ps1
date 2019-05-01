@@ -1,7 +1,7 @@
 ﻿Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$releases = 'http://release.tinymediamanager.org/'
+$releases = 'https://release.tinymediamanager.org/'
 
 function global:au_SearchReplace {
   @{
@@ -33,7 +33,7 @@ function global:au_GetLatest {
   $url = $download_page.links | Where-Object href -match $re | Select-Object -First 1 -expand href
 
   $version = $url -split 'tmm_|_.+_win.zip' | Select-Object -Last 1 -Skip 1
-  $url32 = 'http://release.tinymediamanager.org/' + $url
+  $url32 = 'https://release.tinymediamanager.org/' + $url
 
   $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest

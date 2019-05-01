@@ -39,7 +39,8 @@ It will take an ugly filename like **Lost.S06E05.DD51.720p.WEB-DL.AVC-FUSiON.mkv
 * [Changelog](https://github.com/tvrenamer/tvrenamer/releases)
 
 #### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
+* If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
     <dependencies>
       <dependency id="jre8" version="8.0.171" />
     </dependencies>

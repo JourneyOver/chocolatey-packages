@@ -50,7 +50,8 @@ Installs as a service, to get to Lidarr open browser and go [here](http://localh
 * [Changelog](https://github.com/lidarr/Lidarr/releases)
 
 #### Package
-* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)</releaseNotes>
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
+* If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
 <dependencies>
   <dependency id="DotNet4.6.1" version="4.6.01055.20170308" />
 </dependencies>
