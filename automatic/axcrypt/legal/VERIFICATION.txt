@@ -9,7 +9,7 @@ and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://account.axcrypt.net/download/AxCrypt-2-Setup.exe>
+  url: <https://account.axcrypt.net/download/axcrypt-2-setup.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
@@ -17,7 +17,7 @@ and can be verified by doing the following:
   - check <https://www.axcrypt.net/cryptographic-hashes-files>
 
   checksum type: sha256
-  checksum: B30273015669229D7E924A7D2FC7F350C667F1441605CA7BD5DE22FF5C0ACCA4
+  checksum: E1F85E9BF4586975AA5FF34DC033EBACFA49829B244725E25640297C0149D66C
 
 Using AU:
 
