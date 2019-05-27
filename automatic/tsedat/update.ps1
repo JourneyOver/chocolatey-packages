@@ -1,6 +1,6 @@
 Import-Module au
 
-$releases = 'http://www.sequencepublishing.website/_files/'
+$releases = 'https://www.sequencepublishing.com/_files/'
 
 function global:au_SearchReplace {
   @{
