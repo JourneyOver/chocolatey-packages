@@ -2,7 +2,7 @@
 
 $packageName = 'renamemytvseries2'
 $url = 'https://www.tweaking4all.com/?wpfb_dl=148'
-$checksum = '6cc801c67e8c8521df66c7cd34e62989acc5b0119bfed840bcd50ae8058e6571'
+$checksum = '69a9bfe54ea433617a13773f75ddecfcd41bfd6e0549cc26832cf23125d0e06b'
 $checksumType = 'sha256'
 
 $packageArgs = @{
