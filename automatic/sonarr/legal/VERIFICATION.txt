@@ -9,14 +9,14 @@ and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <http://download.sonarr.tv/v3/phantom-develop/3.0.1.520/Sonarr.phantom-develop.3.0.1.520.windows.exe>
+  url: <http://download.sonarr.tv/v3/phantom-develop/3.0.1.522/Sonarr.phantom-develop.3.0.1.522.windows.exe>
 
   2. You can obtain the checksum using one of the following methods:
     - Use powershell function 'Get-FileHash'
     - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: B88DAAF4A689194E2175EEE13DBAA73BF0181C278693618DE3D357B5EAE57B39
+  checksum: 0953A6240683A9625F930F24930374947698CF729169161EA05F2B25FD207BB4
 
 Using AU:
 
