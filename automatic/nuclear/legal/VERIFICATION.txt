@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/nukeop/nuclear/releases/tag/v0.4.4>
+location on <https://github.com/nukeop/nuclear/releases/tag/v0.5.0>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/nukeop/nuclear/releases/download/v0.4.4/nuclear.Setup.0.4.4.exe>
+  url: <https://github.com/nukeop/nuclear/releases/download/v0.5.0/nuclear.Setup.0.5.0.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:5AC026E92FAC6483EBC49B17AB48672416E10A901A7EDDB71C81F859E13BDD13
+  checksum:BA7372D15EC0B16CB20548D2523A32B30C6AE8F43B47F0AEEE5EC4C6439DB467
 
 Using AU:
 
