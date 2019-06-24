@@ -1,10 +1,18 @@
-daysUntilStale: 60
-daysUntilClose: 7
+daysUntilStale: 100
+daysUntilClose: 30
 exemptLabels:
   - pinned
   - New Package
 staleLabel: Pending Closure
 markComment: >
-  This issue has been automatically marked as stale because it has not had
-  recent activity. It will be closed if no further activity occurs. Thank you
-  for your contributions.
+  Is this still relevant? If so, what is blocking it? Is there anything you can do to help move it forward?
+closeComment: >
+  Dear contributor,
+  because this issue seems to be inactive for quite some time now, I've automatically closed it.
+  If you still feel this is a valid issue, please feel free to re-open the issue.
+  Thank you for your contribution.
+pulls:
+  markComment: >
+    This pull request has been automatically marked as stale because it has not had
+    recent activity. It will be closed in 30 days if no further activity occurs. Thank you
+    for your contributions.

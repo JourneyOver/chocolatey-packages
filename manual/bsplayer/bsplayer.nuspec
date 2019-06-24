@@ -10,7 +10,7 @@
     <title>BSPlayer</title>
     <authors>AB Team Ltd.</authors>
     <projectUrl>http://bsplayer.com/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@0edd82c680a2ed45d8e7df6ccf75c5224a198d54/icons/bsplayer.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/manual/bsplayer/icons/128x128.png</iconUrl>
     <copyright>Copyright © #1# AB Team d.o.o.</copyright>
     <licenseUrl>http://bsplayer.com/bsplayer-english/products/licencing.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

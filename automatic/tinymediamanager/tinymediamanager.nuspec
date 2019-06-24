@@ -10,7 +10,7 @@
     <title>tinyMediaManager</title>
     <authors>https://github.com/tinyMediaManager/tinyMediaManager/graphs/contributors</authors>
     <projectUrl>http://www.tinymediamanager.org/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/tmm.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/tinymediamanager/icons/128x128.png</iconUrl>
     <copyright>© 2019 Manuel Laggner</copyright>
     <licenseUrl>https://github.com/tinyMediaManager/tinyMediaManager/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

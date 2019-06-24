@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
   Updates Package Source Url with correct URL in the nuspec file
 
@@ -56,11 +56,27 @@
 
 param(
   [string]$Name,
-  [string]$GithubRepository = "JourneyOver/chocolatey-packages",
+  [string]$GithubRepository = $null,
   [string]$PackagesDirectory = "../automatic",
   [switch]$UseStopwatch,
   [switch]$Quiet
 )
+
+if (!$GithubRepository) {
+  $allRemotes = . git remote
+  $remoteName = if ($allRemotes | Where-Object { $_ -eq 'upstream' }) { "upstream" }
+  elseif ($allRemotes | Where-Object { $_ -eq 'origin' }) { 'origin' }
+  else { $allRemotes | Select-Object -first 1 }
+
+  if ($remoteName) { $remoteUrl = . git remote get-url $remoteName }
+
+  if ($remoteUrl) {
+    $GithubRepository = ($remoteUrl -split '\/' | Select-Object -last 2) -replace '\.git$', '' -join '/'
+  } else {
+    Write-Warning "Unable to get repository and user, setting dummy values..."
+    $GithubRepository = "USERNAME/REPOSITORY-NAME"
+  }
+}
 
 $counts = @{
   replaced = 0

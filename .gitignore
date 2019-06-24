@@ -35,6 +35,8 @@ ketarin/soluto.xml
 
 .vscode
 
+node_modules/
+
 # ignore certain files in automatic/manual Packages
 automatic/*/*.nupkg
 automatic/*/*/*.exe

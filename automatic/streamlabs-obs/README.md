@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@881181eaf6a2d515f2184c2e49867f8f5f4d6652/icons/streamlabs-obs.png" height="48" width="48" /> ![Streamlabs OBS](https://img.shields.io/chocolatey/v/streamlabs-obs.svg?label=Streamlabs%20OBS&style=for-the-badge)](https://chocolatey.org/packages/streamlabs-obs)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/streamlabs-obs/icons/48x48.png" height="48" width="48" /> ![Streamlabs OBS](https://img.shields.io/chocolatey/v/streamlabs-obs.svg?label=Streamlabs%20OBS&style=for-the-badge)](https://chocolatey.org/packages/streamlabs-obs)
 
 Level up your stream with our reliable, easy-to-setup desktop streaming application built for professional streamers.
 

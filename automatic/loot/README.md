@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@dad203c8b499124fef73bedde186dc8bd53ee111/icons/loot.png" height="48" width="48" /> ![LOOT](https://img.shields.io/chocolatey/v/loot.svg?label=LOOT&style=for-the-badge)](https://chocolatey.org/packages/loot)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/loot/icons/48x48.png" height="48" width="48" /> ![LOOT](https://img.shields.io/chocolatey/v/loot.svg?label=LOOT&style=for-the-badge)](https://chocolatey.org/packages/loot)
 
 LOOT is a plugin load order optimisation tool for TES IV: Oblivion, TES V: Skyrim, TES V: Skyrim Special Edition, Skyrim VR, Fallout 3, Fallout: New Vegas, Fallout 4 and Fallout 4 VR. It is designed to assist mod users in avoiding detrimental conflicts, by automatically calculating a load order that satisfies all plugin dependencies and maximises each plugin's impact on the user's game.
 

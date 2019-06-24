@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/duckietv.png" height="48" width="48" /> ![DuckieTV](https://img.shields.io/chocolatey/v/duckietv.svg?label=DuckieTV&style=for-the-badge)](https://chocolatey.org/packages/duckietv)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/duckietv/icons/48x48.png" height="48" width="48" /> ![DuckieTV](https://img.shields.io/chocolatey/v/duckietv.svg?label=DuckieTV&style=for-the-badge)](https://chocolatey.org/packages/duckietv)
 
 DuckieTV is an application that takes care of TV-Show addicts by providing a personalized TV-Show calendar. DuckieTV makes sure the information is always up-to-date and gives you an integrated blocking-resistant torrent search to help you get to the right download as easy as possible.
 

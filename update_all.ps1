@@ -22,8 +22,9 @@ $Options = [ordered]@{
     'The connection was closed unexpectedly.'
     'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
     'already exists on the repository'             # https://github.com/chocolatey/chocolatey.org/issues/613
-    'and no approved stable releases'             # Hopefully ignores issues when package is brand new and hasn't been approved yet and a new release happens.
+    'and no approved stable releases'             #  ignores when package is brand new and hasn't been approved yet and a new release happens.
     'Conflict'
+    'package version already exists'
   )
 
   RepeatOn                  = @(                                      #Error message parts on which to repeat package updater
@@ -41,6 +42,7 @@ $Options = [ordered]@{
     'already exists on a Simple OData Server'             # https://github.com/chocolatey/chocolatey.org/issues/613
     'already exists on the repository'             # https://github.com/chocolatey/chocolatey.org/issues/613
     'Conflict'
+    'Origin Time-out'
   )
   RepeatSleep               = 60                                    #How much to sleep between repeats in seconds, by default 0
   RepeatCount               = 2                                      #How many times to repeat on errors, by default 1
@@ -97,7 +99,7 @@ $Options = [ordered]@{
       UserMessage = "Update status: https://gist.github.com/JourneyOver/$Env:gist_id"
       SendAlways  = $false                        #Send notifications every time
     }
-  } else {}
+  } else { }
 
   ForcedPackages            = $ForcedPackages -split ' '
   UpdateIconScript          = "$PSScriptRoot\scripts\Update-IconUrl.ps1"

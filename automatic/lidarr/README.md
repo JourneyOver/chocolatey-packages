@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@1717a5416f03ead383e4994a3468f62892f32389/icons/lidarr.png" height="48" width="48" /> ![Lidarr](https://img.shields.io/chocolatey/v/lidarr.svg?label=Lidarr&style=for-the-badge)](https://chocolatey.org/packages/lidarr)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/lidarr/icons/48x48.png" height="48" width="48" /> ![Lidarr](https://img.shields.io/chocolatey/v/lidarr.svg?label=Lidarr&style=for-the-badge)](https://chocolatey.org/packages/lidarr)
 
 Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
 

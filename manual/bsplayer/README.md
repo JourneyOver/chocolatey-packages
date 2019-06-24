@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@0edd82c680a2ed45d8e7df6ccf75c5224a198d54/icons/bsplayer.png" width="48" height="48"/> [BS.Player](https://chocolatey.org/packages/bsplayer)
+# <img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/manual/bsplayer/icons/48x48.png" width="48" height="48"/> [BS.Player](https://chocolatey.org/packages/bsplayer)
 
 BS.Player is a Windows ® player, which supports the playback of all sorts of files, such as AVI, MPG, ASF, WMV, WAV, MP3, etc., with a special focus on video and DivX.
 

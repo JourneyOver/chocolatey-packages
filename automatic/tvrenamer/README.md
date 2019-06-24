@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@2abe074087be5f4c921b6ab1ad0bc6ccd959bbfa/icons/tvrenamer.png" height="48" width="48" /> ![TV Renamer Portable](https://img.shields.io/chocolatey/v/tvrenamer.svg?label=TV%20Renamer%20Portable&style=for-the-badge)](https://chocolatey.org/packages/tvrenamer)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/tvrenamer/icons/48x48.png" height="48" width="48" /> ![TV Renamer Portable](https://img.shields.io/chocolatey/v/tvrenamer.svg?label=TV%20Renamer%20Portable&style=for-the-badge)](https://chocolatey.org/packages/tvrenamer)
 
 TVRenamer is a Java GUI utility to rename TV episodes from TV listings.
 It will take an ugly filename like **Lost.S06E05.DD51.720p.WEB-DL.AVC-FUSiON.mkv** and rename it to **Lost [6x05] Lighthouse.mkv**
