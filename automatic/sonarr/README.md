@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/sonarr/icons/48x48.png" height="48" width="48" /> ![Sonarr](https://img.shields.io/chocolatey/v/sonarr.svg?label=Sonarr&style=for-the-badge)](https://chocolatey.org/packages/sonarr)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/sonarr/icons/48x48.png" height="48" width="48" /> ![Sonarr](https://img.shields.io/chocolatey/v/sonarr.svg?label=Sonarr&style=for-the-badge)](https://chocolatey.org/packages/sonarr)
 
 Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sorts and renames them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
 

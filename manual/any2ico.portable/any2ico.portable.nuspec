@@ -10,7 +10,7 @@
     <title>Quick Any2Ico (portable)</title>
     <authors>Carifred</authors>
     <projectUrl>http://www.carifred.com/quick_any2ico/#index</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/manual/any2ico.portable/icons/128x128.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/manual/any2ico.portable/icons/128x128.png</iconUrl>
     <copyright>Copyright Carifred © 2010 - 2018, all rights reserved.</copyright>
     <licenseUrl>http://www.carifred.com/License.php</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

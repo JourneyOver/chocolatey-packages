@@ -10,7 +10,7 @@
     <title>Cent Browser</title>
     <authors>Cent Studio</authors>
     <projectUrl>https://www.centbrowser.com</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/centbrowser/icons/256x256.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/centbrowser/icons/256x256.png</iconUrl>
     <copyright>Copyright © 2015-2019 Cent Studio.</copyright>
     <licenseUrl>https://www.chromium.org/chromium-os/licenses</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

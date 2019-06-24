@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/renamemytvseries2/icons/48x48.png" height="48" width="48" /> ![Rename My TV Series 2](https://img.shields.io/chocolatey/v/renamemytvseries2.svg?label=Rename%20My%20TV%20Series%202&style=for-the-badge)](https://chocolatey.org/packages/renamemytvseries2)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/renamemytvseries2/icons/48x48.png" height="48" width="48" /> ![Rename My TV Series 2](https://img.shields.io/chocolatey/v/renamemytvseries2.svg?label=Rename%20My%20TV%20Series%202&style=for-the-badge)](https://chocolatey.org/packages/renamemytvseries2)
 
 Originally the application was built as a purpose to learn more about Lazarus Pascal and cross-platform development.
 

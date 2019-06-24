@@ -10,7 +10,7 @@
     <title>GitAhead</title>
     <authors>https://github.com/gitahead/gitahead/graphs/contributors</authors>
     <projectUrl>https://gitahead.github.io/gitahead.com/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/gitahead/icons/128x128.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/gitahead/icons/128x128.png</iconUrl>
     <copyright>Copyright © 2018 Scientific Toolworks, Inc.</copyright>
     <licenseUrl>https://github.com/gitahead/gitahead/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

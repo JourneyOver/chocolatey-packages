@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/vortex/icons/48x48.png" height="48" width="48" /> ![Vortex](https://img.shields.io/chocolatey/v/vortex.svg?label=Vortex&style=for-the-badge)](https://chocolatey.org/packages/vortex)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/vortex/icons/48x48.png" height="48" width="48" /> ![Vortex](https://img.shields.io/chocolatey/v/vortex.svg?label=Vortex&style=for-the-badge)](https://chocolatey.org/packages/vortex)
 
 Vortex is the new, modern mod manager from Nexus Mods. It is designed to make modding your game as simple as possible for new users, while still providing enough control for more experienced veterans of the modding scene. Lead by Tannin, the creator of Mod Organizer, Vortex takes the lessons learnt during the development of MO and Nexus Mod Manager to provide the most powerful and intuitive modding experience available.
 

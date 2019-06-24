@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/tsedat/icons/48x48.png" height="48" width="48" /> ![TheSage English Dictionary and Thesaurus](https://img.shields.io/chocolatey/v/tsedat.svg?label=TheSage%20English%20Dictionary%20and%20Thesaurus&style=for-the-badge)](https://chocolatey.org/packages/tsedat)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/tsedat/icons/48x48.png" height="48" width="48" /> ![TheSage English Dictionary and Thesaurus](https://img.shields.io/chocolatey/v/tsedat.svg?label=TheSage%20English%20Dictionary%20and%20Thesaurus&style=for-the-badge)](https://chocolatey.org/packages/tsedat)
 
 TheSage's English Dictionary and Thesaurus is a professional software package that integrates a complete dictionary and multifaceted thesaurus of the English language into a single and powerful language reference system.
 TheSage can look up words directly from almost any program (IE, Word, Firefox, Outlook, Thunderbird, etc...).

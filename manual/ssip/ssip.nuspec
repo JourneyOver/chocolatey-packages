@@ -10,7 +10,7 @@
     <title>Simple Static IP</title>
     <authors>Shane Croft</authors>
     <projectUrl>http://www.pcwintech.com/simple-static-ip</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/manual/ssip/icons/64x64.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/manual/ssip/icons/64x64.png</iconUrl>
     <copyright>Copyright 2007 - 2015 © Shane Croft Solutions, Inc.</copyright>
     <!-- <licenseUrl></licenseUrl> -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

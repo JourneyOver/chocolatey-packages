@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/memreduct/icons/48x48.png" height="48" width="48" /> ![Mem Reduct](https://img.shields.io/chocolatey/v/memreduct.svg?label=Mem%20Reduct&style=for-the-badge)](https://chocolatey.org/packages/memreduct)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/memreduct/icons/48x48.png" height="48" width="48" /> ![Mem Reduct](https://img.shields.io/chocolatey/v/memreduct.svg?label=Mem%20Reduct&style=for-the-badge)](https://chocolatey.org/packages/memreduct)
 
 Lightweight real-time memory management application to monitor and clean system memory on your computer.
 

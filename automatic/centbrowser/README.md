@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/centbrowser/icons/48x48.png" height="48" width="48" /> ![Cent Browser](https://img.shields.io/chocolatey/v/CentBrowser.svg?label=Cent%20Browser&style=for-the-badge)](https://chocolatey.org/packages/CentBrowser)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/centbrowser/icons/48x48.png" height="48" width="48" /> ![Cent Browser](https://img.shields.io/chocolatey/v/CentBrowser.svg?label=Cent%20Browser&style=for-the-badge)](https://chocolatey.org/packages/CentBrowser)
 
 Cent Browser is an enhanced version of the Chromium web browser that bundles many useful features, such as scrollable tab bar, automatic memory optimization, lazy session loading, mouse gesture, super drag and a lot of tab options.It makes your web surfing easier, more comfortable and more secure.
 

@@ -10,7 +10,7 @@
     <title>TVRenamer (portable)</title>
     <authors>https://github.com/tvrenamer/tvrenamer/graphs/contributors</authors>
     <projectUrl>http://www.tvrenamer.org/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/tvrenamer/icons/256x256.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/tvrenamer/icons/256x256.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/tvrenamer/tvrenamer/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

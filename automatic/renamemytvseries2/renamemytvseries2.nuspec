@@ -10,7 +10,7 @@
     <title>Rename My TV Series 2</title>
     <authors>Hans Luijten</authors>
     <projectUrl>https://www.tweaking4all.com/home-theatre/rename-my-tv-series-v2/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/renamemytvseries2/icons/128x128.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/renamemytvseries2/icons/128x128.png</iconUrl>
     <copyright>©2000-2019 Hans Luijten</copyright>
     <!-- <licenseUrl></licenseUrl> -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

@@ -10,7 +10,7 @@
     <title>Sonarr</title>
     <authors>https://github.com/Sonarr/Sonarr/graphs/contributors</authors>
     <projectUrl>https://sonarr.tv/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/sonarr/icons/128x128.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/sonarr/icons/128x128.png</iconUrl>
     <copyright>© 2019 Sonarr. All rights reserved.</copyright>
     <licenseUrl>https://github.com/Sonarr/Sonarr/blob/develop/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

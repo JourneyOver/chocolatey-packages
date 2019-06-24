@@ -10,7 +10,7 @@
     <title>Radarr</title>
     <authors>https://github.com/Radarr/Radarr/graphs/contributors</authors>
     <projectUrl>https://radarr.video/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/radarr/icons/512x512.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/radarr/icons/512x512.png</iconUrl>
     <copyright>© 2019 Radarr. All rights reserved.</copyright>
     <licenseUrl>https://github.com/Radarr/Radarr/blob/develop/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

@@ -10,7 +10,7 @@
     <title>Nuclear</title>
     <authors>https://github.com/nukeop/nuclear/graphs/contributors</authors>
     <projectUrl>https://nuclear.gumblert.tech/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/nuclear/icons/128x128.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/nuclear/icons/128x128.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/nukeop/nuclear/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

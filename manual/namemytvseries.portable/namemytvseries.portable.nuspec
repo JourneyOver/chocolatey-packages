@@ -10,7 +10,7 @@
     <title>Name My TV Series (Portable)</title>
     <authors>Hans Luijten</authors>
     <projectUrl>https://www.tweaking4all.com/home-theatre/rename-your-tv-series-files/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/manual/namemytvseries.portable/icons/128x128.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/manual/namemytvseries.portable/icons/128x128.png</iconUrl>
     <copyright>©2000-2018 Hans Luijten</copyright>
     <!-- <licenseUrl></licenseUrl> -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

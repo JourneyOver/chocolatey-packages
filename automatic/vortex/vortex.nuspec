@@ -10,7 +10,7 @@
     <title>Vortex</title>
     <authors>https://github.com/Nexus-Mods/Vortex/graphs/contributors</authors>
     <projectUrl>https://www.nexusmods.com/site/mods/1/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/vortex/icons/64x64.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/vortex/icons/64x64.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/Nexus-Mods/Vortex/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

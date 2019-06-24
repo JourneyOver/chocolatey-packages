@@ -10,7 +10,7 @@
     <title>DuckieTV</title>
     <authors>https://github.com/SchizoDuckie/DuckieTV/graphs/contributors</authors>
     <projectUrl>http://schizoduckie.github.io/DuckieTV/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@091665c087b9ea047b2d771953f2d32e9d406fcf/automatic/duckietv/icons/256x256.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/duckietv/icons/256x256.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/SchizoDuckie/DuckieTV/blob/angular/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
