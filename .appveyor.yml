@@ -10,6 +10,8 @@ max_jobs: 1
 branches:
   only:
     - master
+skip_tags: true
+skip_branch_with_pr: true
 #build:
 #  verbosity: minimal
 
@@ -45,7 +47,6 @@ environment:
 
   #Chocolatey version we want to use when checking for updates.
   choco_version: "0.10.15"
-  choco_version_pr: "0.10.11" # Should be kept to the version available one year ago
   nupkg_cache_path: C:\packages
 
 init:
@@ -56,17 +57,15 @@ init:
 install:
   - yarn install
   - ps: |
-      $chocoVersion = if (($Env.APPVEYOR_PULL_REQUEST_NUMBER -eq $null) -or ($ENV:APPVEYOR_PULL_REQUEST_NUMBER -eq '')) { $Env:choco_version } else { $Env:choco_version_pr }
       if (!(Test-Path "$env:nupkg_cache_path")) { mkdir -Force "$env:nupkg_cache_path" }
       @{
-        'chocolatey' = $chocoVersion
+        'chocolatey' = $Env:choco_version
         'wormies-au-helpers' = '0.3.2'
       }.GetEnumerator() | % {
         if (!(Test-Path "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg")) { rm "${env:nupkg_cache_path}\$($_.Key).*.nupkg" ; iwr "https://chocolatey.org/api/v2/package/$($_.Key)/$($_.Value)" -OutFile "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg" }
         if ($_.Key -eq 'chocolatey') { cup $_.Key --version $_.Value --source ${env:nupkg_cache_path} --allow-downgrade --pre }
         else { cinst $_.Key --version $_.Value --source ${env:nupkg_cache_path} --ignore-dependencies }
       }
-      rm "$env:ChocolateyInstall\logs\*.log"
   - ps: "Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version"
   - ps: $PSVersionTable
   - git --version
@@ -87,18 +86,9 @@ build_script:
 
       . ./scripts/EventLogs.ps1
       Clear-EventLogs
-
       if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
-
-      if (($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne $null) -and ($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne '')) {
-        Set-Service wuauserv -StartupType Manual
-        ./scripts/Test-RepoPackage.ps1 -CleanFiles -TakeScreenshots
-        return
-      } else {
         # Clean the choco logs as it's quite large
         rm "$env:ChocolateyInstall\logs\*.log"
-      }
-
       if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {
           switch -regex ($Env:APPVEYOR_REPO_COMMIT_MESSAGE)
           {
