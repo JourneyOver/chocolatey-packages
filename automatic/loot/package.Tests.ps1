@@ -5,6 +5,6 @@ $packageName = Split-Path -Leaf $PSScriptRoot
 Run-PesterTests `
   -packageName "$packageName" `
   -packagePath "$PSScriptRoot" `
-  -expectedEmbeddedMatch '^Loot\.Installer\.exe$' `
+  -expectedEmbeddedMatch '^LOOT\.Installer\.exe$' `
   -licenseShouldMatch 'GNU GENERAL PUBLIC LICENSE' `
   -expectedDefaultDirectory "${env:ProgramFiles(x86)}\LOOT"
