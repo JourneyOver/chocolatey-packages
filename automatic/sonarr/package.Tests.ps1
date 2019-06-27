@@ -10,11 +10,12 @@ Run-PesterTests `
   -licenseShouldMatch 'GNU GENERAL PUBLIC LICENSE' `
   -expectedDefaultDirectory "${env:ProgramData}\NzbDrone"
 
-# Todo: wait until AdmiringWorm finishes https://github.com/AdmiringWorm/chocolatey-packages/issues/61 or I find some way to implement it myself
-#  Run-PesterTests `
-#    -packageName "$packageName" `
-#    -packagePath "$PSScriptRoot" `
-#    -streams "phantom" `
-#    -expectedEmbeddedMatch '^Sonarr\.phantom-develop\.[\d\.]+\.windows\.exe$' `
-#    -licenseShouldMatch 'GNU GENERAL PUBLIC LICENSE' `
-#    -expectedDefaultDirectory "${env:ProgramData}\Sonarr"
+# Todo: wait until AdmiringWorm finishes https://github.com/AdmiringWorm/chocolatey-packages/issues/61 and then switch how I test this.
+  Run-PesterTests `
+    -packageName "$packageName" `
+    -packagePath "$PSScriptRoot" `
+    -streams "phantom" `
+    -expectedEmbeddedMatch '^Sonarr\.phantom-develop\.[\d\.]+\.windows\.exe$' `
+    -licenseShouldMatch 'GNU GENERAL PUBLIC LICENSE' `
+    -installWithPreRelease
+    -expectedDefaultDirectory "${env:ProgramData}\Sonarr"
