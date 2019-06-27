@@ -18,7 +18,7 @@
     <docsUrl>https://github.com/Radarr/Radarr/wiki</docsUrl>
     <mailingListUrl>https://www.reddit.com/r/radarr/</mailingListUrl>
     <bugTrackerUrl>https://github.com/radarr/radarr/issues</bugTrackerUrl>
-    <tags>pvr p2p filesharing torrent nntp admin</tags>
+    <tags>radarr pvr p2p filesharing torrent nntp admin</tags>
     <summary>Movie PVR for Usenet and BitTorrent</summary>
     <description><![CDATA[Radarr is an **independent** fork of [Sonarr](https://github.com/Sonarr/Sonarr) reworked for automatically downloading movies via Usenet and BitTorrent.
 

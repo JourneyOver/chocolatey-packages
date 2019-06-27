@@ -18,7 +18,7 @@
     <docsUrl>http://stackoverflow.com/questions/tagged/gitahead</docsUrl>
     <!-- <mailingListUrl></mailingListUrl> -->
     <bugTrackerUrl>https://github.com/gitahead/gitahead/issues</bugTrackerUrl>
-    <tags>git client gui</tags>
+    <tags>gitahead git client gui</tags>
     <summary>GitAhead is a graphical Git client designed to help you understand and manage your source code history</summary>
     <description><![CDATA[GitAhead is a graphical Git client for Windows, Linux and macOS. It features a fast native interface designed to help you understand and manage your source code history.
 

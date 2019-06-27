@@ -18,7 +18,7 @@
     <docsUrl>https://github.com/Lidarr/Lidarr/wiki</docsUrl>
     <mailingListUrl>https://www.reddit.com/r/Lidarr</mailingListUrl>
     <bugTrackerUrl>https://github.com/lidarr/Lidarr/issues</bugTrackerUrl>
-    <tags>pvr p2p filesharing torrent nntp admin</tags>
+    <tags>lidarr pvr p2p filesharing torrent nntp admin</tags>
     <summary>Looks and smells like Sonarr but made for music</summary>
     <description><![CDATA[Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
 

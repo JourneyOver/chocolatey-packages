@@ -248,7 +248,7 @@ function Run-PesterTests() {
             $id = $_ -replace "\s*\<dependency.*id=`"([^`"]*)`".*", "`$1"
             $version = $_ -replace "\s*\<dependency.*version=`"[\[]?([^`"]*)[\]]?`".*", "`$1"
 
-            return @{ Id = $id ; Version = $version }
+            return @{ Id = ($id -replace "\s*<dependencies>", "") ; Version = ($version -replace "\s*<dependencies>", "") }
           }
 
           if ($dependencies.Count -gt 0) {
@@ -264,7 +264,7 @@ function Run-PesterTests() {
             $id = $_ -replace "\s*\<dependency.*id=`"([^`"]*)`".*", "`$1"
             $version = $_ -replace "\s*\<dependency.*version=`"[\[]?([^`"]*)[\]]?`".*", "`$1"
 
-            return @{ Id = $id ; Version = $version }
+            return @{ Id = ($id -replace "\s*<dependencies>", "") ; Version = ($version -replace "\s*<dependencies>", "") }
           }
 
           if ($dependencies.Count -gt 0) {

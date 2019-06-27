@@ -18,7 +18,7 @@
     <docsUrl>https://wiki.sonarr.tv/</docsUrl>
     <mailingListUrl>https://forums.sonarr.tv/</mailingListUrl>
     <bugTrackerUrl>https://github.com/Sonarr/Sonarr/issues</bugTrackerUrl>
-    <tags>pvr p2p filesharing torrent nntp admin</tags>
+    <tags>sonarr pvr p2p filesharing torrent nntp admin</tags>
     <summary>TV PVR for Usenet and BitTorrent</summary>
     <description><![CDATA[Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sorts and renames them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
 
