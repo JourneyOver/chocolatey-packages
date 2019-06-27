@@ -17,5 +17,5 @@ Run-PesterTests `
     -streams "phantom" `
     -expectedEmbeddedMatch '^Sonarr\.phantom-develop\.[\d\.]+\.windows\.exe$' `
     -licenseShouldMatch 'GNU GENERAL PUBLIC LICENSE' `
-    -installWithPreRelease
+    -installWithPreRelease `
     -expectedDefaultDirectory "${env:ProgramData}\Sonarr"

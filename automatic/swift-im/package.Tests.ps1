@@ -7,4 +7,4 @@ Run-PesterTests `
   -packagePath "$PSScriptRoot" `
   -expectedEmbeddedMatch '^Swift\-[\d\.]+\.msi$' `
   -licenseShouldMatch 'GNU GENERAL PUBLIC LICENSE' `
-  -expectedDefaultDirectory "${env:CommonProgramFiles(x86)}\Swift"
+  -expectedDefaultDirectory "${env:ProgramFiles(x86)}\Swift"

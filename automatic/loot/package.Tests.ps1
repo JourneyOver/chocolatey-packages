@@ -7,4 +7,4 @@ Run-PesterTests `
   -packagePath "$PSScriptRoot" `
   -expectedEmbeddedMatch '^Loot\.Installer\.exe$' `
   -licenseShouldMatch 'GNU GENERAL PUBLIC LICENSE' `
-  -expectedDefaultDirectory "${env:CommonProgramFiles(x86)}\LOOT"
+  -expectedDefaultDirectory "${env:ProgramFiles(x86)}\LOOT"
