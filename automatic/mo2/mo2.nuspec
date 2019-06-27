@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>mo2</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/mo2</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>Mod Organizer 2</title>
+    <authors>https://github.com/ModOrganizer2/modorganizer/graphs/contributors</authors>
+    <projectUrl>https://www.nexusmods.com/skyrimspecialedition/mods/6194/</projectUrl>
+    <iconUrl></iconUrl>
+    <copyright></copyright>
+    <licenseUrl>https://github.com/ModOrganizer2/modorganizer/blob/Develop/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/ModOrganizer2/modorganizer</projectSourceUrl>
+    <docsUrl>https://github.com/ModOrganizer2/modorganizer/wiki</docsUrl>
+    <mailingListUrl>https://discord.gg/cYwdcxj</mailingListUrl>
+    <bugTrackerUrl>https://github.com/ModOrganizer2/modorganizer/issues</bugTrackerUrl>
+    <tags>mo2 mod-organizer organizer mod mods modmanager mod-manager modding skyrim oblivion fallout tes elder scrolls tesiv tesv fallout3 fallout4 fo</tags>
+    <summary>Mod manager for various PC games.</summary>
+    <description><![CDATA[Mod Organizer (MO) is a tool for managing mod collections of arbitrary size. It is specifically designed for people who like to experiment with mods and thus need an easy and reliable way to install and uninstall them.
+Mod Organizer 2 is a mod manager created by Tannin to support 64-bit games like Skyrim Special Edition and Fallout 4 in addition to all the 32-bit games MO1 already supported.
+
+Tannin discontinued the project when he was hired by the Nexus team to develop their new Vortex mod manager.
+MO2 was not completed and was left with many issues. LePresidente managed to fix it to a usable state by himself after SkyrimSE came out, adding support for it, and releasing v2.0.8.
+The project took up speed again after a few more coders showed up in late 2017, and a lot of progress has been made.
+
+## Community
+
+- [Discord](https://discord.gg/cYwdcxj)
+]]></description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://github.com/ModOrganizer2/modorganizer/releases)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
+* If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
+    <!--<dependencies>
+    </dependencies>-->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

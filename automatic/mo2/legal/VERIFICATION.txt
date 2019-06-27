@@ -4,23 +4,23 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/loot/loot/releases/tag/0.14.4>
+location on <>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/loot/loot/releases/download/0.14.4/LOOT.Installer.exe>
+  url: <>
 
   2. You can obtain the checksum using one of the following methods:
     - Use powershell function 'Get-FileHash'
     - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:8792ED6D876215DEB3A2F9E7720FD71695E2D0D64942D09F1ECE1CEFEA1AE6E7
+  checksum:
 
 Using AU:
 
   Get-RemoteChecksum
 
 The file 'license.txt' is obtained from:
-  <https://github.com/loot/loot/blob/master/LICENSE>
+  <https://github.com/ModOrganizer2/modorganizer/blob/Develop/LICENSE>
