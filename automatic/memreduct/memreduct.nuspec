@@ -18,7 +18,7 @@
     <docsUrl>https://github.com/henrypp/memreduct/wiki</docsUrl>
     <!-- <mailingListUrl></mailingListUrl> -->
     <bugTrackerUrl>https://github.com/henrypp/memreduct/issues</bugTrackerUrl>
-    <tags>memory-management memory-monitoring memory cleaner admin</tags>
+    <tags>memreduct memory-management memory-monitoring memory cleaner admin</tags>
     <summary>Lightweight real-time memory management application to monitor and clean system memory on your computer.</summary>
     <description><![CDATA[Lightweight real-time memory management application to monitor and clean system memory on your computer.
 

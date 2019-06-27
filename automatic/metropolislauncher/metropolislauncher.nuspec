@@ -18,7 +18,7 @@
     <docsUrl>https://documentation.metropolis-launcher.net/</docsUrl>
     <!-- <mailingListUrl></mailingListUrl> -->
     <bugTrackerUrl>https://github.com/theMK2k/MetropolisLauncher/issues</bugTrackerUrl>
-    <tags>emulation front-end launcher windows dot-net-client devexpress gaming</tags>
+    <tags>metropolislauncher emulation front-end launcher windows dot-net-client devexpress gaming</tags>
     <summary>A data-heavy Emulation and Gaming front-end for Windows</summary>
     <description><![CDATA[Metropolis Launcher has been created to be a great old-school launcher, emulation front-end and an extensive offline database of video game metadata thanks to [MobyGames](https://www.mobygames.com/) and their strong user base.
 

@@ -18,7 +18,7 @@
     <docsUrl>https://github.com/tinyMediaManager/tinyMediaManager/wiki</docsUrl>
     <mailingListUrl>https://forum.kodi.tv/forumdisplay.php?fid=204</mailingListUrl>
     <bugTrackerUrl>https://github.com/tinyMediaManager/tinyMediaManager/issues</bugTrackerUrl>
-    <tags>media managment tinyMediaManager metadata XBOX Media Center XBMC Plex Emby</tags>
+    <tags>tinymediamanager media managment tinyMediaManager metadata XBOX Media Center XBMC Plex Emby</tags>
     <summary>A multi-OS media managment tool</summary>
     <description><![CDATA[[tinyMediaManager](http://www.tinymediamanager.org) is a media management tool written in Java/Swing. It is written to provide metadata for the XBOX Media Center (XBMC). Due to the fact that it is written in Java, tinyMediaManager will run on Windows, Linux and Mac OSX (and possible more OS).
 

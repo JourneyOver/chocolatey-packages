@@ -18,7 +18,7 @@
     <docsUrl>https://nuclearmusic.readthedocs.io/en/latest/</docsUrl>
     <mailingListUrl>https://twitter.com/nuclear_player</mailingListUrl>
     <bugTrackerUrl>https://github.com/nukeop/nuclear/issues</bugTrackerUrl>
-    <tags>music-player electron stream youtube music windows streaming admin</tags>
+    <tags>nuclear music-player electron stream youtube music windows streaming admin</tags>
     <summary>Nuclear is a free music streaming program that pulls content from free sources all over the internet.</summary>
     <description><![CDATA[nuclear is a free music streaming program that pulls content from free sources all over the internet.
 

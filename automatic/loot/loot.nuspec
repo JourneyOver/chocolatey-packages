@@ -12,7 +12,7 @@
     <projectUrl>https://loot.github.io</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/loot/icons/256x256.png</iconUrl>
     <copyright>© WrinklyNinja</copyright>
-    <licenseUrl>https://github.com/loot/loot/blob/dev/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/loot/loot/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/loot/loot</projectSourceUrl>
     <docsUrl>https://loot.github.io/docs</docsUrl>

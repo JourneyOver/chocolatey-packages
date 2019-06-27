@@ -18,7 +18,7 @@
     <docsUrl>https://swift.im/swift.html</docsUrl>
     <mailingListUrl>https://swift.im/lists/mailman/listinfo/swift-users</mailingListUrl>
     <bugTrackerUrl>https://github.com/swift/swift/issues</bugTrackerUrl>
-    <tags>swift swift.im XMPP admin</tags>
+    <tags>swift-im swift swift.im XMPP admin</tags>
     <summary>Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.</summary>
     <description><![CDATA[Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with features that make it suitable for a wide range of use scenarios.
 
