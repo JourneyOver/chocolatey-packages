@@ -20,7 +20,7 @@ Uninstall-ChocolateyPackage @packageArgs
 $fexist = Test-Path "${env:LOCALAPPDATA}\TheSage"
 if ($fexist) {
   Write-Host "Removing TheSage Folder that's left behind"
-  Remove-Item "${env:LOCALAPPDATA}\TheSage" -Recurse -Force
+  Remove-Item "${env:LOCALAPPDATA}\TheeSage" -Recurse -Force
 } else {
   Write-Host "TheSage Folder not found"
 }
