@@ -73,8 +73,8 @@ test_script:
         .\scripts\Invoke-PesterTests.ps1 -runAllTests
       }
 deploy: off
-#on_failure:
-#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+on_failure:
+- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 on_finish:
   - cmd: git add automatic cinst-gh_packages manual
   - cmd: git diff --cached > unsaved_changes.patch
