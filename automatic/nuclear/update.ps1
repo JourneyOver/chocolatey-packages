@@ -30,7 +30,7 @@ function global:au_BeforeUpdate($Package) {
 function global:au_GetLatest {
   $release = Get-LatestGithubReleases $repoUser $repoName $true
 
-  $url32 = $release.latest.Assets | Where-Object { $_ -match 'Setup\.(\d+)\.(\d+)\.(\d+)\.exe$' } | Select-Object -First 1
+  $url32 = $release.latest.Assets | Where-Object { $_ -match 'Setup(\.|\-)(\d+)\.(\d+)\.(\d+)\.exe$' } | Select-Object -First 1
 
   $Latest = @{ URL32 = $url32; Version = $release.latest.Version; ReleaseUri = $release.latest.ReleaseUrl }
   return $Latest
