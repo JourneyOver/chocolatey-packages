@@ -19,7 +19,7 @@ Install-ChocolateyInstallPackage @packageArgs
 Remove-Item $toolsDir\*.exe -ea 0 -Force
 
 # Start service if it's not running
-$service = 'Sonarr'
+$service = 'NzbDrone'
 if (Get-Service "$service" -ErrorAction SilentlyContinue) {
   $running = Get-Service $service
   if ($running.Status -eq "Running") {
