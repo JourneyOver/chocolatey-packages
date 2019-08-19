@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/Jackett/Jackett/releases/tag/v0.11.616>
+location on <https://github.com/Jackett/Jackett/releases/tag/v0.11.618>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/Jackett/Jackett/releases/download/v0.11.616/Jackett.Installer.Windows.exe>
+  url: <https://github.com/Jackett/Jackett/releases/download/v0.11.618/Jackett.Installer.Windows.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: D7D2ADF9FA3CCE7303B026EFC6BBB901A67C2DF30EF0B40DC3C1DA36CE5C3FE3
+  checksum: 823AF6A04F1140A60AA667743DCA74FB9055A3210BD3F63DA5C5D7CC48FBC9EF
 
 Using AU:
 
