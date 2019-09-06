@@ -15,8 +15,8 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
   $download = Invoke-WebRequest -Uri $releases -UseBasicParsing -Headers @{ "Accept-Encoding" = 'gzip' }
 
-  $versionRegEx = 'v(\d+).(\d+).(\d+).+?'
-  $version = ([regex]::match($download.Content, $versionRegEx) -replace ('v|<', ''))
+  $versionRegEx = 'RenameMyTVSeries-(\d+).(\d+).(\d+)-Windows-32bit-setup.exe'
+  $version = ([regex]::match($download.Content, $versionRegEx) -replace ('RenameMyTVSeries-|-Windows-32bit-setup.exe', ''))
 
   $url32 = 'https://www.tweaking4all.com/?wpfb_dl=148'
 
