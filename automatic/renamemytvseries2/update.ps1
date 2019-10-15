@@ -15,10 +15,9 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
   $download = Invoke-WebRequest -Uri $releases -UseBasicParsing -Headers @{ "Accept-Encoding" = 'gzip' }
 
-  $versionRegEx = 'RenameMyTVSeries-(\d+).(\d+).(\d+)-Windows-32bit-setup.exe'
-  $version = ([regex]::match($download.Content, $versionRegEx) -replace ('RenameMyTVSeries-|-Windows-32bit-setup.exe', ''))
-
-  $url32 = 'https://www.tweaking4all.com/?wpfb_dl=148'
+  $regex = '.exe$'
+  $url32 = $download.links | Where-Object href -Match $regex | Select-Object -First 1 -Expand href
+  $version = $url32 -split 'RenameMyTVSeries-|-Windows-32bit-setup.exe' | Select-Object -Last 1 -Skip 1
 
   # Check checksum of url to determine if checksums are out of date.
   $current_checksum = (Get-Item ".\tools\chocolateyInstall.ps1" | Select-String '^[$]checksum\b') -split "=|'" | Select-Object -Last 1 -Skip 1
