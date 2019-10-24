@@ -3,10 +3,10 @@
 $packageName = 'duckietv'
 
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$url32 = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201910020130/DuckieTV-201910020130-windows-x32.zip'
-$url64 = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201910020130/DuckieTV-201910020130-windows-x64.zip'
-$checksum32 = '8cacbaeb4b95739b87075245afce5cf9c1141c5a285d41f065f78e4b4846a8e3'
-$checksum64 = 'ba5357d87be9c1ebec7571a5974c5689828b6e042139338ed534f9de24ab37d1'
+$url32 = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201910240130/DuckieTV-201910240130-windows-x32.zip'
+$url64 = 'https://github.com/DuckieTV/Nightlies/releases/download/nightly-201910240130/DuckieTV-201910240130-windows-x64.zip'
+$checksum32 = 'b758ba8268c5415c683e3d6c55411d3d7d4b0814592af3c627ece9a2a0459186'
+$checksum64 = 'b8cb47164e4201eaaf00d08da5b0c3cbd30d7b47248662a989b8b4fb55dfab34'
 $silentArgs = '/S'
 $validExitCodes = @(0)
 
