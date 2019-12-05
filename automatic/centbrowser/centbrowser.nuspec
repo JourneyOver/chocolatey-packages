@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>CentBrowser</id>
-    <version>4.1.6.137-beta</version>
+    <version>4.1.7.162-beta</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Cent Browser</title>
