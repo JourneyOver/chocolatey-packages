@@ -4,21 +4,21 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/gitahead/gitahead/releases/tag/v2.5.11>
+location on <https://github.com/gitahead/gitahead/releases/tag/v2.6.0>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/gitahead/gitahead/releases/download/v2.5.11/GitAhead-win32-2.5.11.exe>
-  url64: <https://github.com/gitahead/gitahead/releases/download/v2.5.11/GitAhead-win64-2.5.11.exe>
+  url: <https://github.com/gitahead/gitahead/releases/download/v2.6.0/GitAhead-win32-2.6.0.exe>
+  url64: <https://github.com/gitahead/gitahead/releases/download/v2.6.0/GitAhead-win64-2.6.0.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: BC2C3D73BA15E4E78B9BB504132EAF452B75B9DBC1CF5B70BAA2C9A859F11230
-  checksum64: 4041474A8F70B8B438F9FB1608BDCFA635D6F098AAE0E5DB3DB27EF81D858591
+  checksum: 45C3A7B4BAE5CACE7CE8A38BAFDB7BC63604A8C12687EAB5C97013FD6690D48B
+  checksum64: 93C8B914BA2F4BD766290E531774ABB44C5A6708FBB539C82BEC32B2BA488961
 
 Using AU:
 
