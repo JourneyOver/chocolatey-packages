@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>renamemytvseries2</id>
-    <version>2.0.10</version>
+    <version>0.12.1361</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/renamemytvseries2</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Rename My TV Series 2</title>
