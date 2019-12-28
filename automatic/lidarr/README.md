@@ -23,4 +23,4 @@ Lidarr is a music collection manager for Usenet and BitTorrent users. It can mon
 
 ## Notes
 
-Installs as a service, to get to Lidarr open browser and go [here](http://localhost:8686/) or go to http://<your-ip>:8686/
+Installs as a service, to get to Lidarr open browser and go to [localhost]:8686 (remove the brackets)
