@@ -17,7 +17,7 @@
     <projectSourceUrl>https://github.com/stream-labs/streamlabs-obs</projectSourceUrl>
     <docsUrl>https://github.com/stream-labs/streamlabs-obs/wiki</docsUrl>
     <mailingListUrl>https://streamlabs.com/contact</mailingListUrl>
-    <bugTrackerUrl>https://tracker.streamlabs.com/my_view_page.php</bugTrackerUrl>
+    <!-- <bugTrackerUrl></bugTrackerUrl> -->
     <tags>streamlabs-obs twitch open foss broadcast streaming video recording</tags>
     <summary>Free and open source streaming software built on OBS and Electron.</summary>
     <description><![CDATA[Level up your stream with our reliable, easy-to-setup desktop streaming application built for professional streamers.
