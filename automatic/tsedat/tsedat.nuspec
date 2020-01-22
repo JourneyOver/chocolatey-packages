@@ -9,14 +9,14 @@
     <owners>JourneyOver</owners>
     <title>TheSage English Dictionary and Thesaurus</title>
     <authors>Sequence Publishing</authors>
-    <projectUrl>http://www.sequencepublishing.com/1/thesage.html</projectUrl>
+    <projectUrl>https://www.sequencepublishing.com/1/thesage.html</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/tsedat/icons/128x128.png</iconUrl>
     <copyright>Copyright © 2001-2019 by Sequence Publishing. All Rights Reserved.</copyright>
     <!-- <licenseUrl></licenseUrl> -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!-- <projectSourceUrl></projectSourceUrl> -->
-    <docsUrl>http://www.sequencepublishing.com/1/thesage_documentation.html</docsUrl>
-    <mailingListUrl>http://www.sequencepublishing.com/1/about.html</mailingListUrl>
+    <docsUrl>https://www.sequencepublishing.com/1/thesage/documentation.html</docsUrl>
+    <mailingListUrl>https://www.sequencepublishing.com/1/about.html</mailingListUrl>
     <!-- <bugTrackerUrl></bugTrackerUrl> -->
     <tags>tsedat TheSage English Dictionary Thesaurus One-click lookup wildcard-search anagram concordancer speech pronunciation word-lists admin</tags>
     <summary>TheSage is a comprehensive English dictionary and thesaurus that provides a number of useful and in some cases unusual search tools.</summary>
@@ -38,7 +38,7 @@ TheSage can look up words directly from almost any program (IE, Word, Firefox, O
 ]]></description>
     <releaseNotes>
 #### Program
-* [Changelog](http://www.sequencepublishing.com/1/thesage_news/changelog.txt)
+* [Changelog](https://www.sequencepublishing.com/1/thesage_news/changelog.txt)
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
