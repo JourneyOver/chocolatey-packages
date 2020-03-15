@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>sonarr</id>
-    <version>2.0.0.5344</version>
+    <version>3.0.3.729-phantom</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/sonarr</packageSourceUrl>
     <owners>JourneyOver, dtgm</owners>
     <title>Sonarr</title>
@@ -44,6 +44,11 @@
 
 ## Notes
 
+This is the pre-release versions of Sonarr V3 otherwise known as Phantom.
+
+-   Sonarr v2 migration
+    - Sonarr v3 will automatically convert the existing Sonarr v2 installation. Sonarr v2 stored it's database in `C:\ProgramData\NzbDrone`, which will be automatically converted to `C:\ProgramData\Sonarr`. It's advisable to make a backup of the v2 data first.
+
 Installs as a service, to get to Sonarr open browser and go to [localhost]:8989 (remove the brackets)
 ]]></description>
     <releaseNotes>
@@ -53,7 +58,7 @@ Installs as a service, to get to Sonarr open browser and go to [localhost]:8989 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
 * If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
-    <dependencies></dependencies>
+    <dependencies><dependency id="dotnet4.6.1" version="4.6.01055.20170308" /></dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
