@@ -22,7 +22,12 @@ Remove-Item $toolsDir\*.exe -ea 0 -Force
 # it no longer seems to have a switch for V3
 # and service install is no longer default
 Start-Process "$Env:ProgramData\Sonarr\bin\ServiceInstall.exe"
-Remove-Item "$Env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Sonarr.lnk" -Force
+$fexist = Test-Path "$Env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Sonarr.lnk"
+if ($fexist) {
+  Remove-Item "$Env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\Sonarr.lnk" -Force
+} else {
+  Write-Host "shortcut has already been removed"
+}
 
 # Start service if it's not running
 $service = 'Sonarr'
