@@ -4,7 +4,7 @@ Cent Browser is an enhanced version of the Chromium web browser that bundles man
 
 ## Features
 
-- Google Chrome Based
+- Chromium Based
 - Mouse Gesture
 - Scrollable Tab Bar
 - Super Drag
