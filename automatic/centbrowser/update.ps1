@@ -1,6 +1,6 @@
 Import-Module au
 
-$stableReleases = 'http://static.centbrowser.com/installer_32/'
+$stableReleases = 'https://www.centbrowser.com/'
 $betaReleases = 'http://static.centbrowser.com/beta_32/'
 
 function global:au_SearchReplace {
