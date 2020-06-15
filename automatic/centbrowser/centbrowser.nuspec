@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>CentBrowser</id>
-    <version>4.2.9.152</version>
+    <version>4.2.10.171</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/centbrowser</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Cent Browser</title>
@@ -24,7 +24,7 @@
 
 ## Features
 
-- Google Chrome Based
+- Chromium Based
 - Mouse Gesture
 - Scrollable Tab Bar
 - Super Drag
