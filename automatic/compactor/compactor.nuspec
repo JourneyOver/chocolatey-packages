@@ -4,13 +4,13 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>compactor</id>
-    <version>0.0.0</version>
+    <version>0.9.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/compactor</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Compactor</title>
     <authors>https://github.com/Freaky/Compactor/graphs/contributors</authors>
     <projectUrl>https://github.com/Freaky/Compactor</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/automatic/compactor/icons/128x128.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@bf5d67c0e5f923fac16dbaa9aac3c52e119609f4/automatic/compactor/icons/128x128.png</iconUrl>
     <copyright>Copyright 2019 Thomas Hurst</copyright>
     <licenseUrl>https://github.com/Freaky/Compactor/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -20,7 +20,7 @@
     <bugTrackerUrl>https://github.com/Freaky/Compactor/issues</bugTrackerUrl>
     <tags>compactor windows windows-10 rust compression</tags>
     <summary>A friendly user interface to Windows 10 filesystem compression</summary>
-    <description>With modern lightweight compression algorithms running at gigabytes per second per core, it's practically a no-brainer to apply them to filesystems to make better use of storage and IO.
+    <description><![CDATA[With modern lightweight compression algorithms running at gigabytes per second per core, it's practically a no-brainer to apply them to filesystems to make better use of storage and IO.
 
 Half-recognising this, Windows 10 ships with a reworked compression system that, while fast and effective, is only exposed to users via a command-line tool - [`compact.exe`].
 
@@ -30,7 +30,10 @@ Compactor is here to plug that gap, with a simple GUI utility anyone can use.
 
 - [All Features](https://github.com/Freaky/Compactor#features)
 
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/compactor.png)</description>
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/compactor.png)
+
+[`compact.exe`]: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/compact
+]]></description>
     <releaseNotes>
 #### Program
 * [Changelog](https://github.com/Freaky/Compactor/releases)

@@ -1,4 +1,4 @@
-# [<img src="https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/automatic/compactor/icons/48x48.png" height="48" width="48" /> ![Compactor](https://img.shields.io/chocolatey/v/compactor.svg?label=Compactor&style=for-the-badge)](https://chocolatey.org/packages/compactor)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@bf5d67c0e5f923fac16dbaa9aac3c52e119609f4/automatic/compactor/icons/48x48.png" height="48" width="48" /> ![Compactor](https://img.shields.io/chocolatey/v/compactor.svg?label=Compactor&style=for-the-badge)](https://chocolatey.org/packages/compactor)
 
 With modern lightweight compression algorithms running at gigabytes per second per core, it's practically a no-brainer to apply them to filesystems to make better use of storage and IO.
 
