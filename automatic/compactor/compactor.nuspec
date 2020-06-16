@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>compactor</id>
+    <version>0.0.0</version>
+    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/compactor</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>Compactor</title>
+    <authors>https://github.com/Freaky/Compactor/graphs/contributors</authors>
+    <projectUrl>https://github.com/Freaky/Compactor</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/automatic/compactor/icons/128x128.png</iconUrl>
+    <copyright>Copyright 2019 Thomas Hurst</copyright>
+    <licenseUrl>https://github.com/Freaky/Compactor/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!-- <projectSourceUrl></projectSourceUrl> -->
+    <docsUrl>https://github.com/Freaky/Compactor/wiki</docsUrl>
+    <!-- <mailingListUrl></mailingListUrl> -->
+    <bugTrackerUrl>https://github.com/Freaky/Compactor/issues</bugTrackerUrl>
+    <tags>compactor windows windows-10 rust compression</tags>
+    <summary>A friendly user interface to Windows 10 filesystem compression</summary>
+    <description>With modern lightweight compression algorithms running at gigabytes per second per core, it's practically a no-brainer to apply them to filesystems to make better use of storage and IO.
+
+Half-recognising this, Windows 10 ships with a reworked compression system that, while fast and effective, is only exposed to users via a command-line tool - [`compact.exe`].
+
+Compactor is here to plug that gap, with a simple GUI utility anyone can use.
+
+## Features
+
+- [All Features](https://github.com/Freaky/Compactor#features)
+
+![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/compactor.png)</description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://github.com/Freaky/Compactor/releases)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
+* If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
+    <!--<dependencies>
+    </dependencies>-->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>
