@@ -2,13 +2,14 @@ $ErrorActionPreference = 'Stop'
 
 $packageName = 'compactor'
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$embedded_path = Get-Item "$toolsDir\*.zip"
-$Destination = "$toolsDir"
+$embedded_path = Get-Item "$toolsDir\*-i686.zip"
+$embedded_path64 = $embedded_path -replace ('-i686', '')
 
 $packageArgs = @{
-  packageName  = $packageName
-  FileFullPath = $embedded_path
-  Destination  = $Destination
+  packageName    = $packageName
+  FileFullPath   = $embedded_path
+  FileFullPath64 = $embedded_path64
+  Destination    = $toolsDir
 }
 
 Get-ChocolateyUnzip @packageArgs
