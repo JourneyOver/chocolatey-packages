@@ -17,7 +17,7 @@ and can be verified by doing the following:
   - check <https://www.axcrypt.net/cryptographic-hashes-files>
 
   checksum type: sha256
-  checksum: E1F85E9BF4586975AA5FF34DC033EBACFA49829B244725E25640297C0149D66C
+  checksum: EDFD5437C0759E43E9D5A7949F094E2C45578FFE7CA034F02B3C0F874E233E27
 
 Using AU:
 
