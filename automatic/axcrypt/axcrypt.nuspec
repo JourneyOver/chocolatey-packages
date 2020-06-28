@@ -14,10 +14,10 @@
     <copyright>Copyright © 2017 AxCrypt AB, All rights reserved.</copyright>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://bitbucket.org/axantum/axcrypt-net</projectSourceUrl>
+    <!-- <projectSourceUrl></projectSourceUrl> -->
     <docsUrl>https://www.axcrypt.net/documentation</docsUrl>
     <mailingListUrl>https://www.axcrypt.net/forums/</mailingListUrl>
-    <bugTrackerUrl>https://bitbucket.org/axantum/axcrypt-net/issues</bugTrackerUrl>
+    <!-- <bugTrackerUrl></bugTrackerUrl> -->
     <tags>axcrypt AxCrypt cloud storage crypt password collab admin</tags>
     <summary>AxCrypt is a free and open-source encryption app for Microsoft Windows, developed in Sweden by Svante Seleborg for AxCrypt AB. It can compress, delete, encrypt and edit files.</summary>
     <description><![CDATA[AxCrypt is a highly secure data encryption app that provides AES-128/256 file encryption and compression for Windows. It has a simple interface and works with a single double-click to automatically decrypt and open documents. It has seamless integration with Windows Explorer with no configuration required.
