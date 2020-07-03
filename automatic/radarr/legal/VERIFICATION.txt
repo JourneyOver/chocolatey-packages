@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/Radarr/Radarr/releases/tag/v0.2.0.1480>
+location on <https://github.com/Radarr/Radarr/releases/tag/v0.2.0.1504>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/Radarr/Radarr/releases/download/v0.2.0.1480/Radarr.develop.0.2.0.1480.installer.exe>
+  url: <https://github.com/Radarr/Radarr/releases/download/v0.2.0.1504/Radarr.develop.0.2.0.1504.installer.exe>
 
   2. You can obtain the checksum using one of the following methods:
     - Use powershell function 'Get-FileHash'
     - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 6CC86658C3A52608CAE527CD3E3E8279AEDA6EBCBD4AC554D49541176F39909B
+  checksum: 2BDF99502DDAE737DF56276F457C36DCF3D9A360E3412CA0257605628D33C68F
 
 Using AU:
 
