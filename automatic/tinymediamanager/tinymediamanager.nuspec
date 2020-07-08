@@ -8,16 +8,16 @@
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tinymediamanager</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>tinyMediaManager</title>
-    <authors>https://github.com/tinyMediaManager/tinyMediaManager/graphs/contributors</authors>
+    <authors>https://gitlab.com/tinyMediaManager/tinyMediaManager/-/graphs/devel</authors>
     <projectUrl>http://www.tinymediamanager.org/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/tinymediamanager/icons/128x128.png</iconUrl>
     <copyright>© 2019 Manuel Laggner</copyright>
-    <licenseUrl>https://github.com/tinyMediaManager/tinyMediaManager/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://gitlab.com/tinyMediaManager/tinyMediaManager/-/blob/devel/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/tinyMediaManager/tinyMediaManager</projectSourceUrl>
-    <docsUrl>https://github.com/tinyMediaManager/tinyMediaManager/wiki</docsUrl>
+    <projectSourceUrl>https://gitlab.com/tinyMediaManager/tinyMediaManager</projectSourceUrl>
+    <docsUrl>https://gitlab.com/tinyMediaManager/tinyMediaManager/-/wikis/home</docsUrl>
     <mailingListUrl>https://forum.kodi.tv/forumdisplay.php?fid=204</mailingListUrl>
-    <bugTrackerUrl>https://github.com/tinyMediaManager/tinyMediaManager/issues</bugTrackerUrl>
+    <bugTrackerUrl>https://gitlab.com/tinyMediaManager/tinyMediaManager/-/issues</bugTrackerUrl>
     <tags>tinymediamanager media managment tinyMediaManager metadata XBOX Media Center XBMC Plex Emby</tags>
     <summary>A multi-OS media managment tool</summary>
     <description><![CDATA[[tinyMediaManager](http://www.tinymediamanager.org) is a media management tool written in Java/Swing. It is written to provide metadata for the XBOX Media Center (XBMC). Due to the fact that it is written in Java, tinyMediaManager will run on Windows, Linux and Mac OSX (and possible more OS).
