@@ -11,7 +11,7 @@
     <authors>https://github.com/Radarr/Radarr/graphs/contributors</authors>
     <projectUrl>https://radarr.video/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/radarr/icons/512x512.png</iconUrl>
-    <copyright>© 2019 Radarr. All rights reserved.</copyright>
+    <copyright>© 2020 Radarr. All rights reserved.</copyright>
     <licenseUrl>https://github.com/Radarr/Radarr/blob/develop/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/radarr/radarr</projectSourceUrl>

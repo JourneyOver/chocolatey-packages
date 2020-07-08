@@ -18,15 +18,18 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate($Package) {
+  $licenseData = Get-GithubRepositoryLicense $repoUser $repoName
   $licenseFile = "$PSScriptRoot\legal\LICENSE.txt"
   if (Test-Path $licenseFile) { Remove-Item -Force $licenseFile }
 
-  Invoke-WebRequest -UseBasicParsing -Uri $($Package.nuspecXml.package.metadata.licenseUrl -replace 'blob', 'raw') -OutFile $licenseFile
-  if (!(Get-ValidOpenSourceLicense -path "$licenseFile")) {
-    throw "Unknown license download. Please verify it still contains distribution rights."
-  }
+  Invoke-WebRequest -Uri $licenseData.download_url -UseBasicParsing -OutFile "$licenseFile"
+  $Latest.LicenseUrl = $licenseData.html_url
 
   Get-RemoteFiles -Purge -NoSuffix
+}
+
+function global:au_AfterUpdate {
+  Update-Metadata -key "licenseUrl" -value $Latest.LicenseUrl
 }
 
 function global:au_GetLatest {

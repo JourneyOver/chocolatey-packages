@@ -11,7 +11,7 @@
     <authors>https://github.com/henrypp/memreduct/graphs/contributors</authors>
     <projectUrl>https://www.henrypp.org/product/memreduct</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/memreduct/icons/128x128.png</iconUrl>
-    <copyright>(C) 2009-2019 HENRY++. ALL RIGHTS REVERSED.</copyright>
+    <copyright>(c) 2009-2020 Henry++. All rights reversed.</copyright>
     <licenseUrl>https://github.com/henrypp/memreduct/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/henrypp/memreduct</projectSourceUrl>

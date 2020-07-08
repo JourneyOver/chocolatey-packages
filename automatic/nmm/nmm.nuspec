@@ -4,14 +4,14 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>nmm</id>
-    <version>070.8</version>
+    <version>0.70.8</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/nmm</packageSourceUrl>
     <owners>JourneyOver, Der Archivar</owners>
     <title>Nexus Mod Manager</title>
-    <authors>Black Tree Gaming</authors>
+    <authors>https://github.com/Nexus-Mods/Nexus-Mod-Manager/graphs/contributors</authors>
     <projectUrl>https://www.nexusmods.com/mods/modmanager</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/nmm/icons/256x256.png</iconUrl>
-    <copyright>© 2018 Black Tree Gaming</copyright>
+    <copyright>Copyright © 2020 Robin Scott. All rights reserved.</copyright>
     <licenseUrl>https://github.com/Nexus-Mods/Nexus-Mod-Manager/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/Nexus-Mods/Nexus-Mod-Manager</projectSourceUrl>
