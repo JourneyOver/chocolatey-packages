@@ -28,6 +28,15 @@ pull_request_rules:
       merge:
         strict: smart
         method: squash
+  - name: automatic merge when user is dependabot[bot]
+    conditions:
+      - author=dependabot[bot]
+      - status-success=continuous-integration/appveyor/pr
+      - base=master
+    actions:
+      merge:
+        strict: smart
+        method: squash
   - name: delete head branch after merge
     conditions: []
     actions:
