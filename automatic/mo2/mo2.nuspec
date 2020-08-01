@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>mo2</id>
-    <version>2.3.0</version>
+    <version>2.3.1</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/mo2</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Mod Organizer 2</title>
