@@ -25,12 +25,28 @@ function global:au_BeforeUpdate($Package) {
   Get-RemoteFiles -Purge -NoSuffix
 }
 
+function GetV4Version() {
+  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+
+  #tmm_2.9.7_8513bee_win.zip
+  $re = "tmm_4.+_*_win.zip$"
+  $url = $download_page.links | Where-Object href -match $re | Select-Object -Last 1 -expand href
+
+  $version = $url -split 'tmm_|_.*_?.zip' | Select-Object -Last 1 -Skip 1
+  $url32 = 'http://release.tinymediamanager.org/' + $url
+
+  @{
+    Version = $version
+    URL32   = $url32
+  }
+}
+
 function GetV3Version() {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
   #tmm_2.9.7_8513bee_win.zip
-  $re = "tmm_.+_*_win.zip$"
-  $url = $download_page.links | Where-Object href -match $re | Select-Object -First 1 -expand href
+  $re = "tmm_3.+_*_win.zip$"
+  $url = $download_page.links | Where-Object href -match $re | Select-Object -Last 1 -expand href
 
   $version = $url -split 'tmm_|_.*_?.zip' | Select-Object -Last 1 -Skip 1
   $url32 = 'http://release.tinymediamanager.org/' + $url
@@ -45,7 +61,7 @@ function GetV2Version() {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
   #tmm_2.9.7_8513bee_win.zip
-  $re = "tmm_.+_*_win.zip$"
+  $re = "tmm_2.+_*_win.zip$"
   $url = $download_page.links | Where-Object href -match $re | Select-Object -Last 1 -expand href
 
   $version = $url -split 'tmm_|_.*_?.zip' | Select-Object -Last 1 -Skip 1
@@ -60,10 +76,12 @@ function GetV2Version() {
 function global:au_GetLatest {
   $v2Stream = GetV2Version
   $v3Stream = GetV3Version
+  $v4Stream = GetV4Version
 
   $streams = [ordered] @{
     v2 = $v2Stream
     v3 = $v3Stream
+    v4 = $v4Stream
   }
 
   return @{ Streams = $streams }
