@@ -9,14 +9,14 @@ and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <http://release.tinymediamanager.org/v4/dist/tmm_4.0.1_win.zip>
+  url: <http://release.tinymediamanager.org/v4/dist/tmm_4.0.2_win.zip>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 2CF8E4084304C06988C62D2B937E6855B4E5C7C3835CE06C3025CCE1FB197A99
+  checksum: 0BB54AED4EBE705E2327BCD71D4615342A0A3ACC2CB663E3991FE6F6EE88AAD6
 
 Using AU:
 
