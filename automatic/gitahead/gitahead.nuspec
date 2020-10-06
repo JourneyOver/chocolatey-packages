@@ -15,7 +15,7 @@
     <licenseUrl>https://github.com/gitahead/gitahead/blob/master/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/gitahead/gitahead</projectSourceUrl>
-    <docsUrl>http://stackoverflow.com/questions/tagged/gitahead</docsUrl>
+    <docsUrl>https://stackoverflow.com/questions/tagged/gitahead</docsUrl>
     <!-- <mailingListUrl></mailingListUrl> -->
     <bugTrackerUrl>https://github.com/gitahead/gitahead/issues</bugTrackerUrl>
     <tags>gitahead git client gui</tags>

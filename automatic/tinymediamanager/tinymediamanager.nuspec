@@ -4,12 +4,12 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tinymediamanager</id>
-    <version>3.1.10</version>
+    <version>4.0.3</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tinymediamanager</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>tinyMediaManager</title>
     <authors>https://gitlab.com/tinyMediaManager/tinyMediaManager/-/graphs/devel</authors>
-    <projectUrl>http://www.tinymediamanager.org/</projectUrl>
+    <projectUrl>https://www.tinymediamanager.org/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/tinymediamanager/icons/128x128.png</iconUrl>
     <copyright>© 2019 Manuel Laggner</copyright>
     <licenseUrl>https://gitlab.com/tinyMediaManager/tinyMediaManager/-/blob/devel/LICENSE</licenseUrl>
@@ -20,17 +20,17 @@
     <bugTrackerUrl>https://gitlab.com/tinyMediaManager/tinyMediaManager/-/issues</bugTrackerUrl>
     <tags>tinymediamanager media managment tinyMediaManager metadata XBOX Media Center XBMC Plex Emby</tags>
     <summary>A multi-OS media managment tool</summary>
-    <description><![CDATA[[tinyMediaManager](http://www.tinymediamanager.org) is a media management tool written in Java/Swing. It is written to provide metadata for the XBOX Media Center (XBMC). Due to the fact that it is written in Java, tinyMediaManager will run on Windows, Linux and Mac OSX (and possible more OS).
+    <description><![CDATA[[tinyMediaManager](https://www.tinymediamanager.org) is a media management tool written in Java/Swing. It is written to provide metadata for the XBOX Media Center (XBMC). Due to the fact that it is written in Java, tinyMediaManager will run on Windows, Linux and Mac OSX (and possible more OS).
 
 ## Features
 
-- [All Features](http://www.tinymediamanager.org/features)
+- [All Features](https://www.tinymediamanager.org/features)
 
 ![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tinymediamanager.png)
 ]]></description>
     <releaseNotes>
 #### Program
-* [Changelog](http://www.tinymediamanager.org/changelog)
+* [Changelog](https://www.tinymediamanager.org/changelog)
 * [Version 3 Changelog](https://www.tinymediamanager.org/changelog-v3/)
 
 #### Package

@@ -1,9 +1,9 @@
 ﻿Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$releases = 'http://swift.im/downloads.html'
-$fjoin = 'http://swift.im'
-$clog = 'http://swift.im/'
+$releases = 'https://swift.im/downloads.html'
+$fjoin = 'https://swift.im'
+$clog = 'https://swift.im/'
 
 function global:au_SearchReplace {
   @{
