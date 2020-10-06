@@ -18,7 +18,7 @@ Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can moni
 
 ## Community
 
-- [IRC](http://webchat.freenode.net/?channels=#sonarr)
+- [IRC](https://webchat.freenode.net/?channels=#sonarr)
 - [Twitter](https://twitter.com/sonarrtv)
 - [Reddit](https://www.reddit.com/r/sonarr)
 
