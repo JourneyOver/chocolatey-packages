@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/lidarr/Lidarr/releases/tag/v0.7.1.1381>
+location on <https://github.com/lidarr/Lidarr/releases/tag/v0.7.2.1878>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/lidarr/Lidarr/releases/download/v0.7.1.1381/Lidarr.master.0.7.1.1381.windows-installer.exe>
+  url: <https://github.com/lidarr/Lidarr/releases/download/v0.7.2.1878/Lidarr.master.0.7.2.1878.windows-installer.exe>
 
   2. You can obtain the checksum using one of the following methods:
     - Use powershell function 'Get-FileHash'
     - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:91540585764560C3C8F5BCBF346B85E2EBCB4EBD19BB7EF02696E71D63EC29FA
+  checksum:496EA41C2979ED0D6B130CCE0FFBD29041898FC36E7F7155E02579B1BAA943AA
 
 Using AU:
 
