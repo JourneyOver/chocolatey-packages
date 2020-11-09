@@ -1,8 +1,6 @@
 name: Update Packages
 
 on:
-  push:
-    branches: [ master ]
   workflow_dispatch: # Enable manual trigger
     inputs:
       forced_packages:
