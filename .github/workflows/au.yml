@@ -48,10 +48,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Wormies-AU-Helpers
-        run: |
-          choco install wormies-au-helpers
-
       - name: Check build environment
         run: |
           Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version
