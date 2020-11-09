@@ -58,9 +58,9 @@ jobs:
 
       - name: init
         run: |
-          - git config --global user.email "timtag1190@gmail.com"
-          - git config --global user.name "Journey"
-          - git config --global core.safecrlf false
+          git config --global user.email "chocolatey@realdimensions.net"
+          git config --global user.name "Chocolatey"
+          git config --global core.safecrlf false
 
       - name: Install AU
         run: |
