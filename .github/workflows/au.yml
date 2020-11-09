@@ -2,7 +2,7 @@ name: Update Packages
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 */4 * * *'
   workflow_dispatch: # Enable manual trigger
     inputs:
       forced_packages:
