@@ -1,13 +1,13 @@
 name: Update Packages
 
 on:
+  schedule:
+    - cron: '*/10 * * * *'
   workflow_dispatch: # Enable manual trigger
     inputs:
       forced_packages:
         description: The list of packages to forcibly update (like "pkg1:ver1 pkg2")
         required: false
-  schedule:
-    - cron: '5 */4 * * *'
 
 env:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
