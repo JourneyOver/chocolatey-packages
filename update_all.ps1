@@ -52,8 +52,8 @@ $Options = [ordered]@{
     Path   = "$PSScriptRoot\Update-AUPackages.md"         #Path where to save the report
     Params = @{                                          #Report parameters:
       Github_UserRepo = $Env:github_user_repo         #  Markdown: shows user info in upper right corner
-      NoAppVeyor      = $false                            #  Markdown: do not show AppVeyor build shield
-      UserMessage     = "[Ignored](#ignored) | [History](#update-history) | [Force Test](https://gist.github.com/$Env:gist_id_test) | [Releases](https://github.com/$Env:github_user_repo/tags)"       #  Markdown, Text: Custom user message to show
+      NoAppVeyor      = $true                            #  Markdown: do not show AppVeyor build shield
+      UserMessage     = "[Build Details]($env:GH_ACTIONS_BUILD_URL) | [Ignored](#ignored) | [History](#update-history) | [Force Test](https://gist.github.com/$Env:gist_id_test) | [Releases](https://github.com/$Env:github_user_repo/tags)"       #  Markdown, Text: Custom user message to show
       NoIcons         = $false                            #  Markdown: don't show icon
       IconSize        = 32                                #  Markdown: icon size
       Title           = ''                                #  Markdown, Text: TItle of the report, by default 'Update-AUPackages'
@@ -83,7 +83,7 @@ $Options = [ordered]@{
   }
 
   RunInfo                   = @{
-    Exclude = 'password', 'apikey', 'UserName', 'To', 'ApiToken'          #Option keys which contain those words will be removed
+    Exclude = 'password', 'apikey', 'UserName', 'To', 'ApiToken', 'webhookurl'          #Option keys which contain those words will be removed
     Path    = "$PSScriptRoot\update_info.xml"           #Path where to save the run info
   }
 
