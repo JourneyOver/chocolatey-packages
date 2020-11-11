@@ -47,6 +47,8 @@ $Options = [ordered]@{
   RepeatSleep               = 60                                    #How much to sleep between repeats in seconds, by default 0
   RepeatCount               = 2                                      #How many times to repeat on errors, by default 1
 
+  #NoCheckChocoVersion = $true                            #Turn on this switch for all packages
+
   Report                    = @{
     Type   = 'markdown'                                   #Report type: markdown or text
     Path   = "$PSScriptRoot\Update-AUPackages.md"         #Path where to save the report
@@ -61,7 +63,7 @@ $Options = [ordered]@{
   }
 
   History                   = @{
-    Lines           = 120                                          #Number of lines to show
+    Lines           = 30                                         #Number of lines to show
     Github_UserRepo = $Env:github_user_repo             #User repo to be link to commits
     Path            = "$PSScriptRoot\Update-History.md"            #Path where to save history
   }
@@ -102,13 +104,12 @@ $Options = [ordered]@{
   } else { }
 
   ForcedPackages            = $ForcedPackages -split ' '
-  UpdateIconScript          = "$PSScriptRoot\scripts\Update-IconUrl.ps1"
+  #UpdateIconScript          = "$PSScriptRoot\scripts\Update-IconUrl.ps1"
   UpdatePackageSourceScript = "$PSScriptRoot\scripts\Update-PackageSourceUrl.ps1"
   ModulePaths               = @("$PSScriptRoot\scripts\au_extensions.psm1"; "Wormies-AU-Helpers")
   BeforeEach                = {
     param($PackageName, $Options )
     $Options.ModulePaths | ForEach-Object { Import-Module $_ }
-    . $Options.UpdateIconScript $PackageName.ToLowerInvariant() -Quiet -ThrowErrorOnIconNotFound
     . $Options.UpdatePackageSourceScript $PackageName.ToLowerInvariant() -Quiet
     if (Test-Path tools) {
       Expand-Aliases -Directory tools -AliasWhitelist @(
@@ -130,7 +131,7 @@ $Options = [ordered]@{
 }
 
 if ($ForcedPackages) { Write-Host "FORCED PACKAGES: $ForcedPackages" }
-$global:au_Root = $Root                                    #Path to the AU packages
+$global:au_Root = $Root          #Path to the AU packages
 $global:info = updateall -Name $Name -Options $Options
 
 #Uncomment to fail the build on AppVeyor on any package error
