@@ -2,7 +2,7 @@
 
 [![Build status](https://github.com/JourneyOver/chocolatey-packages/workflows/Update%20Packages/badge.svg)](https://github.com/JourneyOver/chocolatey-packages/actions?query=workflow%3A%22Update+Packages%22)
 [![Update Status](https://img.shields.io/badge/Update-Status-blue.svg)](https://gist.github.com/JourneyOver/508bb89c4cc35b67842940c60310532b)
-[![Force Test Status # Currently not used](https://img.shields.io/badge/Update-Force%20Test%20Status-red.svg)](https://gist.github.com/JourneyOver/13f08beca5db513521762b5c4ce53d58)
+[![Force Test Status](https://img.shields.io/badge/Update-Force%20Test%20Status-red.svg)](https://gist.github.com/JourneyOver/13f08beca5db513521762b5c4ce53d58)
 [![chocolatey/JourneyOver](https://img.shields.io/badge/Chocolatey-JourneyOver-008b85.svg)](https://chocolatey.org/profiles/JourneyOver)
 [![Open Source Helpers](https://www.codetriage.com/journeyover/chocolatey-packages/badges/users.svg)](https://www.codetriage.com/journeyover/chocolatey-packages)
 
