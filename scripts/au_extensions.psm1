@@ -10,7 +10,6 @@ $funcs = @(
   'Get-AllGithubReleases'
   'Get-ValidOpenSourceLicense'
   'Get-GithubRepositoryLicense'
-  'Get-RedirectedUrl'
 )
 
 $funcs | % {

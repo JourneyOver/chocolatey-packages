@@ -21,5 +21,3 @@ It's also focusing more on audio. Imagine Spotify which you don't have to pay fo
 
 - [Mastodon](https://mstdn.io/@nuclear)
 - [Twitter](https://twitter.com/nuclear_player)
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/nuclear.png)

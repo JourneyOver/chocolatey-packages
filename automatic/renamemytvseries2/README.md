@@ -21,5 +21,3 @@ This tool by no means pretends to be anything else than just that.
 - Merge 2 Episodes into 1 (filename only of course)
 - Detection of resolution, video format, Audio and Video codec, and audio channels
 - Log file of what files have been renamed
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/renamemytvseries2.png)

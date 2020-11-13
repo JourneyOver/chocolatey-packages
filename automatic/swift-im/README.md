@@ -9,5 +9,3 @@ Swift.im is an elegant, secure, adaptable and intuitive XMPP client, with featur
 - basic statuses
 - avatar support
 - mailbox status support
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/swift-im.png)

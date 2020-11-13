@@ -13,5 +13,3 @@ Level up your stream with our reliable, easy-to-setup desktop streaming applicat
 ## Community
 
 - [Discord](https://discord.gg/stream)
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/streamlabs-obs.png)

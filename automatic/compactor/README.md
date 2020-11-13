@@ -10,6 +10,4 @@ Compactor is here to plug that gap, with a simple GUI utility anyone can use.
 
 - [All Features](https://github.com/Freaky/Compactor#features)
 
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/compactor.png)
-
 [`compact.exe`]: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/compact

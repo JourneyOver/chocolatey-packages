@@ -29,5 +29,3 @@ Featuring a fully customisable interface, Vortex allows you to quickly and easil
 - EXTENSIONS AND PLUGINS:
 
 Vortex is released under a GPL-3 License giving our community the ability to write extensions and frameworks which can then interact with Vortex, continually adding to its functionality.
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/vortex.png)
