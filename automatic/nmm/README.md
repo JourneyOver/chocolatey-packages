@@ -31,5 +31,3 @@ The Nexus Mod Manager (NMM) is a free and open source piece of software that all
 - **No advertising**
 
   The Mod Manager is completely free of advertisements
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/nmm.png)

@@ -11,5 +11,3 @@ LOOT is intended to make using mods easier, and mod users should still possess a
 ## Community
 
 - [Discord](https://loot.github.io/discord/)
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/loot.png)

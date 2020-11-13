@@ -18,5 +18,3 @@ AxCrypt is used to share and work with stored documents and e-mail attachments, 
 - AxCrypt is a great tool for protecting your documents such as private correspondence, employment information, medical information, and financial details. It doesn't matter whether this data is stored on a local hard disk or network server, encrypting it is easy. Simply right-click any document file and encrypt it via the explorer interface.
 
 `*` Some features are only available in AxCrypt Premium.
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/axcrypt.png)

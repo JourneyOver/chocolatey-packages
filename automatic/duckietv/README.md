@@ -15,5 +15,3 @@ With the integrated DuckieTorrent client you can connect DuckieTV to your local 
 - Control various settings to adjust DuckieTV to your needs, translated into your choice of 12 languages
 - You can either completely turn off Torrent integration or tune it to your preference
 - DuckieTorrent Torrent clients built-in (µTorrent/BitTorrent, qBittorrent, Tixati, Transmission)
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/duckietv.png)

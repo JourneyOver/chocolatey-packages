@@ -13,5 +13,3 @@ TheSage can look up words directly from almost any program (IE, Word, Firefox, O
 - Cross-Referencing - Any and all displayed words are clickable, triggering a new lookup.
 - Wildcard Search - Match single/multiple characters as well as filter by single/groups of vowels and consonants.
 - Anagram Search - Only valid English words are returned.
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tsedat.png)
