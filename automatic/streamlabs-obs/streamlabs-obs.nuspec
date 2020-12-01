@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>streamlabs-obs</id>
-    <version>0.25.0</version>
+    <version>0.26.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/streamlabs-obs</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>StreamLabs OBS</title>
