@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>compactor</id>
-    <version>0.9.0</version>
+    <version>0.10.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/compactor</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Compactor</title>

@@ -4,21 +4,21 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/Freaky/Compactor/releases/tag/v0.9.0>
+location on <https://github.com/Freaky/Compactor/releases/tag/v0.10.0>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/Freaky/Compactor/releases/download/v0.9.0/Compactor-0.9.0-i686.zip>
-  url64: <https://github.com/Freaky/Compactor/releases/download/v0.9.0/Compactor-0.9.0.zip>
+  url: <https://github.com/Freaky/Compactor/releases/download/v0.10.0/Compactor-0.10.0-i686.zip>
+  url64: <https://github.com/Freaky/Compactor/releases/download/v0.10.0/Compactor-0.10.0.zip>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:9F071F8EA8B673FD408C06DED681338C85C343F92ADE70A174FC8A151EF67EDF
-  checksum64:D7FFD83A1ACB2E1F33A53C94F4544FDD14ED4EF68FB0EDFCAA2AF6574D1C849E
+  checksum:E44A09019A3346D48EAF8535648730E7D9DF4E4D79949361819D77D314E28C66
+  checksum64:F2FBC73B11BB7A2AF090C5727B2D927FCAEA6C782950CAE7EDAEFE5F25E72311
 
 Using AU:
 
