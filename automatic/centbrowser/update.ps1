@@ -1,7 +1,7 @@
 Import-Module au
 
 $stableReleases = 'https://www.centbrowser.com/'
-$betaReleases = 'http://static.centbrowser.com/beta_32/'
+$betaReleases = 'http://static.centbrowser.com/win_beta/'
 
 function global:au_SearchReplace {
   @{
@@ -25,8 +25,8 @@ function GetStableVersion() {
   @{
     PackageName = "CentBrowser"
     Version     = $version
-    URL32       = "http://static.centbrowser.com/installer_32/centbrowser_${version}.exe"
-    URL64       = "http://static.centbrowser.com/installer_64/centbrowser_${version}_x64.exe"
+    URL32       = "http://static.centbrowser.com/win_stable/${version}/centbrowser_${version}.exe"
+    URL64       = "http://static.centbrowser.com/win_stable/${version}/centbrowser_${version}_x64.exe"
   }
 }
 
@@ -34,15 +34,15 @@ function GetBetaVersion() {
   $download_page = Invoke-WebRequest -Uri $betaReleases -UseBasicParsing
 
   $regex = '.exe$'
-  $url = $download_page.links | Where-Object href -Match $regex | Select-Object -Last 2 -Expand href
+  $url = $download_page.links | Where-Object href -Match $regex | Select-Object -Last 4 -Expand href
   $version = $url[0] -split 'centbrowser_|.exe' | Select-Object -Last 1 -Skip 1
   $build = "-beta"
 
   @{
     PackageName = "CentBrowser"
     Version     = ($version + $build)
-    URL32       = "http://static.centbrowser.com/beta_32/centbrowser_${version}.exe"
-    URL64       = "http://static.centbrowser.com/beta_64/centbrowser_${version}_x64.exe"
+    URL32       = "http://static.centbrowser.com/win_beta/centbrowser_${version}.exe"
+    URL64       = "http://static.centbrowser.com/win_beta/centbrowser_${version}_x64.exe"
   }
 }
 
