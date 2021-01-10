@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>radarr</id>
-    <version>3.0.1.4259</version>
+    <version>3.0.2.4369</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/radarr</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Radarr</title>
