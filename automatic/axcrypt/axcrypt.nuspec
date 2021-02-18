@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>axcrypt</id>
-    <version>2.1.1611.0</version>
+    <version>2.1.1612.0</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/axcrypt</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>AxCrypt</title>
