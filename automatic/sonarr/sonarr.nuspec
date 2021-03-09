@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>sonarr</id>
-    <version>3.0.5.1143-phantom</version>
+    <version>3.0.5.1144</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/sonarr</packageSourceUrl>
     <owners>JourneyOver, dtgm</owners>
     <title>Sonarr</title>
@@ -12,7 +12,7 @@
     <projectUrl>https://sonarr.tv/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@8b01638f1c9614c1301326ce2dbc37dba585e00a/automatic/sonarr/icons/128x128.png</iconUrl>
     <copyright>© 2021 Sonarr. All rights reserved.</copyright>
-    <licenseUrl>https://github.com/Sonarr/Sonarr/blob/phantom-develop/LICENSE.md</licenseUrl>
+    <licenseUrl>https://github.com/Sonarr/Sonarr/blob/develop/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/Sonarr/Sonarr</projectSourceUrl>
     <docsUrl>https://wiki.servarr.com/Sonarr</docsUrl>
@@ -44,10 +44,7 @@
 
 ## Notes
 
-This is the pre-release versions of Sonarr V3 otherwise known as Phantom.
-
--   Sonarr v2 migration
-    - Sonarr v3 will automatically convert the existing Sonarr v2 installation. Sonarr v2 stored it's database in `C:\ProgramData\NzbDrone`, which will be automatically converted to `C:\ProgramData\Sonarr`. It's advisable to make a backup of the v2 data first.
+The long awaited moment has finally arrived. Starting (3/8/2021) Sonarr v2 is now officially EOL and unsupported. Sonarr v3 is officially out of beta and is the stable release.
 
 Installs as a service, to get to Sonarr open browser and go to [localhost]:8989 (remove the brackets)
 ]]></description>
