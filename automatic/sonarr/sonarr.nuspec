@@ -11,11 +11,11 @@
     <authors>https://github.com/Sonarr/Sonarr/graphs/contributors</authors>
     <projectUrl>https://sonarr.tv/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@8b01638f1c9614c1301326ce2dbc37dba585e00a/automatic/sonarr/icons/128x128.png</iconUrl>
-    <copyright>© 2020 Sonarr. All rights reserved.</copyright>
+    <copyright>© 2021 Sonarr. All rights reserved.</copyright>
     <licenseUrl>https://github.com/Sonarr/Sonarr/blob/phantom-develop/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/Sonarr/Sonarr</projectSourceUrl>
-    <docsUrl>https://wiki.sonarr.tv/</docsUrl>
+    <docsUrl>https://wiki.servarr.com/Sonarr</docsUrl>
     <mailingListUrl>https://forums.sonarr.tv/</mailingListUrl>
     <bugTrackerUrl>https://github.com/Sonarr/Sonarr/issues</bugTrackerUrl>
     <tags>sonarr pvr p2p filesharing torrent nntp admin</tags>

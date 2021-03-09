@@ -12,22 +12,22 @@ function global:au_SearchReplace {
   }
 }
 
-function GetStableVersion() {
-  $repoUser = "SchizoDuckie"
-  $repoName = "DuckieTV"
-
-  $release = Get-LatestGithubReleases $repoUser $repoName $false
-
-  $url32 = $release.latestStable.Assets | Where-Object { $_ -match 'x32\.zip$' } | Select-Object -First 1
-  $url64 = $release.latestStable.Assets | Where-Object { $_ -match 'x64\.zip$' } | Select-Object -First 1
-
-  @{
-    PackageName = "duckietv"
-    Version     = $release.latestStable.Version
-    URL32       = $url32
-    URL64       = $url64
-  }
-}
+#function GetStableVersion() {
+#  $repoUser = "SchizoDuckie"
+#  $repoName = "DuckieTV"
+#
+#  $release = Get-LatestGithubReleases $repoUser $repoName $false
+#
+#  $url32 = $release.latestStable.Assets | Where-Object { $_ -match 'x32\.zip$' } | Select-Object -First 1
+#  $url64 = $release.latestStable.Assets | Where-Object { $_ -match 'x64\.zip$' } | Select-Object -First 1
+#
+#  @{
+#    PackageName = "duckietv"
+#    Version     = $release.latestStable.Version
+#    URL32       = $url32
+#    URL64       = $url64
+#  }
+#}
 
 function GetNightlyVersion() {
   $repoUser = "DuckieTV"
@@ -61,11 +61,11 @@ function GetNightlyVersion() {
 }
 
 function global:au_GetLatest {
-  $stableStream = GetStableVersion
+  #$stableStream = GetStableVersion
   $nightlyStream = GetNightlyVersion
 
   $streams = [ordered] @{
-    stable  = $stableStream
+    #stable  = $stableStream
     nightly = $nightlyStream
   }
 
