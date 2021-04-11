@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>nmm</id>
-    <version>0.80.7</version>
+    <version>0.80.8</version>
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/nmm</packageSourceUrl>
     <owners>JourneyOver, Der Archivar</owners>
     <title>Nexus Mod Manager</title>
