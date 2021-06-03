@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/Radarr/Radarr/releases/tag/v3.2.1.5070>
+location on <https://github.com/Radarr/Radarr/releases/tag/v3.2.2.5080>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/Radarr/Radarr/releases/download/v3.2.1.5070/Radarr.master.3.2.1.5070.windows-core-x64-installer.exe>
+  url: <https://github.com/Radarr/Radarr/releases/download/v3.2.2.5080/Radarr.master.3.2.2.5080.windows-core-x64-installer.exe>
 
   2. You can obtain the checksum using one of the following methods:
     - Use powershell function 'Get-FileHash'
     - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: EE22C4577F1D5F79E6A70A2CF82F201B791E52190F152619C1EE899E2BC29A1A
+  checksum: 8468C8AA1CE89411263D5C4CEFF643519FF00D3404527328DF8C2D00F5D9710E
 
 Using AU:
 
