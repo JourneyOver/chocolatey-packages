@@ -1,4 +1,4 @@
-﻿$allDeps = @(
+$allDeps = @(
   'chocolatey-core.extension'
   'autohotkey.portable'
   'jre8'
@@ -25,7 +25,7 @@ $foundDeps = . choco search $allDeps -r | ConvertFrom-Csv -Delimiter '|' -Header
 
 $allDeps | ForEach-Object {
   "Updating version for dependency $_..."
-  $dependency = $foundDeps | Where-Object id -eq $_ | Select-Object -first 1
+  $dependency = $foundDeps | Where-Object id -EQ $_ | Select-Object -First 1
   . $PSScriptRoot\Update-Dependency.ps1 $_ -Version $dependency.version
 }
 
@@ -35,7 +35,7 @@ $allDeps | ForEach-Object {
   'vcredist2017'                   = 'vcredist140'
 }.GetEnumerator() | ForEach-Object {
   "Changing dependency from $($_.Key) to $($_.Value) and using latest version..."
-  $dependency = $foundDeps | Where-Object id -eq $_.Value | Select-Object -first 1
+  $dependency = $foundDeps | Where-Object id -EQ $_.Value | Select-Object -First 1
   if ($dependency) {
     . $PSScriptRoot\Update-Dependency.ps1 -OldDependencyName $_.Key -NewDependencyName $_.Value -Version $dependency.version
   } else {

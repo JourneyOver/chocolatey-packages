@@ -1,4 +1,4 @@
-﻿
+
 function resolveLatestRelease {
   param(
     $response,
@@ -54,5 +54,5 @@ function Get-LatestGithubReleases {
   $latestStableRelease = resolveLatestRelease -response $response -usePrerelease $false;
   $latestRelease = resolveLatestRelease -response $response -usePrerelease $includePreRelease;
 
-  return @{ latest = $latestRelease ; latestStable = $latestStableRelease};
+  return @{ latest = $latestRelease ; latestStable = $latestStableRelease };
 }

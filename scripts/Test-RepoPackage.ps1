@@ -88,9 +88,9 @@ function CreateSnapshotArchive() {
 
   if (!(Test-Path $artifactsDirectory)) { mkdir $artifactsDirectory }
   $directories = $packages | Where-Object {
-    Test-path "$env:ChocolateyInstall\.chocolatey\$($_.Name)*"
+    Test-Path "$env:ChocolateyInstall\.chocolatey\$($_.Name)*"
   } | ForEach-Object {
-    $directory = Resolve-Path "$env:ChocolateyInstall\.chocolatey\$($_.Name)*" | Select-Object -last 1
+    $directory = Resolve-Path "$env:ChocolateyInstall\.chocolatey\$($_.Name)*" | Select-Object -Last 1
     "`"$directory`""
   }
 
@@ -190,7 +190,7 @@ function GetDependentPackage() {
     [Parameter(Mandatory = $true)]
     [string]$packageDirectory
   )
-  $packageName = $PackageDirectory -split '[\/\\]' | Select-Object -last 1
+  $packageName = $PackageDirectory -split '[\/\\]' | Select-Object -Last 1
   $nuspecPath = Get-Item "$PackageDirectory\*.nuspec"
   $content = Get-Content -Encoding UTF8 $nuspecPath
   $Matches = $null
@@ -223,11 +223,11 @@ function GetPackageSelectQuery() {
   begin { $queries = @() }
   process {
     $queries += $InputObject | Select-Object `
-    @{Name = 'NuspecPath'; Expression = {Resolve-Path "$_\*.nuspec"}},
-    @{Name = 'Directory'; Expression = {Resolve-Path $_}},
-    @{Name = 'Name'; Expression = {[System.IO.Path]::GetFileName($_).ToLowerInvariant()}},
-    @{Name = 'IsAutomatic'; Expression = {$_ -match 'automatic[\/\\]'}},
-    @{Name = 'DependentPackage'; Expression = {GetDependentPackage -packageDirectory $_}}
+    @{Name = 'NuspecPath'; Expression = { Resolve-Path "$_\*.nuspec" } },
+    @{Name = 'Directory'; Expression = { Resolve-Path $_ } },
+    @{Name = 'Name'; Expression = { [System.IO.Path]::GetFileName($_).ToLowerInvariant() } },
+    @{Name = 'IsAutomatic'; Expression = { $_ -match 'automatic[\/\\]' } },
+    @{Name = 'DependentPackage'; Expression = { GetDependentPackage -packageDirectory $_ } }
   }
   end {
     $queries
@@ -313,7 +313,7 @@ function RunChocoPackProcess() {
     . choco pack | WriteChocoOutput
     if ($LastExitCode -ne 0) { Pop-Location; throw "Choco pack failed with code: $LastExitCode"; return }
   }
-  if ($null -ne $path -and $path -ne '') { Pop-Location}
+  if ($null -ne $path -and $path -ne '') { Pop-Location }
 }
 
 function SetAppveyorExitCode() {
@@ -371,12 +371,12 @@ function RunChocoProcess() {
   $errorFilePath = "$screenShotDir\$($arguments[0])Error_$($arguments[1]).jpg"
   if (!(Test-Path "$screenShotDir")) { mkdir "$screenShotDir" -Force | Out-Null }
 
-  $packageName = $arguments[1] -split ' ' | Select-Object -first 1
-  $pkgDir = Get-ChildItem -Path "$PSScriptRoot\.." -Filter "$packageName" -Recurse -Directory | Select-Object -first 1
-  $nupkgFile = Get-ChildItem -Path $pkgDir.FullName -Filter "*.nupkg" | Select-Object -first 1
+  $packageName = $arguments[1] -split ' ' | Select-Object -First 1
+  $pkgDir = Get-ChildItem -Path "$PSScriptRoot\.." -Filter "$packageName" -Recurse -Directory | Select-Object -First 1
+  $nupkgFile = Get-ChildItem -Path $pkgDir.FullName -Filter "*.nupkg" | Select-Object -First 1
   $pkgNameVersion = Split-Path -Leaf $nupkgFile | ForEach-Object { ($_ -replace '((\.\d+)+(-[^-\.]+)?).nupkg', ':$1').Replace(':.', ':') -split ':' }
-  $packageName = $pkgNameVersion | Select-Object -first 1
-  $version = $pkgNameVersion | Select-Object -last 1
+  $packageName = $pkgNameVersion | Select-Object -First 1
+  $version = $pkgNameVersion | Select-Object -Last 1
   if ($packageName -ne $arguments[1]) { $args[1] = $packageName }
 
   try {
@@ -420,6 +420,7 @@ function RunChocoProcess() {
           Write-Verbose "Stopping any processes matching uninst*"
           Stop-Process -ProcessName "unins*" -ErrorAction Ignore -Force
         }
+
         Write-Verbose "Stopping any processes matching *$($arguments[1])*"
         Stop-Process -ProcessName "*$($arguments[1])*" -ErrorAction Ignore -Force
       }

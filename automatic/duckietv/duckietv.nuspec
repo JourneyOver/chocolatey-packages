@@ -18,7 +18,7 @@
     <docsUrl>https://github.com/SchizoDuckie/DuckieTV/wiki</docsUrl>
     <mailingListUrl>https://www.reddit.com/r/duckietv/</mailingListUrl>
     <bugTrackerUrl>https://github.com/SchizoDuckie/DuckieTV/issues</bugTrackerUrl>
-    <tags>duckietv tv series-database calendar angularjs javascript episodes search-engine torrent-client remote-control angular nwjs qbittorrent series trakt automation utorrent js admin</tags>
+    <tags>duckietv tv series-database calendar episodes search-engine torrent-client remote-control qbittorrent series trakt automation utorrent foss admin</tags>
     <summary>DuckieTV is the TV-Show calendar you've been waiting for. A personalized calendar that tracks the shows you like that can search on multiple torrent sites</summary>
     <description><![CDATA[DuckieTV is an application that takes care of TV-Show addicts by providing a personalized TV-Show calendar. DuckieTV makes sure the information is always up-to-date and gives you an integrated blocking-resistant torrent search to help you get to the right download as easy as possible.
 

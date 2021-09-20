@@ -14,7 +14,7 @@ and can be verified by doing the following:
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
-  - check <https://www.axcrypt.net/cryptographic-hashes-files>
+  - check <https://www.axcrypt.net/information/cryptographic-hashes-of-files>
 
   checksum type: sha256
   checksum: 36F6157740900AC658179D8CA0B8545D78734DC2A35FFD33A2B3B3CF255ABB6C
@@ -24,4 +24,4 @@ Using AU:
   Get-RemoteChecksum
 
 The file 'LICENSE.txt' is obtained from:
-  <https://www.axcrypt.net/documentation/license> at "Software License"
+  <https://www.axcrypt.net/information/terms-of-use> at "Software License"

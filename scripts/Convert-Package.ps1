@@ -111,7 +111,7 @@ if (!$packagePath) {
   throw "Package with the name $PackageName was not found"
 }
 
-$iconPath = Get-ChildItem -File -Path $packagePath.FullName -Recurse -Include "*.png", "*.svg" | Select-Object -first 1 -expand FullName
+$iconPath = Get-ChildItem -File -Path $packagePath.FullName -Recurse -Include "*.png", "*.svg" | Select-Object -First 1 -expand FullName
 
 if (!$iconPath) {
   $iconPath = Get-ChildItem -File -Path $IconsDirectory -Filter "$PackageName.*" | ForEach-Object FullName
@@ -173,7 +173,7 @@ Add-Element $newNuspec "id" $metadata $id | Out-Null
 if ($oldNuspec.package.metadata.version -match "^[\d\.]+$") {
   Add-MetadataElement $newNuspec $oldNuspec $metadata "version"
 } else {
-  $version = (. choco info $id -r) -split '\|' | Select-Object -last 1
+  $version = (. choco info $id -r) -split '\|' | Select-Object -Last 1
   if (!$version) {
     $version = "0.0"
   }
@@ -277,7 +277,7 @@ $oldNuspec.package.metadata.dependencies.dependency | ForEach-Object {
 if ($uninstallScript -or $addCoreExtension) {
   $element = Add-Element $newNuspec "dependency" $dependencies
   $element.SetAttribute("id", "chocolatey-core.extension")
-  $version = (. choco info 'chocolatey-core.extension' -r) -split '\|' | Select-Object -last 1
+  $version = (. choco info 'chocolatey-core.extension' -r) -split '\|' | Select-Object -Last 1
   if ($version) {
     $element.SetAttribute("version", $version)
   }
@@ -329,7 +329,7 @@ if ($Embedd) {
 
       $verificationUrl = "https://github.com/$owner/$repo/blob/$sha/$path"
     } elseif ($licenseUrl -match "^https?://sourceforge.net/p/[^/]+/code/ci/master/tree/.*") {
-      Invoke-WebRequest -UseBasicParsing -uri "${licenseUrl}?format=raw" -OutFile "$legalDir\LICENSE.txt"
+      Invoke-WebRequest -UseBasicParsing -Uri "${licenseUrl}?format=raw" -OutFile "$legalDir\LICENSE.txt"
       $verificationUrl = $licenseUrl
     } else {
       Invoke-WebRequest -UseBasicParsing -Uri "$licenseUrl" -OutFile "$legalDir\LICENSE.txt"
@@ -474,7 +474,7 @@ do {
 
   $download_page = Invoke-WebRequest -UseBasicParsing -Uri $ReleaseUrl
   Write-Host "The regex matched the following urls (the first one will be grabbed)"
-  $download_page.links | Where-Object href -match $url32Re | ForEach-Object { Write-Host "  $($_.href)" }
+  $download_page.links | Where-Object href -Match $url32Re | ForEach-Object { Write-Host "  $($_.href)" }
 } while ((yesno "Do this look correct?") -eq 0)
 $writer.WriteLine("  `$re = '$url32Re'")
 $writer.WriteLine('  $url32 = $download_page.Links | ? href -match $re | select -first 1 -expand href')
@@ -485,7 +485,7 @@ if ($supportsX64) {
     if (!$url64Re) { break; }
     $download_page = Invoke-WebRequest -UseBasicParsing -Uri $ReleaseUrl
     Write-Host "The regex matched the following urls (the first one will be grabbed)"
-    $download_page.links | Where-Object href -match $url64Re | ForEach-Object { Write-Host "  $($_.href)" } | Out-Null
+    $download_page.links | Where-Object href -Match $url64Re | ForEach-Object { Write-Host "  $($_.href)" } | Out-Null
   } while ((yesno "Do this look correct?") -eq 0)
   $writer.WriteLine("  `$re = '$url64Re'")
   $writer.WriteLine('  $url64 = $download_page.links | ? href -match $re | select -first 1 -expand href')

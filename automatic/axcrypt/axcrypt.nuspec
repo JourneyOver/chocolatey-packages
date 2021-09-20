@@ -11,15 +11,15 @@
     <authors>Svante Seleborg, Zebastian Victorin, Måns Hansson, Linda Olander, Mattias Tall, Alejandro Serratosa, Juliette Dreyer</authors>
     <projectUrl>https://www.axcrypt.net</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/axcrypt/icons/128x128.png</iconUrl>
-    <copyright>Copyright © 2020 AxCrypt AB, All rights reserved.</copyright>
+    <copyright>Copyright © 2021 AxCrypt AB, All rights reserved.</copyright>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!--<projectSourceUrl></projectSourceUrl>-->
-    <docsUrl>https://www.axcrypt.net/documentation</docsUrl>
+    <docsUrl>https://www.axcrypt.net/information/guides/get-started</docsUrl>
     <mailingListUrl>https://www.axcrypt.net/forums/</mailingListUrl>
     <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>axcrypt AxCrypt cloud storage crypt password collab admin</tags>
-    <summary>AxCrypt is a free and open-source encryption app for Microsoft Windows, developed in Sweden by Svante Seleborg for AxCrypt AB. It can compress, delete, encrypt and edit files.</summary>
+    <tags>axcrypt AxCrypt cloud storage crypt password freemium admin</tags>
+    <summary>AxCrypt is a simple file encryption software for Windows. It integrates seamlessly with your workflow to encrypt, decrypt, store, send and work with files.</summary>
     <description><![CDATA[AxCrypt is a highly secure data encryption app that provides AES-128/256 file encryption and compression for Windows. It has a simple interface and works with a single double-click to automatically decrypt and open documents. It has seamless integration with Windows Explorer with no configuration required.
 
 AxCrypt is used to share and work with stored documents and e-mail attachments, in a secure manner. If your documents reside on a document sharing service or file server, AxCrypt is well suited and is able to seamlessly integrate, and makes both sharing and storing sensitive data a simple task.
@@ -43,7 +43,7 @@ AxCrypt is used to share and work with stored documents and e-mail attachments, 
 ]]></description>
     <releaseNotes>
 #### Program
-* [Changelog](https://www.axcrypt.net/documentation/release-notes/)
+* [Changelog](https://axcrypt.net/information/release-notes)
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)

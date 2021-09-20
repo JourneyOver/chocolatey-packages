@@ -22,7 +22,7 @@ function global:au_GetLatest {
 
   Invoke-WebRequest -Uri $url32 -OutFile $dest
   $version = (Get-Item $dest).VersionInfo.FileVersion -replace ('\s', '')
-  Remove-Item -force $dest
+  Remove-Item -Force $dest
 
   $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest

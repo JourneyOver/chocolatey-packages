@@ -1,4 +1,4 @@
-﻿function Get-ValidOpenSourceLicense() {
+function Get-ValidOpenSourceLicense() {
   param(
     [Parameter(Mandatory = $true, ParameterSetName = "text")]
     [string[]]$content,

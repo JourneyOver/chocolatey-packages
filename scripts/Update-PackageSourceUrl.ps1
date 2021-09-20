@@ -66,12 +66,12 @@ if (!$GithubRepository) {
   $allRemotes = . git remote
   $remoteName = if ($allRemotes | Where-Object { $_ -eq 'upstream' }) { "upstream" }
   elseif ($allRemotes | Where-Object { $_ -eq 'origin' }) { 'origin' }
-  else { $allRemotes | Select-Object -first 1 }
+  else { $allRemotes | Select-Object -First 1 }
 
   if ($remoteName) { $remoteUrl = . git remote get-url $remoteName }
 
   if ($remoteUrl) {
-    $GithubRepository = ($remoteUrl -split '\/' | Select-Object -last 2) -replace '\.git$', '' -join '/'
+    $GithubRepository = ($remoteUrl -split '\/' | Select-Object -Last 2) -replace '\.git$', '' -join '/'
   } else {
     Write-Warning "Unable to get repository and user, setting dummy values..."
     $GithubRepository = "USERNAME/REPOSITORY-NAME"
@@ -99,12 +99,12 @@ function Replace-PackageSourceUrl {
 
   $oldContent = ($nuspec | Out-String) -replace '\r\n?', "`n"
 
-  $url = "https://github.com/${GithubRepository}/tree/master/$PackagesDirectory/$PackageName"
+  $url = "https://github.com/$($GithubRepository.ToLowerInvariant())/tree/master/$PackagesDirectory/$PackageName"
 
   $nuspec = $nuspec -replace '<packageSourceUrl>.*', "<packageSourceUrl>$url</packageSourceUrl>"
 
   $output = ($nuspec | Out-String) -replace '\r\n?', "`n"
-  if ($oldContent -eq $output) {
+  if ($oldContent -ceq $output) {
     $counts.uptodate++;
     return;
   }

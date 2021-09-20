@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
   Updates Icon Url with correct hashes in the nuspec file
 
@@ -93,31 +93,14 @@
 param(
   [string]$Name = $null,
   [string]$IconName = $null,
-  [string]$GithubRepository = $null,
+  [string]$GithubRepository = "JourneyOver/chocolatey-packages",
   [string]$RelativeIconDir = "../icons",
   [string]$PackagesDirectory = "../automatic",
-  [ValidateSet('jsdelivr', 'staticaly', 'githack')]
-  [string]$template = 'jsdelivr',
   [switch]$UseStopwatch,
   [switch]$Quiet,
   [switch]$ThrowErrorOnIconNotFound,
   [switch]$Optimize
 )
-
-if (!$GithubRepository) {
-  $allRemotes = . git remote
-  $remoteName = if ($allRemotes | Where-Object { $_ -eq 'upstream' }) { "upstream" }
-  elseif ($allRemotes | Where-Object { $_ -eq 'origin' }) { 'origin' }
-  else { $allRemotes | Select-Object -first 1 }
-
-  if ($remoteName) { $remoteUrl = . git remote get-url $remoteName }
-
-  if ($remoteUrl) {
-    $GithubRepository = ($remoteUrl -split '\/' | Select-Object -last 2) -replace '\.git$', '' -join '/'
-  } else {
-    $GithubRepository = "USERNAME/REPOSITORY-NAME"
-  }
-}
 
 $counts = @{
   replaced = 0
@@ -261,12 +244,7 @@ function Replace-IconUrl {
 
   # Old rawgit url, just for history purposes
   # $url = "https://cdn.rawgit.com/$GithubRepository/$CommitHash/$iconPath"
-  $url = switch ($template) {
-    'jsdelivr' { "https://cdn.jsdelivr.net/gh/${GithubRepository}@${CommitHash}/$iconPath" }
-    'staticaly' { "https://cdn.staticaly.com/gh/${GithubRepository}/${CommitHash}/$iconPath" }
-    'githack' { "https://rawcdn.githack.com/${GithubRepository}/${CommitHash}/$iconPath" }
-    Default { throw "$template is Unsupported" }
-  }
+  $url = "https://cdn.jsdelivr.net/gh/${GithubRepository}@${CommitHash}/$iconPath"
 
   $nuspec = $nuspec -replace '<iconUrl>.*', "<iconUrl>$url</iconUrl>"
 
@@ -317,10 +295,10 @@ function Update-IconUrl {
   }
   $iconPath = $possiblePkgNames | ForEach-Object {
     if (Test-Path "$PSScriptRoot/$PackagesDirectory/$_/icons") {
-      $result = Get-ChildItem "$PSScriptRoot/$PackagesDirectory/$_/icons" | Where-Object Name -match "^[\d]+x" | Sort-Object -Descending { [int]($_ -split 'x' | Select-Object -first 1) } | Select-Object -expand FullName -first 1
+      $result = Get-ChildItem "$PSScriptRoot/$PackagesDirectory/$_/icons" | Where-Object Name -Match "^[\d]+x" | Sort-Object -Descending { [int]($_ -split 'x|\\' | Select-Object -Last 1 -Skip 1) } | Select-Object -expand FullName -First 1
       if (!$result) {
         # We assume that there is only one file in the icons directory
-        $result = Get-ChildItem "$PSScriptRoot/$PackagesDirectory/$_/icons" | Select-Object -expand FullName -first 1
+        $result = Get-ChildItem "$PSScriptRoot/$PackagesDirectory/$_/icons" | Select-Object -expand FullName -First 1
       }
       if ($result) {
         return $result
@@ -350,12 +328,7 @@ function Update-IconUrl {
       $commitHash = Test-Icon -Name "48x48" -Extension $extension -IconDir "$packageIconDir" -Optimize $Optimize -PackageName $Name;
       # Old rawgit url, just for history purposes
       #$url = "https://cdn.rawgit.com/$GithubRepository/$CommitHash/$($iconPath -replace "$iconName",'48x48')"
-      $url = switch ($template) {
-        'jsdelivr' { "https://cdn.jsdelivr.net/gh/${GithubRepository}@${commitHash}/$($iconPath -replace "$iconName","48x48")" }
-        'staticaly' { "https://cdn.staticaly.com/gh/${GithubRepository}/${CommitHash}/$($iconPath -replace "$iconName","48x48")" }
-        'githack' { "https://rawcdn.githack.com/${GithubRepository}/${CommitHash}/$($iconPath -replace "$iconName","48x48")" }
-        Default { throw "$template is Unsupported" }
-      }
+      $url = "https://cdn.jsdelivr.net/gh/${GithubRepository}@${commitHash}/$($iconPath -replace "$iconName","48x48")"
 
       $readMePath = "$PSScriptRoot/$PackagesDirectory/$Name/Readme.md"
       Update-Readme -ReadmePath $readMePath -Url $url

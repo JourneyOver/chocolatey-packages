@@ -67,7 +67,7 @@ function Get-RemoteFiles {
 
     if ($Latest.Url32) {
       $base_name = name4url $Latest.Url32
-      $file_name = "{0}{2}.{1}" -f $base_name, $ext, $(if ($NoSuffix) { '' } else {'_x32'})
+      $file_name = "{0}{2}.{1}" -f $base_name, $ext, $(if ($NoSuffix) { '' } else { '_x32' })
       $file_path = "$toolsPath\$file_name"
 
       Write-Host "Downloading to $file_name -" $Latest.Url32
@@ -80,7 +80,7 @@ function Get-RemoteFiles {
 
     if ($Latest.Url64) {
       $base_name = name4url $Latest.Url64
-      $file_name = "{0}{2}.{1}" -f $base_name, $ext, $(if ($NoSuffix) { '' } else {'_x64'})
+      $file_name = "{0}{2}.{1}" -f $base_name, $ext, $(if ($NoSuffix) { '' } else { '_x64' })
       $file_path = "$toolsPath\$file_name"
 
       Write-Host "Downloading to $file_name -" $Latest.Url64

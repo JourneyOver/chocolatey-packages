@@ -1,4 +1,4 @@
-﻿function GetVersion() {
+function GetVersion() {
   param($versionToParse)
   try {
     return Get-Version $versionToParse
@@ -10,7 +10,7 @@
 function resolveRelease {
   param($release)
 
-  [array]$assetUrls = $release.assets | Where-Object name -match "\.(msi|exe|zip|7z)$" | Select-Object -expand browser_download_url
+  [array]$assetUrls = $release.assets | Where-Object name -Match "\.(msi|exe|zip|7z)$" | Select-Object -expand browser_download_url
   $assetUrls += @($release.tarball_url; $release.zipball_url)
 
   try {

@@ -9,10 +9,10 @@
   $headers = @{}
 
   if (Test-Path Env:\github_api_key) {
-    $headers.Authorization = "token " + $env:github_api_key
+    $headers.Authorization = 'token ' + $env:github_api_key
   }
 
-  $licenseData = Invoke-RestMethod  -Uri $apiUrl -Headers $headers
+  $licenseData = Invoke-RestMethod -Uri $apiUrl -Headers $headers
 
   return $licenseData
 }

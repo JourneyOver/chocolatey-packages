@@ -1,14 +1,26 @@
-﻿#require -version 3.0
+#require -version 3.0
 
 <#
 .SYNOPSIS
     Clear all event logs
 #>
 function Clear-EventLogs {
-  Get-EventLog * | ForEach-Object { Clear-EventLog $_.Log }
+  Get-EventLog * | ForEach-Object {
+    try {
+      Clear-EventLog $_.Log
+    } catch {
+      Write-Warning 'Error during clearing event logs'
+      Write-Warning "$_"
+    }
+  }
 
   #Clear this one again as it accumulates clearing events from previous step
-  Clear-EventLog System
+  try {
+    Clear-EventLog System
+  } catch {
+    Write-Warning 'Error during clearing event logs'
+    Write-Warning "$_"
+  }
   Get-EventLog *
 }
 
@@ -37,7 +49,7 @@ function Get-EventLogs {
     } catch { Write-Warning "$log - $_" }
   }
   $r = $r | Sort-Object TimeWritten -Descending
-  if ($Raw) {$r} else { $r | Select-Object Source, TimeWritten, Message }
+  if ($Raw) { $r } else { $r | Select-Object Source, TimeWritten, Message }
 }
 
 Set-Alias logs Get-EventLogs
