@@ -10,7 +10,7 @@
     <title>Jackett</title>
     <authors>https://github.com/Jackett/Jackett/graphs/contributors</authors>
     <projectUrl>https://github.com/Jackett/Jackett</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@36072bc2bdfe1259a8ba4aa8b6b66d68361fcb34/automatic/jackett/icons/256x256.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/jackett/icons/256x256.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/Jackett/Jackett/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
