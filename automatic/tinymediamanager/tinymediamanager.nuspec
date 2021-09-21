@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tinymediamanager</id>
-    <version>3.1.15</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tinymediamanager</packageSourceUrl>
+    <version>3.1.16.1</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/tinymediamanager</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>tinyMediaManager</title>
     <authors>https://gitlab.com/tinyMediaManager/tinyMediaManager/-/graphs/devel</authors>
@@ -25,8 +25,6 @@
 ## Features
 
 - [All Features](https://www.tinymediamanager.org/features)
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tinymediamanager.png)
 ]]></description>
     <releaseNotes>
 #### Program
