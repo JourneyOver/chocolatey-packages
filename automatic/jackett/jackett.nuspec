@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>jackett</id>
-    <version>0.18.786</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/jackett</packageSourceUrl>
+    <version>0.18.788</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/jackett</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Jackett</title>
     <authors>https://github.com/Jackett/Jackett/graphs/contributors</authors>
