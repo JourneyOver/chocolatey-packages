@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>vortex</id>
-    <version>1.4.15</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/vortex</packageSourceUrl>
+    <version>1.4.16</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/vortex</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Vortex</title>
     <authors>https://github.com/Nexus-Mods/Vortex/graphs/contributors</authors>
@@ -49,8 +49,6 @@ Featuring a fully customisable interface, Vortex allows you to quickly and easil
 - EXTENSIONS AND PLUGINS:
 
 Vortex is released under a GPL-3 License giving our community the ability to write extensions and frameworks which can then interact with Vortex, continually adding to its functionality.
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/vortex.png)
 ]]></description>
     <releaseNotes>
 #### Program
