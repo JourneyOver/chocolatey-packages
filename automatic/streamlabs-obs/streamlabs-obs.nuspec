@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>streamlabs-obs</id>
-    <version>1.4.0</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/streamlabs-obs</packageSourceUrl>
+    <version>1.5.1</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/streamlabs-obs</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>StreamLabs OBS</title>
     <authors>https://github.com/stream-labs/streamlabs-obs/graphs/contributors</authors>
@@ -33,8 +33,6 @@
 ## Community
 
 - [Discord](https://discord.gg/stream)
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/streamlabs-obs.png)
 ]]></description>
     <releaseNotes>
 #### Package
