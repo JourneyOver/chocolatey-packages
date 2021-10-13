@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>duckietv</id>
-    <version>2021.0907.2304-nightly</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/duckietv</packageSourceUrl>
+    <version>2021.0913.2125-nightly</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/duckietv</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>DuckieTV</title>
     <authors>https://github.com/SchizoDuckie/DuckieTV/graphs/contributors</authors>
@@ -35,8 +35,6 @@ With the integrated DuckieTorrent client you can connect DuckieTV to your local 
 - Control various settings to adjust DuckieTV to your needs, translated into your choice of 12 languages
 - You can either completely turn off Torrent integration or tune it to your preference
 - DuckieTorrent Torrent clients built-in (µTorrent/BitTorrent, qBittorrent, Tixati, Transmission)
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/duckietv.png)
 ]]></description>
     <releaseNotes>
 #### Program
