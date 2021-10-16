@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>nuclear</id>
-    <version>0.6.16</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/nuclear</packageSourceUrl>
+    <version>0.6.17</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/nuclear</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Nuclear</title>
     <authors>https://github.com/nukeop/nuclear/graphs/contributors</authors>
@@ -41,8 +41,6 @@ It's also focusing more on audio. Imagine Spotify which you don't have to pay fo
 
 - [Mastodon](https://mstdn.io/@nuclear)
 - [Twitter](https://twitter.com/nuclear_player)
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/nuclear.png)
 ]]></description>
     <releaseNotes>
 #### Program
