@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>nmm</id>
-    <version>0.81.1</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/nmm</packageSourceUrl>
+    <version>0.82.0</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/nmm</packageSourceUrl>
     <owners>JourneyOver, Der Archivar</owners>
     <title>Nexus Mod Manager</title>
     <authors>https://github.com/Nexus-Mods/Nexus-Mod-Manager/graphs/contributors</authors>
@@ -51,8 +51,6 @@
 - **No advertising**
 
   The Mod Manager is completely free of advertisements
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/nmm.png)
 ]]></description>
     <releaseNotes>
 #### Program
