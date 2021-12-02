@@ -41,16 +41,15 @@ function GetNightlyVersion() {
   $version = $release.latest.Version -replace '(....(?!$))', '$1.'
   $build = '-nightly'
 
-  $hashRegEx = ' - (\w+)'
-  $hash = ([regex]::match($release.latest.Body, $hashRegEx))
-  $hashnew = $hash
-  $hashold = Get-Content -Path "./hashcheck.txt"
-  if ($hashold -eq $hashnew) {
-    Write-Host 'Changelog hash matches old release'
+  $body = $release.latest.Body
+  $bodynew = $body
+  $bodyold = Get-Content -Path "./bodycheck.md"
+  if ($bodyold -eq $bodynew) {
+    Write-Host 'Changelog body matches old release'
     return 'ignore'
   }
 
-  Set-Content "./hashcheck.txt" $hashnew
+  Set-Content "./bodycheck.md" $bodynew
 
   @{
     PackageName = "duckietv"
