@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>duckietv</id>
-    <version>2021.0913.2125-nightly</version>
+    <version>2021.1119.0950-nightly</version>
     <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/duckietv</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>DuckieTV</title>
