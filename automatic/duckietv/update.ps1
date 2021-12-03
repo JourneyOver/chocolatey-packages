@@ -32,8 +32,10 @@ function global:au_SearchReplace {
 function GetNightlyVersion() {
   $repoUser = "DuckieTV"
   $repoName = "Nightlies"
+  $release_page = 'https://github.com/DuckieTV/Nightlies/releases'
 
   $release = Get-LatestGithubReleases $repoUser $repoName $true
+  $getcommithash = Invoke-WebRequest -Uri $release_page -UseBasicParsing
 
   $url32 = $release.latest.Assets | Where-Object { $_ -match 'x32\.zip$' } | Select-Object -First 1
   $url64 = $release.latest.Assets | Where-Object { $_ -match 'x64\.zip$' } | Select-Object -First 1
@@ -41,15 +43,16 @@ function GetNightlyVersion() {
   $version = $release.latest.Version -replace '(....(?!$))', '$1.'
   $build = '-nightly'
 
-  $body = $release.latest.Body
-  $bodynew = $body
-  $bodyold = Get-Content -Path "./bodycheck.md"
-  if ($bodyold -eq $bodynew) {
-    Write-Host 'Changelog body matches old release'
+  $regex = 'commit\/.+$'
+  $commithashfull = $getcommithash.links | Where-Object href -Match $regex | Select-Object -First 1 -Expand href
+  $hashnew = $commithashfull -replace('/DuckieTV/Nightlies/commit/','')
+  $hashold = Get-Content -Path "./hashcheck.md"
+  if ($hashold -eq $hashnew) {
+    Write-Host 'commit hash matches old release'
     return 'ignore'
   }
 
-  Set-Content "./bodycheck.md" $bodynew
+  Set-Content "./hashcheck.md" $hashnew
 
   @{
     PackageName = "duckietv"
