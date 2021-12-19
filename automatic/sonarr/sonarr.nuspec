@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>sonarr</id>
-    <version>3.0.6.1409-beta</version>
+    <version>3.0.6.1410-beta</version>
     <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/sonarr</packageSourceUrl>
     <owners>JourneyOver, dtgm</owners>
     <title>Sonarr</title>
