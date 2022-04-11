@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tsedat</id>
-    <version>7.36.2708</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/tsedat</packageSourceUrl>
+    <version>7.38.2710</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/tsedat</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>TheSage English Dictionary and Thesaurus</title>
     <authors>Sequence Publishing</authors>
@@ -33,8 +33,6 @@ TheSage can look up words directly from almost any program (IE, Word, Firefox, O
 - Cross-Referencing - Any and all displayed words are clickable, triggering a new lookup.
 - Wildcard Search - Match single/multiple characters as well as filter by single/groups of vowels and consonants.
 - Anagram Search - Only valid English words are returned.
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/tsedat.png)
 ]]></description>
     <releaseNotes>
 #### Program
