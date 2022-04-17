@@ -75,7 +75,7 @@ jobs:
           7z a au_temp.zip $Env:TEMP\chocolatey\au\*
 
       - name: Upload update results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: update_results
           path: |
