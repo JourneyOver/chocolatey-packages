@@ -1,0 +1,8 @@
+{
+  "automerge": true,
+  "extends": ["config:base"],
+  "platformAutomerge": true,
+  "prCreation": "not-pending",
+  "timezone": "US/Central",
+  "updateInternalDeps": true
+}

@@ -12,6 +12,10 @@ function global:au_SearchReplace {
   }
 }
 
+function global:au_AfterUpdate($Package) {
+  Invoke-VirusTotalScan $Package
+}
+
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 

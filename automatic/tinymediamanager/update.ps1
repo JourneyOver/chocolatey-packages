@@ -25,6 +25,10 @@ function global:au_BeforeUpdate($Package) {
   Get-RemoteFiles -Purge -NoSuffix
 }
 
+function global:au_AfterUpdate($Package) {
+  Invoke-VirusTotalScan $Package
+}
+
 function GetV4Version() {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 

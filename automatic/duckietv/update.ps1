@@ -12,6 +12,10 @@ function global:au_SearchReplace {
   }
 }
 
+function global:au_AfterUpdate($Package) {
+  Invoke-VirusTotalScan $Package
+}
+
 #function GetStableVersion() {
 #  $repoUser = "SchizoDuckie"
 #  $repoName = "DuckieTV"
@@ -45,7 +49,7 @@ function GetNightlyVersion() {
 
   $regex = 'commit\/.+$'
   $commithashfull = $getcommithash.links | Where-Object href -Match $regex | Select-Object -First 1 -Expand href
-  $hashnew = $commithashfull -replace('/DuckieTV/Nightlies/commit/','')
+  $hashnew = $commithashfull -replace ('/DuckieTV/Nightlies/commit/', '')
   $hashold = Get-Content -Path "./hashcheck.md"
   if ($hashold -eq $hashnew) {
     Write-Host 'commit hash matches old release'

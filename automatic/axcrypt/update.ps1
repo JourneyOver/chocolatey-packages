@@ -16,6 +16,10 @@ function global:au_BeforeUpdate {
   Get-RemoteFiles -Purge -NoSuffix
 }
 
+function global:au_AfterUpdate($Package) {
+  Invoke-VirusTotalScan $Package
+}
+
 function global:au_GetLatest {
   $url32 = $releases
   $dest = "$env:TEMP\axcrypt.exe"

@@ -10,6 +10,7 @@ $funcs = @(
   'Get-AllGithubReleases'
   'Get-ValidOpenSourceLicense'
   'Get-GithubRepositoryLicense'
+  'Invoke-VirusTotalScan'
 )
 
 $funcs | ForEach-Object {

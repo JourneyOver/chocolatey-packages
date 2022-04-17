@@ -1,0 +1,113 @@
+name: Package Updater
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: # Enable manual trigger
+    inputs:
+      packages:
+        description: "What is the packages (optionally version) you wish to force update on?"
+        required: false
+  schedule:
+    - cron: "30 1-19/6 * * *"
+
+env:
+  # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
+  au_version: master
+  au_push: true
+  # Use 1 to test all, or N to split testing into N groups
+  au_test_groups: 1
+
+  # Github token to commit pushed packages to repository
+  github_user_repo: ${{ github.repository }}
+  github_api_key: ${{ secrets.AU_GITHUB_API_KEY }}
+
+  # Mail credentials - for error notifications
+  mail_user: ${{ secrets.MAIL_USER }}
+  mail_pass: ${{ secrets.MAIL_PASSWORD }}
+  mail_server: smtp.gmail.com
+  mail_port: 587
+  mail_enablessl: true
+
+  #ID of the gist used to save run results
+  gist_id: 508bb89c4cc35b67842940c60310532b
+
+  #Chocolatey API key - to push updated packages
+  api_key: ${{ secrets.CHOCO_API_KEY }}
+
+  # GitHub Actions build url which points to this build
+  GH_ACTIONS_BUILD_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+  nupkg_cache_path: C:\nupkg_cache
+  nuget_artifacts: ${{ github.runner.temp }}/artifacts
+  VT_APIKEY: ${{ secrets.VT_APIKEY }}
+
+jobs:
+  updater:
+    runs-on: windows-2019
+    defaults:
+      run:
+        shell: powershell
+
+    steps:
+      - uses: actions/checkout@v3.0.1
+        with:
+          fetch-depth: 100
+
+      - name: Configure git client
+        run: |
+          git config --global user.email "${{ secrets.MAIL_USER }}"
+          git config --global user.name "Journey"
+          git config --global core.safecrlf false
+
+      - name: Install Dependencies
+        run: |
+          Set-Service wuauserv -StartupType Manual
+          choco install --no-progress wormies-au-helpers vt-cli -y
+          git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
+          . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
+
+      - name: System information
+        run: |
+          Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version
+          $PSVersionTable
+          git --version
+          choco --version
+          cmd /c "set" | grep -i 'github\|runner' | sort
+          "Build info"
+          '  {0,-20} {1}' -f 'SCHEDULED BUILD:', ("${{ github.event_name }}" -eq 'schedule')
+          '  {0,-20} {1}' -f 'FORCED BUILD:'   , ("${{ github.event_name }}"    -eq 'workflow_dispatch')
+
+      - name: Run package updater
+        env:
+          FORCED_PACKAGES: ${{ github.event.inputs.packages }}
+        run: |
+          . ./scripts/EventLogs.ps1
+          Clear-EventLogs
+          rm "$env:ChocolateyInstall\logs\*.log"
+
+          ./update_all.ps1 -ForcedPackages $env:FORCED_PACKAGES
+          Get-EventLogs * | ? Source -eq 'Schannel' | fl * | out-file eventlogs.txt
+
+      - name: Create diff file
+        run: |
+          git add automatic manual
+          git diff --cached > unsaved_changes.patch
+
+      - name: Create au temporary directory
+        run: |
+          if (Test-Path $Env:TEMP\chocolatey\au) { 7z a -mx9 au_temp.7z $Env:TEMP\chocolatey\au\* }
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: |
+            unsaved_changes.patch
+            au_temp.7z
+            update_info.xml
+            Update-AUPackages.md
+            eventlogs.txt
+            **/*.nupkg
+          retention-days: 5
