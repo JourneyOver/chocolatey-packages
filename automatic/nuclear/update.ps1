@@ -1,16 +1,14 @@
 ﻿Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$repoUser = "nukeop"
-$repoName = "nuclear"
+$releases = 'https://github.com/nukeop/nuclear/releases'
 
 function global:au_SearchReplace {
   @{
     ".\legal\VERIFICATION.txt" = @{
-      "(?i)(^\s*location on\:?\s*)\<.*\>" = "`${1}<$($Latest.ReleaseUri)>"
-      "(?i)(^\s*url(32)?\:\s*).*"         = "`${1}<$($Latest.URL32)>"
-      "(?i)(^\s*checksum(32)?\:\s*).*"    = "`${1}$($Latest.Checksum32)"
-      "(?i)(^\s*checksum\s*type\:\s*).*"  = "`${1}$($Latest.ChecksumType32)"
+      "(?i)(^\s*url(32)?\:\s*).*"        = "`${1}<$($Latest.URL32)>"
+      "(?i)(^\s*checksum(32)?\:\s*).*"   = "`${1}$($Latest.Checksum32)"
+      "(?i)(^\s*checksum\s*type\:\s*).*" = "`${1}$($Latest.ChecksumType32)"
     }
   }
 }
@@ -31,11 +29,18 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-  $release = Get-LatestGithubReleases $repoUser $repoName $true
+  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-  $url32 = $release.latest.Assets | Where-Object { $_ -match 'Setup.+\.exe$' } | Select-Object -First 1
+  $re = 'Setup.+\.exe$'
+  $url32 = $download_page.Links | Where-Object href -Match $re | Select-Object -First 1 -expand href | ForEach-Object { 'https://github.com' + $_ }
 
-  $Latest = @{ URL32 = $url32; Version = $release.latest.Version; ReleaseUri = $release.latest.ReleaseUrl }
+  $dest = "$env:TEMP\nuclear.exe"
+
+  Invoke-WebRequest -Uri $url32 -OutFile $dest
+  $version = (Get-Item $dest).VersionInfo.FileVersion -replace ('\s', '')
+  Remove-Item -Force $dest
+
+  $Latest = @{ URL32 = $url32; Version = $version; }
   return $Latest
 }
 
