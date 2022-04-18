@@ -3,12 +3,14 @@
 $packageName = 'loot'
 
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$fileLocation = Get-Item "$toolsDir\*.exe"
+$fileLocation32bit = Get-Item "$toolsDir\*win32.exe"
+$fileLocation64bit = Get-Item "$toolsDir\*win64.exe"
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
   file           = $fileLocation
+  file64         = $fileLocation64bit
   silentArgs     = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /LOG=`"$($env:TEMP)\$($env:chocolateyPackageName).$($env:chocolateyPackageVersion).InnoInstall.log`""
   validExitCodes = @(0)
 }
