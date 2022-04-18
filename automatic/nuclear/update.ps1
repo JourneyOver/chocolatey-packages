@@ -1,7 +1,9 @@
-﻿Import-Module au
+Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
 $releases = 'https://github.com/nukeop/nuclear/releases'
+$repoUser = "nukeop"
+$repoName = "nuclear"
 
 function global:au_SearchReplace {
   @{
