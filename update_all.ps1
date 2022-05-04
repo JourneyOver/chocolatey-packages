@@ -104,7 +104,7 @@ $Options = [ordered]@{
   } else { }
 
   ForcedPackages            = $ForcedPackages -split ' '
-  #UpdateIconScript          = "$PSScriptRoot\scripts\Update-IconUrl.ps1"
+  UpdateIconScript          = "$PSScriptRoot\scripts\Update-IconUrl.ps1"
   UpdatePackageSourceScript = "$PSScriptRoot\scripts\Update-PackageSourceUrl.ps1"
   ModulePaths               = @("$PSScriptRoot\scripts\au_extensions.psm1"; "Wormies-AU-Helpers")
   BeforeEach                = {

@@ -23,4 +23,4 @@ Using AU:
   Get-RemoteChecksum
 
 The file 'LICENSE.txt' is obtained from:
-  <https://github.com/cmdrkotori/mpc-qt/blob/master/LICENSE>
+  <https://github.com/mpc-qt/mpc-qt/blob/master/LICENSE>

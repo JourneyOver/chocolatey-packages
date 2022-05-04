@@ -8,16 +8,16 @@
     <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/mpc-qt</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>MPC QT</title>
-    <authors>https://github.com/cmdrkotori/mpc-qt/graphs/contributors</authors>
+    <authors>https://github.com/mpc-qt/mpc-qt/graphs/contributors</authors>
     <projectUrl>https://github.com/cmdrkotori/mpc-qt</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/deprecated/mpc-qt/icons/64x64.png</iconUrl>
     <copyright></copyright>
-    <licenseUrl>https://github.com/cmdrkotori/mpc-qt/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/mpc-qt/mpc-qt/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!-- <projectSourceUrl></projectSourceUrl> -->
-    <docsUrl>https://github.com/cmdrkotori/mpc-qt/wiki</docsUrl>
+    <docsUrl>https://github.com/mpc-qt/mpc-qt/wiki</docsUrl>
     <!-- <mailingListUrl></mailingListUrl> -->
-    <bugTrackerUrl>https://github.com/cmdrkotori/mpc-qt/issues</bugTrackerUrl>
+    <bugTrackerUrl>https://github.com/mpc-qt/mpc-qt/issues</bugTrackerUrl>
     <tags>media-player libmpv mpc-qt mpc-hc cross-platform clone mpv</tags>
     <summary>A clone of Media Player Classic reimplemented in Qt.</summary>
     <description><![CDATA[Media Player Classic Qute Theater (mpc-qt) is a clone of Media Player Classic (mpc-hc) reimplemented in Qt. It aims to reproduce most of the interface and functionality of mpc-hc while using libmpv to play video instead of DirectShow.
