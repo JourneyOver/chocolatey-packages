@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>mpc-qt</id>
-    <version>18.08</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/mpc-qt</packageSourceUrl>
+    <version>22.02</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/mpc-qt</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>MPC QT</title>
     <authors>https://github.com/mpc-qt/mpc-qt/graphs/contributors</authors>
@@ -30,8 +30,6 @@
 - Screenshot templates
 - Looped playback
 - Custom metadata
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/mpc-qt.png)
 ]]></description>
     <releaseNotes>
 #### Program
