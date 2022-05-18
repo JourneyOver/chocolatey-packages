@@ -4,8 +4,8 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>axcrypt</id>
-    <version>2.1.1618.0</version>
-    <packageSourceUrl>https://github.com/JourneyOver/chocolatey-packages/tree/master/automatic/axcrypt</packageSourceUrl>
+    <version>2.1.1629.0</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/axcrypt</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>AxCrypt</title>
     <authors>Svante Seleborg, Zebastian Victorin, Måns Hansson, Linda Olander, Mattias Tall, Alejandro Serratosa, Juliette Dreyer</authors>
@@ -38,8 +38,6 @@ AxCrypt is used to share and work with stored documents and e-mail attachments, 
 - AxCrypt is a great tool for protecting your documents such as private correspondence, employment information, medical information, and financial details. It doesn't matter whether this data is stored on a local hard disk or network server, encrypting it is easy. Simply right-click any document file and encrypt it via the explorer interface.
 
 `*` Some features are only available in AxCrypt Premium.
-
-![screenshot](https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/readme_imgs/axcrypt.png)
 ]]></description>
     <releaseNotes>
 #### Program
