@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>loot</id>
-    <version>0.18.2.20220418</version>
+    <version>0.18.3</version>
     <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/loot</packageSourceUrl>
     <owners>JourneyOver, Der Archivar</owners>
     <title>LOOT: The Load Order Optimisation Tool</title>
@@ -34,7 +34,7 @@ LOOT is intended to make using mods easier, and mod users should still possess a
 ]]></description>
     <releaseNotes>
 #### Program
-* [Changelog](https://loot.readthedocs.io/en/0.18.2/app/changelog.html)
+* [Changelog](https://loot.readthedocs.io/en/0.18.3/app/changelog.html)
 
 #### Package
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
