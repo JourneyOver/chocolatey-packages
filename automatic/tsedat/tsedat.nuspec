@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>tsedat</id>
-    <version>7.38.2710</version>
+    <version>7.40.2712</version>
     <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/tsedat</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>TheSage English Dictionary and Thesaurus</title>
