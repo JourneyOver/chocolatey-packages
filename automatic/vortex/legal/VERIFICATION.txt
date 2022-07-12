@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/Nexus-Mods/Vortex/releases/tag/v1.6.1>
+location on <https://github.com/Nexus-Mods/Vortex/releases/tag/v1.6.2>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/Nexus-Mods/Vortex/releases/download/v1.6.1/vortex-setup-1.6.1.exe>
+  url: <https://github.com/Nexus-Mods/Vortex/releases/download/v1.6.2/vortex-setup-1.6.2.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:1805A3C88AE91F0DEE21CCBD9D71AFEA34EFA9E8F8DE4A36E94F68E92898D815
+  checksum:38539C04263936BDE0CE96A8FFB5E7996B8A2433CF6E14BDE55F468646FDDC52
 
 Using AU:
 
