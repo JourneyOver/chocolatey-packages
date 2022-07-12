@@ -10,7 +10,7 @@
     <title>Prowlarr</title>
     <authors>https://github.com/Prowlarr/Prowlarr/graphs/contributors</authors>
     <projectUrl>https://prowlarr.com/</projectUrl>
-    <iconUrl></iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/automatic/prowlarr/icons/128x128.png</iconUrl>
     <copyright>Copyright 2010-2022</copyright>
     <licenseUrl>https://github.com/Prowlarr/Prowlarr/blob/develop/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
