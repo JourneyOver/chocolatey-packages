@@ -10,7 +10,7 @@
     <title>Mod Organizer 2</title>
     <authors>https://github.com/ModOrganizer2/modorganizer/graphs/contributors</authors>
     <projectUrl>https://www.nexusmods.com/skyrimspecialedition/mods/6194/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@9a7480c37106b5cd749176b7f5ff648d6cf5c8d8/automatic/mo2/icons/128x128.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@1e514129d6064b64ccc88a99a27a23626e769856/automatic/mo2/icons/128x128.png</iconUrl>
     <copyright></copyright>
     <licenseUrl>https://github.com/ModOrganizer2/modorganizer/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

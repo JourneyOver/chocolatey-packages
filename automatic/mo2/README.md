@@ -1,4 +1,4 @@
-# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@b2e757a1f48e8bce55237287f321497c32beab57/automatic/mo2/icons/48x48.png" height="48" width="48" /> ![Mod Organizer 2](https://img.shields.io/chocolatey/v/loot.svg?label=Mod%20Organizer%202&style=for-the-badge)](https://chocolatey.org/packages/mo2)
+# [<img src="https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@1e514129d6064b64ccc88a99a27a23626e769856/automatic/mo2/icons/48x48.png" height="48" width="48" /> ![Mod Organizer 2](https://img.shields.io/chocolatey/v/loot.svg?label=Mod%20Organizer%202&style=for-the-badge)](https://chocolatey.org/packages/mo2)
 
 Mod Organizer (MO) is a tool for managing mod collections of arbitrary size. It is specifically designed for people who like to experiment with mods and thus need an easy and reliable way to install and uninstall them.
 Mod Organizer 2 is a mod manager created by Tannin to support 64-bit games like Skyrim Special Edition and Fallout 4 in addition to all the 32-bit games MO1 already supported.

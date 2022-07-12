@@ -10,7 +10,7 @@
     <title>Prowlarr</title>
     <authors>https://github.com/Prowlarr/Prowlarr/graphs/contributors</authors>
     <projectUrl>https://prowlarr.com/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/JourneyOver/chocolatey-packages/master/automatic/prowlarr/icons/128x128.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@6095413768de0bd32f182d4f06c13da0e2471942/automatic/prowlarr/icons/512x512.png</iconUrl>
     <copyright>Copyright 2010-2022</copyright>
     <licenseUrl>https://github.com/Prowlarr/Prowlarr/blob/develop/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -44,7 +44,7 @@
 
 ## Notes
 
-Installs as a service, to get to Radarr open browser and go to [localhost]:9696 (remove the brackets)
+Installs as a service, to get to Prowlarr open browser and go to [localhost]:9696 (remove the brackets)
 ]]></description>
     <releaseNotes>
 #### Program
