@@ -11,9 +11,9 @@ and can be verified by doing the following:
 
   url: <https://github.com/Lidarr/Lidarr/releases/download/v1.0.2.2592/Lidarr.master.1.0.2.2592.windows-core-x64-installer.exe>
 
-  2. You can obtain the checksum using one of the following methods:
-    - Use powershell function 'Get-FileHash'
-    - Use Chocolatey utility 'checksum.exe'
+2. You can obtain the checksum using one of the following methods:
+  - Use powershell function 'Get-FileHash'
+  - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
   checksum:946149E1B95AC41C425D973035E1A30389D5D5BE24BDA022AAC1A9B70F671BE0

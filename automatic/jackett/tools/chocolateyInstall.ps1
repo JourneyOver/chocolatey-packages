@@ -18,6 +18,7 @@ Install-ChocolateyInstallPackage @packageArgs
 # Remove the installers as there is no more need for it
 Remove-Item $toolsDir\*.exe -ea 0 -Force
 
+# Start service if it's not running
 if (Get-Service "$packageName" -ErrorAction SilentlyContinue) {
   $running = Get-Service $packageName
   if ($running.Status -eq "Running") {

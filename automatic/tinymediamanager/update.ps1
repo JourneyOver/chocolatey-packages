@@ -29,7 +29,7 @@ function global:au_AfterUpdate($Package) {
   Invoke-VirusTotalScan $Package
 }
 
-function GetV4Version() {
+function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
   #tmm_4.2.2_windows-amd64.zip
@@ -39,38 +39,8 @@ function GetV4Version() {
   $version = $url -split 'tmm_|_.*_?.zip' | Select-Object -Last 1 -Skip 1
   $url32 = 'https://release.tinymediamanager.org/' + $url
 
-  @{
-    Version = $version
-    URL32   = $url32
-  }
-}
-
-function GetV3Version() {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-  #tmm_3.1.16.1_win.zip
-  $re = "tmm_3.+_*_win.zip$"
-  $url = $download_page.links | Where-Object href -Match $re | Select-Object -Last 1 -expand href
-
-  $version = $url -split 'tmm_|_.*_?.zip' | Select-Object -Last 1 -Skip 1
-  $url32 = 'https://release.tinymediamanager.org/' + $url
-
-  @{
-    Version = $version
-    URL32   = $url32
-  }
-}
-
-function global:au_GetLatest {
-  $v3Stream = GetV3Version
-  $v4Stream = GetV4Version
-
-  $streams = [ordered] @{
-    v3 = $v3Stream
-    v4 = $v4Stream
-  }
-
-  return @{ Streams = $streams }
+  $Latest = @{ URL32 = $url32; Version = $version }
+  return $Latest
 }
 
 update -ChecksumFor none

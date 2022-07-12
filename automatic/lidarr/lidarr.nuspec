@@ -15,7 +15,7 @@
     <licenseUrl>https://github.com/Lidarr/Lidarr/blob/develop/LICENSE.md</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/lidarr/Lidarr</projectSourceUrl>
-    <docsUrl>https://github.com/Lidarr/Lidarr/wiki</docsUrl>
+    <docsUrl>https://wiki.servarr.com/lidarr</docsUrl>
     <mailingListUrl>https://www.reddit.com/r/Lidarr</mailingListUrl>
     <bugTrackerUrl>https://github.com/lidarr/Lidarr/issues</bugTrackerUrl>
     <tags>lidarr pvr p2p filesharing torrent nntp admin</tags>

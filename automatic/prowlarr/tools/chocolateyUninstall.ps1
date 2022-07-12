@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
-$packageName = 'radarr'
-$programUninstallEntryName = 'Radarr*'
+$packageName = 'prowlarr'
+$programUninstallEntryName = 'Prowlarr*'
 
 $registry = Get-UninstallRegistryKey -SoftwareName $programUninstallEntryName
 $file = $registry.UninstallString

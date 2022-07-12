@@ -30,8 +30,7 @@ if ($fexist) {
 }
 
 # Start service if it's not running
-$service = 'Sonarr'
-if (Get-Service "$service" -ErrorAction SilentlyContinue) {
+if (Get-Service "$packageName" -ErrorAction SilentlyContinue) {
   $running = Get-Service $service
   if ($running.Status -eq "Running") {
     Write-Host 'Service is already running'

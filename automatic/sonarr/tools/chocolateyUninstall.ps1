@@ -15,12 +15,3 @@ $packageArgs = @{
 }
 
 Uninstall-ChocolateyPackage @packageArgs
-
-#remove Sonarr folder that gets left behind
-$fexist = Test-Path "${env:ProgramData}\Sonarr"
-if ($fexist) {
-  Write-Host "Removing Sonarr Folder that's left behind"
-  Remove-Item "${env:ProgramData}\Sonarr" -Recurse -Force
-} else {
-  Write-Host "Sonarr Folder not found"
-}

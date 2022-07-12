@@ -28,7 +28,7 @@ The project was inspired by other Usenet/BitTorrent movie downloaders such as Co
 
 ## Community
 
-- [Discord](https://discord.gg/AD3UP37)
+- [Discord](https://radarr.video/discord)
 - [Reddit](https://www.reddit.com/r/radarr)
 
 ## Notes

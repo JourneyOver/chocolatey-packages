@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>prowlarr</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/prowlarr</packageSourceUrl>
+    <owners>JourneyOver</owners>
+    <title>Prowlarr</title>
+    <authors>https://github.com/Prowlarr/Prowlarr/graphs/contributors</authors>
+    <projectUrl>https://prowlarr.com/</projectUrl>
+    <iconUrl></iconUrl>
+    <copyright>Copyright 2010-2022</copyright>
+    <licenseUrl>https://github.com/Prowlarr/Prowlarr/blob/develop/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/Prowlarr/Prowlarr</projectSourceUrl>
+    <docsUrl>https://wiki.servarr.com/prowlarr</docsUrl>
+    <mailingListUrl>https://www.reddit.com/r/prowlarr/</mailingListUrl>
+    <bugTrackerUrl>https://github.com/Prowlarr/Prowlarr/issues</bugTrackerUrl>
+    <tags>prowlarr indexer torrent-search-engine torrent-management torrent-downloader torznab newznab rss rss-proxy p2p filesharing torrent nntp proxy server sonarr radarr lidarr arr admin</tags>
+    <summary>Indexer manager/proxy built on the popular *arr .net/reactjs base stack to integrate with your various PVR apps</summary>
+    <description></description>
+    <releaseNotes>
+#### Program
+* [Changelog](https://github.com/Prowlarr/Prowlarr/releases)
+
+#### Package
+* Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
+* If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
+    <!-- <dependencies>
+    </dependencies> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+  </files>
+</package>

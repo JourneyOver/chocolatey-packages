@@ -1,6 +1,6 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'lidarr'
+$packageName = 'prowlarr'
 
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 $fileLocation = Get-Item "$toolsDir\*.exe"
@@ -20,10 +20,10 @@ Remove-Item $toolsDir\*.exe -ea 0 -Force
 
 # Start service if it's not running
 if (Get-Service "$packageName" -ErrorAction SilentlyContinue) {
-  $running = Get-Service $service
+  $running = Get-Service $packageName
   if ($running.Status -eq "Running") {
     Write-Host 'Service is already running'
   } elseif ($running.Status -eq "Stopped") {
-    Start-Service $service
+    Start-Service $packageName
   }
 }

@@ -15,7 +15,7 @@
     <licenseUrl>https://github.com/Radarr/Radarr/blob/develop/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/radarr/radarr</projectSourceUrl>
-    <docsUrl>https://github.com/Radarr/Radarr/wiki</docsUrl>
+    <docsUrl>https://wiki.servarr.com/radarr</docsUrl>
     <mailingListUrl>https://www.reddit.com/r/radarr/</mailingListUrl>
     <bugTrackerUrl>https://github.com/radarr/radarr/issues</bugTrackerUrl>
     <tags>radarr pvr p2p filesharing torrent nntp admin</tags>
