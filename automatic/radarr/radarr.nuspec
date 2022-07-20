@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>radarr</id>
-    <version>4.1.0.6175</version>
+    <version>4.2.0.6438</version>
     <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/radarr</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Radarr</title>
@@ -48,7 +48,7 @@ The project was inspired by other Usenet/BitTorrent movie downloaders such as Co
 
 ## Community
 
-- [Discord](https://discord.gg/AD3UP37)
+- [Discord](https://radarr.video/discord)
 - [Reddit](https://www.reddit.com/r/radarr)
 
 ## Notes
