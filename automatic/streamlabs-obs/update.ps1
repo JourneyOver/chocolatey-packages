@@ -1,6 +1,8 @@
 ﻿Import-Module au
 
-$releases = 'https://streamlabs.com/slobs/download'
+$releases = "https://slobs-cdn.streamlabs.com/Streamlabs+Desktop+Setup+0.0.0.exe"
+$versioninfo = "https://github.com/stream-labs/desktop/tags"
+
 
 function global:au_SearchReplace {
   @{
@@ -17,10 +19,13 @@ function global:au_AfterUpdate($Package) {
 }
 
 function global:au_GetLatest {
-  $url = Get-RedirectedUrl $releases
+  $download_page = Invoke-WebRequest -Uri $versioninfo -UseBasicParsing
 
-  $version = $url -split 'Setup\+|\.exe' | Select-Object -Last 1 -Skip 1
-  $url64 = $url -replace ('\?installer_id=[a-zA-Z0-9]+', '')
+  $regex = "v\d+\.\d+\.\d+$"
+  $versioninfo = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -First 1
+  $version = $versioninfo -replace("/stream-labs/desktop/releases/tag/v", "")
+
+  $url64 = $releases -replace("0.0.0", "$version")
 
   $Latest = @{ URL64 = $url64; Version = $version }
   return $Latest

@@ -7,18 +7,18 @@
     <version>1.9.0</version>
     <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/streamlabs-obs</packageSourceUrl>
     <owners>JourneyOver</owners>
-    <title>StreamLabs OBS</title>
-    <authors>https://github.com/stream-labs/streamlabs-obs/graphs/contributors</authors>
+    <title>StreamLabs Desktop</title>
+    <authors>https://github.com/stream-labs/desktop/graphs/contributors</authors>
     <projectUrl>https://streamlabs.com/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/JourneyOver/chocolatey-packages@76c7b31b4ba90b90decfbc40c928a9b939973555/automatic/streamlabs-obs/icons/256x256.png</iconUrl>
     <copyright>© Streamlabs. All Rights Reserved.</copyright>
-    <licenseUrl>https://github.com/stream-labs/streamlabs-obs/blob/staging/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/stream-labs/desktop/blob/staging/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/stream-labs/streamlabs-obs</projectSourceUrl>
-    <docsUrl>https://github.com/stream-labs/streamlabs-obs/wiki</docsUrl>
+    <projectSourceUrl>https://github.com/stream-labs/desktop</projectSourceUrl>
+    <docsUrl>hhttps://github.com/stream-labs/desktop/wiki</docsUrl>
     <mailingListUrl>https://streamlabs.com/contact</mailingListUrl>
     <!-- <bugTrackerUrl></bugTrackerUrl> -->
-    <tags>streamlabs-obs twitch open foss broadcast streaming video recording</tags>
+    <tags>streamlabs-Desktop streamlabs twitch open foss broadcast streaming video recording</tags>
     <summary>Free and open source streaming software built on OBS and Electron.</summary>
     <description><![CDATA[Level up your stream with our reliable, easy-to-setup desktop streaming application built for professional streamers.
 
