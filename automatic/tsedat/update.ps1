@@ -1,6 +1,6 @@
 Import-Module au
 
-$releases = 'https://www.sequencepublishing.com/_files/'
+$releases = 'https://sequencepublishing.com/cgi-bin/download.cgi?thesage'
 
 function global:au_SearchReplace {
   @{
@@ -17,15 +17,11 @@ function global:au_AfterUpdate($Package) {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $url32 = Get-RedirectedUrl $releases
 
-  $regex = 'TheSage_Setup_'
-  $url = $download_page.links | Where-Object href -Match $regex
-
-  $realnum = $url -split 'TheSage_Setup_|.exe' | Select-Object -Last 1 -Skip 1
+  $realnum = $url32 -split 'TheSage_Setup_|.exe' | Select-Object -Last 1 -Skip 1
 
   $version = $realnum -replace ('-', '.');
-  $url32 = $releases + 'TheSage_Setup_0-0-0000.exe' -replace ("(\d+)\-(\d+)\-(\d+)", "$realnum");
 
   $Latest = @{ URL32 = $url32; Version = $version }
   return $Latest
