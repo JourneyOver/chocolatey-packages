@@ -1,7 +1,8 @@
 Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$releases = 'https://release.tinymediamanager.org/'
+$releasev4 = 'https://release.tinymediamanager.org/download_v4.html'
+$releasev3 = 'https://release.tinymediamanager.org/download_v3.html'
 
 function global:au_SearchReplace {
   @{
@@ -25,12 +26,8 @@ function global:au_BeforeUpdate($Package) {
   Get-RemoteFiles -Purge -NoSuffix
 }
 
-function global:au_AfterUpdate($Package) {
-  Invoke-VirusTotalScan $Package
-}
-
-function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+function GetV4Version() {
+  $download_page = Invoke-WebRequest -Uri $releasev4 -UseBasicParsing
 
   #tmm_4.2.2_windows-amd64.zip
   $re = "tmm_4.+_*_windows-amd64.zip$"
@@ -39,8 +36,38 @@ function global:au_GetLatest {
   $version = $url -split 'tmm_|_.*_?.zip' | Select-Object -Last 1 -Skip 1
   $url32 = 'https://release.tinymediamanager.org/' + $url
 
-  $Latest = @{ URL32 = $url32; Version = $version }
-  return $Latest
+  @{
+    Version = $version
+    URL32   = $url32
+  }
+}
+
+function GetV3Version() {
+  $download_page = Invoke-WebRequest -Uri $releasev3 -UseBasicParsing
+
+  #tmm_3.1.16.1_win.zip
+  $re = "tmm_3.+_*_win.zip$"
+  $url = $download_page.links | Where-Object href -Match $re | Select-Object -Last 1 -expand href
+
+  $version = $url -split 'tmm_|_.*_?.zip' | Select-Object -Last 1 -Skip 1
+  $url32 = 'https://release.tinymediamanager.org/' + $url
+
+  @{
+    Version = $version
+    URL32   = $url32
+  }
+}
+
+function global:au_GetLatest {
+  $v3Stream = GetV3Version
+  $v4Stream = GetV4Version
+
+  $streams = [ordered] @{
+    v3 = $v3Stream
+    v4 = $v4Stream
+  }
+
+  return @{ Streams = $streams }
 }
 
 update -ChecksumFor none
