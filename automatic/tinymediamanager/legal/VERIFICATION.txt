@@ -23,4 +23,4 @@ Using AU:
   Get-RemoteChecksum
 
 The file 'LICENSE.txt' is obtained from:
-  <https://github.com/tinyMediaManager/tinyMediaManager/blob/master/LICENSE>
+  <https://gitlab.com/tinyMediaManager/tinyMediaManager/-/blob/devel/LICENSE>
