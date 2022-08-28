@@ -4,21 +4,21 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/loot/loot/releases/tag/0.18.3>
+location on <https://github.com/loot/loot/releases/tag/0.18.4>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/loot/loot/releases/download/0.18.3/loot_0.18.3-win32.exe>
-  url64: <https://github.com/loot/loot/releases/download/0.18.3/loot_0.18.3-win64.exe>
+  url: <https://github.com/loot/loot/releases/download/0.18.4/loot_0.18.4-win32.exe>
+  url64: <https://github.com/loot/loot/releases/download/0.18.4/loot_0.18.4-win64.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 94688814840BE650ED73F34365F9F9C86CB37DCFBAFEF7D5045A1906ADF0DB14
-  checksum64: 0E143A8830CCC48B9E82C62715A56C4F9F4751A20EFBFBB35560515D1CE7BA63
+  checksum: 4BA83E5849EA2B673C76CCA21B51F4CD8B3E408CED6E69FCB5F04266DCB16444
+  checksum64: 19DE6C37C6C88173D6D4B1899DA546E31A5E9A35D2578616EDD3A9AF9FF86CF2
 
 Using AU:
 
