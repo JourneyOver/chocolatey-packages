@@ -1,7 +1,6 @@
 Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$releases = 'https://github.com/nukeop/nuclear/releases'
 $repoUser = "nukeop"
 $repoName = "nuclear"
 
@@ -32,10 +31,9 @@ function global:au_AfterUpdate($Package) {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $release = Get-LatestGithubReleases $repoUser $repoName $true
 
-  $re = 'Setup.+\.exe$'
-  $url32 = $download_page.Links | Where-Object href -Match $re | Select-Object -First 1 -expand href | ForEach-Object { 'https://github.com' + $_ }
+  $url32 = $release.latest.Assets | Where-Object { $_ -match 'Setup.+\.exe$' } | Select-Object -First 1
 
   $dest = "$env:TEMP\nuclear.exe"
 
