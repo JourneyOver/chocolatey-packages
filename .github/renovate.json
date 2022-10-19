@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "git-submodules": {
+    "enabled": true
+  },
+  "automerge": true,
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
+  "timezone": "US/Central",
+  "groupName": "all",
+  "extends": ["config:base", ":rebaseStalePrs"]
+}
