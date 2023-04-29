@@ -1,8 +1,7 @@
 ﻿Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$Releases = 'https://download.sonarr.tv/v3/main/'
-$betaReleases = 'https://download.sonarr.tv/v3/develop/'
+$Releases = 'https://services.sonarr.tv/v1/download/main/latest?version=3&os=windows&installer=true'
 
 $repoUser = "Sonarr"
 $repoName = "Sonarr"
@@ -33,14 +32,13 @@ function global:au_AfterUpdate($Package) {
   Invoke-VirusTotalScan $Package
 }
 
-function GetStableVersion() {
-  $download_page = Invoke-WebRequest -Uri $Releases -UseBasicParsing
+function GetV3StableVersion() {
+  $download_page = Get-RedirectedUrl $Releases
 
-  $regex = '(\d)\.(\d)\.(\d)\.(\d+)\/$'
-  $versioninfo = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -Last 1
-  $version = $versioninfo -replace('/', '')
+  $regex = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
+  $version = ([regex]::match($url, $regex))
 
-  $url = ($Releases + "$version/Sonarr.main.$version.windows.exe")
+  $url = $download_page
 
   @{
     PackageName = "sonarr"
@@ -49,15 +47,30 @@ function GetStableVersion() {
   }
 }
 
-function GetBetaVersion() {
-  $download_page = Invoke-WebRequest -Uri $betaReleases -UseBasicParsing
+function GetV3DevVersion() {
+  $download_page = Get-RedirectedUrl $Releases.replace('main','develop')
 
-  $regex = '(\d)\.(\d)\.(\d)\.(\d+)\/$'
-  $versioninfo = $download_page.links | Where-Object href -match $regex | ForEach-Object href | Select-Object -Last 1
-  $version = $versioninfo -replace('/', '')
+  $regex = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
+  $version = ([regex]::match($url, $regex))
   $build = "-beta"
 
-  $url = ($betaReleases + "$version/Sonarr.develop.$version.windows.exe")
+  $url = $download_page
+
+  @{
+    PackageName = "sonarr"
+    Version     = ($version + $build)
+    URL32       = $url
+  }
+}
+
+function GetV4DevVersion() {
+  $download_page = Get-RedirectedUrl $Releases.replace('main','develop').Replace('version=3','version=4')
+
+  $regex = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
+  $version = ([regex]::match($url, $regex))
+  $build = "-v4beta"
+
+  $url = $download_page
 
   @{
     PackageName = "sonarr"
@@ -67,12 +80,14 @@ function GetBetaVersion() {
 }
 
 function global:au_GetLatest {
-  $stableStream = GetStableVersion
-  $betaStream = GetBetaVersion
+  $v3stableStream = GetV3StableVersion
+  $v3devStream = GetV3DevVersion
+  $v4devStream = GetV4DevVersion
 
   $streams = [ordered] @{
-    stable  = $stableStream
-    beta    = $betaStream
+    V3_Stable = $v3stableStream
+    V3_Dev    = $v3devStream
+    V4_Dev    = $v4devStream
   }
 
   return @{ Streams = $streams }
