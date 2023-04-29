@@ -35,10 +35,10 @@ function global:au_AfterUpdate($Package) {
 function GetV3StableVersion() {
   $download_page = Get-RedirectedUrl $Releases
 
+  $url = $download_page
+
   $regex = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
   $version = ([regex]::match($url, $regex))
-
-  $url = $download_page
 
   @{
     PackageName = "sonarr"
@@ -48,13 +48,13 @@ function GetV3StableVersion() {
 }
 
 function GetV3DevVersion() {
-  $download_page = Get-RedirectedUrl $Releases.replace('main','develop')
+  $download_page = Get-RedirectedUrl $Releases.replace('main', 'develop')
+
+  $url = $download_page
 
   $regex = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
   $version = ([regex]::match($url, $regex))
   $build = "-beta"
-
-  $url = $download_page
 
   @{
     PackageName = "sonarr"
@@ -64,13 +64,13 @@ function GetV3DevVersion() {
 }
 
 function GetV4DevVersion() {
-  $download_page = Get-RedirectedUrl $Releases.replace('main','develop').Replace('version=3','version=4')
+  $download_page = Get-RedirectedUrl $Releases.replace('main', 'develop').Replace('version=3', 'version=4')
+
+  $url = $download_page
 
   $regex = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
   $version = ([regex]::match($url, $regex))
   $build = "-v4beta"
-
-  $url = $download_page
 
   @{
     PackageName = "sonarr"
