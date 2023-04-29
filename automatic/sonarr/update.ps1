@@ -36,9 +36,7 @@ function GetV3StableVersion() {
   $download_page = Get-RedirectedUrl $Releases
 
   $url = $download_page
-
-  $regex = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
-  $version = ([regex]::match($url, $regex))
+  $version = $url -split 'main/|/Sonarr' | Select-Object -Last 1 -Skip 1
 
   @{
     PackageName = "sonarr"
@@ -51,9 +49,7 @@ function GetV3DevVersion() {
   $download_page = Get-RedirectedUrl $Releases.replace('main', 'develop')
 
   $url = $download_page
-
-  $regex = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
-  $version = ([regex]::match($url, $regex))
+  $version = $url -split 'develop/|/Sonarr' | Select-Object -Last 1 -Skip 1
   $build = "-beta"
 
   @{
@@ -67,9 +63,7 @@ function GetV4DevVersion() {
   $download_page = Get-RedirectedUrl $Releases.replace('main', 'develop').Replace('version=3', 'version=4')
 
   $url = $download_page
-
-  $regex = '(\d+)\.(\d+)\.(\d+)\.(\d+)'
-  $version = ([regex]::match($url, $regex))
+  $version = $url -split 'develop/|/Sonarr' | Select-Object -Last 1 -Skip 1
   $build = "-v4beta"
 
   @{
