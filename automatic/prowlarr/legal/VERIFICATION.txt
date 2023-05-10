@@ -4,21 +4,21 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/Prowlarr/Prowlarr/releases/tag/v1.4.1.3258>
+location on <https://github.com/Prowlarr/Prowlarr/releases/tag/v1.5.0.3300>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/Prowlarr/Prowlarr/releases/download/v1.4.1.3258/Prowlarr.master.1.4.1.3258.windows-core-x86-installer.exe>
-  url64: <https://github.com/Prowlarr/Prowlarr/releases/download/v1.4.1.3258/Prowlarr.master.1.4.1.3258.windows-core-x64-installer.exe>
+  url: <https://github.com/Prowlarr/Prowlarr/releases/download/v1.5.0.3300/Prowlarr.develop.1.5.0.3300.windows-core-x86-installer.exe>
+  url64: <https://github.com/Prowlarr/Prowlarr/releases/download/v1.5.0.3300/Prowlarr.develop.1.5.0.3300.windows-core-x64-installer.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:54957BC1F10272BCD78CEA5C461544B8CE5796EA60DBD39E214B9696ADC279A0
-  checksum64:8101256926CDB1DAD04C5DF4869DA81D2CCB3F0948FCB93864E54DF29E871F7C
+  checksum:75973766C6B9AC7FE449DDC29A4852CBD26E007FA3B4DCED6DF75BAE5378A626
+  checksum64:F1F28DA89FF8E42333B6AF7453CF2BE50802B577DF1B24160EEE5A2F38CEA032
 
 Using AU:
 
