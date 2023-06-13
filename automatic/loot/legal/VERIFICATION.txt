@@ -10,7 +10,6 @@ and can be verified by doing the following:
 1. Download the following:
 
   url: <https://github.com/loot/loot/releases/download/0.19.1/loot_0.19.1-win32.exe>
-  url64: <https://github.com/loot/loot/releases/download/0.19.1/loot_0.19.1-win64.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
@@ -18,7 +17,6 @@ and can be verified by doing the following:
 
   checksum type: sha256
   checksum: 6DFD6323C52DC1E1325920FA655847D8A4FB8FE153720491D875971859BFD741
-  checksum64: F06569A8A11D47EF0E9C7006FC712300FD2A0E716BBAE79A70DDD1CFC66FD9E9
 
 Using AU:
 

@@ -40,7 +40,7 @@ LOOT is intended to make using mods easier, and mod users should still possess a
 * Automatically built and uploaded by [JourneyOver](https://chocolatey.org/profiles/JourneyOver)
 * If you have any requests or issues with this package please make an issue [here](https://github.com/JourneyOver/chocolatey-packages) instead of "Contact Maintainers"</releaseNotes>
     <dependencies>
-      <dependency id="vcredist2017" version="14.15.26706" />
+      <dependency id="vcredist140" version="14.36.32532" />
     </dependencies>
   </metadata>
   <files>
