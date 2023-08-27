@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>lidarr</id>
-    <version>1.3.5.3530</version>
+    <version>1.4.0.3554</version>
     <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/lidarr</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Lidarr</title>
