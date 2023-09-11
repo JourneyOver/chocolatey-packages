@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'streamlabs-obs'
-$url64 = 'https://slobs-cdn.streamlabs.com/Streamlabs+Desktop+Setup+1.13.3.exe'
-$checksum64 = '0f59a0207273056c91f9f717327049516e740dfd10d6fa4a602e6afd27766dcd'
+$url64 = 'https://slobs-cdn.streamlabs.com/Streamlabs+Desktop+Setup+1.14.0.exe'
+$checksum64 = '172a2a7f46507aee4315b76023257cd3e7936d1831194065f7377baa7b16bf08'
 $checksumType = 'sha256'
 
 if ((Get-OSArchitectureWidth 32) -or $env:ChocolateyForceX86) {
