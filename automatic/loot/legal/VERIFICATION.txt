@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/loot/loot/releases/tag/0.21.0>
+location on <https://github.com/loot/loot/releases/tag/0.22.0>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/loot/loot/releases/download/0.21.0/loot_0.21.0-win64.exe>
+  url: <https://github.com/loot/loot/releases/download/0.22.0/loot_0.22.0-win64.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 114924085FAB7168215F76F7AF217F675B3CDE317D260B446FE2B328AC84D4D3
+  checksum: FF30F9DF7EB6EE9A76B8FFCEE87E48257F3826B2F582E2EC9B4A33EE771882EF
 
 Using AU:
 
