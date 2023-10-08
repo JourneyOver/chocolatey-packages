@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>prowlarr</id>
-    <version>1.9.2.3992</version>
+    <version>1.9.3.4013</version>
     <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/prowlarr</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>Prowlarr</title>
