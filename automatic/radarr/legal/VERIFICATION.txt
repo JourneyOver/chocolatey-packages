@@ -4,21 +4,21 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/Radarr/Radarr/releases/tag/v5.2.1.8276>
+location on <https://github.com/Radarr/Radarr/releases/tag/v5.2.2.8288>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/Radarr/Radarr/releases/download/v5.2.1.8276/Radarr.develop.5.2.1.8276.windows-core-x86-installer.exe>
-  url64: <https://github.com/Radarr/Radarr/releases/download/v5.2.1.8276/Radarr.develop.5.2.1.8276.windows-core-x64-installer.exe>
+  url: <https://github.com/Radarr/Radarr/releases/download/v5.2.2.8288/Radarr.develop.5.2.2.8288.windows-core-x86-installer.exe>
+  url64: <https://github.com/Radarr/Radarr/releases/download/v5.2.2.8288/Radarr.develop.5.2.2.8288.windows-core-x64-installer.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:E19F48792ACB8BE5B9424F609F7D24A1204CB801FF544BD5C9E49B001C5D9107
-  checksum64:DEC7EFA8FE4E8C7EB6947AA8CA7B68A94CADC7B293638BB5C82018FE213F153E
+  checksum:FE2103CFDBECA574019049732F2B59DA112DC9891D5A45D6D689ACE2D09A7BCE
+  checksum64:C2F4085F32FBFF99B6A16F6C11FED2CAF717E3031FCEA724F109A69A51C7FA79
 
 Using AU:
 

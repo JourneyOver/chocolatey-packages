@@ -4,21 +4,21 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/Lidarr/Lidarr/releases/tag/v2.0.3.3791>
+location on <https://github.com/Lidarr/Lidarr/releases/tag/v2.0.4.3802>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/Lidarr/Lidarr/releases/download/v2.0.3.3791/Lidarr.develop.2.0.3.3791.windows-core-x86-installer.exe>
-  url64: <https://github.com/Lidarr/Lidarr/releases/download/v2.0.3.3791/Lidarr.develop.2.0.3.3791.windows-core-x64-installer.exe>
+  url: <https://github.com/Lidarr/Lidarr/releases/download/v2.0.4.3802/Lidarr.develop.2.0.4.3802.windows-core-x86-installer.exe>
+  url64: <https://github.com/Lidarr/Lidarr/releases/download/v2.0.4.3802/Lidarr.develop.2.0.4.3802.windows-core-x64-installer.exe>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:0AFDDDB37AC398EF32D3E62FB426C4C960F3C4F9C6DBF57EBEDE41F4DBC28598
-  checksum64:4D1F241D39CF874810C4D41337EF884E6453F46B99422A81E20DED6E071DE45B
+  checksum:F71E07AD195452740B6F2E722111D01893D2D350EB04C1D421CD1685F92ADD83
+  checksum64:9907F3CC8C336332165405E6F8D7C0BFE7730E134CDDDFCD866A64CB13F1AACE
 
 Using AU:
 
