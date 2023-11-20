@@ -9,14 +9,14 @@ and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://download.sonarr.tv/v4/develop/4.0.0.729/Sonarr.develop.4.0.0.729.win-x64-installer.exe>
+  url: <https://download.sonarr.tv/v4/develop/4.0.0.731/Sonarr.develop.4.0.0.731.win-x64-installer.exe>
 
   2. You can obtain the checksum using one of the following methods:
     - Use powershell function 'Get-FileHash'
     - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 5F6A14D170A9331813FE0C8A35660A1256FBAB0C7419396EBBB5166E2EA2CD07
+  checksum: 5101324F44DE02803AEB12F9B22B9D4958B7FAE4A97B9FB1D1A856C38B15614E
 
 Using AU:
 
