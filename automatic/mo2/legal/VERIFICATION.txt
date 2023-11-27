@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/ModOrganizer2/modorganizer/releases/tag/v2.4.4>
+location on <https://github.com/ModOrganizer2/modorganizer/releases/tag/v2.5.0>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/ModOrganizer2/modorganizer/releases/download/v2.4.4/Mod.Organizer-2.4.4.exe>
+  url: <https://github.com/ModOrganizer2/modorganizer/releases/download/v2.5.0/Mod.Organizer-2.5.0.exe>
 
   2. You can obtain the checksum using one of the following methods:
     - Use powershell function 'Get-FileHash'
     - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum:AB60CA3F5B88723D55F918E4D3DB50EA0B8862432E53E6924195F5FD25D77B10
+  checksum:69A38C4EB697C9275BF7E847E5EB90365D7B7862F26E82286A71B18947C902FF
 
 Using AU:
 
