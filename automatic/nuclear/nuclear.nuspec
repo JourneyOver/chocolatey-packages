@@ -15,7 +15,7 @@
     <licenseUrl>https://github.com/nukeop/nuclear/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/nukeop/nuclear</projectSourceUrl>
-    <docsUrl>https://nuclearmusic.readthedocs.io/en/latest/</docsUrl>
+    <docsUrl>https://nukeop.gitbook.io/nuclear/</docsUrl>
     <mailingListUrl>https://twitter.com/nuclear_player</mailingListUrl>
     <bugTrackerUrl>https://github.com/nukeop/nuclear/issues</bugTrackerUrl>
     <tags>nuclear music-player electron stream youtube music windows streaming admin</tags>
