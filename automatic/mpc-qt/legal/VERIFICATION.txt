@@ -4,19 +4,19 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://github.com/mpc-qt/mpc-qt/releases/tag/v23.02>
+location on <https://github.com/mpc-qt/mpc-qt/releases/tag/v23.12>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://github.com/mpc-qt/mpc-qt/releases/download/v23.02/mpc-qt-win-x64-2302.zip>
+  url: <https://github.com/mpc-qt/mpc-qt/releases/download/v23.12/mpc-qt-win-x64-2312.zip>
 
 2. You can obtain the checksum using one of the following methods:
   - Use powershell function 'Get-FileHash'
   - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: B3BAE8F75A676E3D82AE245BBB43D21CD749BC61BF79DF83BA3387F91F3194B1
+  checksum: 0C13736C8F5759FB0E953A7B866751232ED42BDF676875418B8660F93C37C055
 
 Using AU:
 

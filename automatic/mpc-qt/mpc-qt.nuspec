@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>mpc-qt</id>
-    <version>23.02</version>
+    <version>23.12</version>
     <packageSourceUrl>https://github.com/journeyover/chocolatey-packages/tree/master/automatic/mpc-qt</packageSourceUrl>
     <owners>JourneyOver</owners>
     <title>MPC QT</title>
