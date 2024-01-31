@@ -3,17 +3,18 @@ $ErrorActionPreference = 'Stop'
 $packageName = 'tinymediamanager'
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 $embedded_path = Get-Item "$toolsDir\*.zip"
-$Destination = "C:\Tools\tmm"
+$Destination = "C:\Tools"
 
 $packageArgs = @{
   packageName  = $packageName
   FileFullPath = $embedded_path
+  SpecificFolder = 'tinyMediaManager'
   Destination  = $Destination
 }
 
 Get-ChocolateyUnzip @packageArgs
 
-$fileLocation = Get-Item "$Destination\*Manager.exe"
+$fileLocation = Get-Item "$Destination\tinyMediaManager\*Manager.exe"
 $shortcutName = 'tinyMediaManager.lnk'
 
 Install-ChocolateyShortcut -shortcutFilePath "$env:Public\Desktop\$shortcutName" -targetPath "$fileLocation" -WorkingDirectory "$Destination"
