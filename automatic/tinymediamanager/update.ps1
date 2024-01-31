@@ -1,8 +1,9 @@
 Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$release = 'https://www.tinymediamanager.org/blog/'
+$releasev3 = 'https://release.tinymediamanager.org/download_v3.html'
 $releasev4 = 'https://release.tinymediamanager.org/download_v4.html'
+$releasev5 = 'https://release.tinymediamanager.org/download_v5.html'
 
 function global:au_SearchReplace {
   @{
@@ -24,6 +25,37 @@ function global:au_BeforeUpdate($Package) {
   }
 
   Get-RemoteFiles -Purge -NoSuffix
+
+  if ($Latest.URL32 -like '*tmm_3*' -or $Latest.URL32 -like '*tmm_4*') {
+    Copy-Item "$PSScriptRoot\version_switch\old_versions.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
+  } else {
+    Copy-Item "$PSScriptRoot\version_switch\version5.ps1" "$PSScriptRoot\tools\chocolateyInstall.ps1" -Force
+  }
+}
+
+function global:au_AfterUpdate {
+  . "$PSScriptRoot/update_helper.ps1"
+  if ($Latest.URL32 -like '*tmm_3*') {
+    addDependency ".\*.nuspec" 'jre8' '8.0.171'
+  } else {
+    removeDependencies ".\*.nuspec"
+  }
+}
+
+function GetV5Version() {
+  $download_page = Invoke-WebRequest -Uri $releasev5 -UseBasicParsing
+
+  #tinyMediaManager-5.0.1.1-windows-amd64.zip
+  $re = "tinyMediaManager-5.+_*-windows-amd64.zip$"
+  $url = $download_page.links | Where-Object href -Match $re | Select-Object -Last 1 -expand href
+
+  $version = $url -split 'tinyMediaManager-|-.*?.zip' | Select-Object -Last 1 -Skip 1
+  $url32 = 'https://release.tinymediamanager.org/' + $url
+
+  @{
+    Version = $version
+    URL32   = $url32
+  }
 }
 
 function GetV4Version() {
@@ -33,7 +65,7 @@ function GetV4Version() {
   $re = "tmm_4.+_*_windows-amd64.zip$"
   $url = $download_page.links | Where-Object href -Match $re | Select-Object -Last 1 -expand href
 
-  $version = $url -split 'tmm_|_.*_?.zip' | Select-Object -Last 1 -Skip 1
+  $version = $url -split 'tmm_|_.*?.zip' | Select-Object -Last 1 -Skip 1
   $url32 = 'https://release.tinymediamanager.org/' + $url
 
   @{
@@ -43,14 +75,14 @@ function GetV4Version() {
 }
 
 function GetV3Version() {
-  $download_page = Invoke-WebRequest -Uri $release -UseBasicParsing
+  $download_page = Invoke-WebRequest -Uri $releasev3 -UseBasicParsing
 
-  #Version v3.1.18
-  $versionRegEx = 'Version\s+v3.+'
-  $version = ([regex]::match($download_page.Content, $versionRegEx) -replace ("Version v", ""))
+  #tmm_3.1.17_win.zip
+  $re = "tmm_3.+_*_win.zip$"
+  $url = $download_page.links | Where-Object href -Match $re | Select-Object -Last 1 -expand href
 
-  #https://archive.tinymediamanager.org/v3.1.18/tmm_3.1.18_win.zip
-  $url32 = "https://archive.tinymediamanager.org/v$version/tmm_$version" + "_win.zip"
+  $version = $url -split 'tmm_|_.*?.zip' | Select-Object -Last 1 -Skip 1
+  $url32 = 'https://release.tinymediamanager.org/' + $url
 
   @{
     Version = $version
@@ -61,10 +93,12 @@ function GetV3Version() {
 function global:au_GetLatest {
   $v3Stream = GetV3Version
   $v4Stream = GetV4Version
+  $v5Stream = GetV5Version
 
   $streams = [ordered] @{
     v3 = $v3Stream
     v4 = $v4Stream
+    v5 = $v5Stream
   }
 
   return @{ Streams = $streams }
