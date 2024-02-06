@@ -3,12 +3,14 @@
 $packageName = 'sonarr'
 
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$fileLocation = Get-Item "$toolsDir\*.exe"
+$fileLocation32bit = Get-Item "$toolsDir\*x86-installer.exe"
+$fileLocation64bit = Get-Item "$toolsDir\*x64-installer.exe"
 
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  file           = $fileLocation
+  file           = $fileLocation32bit
+  file64         = $fileLocation64bit
   silentArgs     = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /LOG=`"$($env:TEMP)\$($env:chocolateyPackageName).$($env:chocolateyPackageVersion).InnoInstall.log`""
   validExitCodes = @(0)
 }
