@@ -18,12 +18,11 @@ Sonarr (formerly NzbDrone) is a PVR for Usenet and BitTorrent users. It can moni
 
 ## Community
 
-- [IRC](https://webchat.freenode.net/?channels=#sonarr)
+- [IRC](https://web.libera.chat/?channels=#sonarr)
+- [Discord](https://discord.sonarr.tv)
 - [Twitter](https://twitter.com/sonarrtv)
 - [Reddit](https://www.reddit.com/r/sonarr)
 
 ## Notes
-
-The long awaited moment has finally arrived. Starting (3/8/2021) Sonarr v2 is now officially EOL and unsupported. Sonarr v3 is officially out of beta and is the stable release.
 
 Installs as a service, to get to Sonarr open browser and go to [localhost]:8989 (remove the brackets)

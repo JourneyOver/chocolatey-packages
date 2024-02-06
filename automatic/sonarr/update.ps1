@@ -1,17 +1,18 @@
 ﻿Import-Module au
 Import-Module "$PSScriptRoot\..\..\scripts\au_extensions.psm1"
 
-$Releases = 'https://services.sonarr.tv/v1/download/main/latest?version=3&os=windows&installer=true'
-
 $repoUser = "Sonarr"
 $repoName = "Sonarr"
 
 function global:au_SearchReplace {
   @{
     ".\legal\VERIFICATION.txt" = @{
-      "(?i)(^\s*url(32)?\:\s*).*"        = "`${1}<$($Latest.URL32)>"
-      "(?i)(^\s*checksum(32)?\:\s*).*"   = "`${1}$($Latest.Checksum32)"
-      "(?i)(^\s*checksum\s*type\:\s*).*" = "`${1}$($Latest.ChecksumType32)"
+      "(?i)(^\s*location on\:?\s*)\<.*\>" = "`${1}<$($Latest.ReleaseUri)>"
+      "(?i)(^\s*url(32)?\:\s*).*"         = "`${1}<$($Latest.URL32)>"
+      "(?i)(^\s*url64?\:\s*).*"           = "`${1}<$($Latest.URL64)>"
+      "(?i)(^\s*checksum(32)?\:\s*).*"    = "`${1}$($Latest.Checksum32)"
+      "(?i)(^\s*checksum64?\:\s*).*"      = "`${1}$($Latest.Checksum64)"
+      "(?i)(^\s*checksum\s*type\:\s*).*"  = "`${1}$($Latest.ChecksumType32)"
     }
   }
 }
@@ -32,59 +33,14 @@ function global:au_AfterUpdate($Package) {
   Invoke-VirusTotalScan $Package
 }
 
-function GetV3StableVersion() {
-  $download_page = Get-RedirectedUrl $Releases
-
-  $url = $download_page
-  $version = $url -split 'main/|/Sonarr' | Select-Object -Last 1 -Skip 1
-
-  @{
-    PackageName = "sonarr"
-    Version     = $version
-    URL32       = $url
-  }
-}
-
-function GetV3DevVersion() {
-  $download_page = Get-RedirectedUrl $Releases.replace('main', 'develop')
-
-  $url = $download_page
-  $version = $url -split 'develop/|/Sonarr' | Select-Object -Last 1 -Skip 1
-  $build = "-beta"
-
-  @{
-    PackageName = "sonarr"
-    Version     = ($version + $build)
-    URL32       = $url
-  }
-}
-
-function GetV4DevVersion() {
-  $download_page = Get-RedirectedUrl $Releases.replace('main', 'develop').Replace('version=3', 'version=4')
-
-  $url = $download_page
-  $version = $url -split 'develop/|/Sonarr' | Select-Object -Last 1 -Skip 1
-  $build = "-v4beta"
-
-  @{
-    PackageName = "sonarr"
-    Version     = ($version + $build)
-    URL32       = $url
-  }
-}
-
 function global:au_GetLatest {
-  $v3stableStream = GetV3StableVersion
-  $v3devStream = GetV3DevVersion
-  $v4devStream = GetV4DevVersion
+  $release = Get-LatestGithubReleases $repoUser $repoName $true
 
-  $streams = [ordered] @{
-    V3_Stable = $v3stableStream
-    V3_Dev    = $v3devStream
-    V4_Dev    = $v4devStream
-  }
+  $url32 = $release.latest.Assets | Where-Object { $_ -match 'x86-installer\.exe$' } | Select-Object -First 1
+  $url64 = $release.latest.Assets | Where-Object { $_ -match 'x64-installer\.exe$' } | Select-Object -First 1
 
-  return @{ Streams = $streams }
+  $Latest = @{ URL32 = $url32; URL64 = $url64; Version = $release.latest.Version; ReleaseUri = $release.latest.ReleaseUrl }
+  return $Latest
 }
 
 update -ChecksumFor none
