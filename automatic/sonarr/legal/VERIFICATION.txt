@@ -4,21 +4,21 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software has been downloaded from the listed download
-location on <https://sonarr.tv>
+location on <https://github.com/Sonarr/Sonarr/releases/tag/v4.0.1.1047>
 and can be verified by doing the following:
 
 1. Download the following:
 
-  url: <https://download.sonarr.tv/v4/develop/4.0.0.752/Sonarr.develop.4.0.0.752.win-x64-installer.exe>
-  url64: <https://download.sonarr.tv/v4/develop/4.0.0.752/Sonarr.develop.4.0.0.752.win-x64-installer.exe>
+  url: <https://github.com/Sonarr/Sonarr/releases/download/v4.0.1.1047/Sonarr.develop.4.0.1.1047.win-x86-installer.exe>
+  url64: <https://github.com/Sonarr/Sonarr/releases/download/v4.0.1.1047/Sonarr.develop.4.0.1.1047.win-x64-installer.exe>
 
   2. You can obtain the checksum using one of the following methods:
     - Use powershell function 'Get-FileHash'
     - Use Chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: 43B4E6CD3E96D51CCE5AE5A65FAE2E051773D23217D30AA276E1CFEBC56D8B5D
-  checksum64:43B4E6CD3E96D51CCE5AE5A65FAE2E051773D23217D30AA276E1CFEBC56D8B5D
+  checksum: 3549A6698CB3790CA2F96E9CE46AB12B51A0231FF840CF0D051600D6E4AA24F2
+  checksum64:2E33258D7D03A2E394CC65B0790279C0FBEDEEE9A23FD93E805E44303566B186
 
 Using AU:
 
