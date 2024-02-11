@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageName = 'tsedat'
-$url = 'https://www.sequencepublishing.com/_files/TheSage_Setup_7-56-2810.exe'
-$checksum = '7755d5b8d2705fd797bac23830c507f8449d21ba073134ddd41b5169bb87ce92'
+$url = 'https://www.sequencepublishing.com/_files/TheSage_Setup_7-58-2812.exe'
+$checksum = 'cefb47552bc3eb58eb80f920507656f1177de96c6ddd8c8a28202df8e62eeb8f'
 $checksumType = 'sha256'
 
 $packageArgs = @{
